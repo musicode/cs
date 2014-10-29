@@ -1,31 +1,25 @@
-//** `<input>` background color
-@input-bg:                       #fff;
-//** `<input disabled>` background color
-@input-bg-disabled:              @gray-lighter;
+/**
+ * $file 表单元素
+ * $author zhujl
+ */
 
-//** Text color for `<input>`s
-@input-color:                    @gray;
-//** `<input>` border color
-@input-border:                   #ccc;
-//** `<input>` border radius
-@input-border-radius:            @border-radius-base;
-//** Border color for inputs on focus
-@input-border-focus:             #66afe9;
+$input-bg = #FFF;
+$input-border = #ccc;
+$input-color = $text-color;
 
-//** Placeholder text color
-@input-color-placeholder:        @gray-light;
+$input-border-radius = $border-radius-base;
+$input-color-placeholder = #CCC;
 
-//** Default `.form-control` height
-@input-height-base:              (@line-height-computed + (@padding-base-vertical * 2) + 2);
-//** Large `.form-control` height
-@input-height-large:             (ceil(@font-size-large * @line-height-large) + (@padding-large-vertical * 2) + 2);
-//** Small `.form-control` height
-@input-height-small:             (floor(@font-size-small * @line-height-small) + (@padding-small-vertical * 2) + 2);
+// focus
+$input-bg-focus = #FFF;
+$input-border-focus = $brand-primary;
+$input-color-focus = $text-color;
 
-@legend-color:                   @gray-dark;
-@legend-border-color:            #e5e5e5;
+// disabled
+$input-bg-disabled = $gray-lighter;
+$input-border-disabled = $gray-light;
+$input-color-disabled = $gray-light;
 
-//** Background color for textual input addons
-@input-group-addon-bg:           @gray-lighter;
-//** Border color for textual input addons
-@input-group-addon-border-color: @input-border;
+
+
+

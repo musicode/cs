@@ -4,71 +4,46 @@
  */
 
 
-button-type($bg, $color, $border) {
-    background-color: $bg;
-    border: 1px solid $border;
-    color: $color;
+.btn-huge {
+    btn-huge();
+}
+.btn-large {
+    btn-large();
+}
+.btn {
+    btn-base();
+}
+.btn-small {
+    btn-small();
+}
+.btn-tiny {
+    btn-tiny();
 }
 
-button-size($padding-vertical, $padding-horizontal, $font-size, $line-height, $border-radius = 0) {
-
-    cursor: pointer;
-    display: inline-block;
-    font-size: $font-size;
-    line-height: $line-height;
-    padding: $padding-vertical $padding-horizontal;
-    box-sizing: border-box;
-
-    if ($border-radius > 0) {
-        border-radius: $border-radius;
-    }
+.btn-default {
+    btn-default();
 }
 
-
-
-
-btn-default() {
-    button-type($btn-default-bg, $btn-default-color, $btn-default-border);
-}
-btn-primary() {
-    button-type($btn-primary-bg, $btn-primary-color, $btn-primary-border);
-}
-btn-info() {
-    button-type($btn-info-bg, $btn-info-color, $btn-info-border);
-}
-btn-warning() {
-    button-type($btn-warning-bg, $btn-warning-color, $btn-warning-border);
-}
-btn-success() {
-    button-type($btn-success-bg, $btn-success-color, $btn-success-border);
-}
-btn-error() {
-    button-type($btn-error-bg, $btn-error-color, $btn-error-border);
-}
-btn-link() {
-    color: $btn-link-color;
-    cursor: pointer;
+.btn-primary {
+    btn-primary();
 }
 
-
-
-
-btn-base() {
-    button-size($padding-vertical-base, $padding-horizontal-base, $font-size-base, $line-height-base, $border-radius-base);
+.btn-info {
+    btn-info();
 }
 
-btn-tiny() {
-    button-size($padding-vertical-tiny, $padding-horizontal-tiny, $font-size-tiny, $line-height-tiny, $border-radius-tiny);
+.btn-warning {
+    btn-warning();
 }
 
-btn-small() {
-    button-size($padding-vertical-small, $padding-horizontal-small, $font-size-small, $line-height-small, $border-radius-small);
+.btn-success {
+    btn-success();
 }
 
-btn-large() {
-    button-size($padding-vertical-large, $padding-horizontal-large, $font-size-large, $line-height-large, $border-radius-large);
+.btn-error {
+    btn-error();
 }
 
-btn-huge() {
-    button-size($padding-vertical-huge, $padding-horizontal-huge, $font-size-huge, $line-height-huge, $border-radius-huge);
+.btn-link {
+    btn-link();
 }

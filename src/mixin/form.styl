@@ -1,0 +1,116 @@
+/**
+ * @file 表单元素
+ * @author zhujl
+ */
+
+form-control-size($padding-vertical, $padding-horizontal) {
+    padding: $padding-vertical $padding-horizontal;
+}
+
+form-control-base($has-border = false) {
+    form-control-size(
+        $has-border ? $padding-vertical-base - 2 : $padding-vertical-base,
+        $has-border ? $padding-horizontal-base - 2 : $padding-horizontal-base
+    );
+}
+
+form-control-tiny($has-border = false) {
+    form-control-size(
+        $has-border ? $padding-vertical-tiny - 2 : $padding-vertical-tiny,
+        $has-border ? $padding-horizontal-tiny - 2 : $padding-horizontal-tiny
+    );
+}
+
+form-control-small($has-border = false) {
+    form-control-size(
+        $has-border ? $padding-vertical-small - 2 : $padding-vertical-small,
+        $has-border ? $padding-horizontal-small - 2 : $padding-horizontal-small
+    );
+}
+
+form-control-large($has-border = false) {
+    form-control-size(
+        $has-border ? $padding-vertical-large - 2 : $padding-vertical-large,
+        $has-border ? $padding-horizontal-large - 2 : $padding-horizontal-large
+    );
+}
+
+form-control-huge($has-border = false) {
+    form-control-size(
+        $has-border ? $padding-vertical-huge - 2 : $padding-vertical-huge,
+        $has-border ? $padding-horizontal-huge - 2 : $padding-horizontal-huge
+    );
+}
+
+
+// 文本输入框
+form-text() {
+
+    background-color: $input-bg;
+    border: 1px solid $input-border;
+    color: $input-color;
+    outline: none;
+
+    if ($input-border-radius > 0) {
+        border-radius: $input-border-radius;
+    }
+
+    &:foucs {
+
+        if ($input-bg-focus != $input-bg) {
+            background-color: $input-bg-focus;
+        }
+
+        if ($input-border-focus != $input-border) {
+            border-color: $input-border-focus;
+        }
+
+        if ($input-color-focus != $input-color) {
+            color: $input-color-focus;
+        }
+    }
+
+    &:disabled {
+
+        cursor: not-allowed;
+
+        if ($input-bg-disabled != $input-bg) {
+            background-color: $input-bg-disabled;
+        }
+
+        if ($input-border-disabled != $input-border) {
+            border-color: $input-border-disabled;
+        }
+
+        if ($input-color-disabled != $input-color) {
+            color: $input-color-disabled;
+        }
+    }
+
+    // 不能合并写
+    &::-webkit-input-placeholder { /* WebKit browsers */
+        color: $input-color-placeholder;
+    }
+    &:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+        color: $input-color-placeholder;
+    }
+    &::-moz-placeholder { /* Mozilla Firefox 19+ */
+        color: $input-color-placeholder;
+    }
+    &:-ms-input-placeholder { /* Internet Explorer 10+ */
+        color: $input-color-placeholder;
+    }
+}
+
+
+
+form-radio() {
+    user-select: none;
+
+    input {
+        margin-right:
+    }
+}
+form-checkbox() {
+
+}

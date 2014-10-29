@@ -1,0 +1,119 @@
+/**
+ * @file 标签
+ * @author zhujl
+ */
+
+label-type($bg, $color, $border) {
+    background-color: $bg;
+    border: 1px solid $border;
+    color: $color;
+}
+
+label-size($padding-vertical, $padding-horizontal, $font-size, $line-height, $border-radius = 0) {
+
+    display: inline-block;
+    font-size: $font-size;
+    line-height: $line-height;
+    padding: $padding-vertical $padding-horizontal;
+    box-sizing: border-box;
+
+    if ($border-radius > 0) {
+        border-radius: $border-radius;
+    }
+}
+
+
+label-default() {
+    label-type(
+        $label-default-bg,
+        $label-default-color,
+        $label-default-border
+    );
+}
+label-primary() {
+    label-type(
+        $label-primary-bg,
+        $label-primary-color,
+        $label-primary-border
+    );
+}
+label-info() {
+    label-type(
+        $label-info-bg,
+        $label-info-color,
+        $label-info-border
+    );
+}
+label-warning() {
+    label-type(
+        $label-warning-bg,
+        $label-warning-color,
+        $label-warning-border
+    );
+}
+label-success() {
+    label-type(
+        $label-success-bg,
+        $label-success-color,
+        $label-success-border
+    );
+}
+label-error() {
+    label-type(
+        $label-error-bg,
+        $label-error-color,
+        $label-error-border
+    );
+}
+
+
+
+label-base() {
+    label-size(
+        $padding-vertical-base,
+        $padding-horizontal-base,
+        $font-size-base,
+        $line-height-base,
+        $border-radius-base
+    );
+}
+
+label-tiny() {
+    label-size(
+        $padding-vertical-tiny,
+        $padding-horizontal-tiny,
+        $font-size-tiny,
+        $line-height-tiny,
+        $border-radius-tiny
+    );
+}
+
+label-small() {
+    label-size(
+        $padding-vertical-small,
+        $padding-horizontal-small,
+        $font-size-small,
+        $line-height-small,
+        $border-radius-small
+    );
+}
+
+label-large() {
+    label-size(
+        $padding-vertical-large,
+        $padding-horizontal-large,
+        $font-size-large,
+        $line-height-large,
+        $border-radius-large
+    );
+}
+
+label-huge() {
+    label-size(
+        $padding-vertical-huge,
+        $padding-horizontal-huge,
+        $font-size-huge,
+        $line-height-huge,
+        $border-radius-huge
+    );
+}
