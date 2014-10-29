@@ -3,70 +3,112 @@
  * @author zhujl
  */
 
-form-control-size($padding-vertical, $padding-horizontal) {
+form-control-size($padding-vertical, $padding-horizontal, $font-size, $line-height, $has-border = false) {
+
+    $padding-vertical = $has-border ? $padding-vertical : $padding-vertical + 1;
+    $padding-horizontal = $has-border ? $padding-horizontal : $padding-horizontal + 1;
+
+    font-size: $font-size;
+    line-height: $line-height;
     padding: $padding-vertical $padding-horizontal;
+    box-sizing: border-box;
 }
 
 form-control-base($has-border = false) {
     form-control-size(
-        $has-border ? $padding-vertical-base - 2 : $padding-vertical-base,
-        $has-border ? $padding-horizontal-base - 2 : $padding-horizontal-base
+        $padding-vertical-base,
+        $padding-horizontal-base,
+        $font-size-base,
+        $line-height-base,
+        $has-border
     );
 }
 
 form-control-tiny($has-border = false) {
     form-control-size(
-        $has-border ? $padding-vertical-tiny - 2 : $padding-vertical-tiny,
-        $has-border ? $padding-horizontal-tiny - 2 : $padding-horizontal-tiny
+        $padding-vertical-tiny,
+        $padding-horizontal-tiny,
+        $font-size-tiny,
+        $line-height-tiny,
+        $has-border
     );
 }
 
 form-control-small($has-border = false) {
     form-control-size(
-        $has-border ? $padding-vertical-small - 2 : $padding-vertical-small,
-        $has-border ? $padding-horizontal-small - 2 : $padding-horizontal-small
+        $padding-vertical-small,
+        $padding-horizontal-small,
+        $font-size-small,
+        $line-height-small,
+        $has-border
     );
 }
 
 form-control-large($has-border = false) {
     form-control-size(
-        $has-border ? $padding-vertical-large - 2 : $padding-vertical-large,
-        $has-border ? $padding-horizontal-large - 2 : $padding-horizontal-large
+        $padding-vertical-large,
+        $padding-horizontal-large,
+        $font-size-large,
+        $line-height-large,
+        $has-border
     );
 }
 
 form-control-huge($has-border = false) {
     form-control-size(
-        $has-border ? $padding-vertical-huge - 2 : $padding-vertical-huge,
-        $has-border ? $padding-horizontal-huge - 2 : $padding-horizontal-huge
+        $padding-vertical-huge,
+        $padding-horizontal-huge,
+        $font-size-huge,
+        $line-height-huge,
+        $has-border
     );
 }
 
 
+
+form-label() {
+    font-weight: $form-label-font-weight;
+}
+
 // 文本输入框
 form-text() {
 
-    background-color: $input-bg;
-    border: 1px solid $input-border;
-    color: $input-color;
+    background-color: $form-text-bg;
+    border: 1px solid $form-text-border;
+    color: $form-text-color;
     outline: none;
 
-    if ($input-border-radius > 0) {
-        border-radius: $input-border-radius;
+    if ($form-text-border-radius > 0) {
+        border-radius: $form-text-border-radius;
     }
 
-    &:foucs {
+    &:hover {
 
-        if ($input-bg-focus != $input-bg) {
-            background-color: $input-bg-focus;
+        if ($form-text-bg-hover != $form-text-bg) {
+            background-color: $form-text-bg-hover;
         }
 
-        if ($input-border-focus != $input-border) {
-            border-color: $input-border-focus;
+        if ($form-text-border-hover != $form-text-border) {
+            border-color: $form-text-border-hover;
         }
 
-        if ($input-color-focus != $input-color) {
-            color: $input-color-focus;
+        if ($form-text-color-hover != $form-text-color) {
+            color: $form-text-color-hover;
+        }
+    }
+
+    &:focus {
+
+        if ($form-text-bg-focus != $form-text-bg) {
+            background-color: $form-text-bg-focus;
+        }
+
+        if ($form-text-border-focus != $form-text-border) {
+            border-color: $form-text-border-focus;
+        }
+
+        if ($form-text-color-focus != $form-text-color) {
+            color: $form-text-color-focus;
         }
     }
 
@@ -74,43 +116,40 @@ form-text() {
 
         cursor: not-allowed;
 
-        if ($input-bg-disabled != $input-bg) {
-            background-color: $input-bg-disabled;
-        }
+        // 禁用具有最高优先级，所以不能像前面那样 if
+        // 否则无法覆盖样式
+        background-color: $form-text-bg-disabled;
+        border-color: $form-text-border-disabled;
+        color: $form-text-color-disabled;
 
-        if ($input-border-disabled != $input-border) {
-            border-color: $input-border-disabled;
-        }
-
-        if ($input-color-disabled != $input-color) {
-            color: $input-color-disabled;
-        }
     }
 
     // 不能合并写
     &::-webkit-input-placeholder { /* WebKit browsers */
-        color: $input-color-placeholder;
+        color: $form-text-color-placeholder;
     }
     &:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-        color: $input-color-placeholder;
+        color: $form-text-color-placeholder;
     }
     &::-moz-placeholder { /* Mozilla Firefox 19+ */
-        color: $input-color-placeholder;
+        color: $form-text-color-placeholder;
     }
     &:-ms-input-placeholder { /* Internet Explorer 10+ */
-        color: $input-color-placeholder;
+        color: $form-text-color-placeholder;
     }
 }
 
 
+form-box() {
 
-form-radio() {
+    display: inline-block;
     user-select: none;
+    cursor: pointer;
 
     input {
-        margin-right:
+        cursor: pointer;
+        margin: 0 $form-label-gap 0 0;
     }
 }
-form-checkbox() {
 
-}
+

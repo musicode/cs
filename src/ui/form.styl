@@ -3,12 +3,57 @@
  * @author zhujl
  */
 
+
 input[type="search"] {
-  -webkit-appearance: none;
+    appearance: textfield;
 }
 
 
+.form-label,
+.form-static,
+.form-radio,
+.form-checkbox,
+.form-inline,
+.form-block {
+    form-control-base();
+}
+
+.form-group {
+    clearfix();
+
+    & + & {
+        margin-top: $form-group-gap;
+    }
+}
+
+.form-label {
+    float: left;
+}
+.form-controls {
+    overflow: hidden;
+}
+
+.form-radio,
+.form-checkbox {
+    form-box();
+}
+
+.form-label {
+    form-label();
+}
 .form-text {
     form-text();
     form-control-base(true);
+
+    div&,
+    span& {
+        display: inline-block;
+    }
+}
+
+.form-inline {
+    display: inline-block;
+}
+.form-block {
+    display: block;
 }

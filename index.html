@@ -149,8 +149,167 @@
         <label class="badge-huge badge-error">8</label>
 
         <h1>表单</h1>
-        <input type="text" class="form-text" placeholder="哈哈" />
-        <input type="text" class="form-text" value="禁用" disabled />
+
+        <div class="form">
+
+            <div class="form-group">
+                <label class="form-label">文本输入框：</label>
+                <div class="form-controls">
+                    <div class="form-static">纯文本</div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">文本输入框：</label>
+                <div class="form-controls">
+                    <input class="form-text" type="text" name="username" placeholder="请输入用户名" />
+                </div>
+            </div>
+
+            <div class="form-group has-success">
+                <label class="form-label">文本输入框：</label>
+                <div class="form-controls">
+                    <input class="form-text" type="text" name="username" placeholder="请输入用户名" />
+                    <span class="success">成功</span>
+                </div>
+            </div>
+
+            <div class="form-group has-error">
+                <label class="form-label">文本输入框：</label>
+                <div class="form-controls">
+                    <input class="form-text" type="text" name="username" placeholder="请输入用户名" />
+                    <span class="error">请输入用户名</span>
+                </div>
+            </div>
+
+             <div class="form-group">
+                <label class="form-label">地区下拉菜单：</label>
+                <div class="form-controls">
+                    <div class="dropdown">
+                        <button class="btn btn-default">
+                            <span>哈哈</span>
+                            <i class="caret"></i>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li>11111</li>
+                            <li>11111</li>
+                            <li>11111</li>
+                            <li>11111</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">前后缀输入框：</label>
+                <div class="form-controls">
+                    <span class="form-text">
+                        <span class="form-prefix">￥</span>
+                        <input type="text" />
+                        <span class="form-suffix">/ 时</span>
+                    </span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">横向单选框：</label>
+                <div class="form-controls">
+
+                    <label class="form-radio">
+                        <input type="radio" />
+                        男
+                    </label>
+
+                    <label class="form-radio">
+                        <input type="radio" />
+                        女
+                    </label>
+
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">纵向单选框：</label>
+                <div class="form-controls">
+
+                    <label class="form-radio form-block">
+                        <input type="radio" />
+                        男
+                    </label>
+
+                    <label class="form-radio form-block">
+                        <input type="radio" />
+                        女
+                    </label>
+
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">横向复选框：</label>
+                <div class="form-controls">
+
+                    <label class="form-checkbox">
+                        <input type="checkbox" />
+                        琴
+                    </label>
+
+                    <label class="form-checkbox">
+                        <input type="checkbox" />
+                        棋
+                    </label>
+
+                    <label class="form-checkbox">
+                        <input type="checkbox" />
+                        书
+                    </label>
+
+                    <label class="form-checkbox">
+                        <input type="checkbox" />
+                        画
+                    </label>
+
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">纵向复选框：</label>
+                <div class="form-controls">
+
+                    <label class="form-checkbox form-block">
+                        <input type="checkbox" />
+                        琴
+                    </label>
+
+                    <label class="form-checkbox form-block">
+                        <input type="checkbox" />
+                        棋
+                    </label>
+
+                    <label class="form-checkbox form-block">
+                        <input type="checkbox" />
+                        书
+                    </label>
+
+                    <label class="form-checkbox form-block">
+                        <input type="checkbox" />
+                        画
+                    </label>
+
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <label class="form-label">文本域：</label>
+                <div class="form-controls">
+                    <textarea class="form-text form-block" placeholder="请输入xxx"></textarea>
+                    <span class="form-hint">
+                        还可以输入<strong>5</strong>个字
+                    </span>
+                </div>
+            </div>
+        </div>
     </section>
 
 </body>
