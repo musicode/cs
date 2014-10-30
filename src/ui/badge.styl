@@ -3,45 +3,30 @@
  * @author zhujl
  */
 
-badge-size-helper() {
-    &:not(.tiny):not(.small):not(.large):not(.huge) {
-        badge-base();
-    }
-    &.huge {
-        badge-huge();
-    }
-    &.large {
-        badge-large();
-    }
-    &.small {
-        badge-small();
-    }
-    &.tiny {
-        badge-tiny();
-    }
+.badge-default,
+.badge-primary,
+.badge-info,
+.badge-success,
+.badge-error {
+    ui-size('badge', false, true);
 }
 
 .badge-default {
     badge-default();
-    badge-size-helper();
 }
 
 .badge-primary {
     badge-primary();
-    badge-size-helper();
 }
 
 .badge-info {
     badge-info();
-    badge-size-helper();
 }
 
 .badge-success {
     badge-success();
-    badge-size-helper();
 }
 
 .badge-error {
     badge-error();
-    badge-size-helper();
 }

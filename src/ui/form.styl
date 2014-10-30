@@ -3,24 +3,6 @@
  * @author zhujl
  */
 
-form-control-size($has-border = false, $has-padding-horizontal = false) {
-    &:not(.tiny):not(.small):not(.large):not(.huge) {
-        ui-size('base', $has-border, $has-padding-horizontal);
-    }
-    &.huge {
-        ui-size('huge', $has-border, $has-padding-horizontal);
-    }
-    &.large {
-        ui-size('large', $has-border, $has-padding-horizontal);
-    }
-    &.small {
-        ui-size('small', $has-border, $has-padding-horizontal);
-    }
-    &.tiny {
-        ui-size('tiny', $has-border, $has-padding-horizontal);
-    }
-}
-
 input[type="search"] {
     appearance: textfield;
 }
@@ -32,7 +14,7 @@ input[type="search"] {
 .form-checkbox,
 .form-inline,
 .form-block {
-    form-control-size();
+    ui-size('form');
 }
 
 .form-group {
@@ -48,6 +30,7 @@ input[type="search"] {
     margin-right: $form-label-gap;
     form-label();
 }
+
 .form-controls {
     overflow: hidden;
 }
@@ -65,7 +48,7 @@ input[type="search"] {
 .form-text {
 
     form-text();
-    form-control-size(true, true);
+    ui-size('form-text', true, true);
 
     div&,
     span& {

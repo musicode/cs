@@ -6,24 +6,10 @@
 badge-type($bg, $color) {
     background-color: $bg;
     color: $color;
-}
-
-badge-size($padding-vertical, $padding-horizontal,
-            $font-size, $line-height,
-            $border-radius = 0) {
-
     display: inline-block;
-    font-size: $font-size;
-    line-height: $line-height;
-    padding: $padding-vertical $padding-horizontal;
-    box-sizing: border-box;
-
-    if ($border-radius > 0) {
-        border-radius: $border-radius;
-    }
+    font-weight: $badge-font-weight;
+    border-radius: $badge-border-radius-base;
 }
-
-
 
 
 badge-default() {
@@ -54,58 +40,5 @@ badge-error() {
     badge-type(
         $badge-error-bg,
         $badge-error-color
-    );
-}
-
-
-
-
-badge-base() {
-    badge-size(
-        $padding-vertical-base,
-        $padding-horizontal-base,
-        $font-size-base,
-        $line-height-base,
-        $badge-border-radius-base
-    );
-}
-
-badge-tiny() {
-    badge-size(
-        $padding-vertical-tiny,
-        $padding-horizontal-tiny,
-        $font-size-tiny,
-        $line-height-tiny,
-        $badge-border-radius-tiny
-    );
-}
-
-badge-small() {
-    badge-size(
-        $padding-vertical-small,
-        $padding-horizontal-small,
-        $font-size-small,
-        $line-height-small,
-        $badge-border-radius-small
-    );
-}
-
-badge-large() {
-    badge-size(
-        $padding-vertical-large,
-        $padding-horizontal-large,
-        $font-size-large,
-        $line-height-large,
-        $badge-border-radius-large
-    );
-}
-
-badge-huge() {
-    badge-size(
-        $padding-vertical-huge,
-        $padding-horizontal-huge,
-        $font-size-huge,
-        $line-height-huge,
-        $badge-border-radius-huge
     );
 }

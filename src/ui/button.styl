@@ -3,51 +3,36 @@
  * @author zhujl
  */
 
-btn-size-helper($has-border = true) {
-    &:not(.tiny):not(.small):not(.large):not(.huge) {
-        btn-base($has-border);
-    }
-    &.huge {
-        btn-huge($has-border);
-    }
-    &.large {
-        btn-large($has-border);
-    }
-    &.small {
-        btn-small($has-border);
-    }
-    &.tiny {
-        btn-tiny($has-border);
-    }
+.btn-default,
+.btn-primary,
+.btn-info,
+.btn-success,
+.btn-error {
+    ui-size('btn', true, true);
 }
 
 
 .btn-default {
     btn-default();
-    btn-size-helper();
 }
 
 .btn-primary {
     btn-primary();
-    btn-size-helper();
 }
 
 .btn-info {
     btn-info();
-    btn-size-helper();
 }
 
 .btn-success {
     btn-success();
-    btn-size-helper();
 }
 
 .btn-error {
     btn-error();
-    btn-size-helper();
 }
 
 .btn-link {
     btn-link();
-    btn-size-helper(false);
+    ui-size('btn', false, true);
 }

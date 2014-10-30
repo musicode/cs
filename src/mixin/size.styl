@@ -7,35 +7,36 @@
  * @param {string} $type 大小类型，可选值有 'base', 'tiny', 'small', 'large', 'huge'
  * @param {boolean=} $has-border 是否有边框
  * @param {boolean=} $has-padding-horizontal 是否有水平内边距
+ * @param {boolean=} $has-padding-vertical 是否有垂直内边距
  */
-ui-size($type, $has-border = false, $has-padding-horizontal = false) {
+ui-size-inner($name, $type, $has-border = false, $has-padding-horizontal = false, $has-padding-vertical = true) {
 
     $hash = {
-        base: {
+        'base': {
             'padding-vertical': $padding-vertical-base,
             'padding-horizontal': $padding-horizontal-base,
             'font-size': $font-size-base,
             'line-height': $line-height-base
         },
-        tiny: {
+        'tiny': {
             'padding-vertical': $padding-vertical-tiny,
             'padding-horizontal': $padding-horizontal-tiny,
             'font-size': $font-size-tiny,
             'line-height': $line-height-tiny
         },
-        small: {
+        'small': {
             'padding-vertical': $padding-vertical-small,
             'padding-horizontal': $padding-horizontal-small,
             'font-size': $font-size-small,
             'line-height': $line-height-small
         },
-        large: {
+        'large': {
             'padding-vertical': $padding-vertical-large,
             'padding-horizontal': $padding-horizontal-large,
             'font-size': $font-size-large,
             'line-height': $line-height-large
         },
-        huge: {
+        'huge': {
             'padding-vertical': $padding-vertical-huge,
             'padding-horizontal': $padding-horizontal-huge,
             'font-size': $font-size-huge,
@@ -46,16 +47,38 @@ ui-size($type, $has-border = false, $has-padding-horizontal = false) {
     $style = $hash[$type];
 
     if (!$has-border) {
-        $style['padding-vertical'] = $style['padding-vertical'] - 1;
-        $style['padding-horizontal'] = $style['padding-horizontal'] - 1;
+        $style['padding-vertical'] = $style['padding-vertical'] + 1;
+        $style['padding-horizontal'] = $style['padding-horizontal'] + 1;
     }
 
     if (!$has-padding-horizontal) {
         $style['padding-horizontal'] = 0;
     }
 
+    if (!$has-padding-vertical) {
+        $style['padding-vertical'] = 0;
+    }
+
     font-size: $style['font-size'];
     line-height: $style['line-height'];
     padding: $style['padding-vertical'] $style['padding-horizontal'];
     box-sizing: border-box;
+}
+
+ui-size($name, $has-border = false, $has-padding-horizontal = false) {
+    &:not(.tiny):not(.small):not(.large):not(.huge) {
+        ui-size-inner($name, 'base', $has-border, $has-padding-horizontal);
+    }
+    &.huge {
+        ui-size-inner($name, 'huge', $has-border, $has-padding-horizontal);
+    }
+    &.large {
+        ui-size-inner($name, 'large', $has-border, $has-padding-horizontal);
+    }
+    &.small {
+        ui-size-inner($name, 'small', $has-border, $has-padding-horizontal);
+    }
+    &.tiny {
+        ui-size-inner($name, 'tiny', $has-border, $has-padding-horizontal);
+    }
 }

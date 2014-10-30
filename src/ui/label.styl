@@ -2,45 +2,31 @@
  * @file 标签
  * @author zhujl
  */
-label-size-helper() {
-    &:not(.tiny):not(.small):not(.large):not(.huge) {
-        label-base();
-    }
-    &.huge {
-        label-huge();
-    }
-    &.large {
-        label-large();
-    }
-    &.small {
-        label-small();
-    }
-    &.tiny {
-        label-tiny();
-    }
+
+.label-default,
+.label-primary,
+.label-info,
+.label-success,
+.label-error {
+    ui-size('label', false, true);
 }
 
 .label-default {
     label-default();
-    label-size-helper();
 }
 
 .label-primary {
     label-primary();
-    label-size-helper();
 }
 
 .label-info {
     label-info();
-    label-size-helper();
 }
 
 .label-success {
     label-success();
-    label-size-helper();
 }
 
 .label-error {
     label-error();
-    label-size-helper();
 }
