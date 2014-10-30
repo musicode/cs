@@ -1,0 +1,35 @@
+/**
+ * @file 列表
+ * @author zhujl
+ */
+
+list() {
+
+    background-color: $list-bg;
+    padding: $list-padding-vertical $list-padding-horizontal;
+
+/**
+    if (transparent in $list-border) {
+        border: 1px solid $list-border;
+    }
+**/
+}
+
+list-item() {
+
+    color: $list-item-color;
+    display: block;
+    font-size: $list-item-font-size;
+    padding: $list-item-padding-vertical $list-item-padding-horizontal;
+
+/**
+    if ($list-item-border !== 'transparent') {
+
+        border-top: 1px solid $list-item-border;
+
+        &:first-child {
+            border-top: none;
+        }
+    }
+*/
+}
