@@ -3,38 +3,45 @@
  * @author zhujl
  */
 
-.badge-huge {
-    badge-huge();
-}
-.badge-large {
-    badge-large();
-}
-.badge {
-    badge-base();
-}
-.badge-small {
-    badge-small();
-}
-.badge-tiny {
-    badge-tiny();
+badge-size-helper() {
+    &:not(.tiny):not(.small):not(.large):not(.huge) {
+        badge-base();
+    }
+    &.huge {
+        badge-huge();
+    }
+    &.large {
+        badge-large();
+    }
+    &.small {
+        badge-small();
+    }
+    &.tiny {
+        badge-tiny();
+    }
 }
 
 .badge-default {
     badge-default();
+    badge-size-helper();
 }
 
 .badge-primary {
     badge-primary();
+    badge-size-helper();
 }
 
 .badge-info {
     badge-info();
+    badge-size-helper();
 }
 
 .badge-success {
     badge-success();
+    badge-size-helper();
 }
 
 .badge-error {
     badge-error();
+    badge-size-helper();
 }
