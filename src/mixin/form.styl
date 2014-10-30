@@ -3,64 +3,8 @@
  * @author zhujl
  */
 
-form-control-size($padding-vertical, $font-size, $line-height, $has-border = false) {
 
-    $padding-vertical = $has-border ? $padding-vertical : $padding-vertical + 1;
-
-    font-size: $font-size;
-    line-height: $line-height;
-    padding-top: $padding-vertical;
-    padding-bottom: $padding-vertical;
-    box-sizing: border-box;
-}
-
-form-control-base($has-border = false) {
-    form-control-size(
-        $padding-vertical-base,
-        $font-size-base,
-        $line-height-base,
-        $has-border
-    );
-}
-
-form-control-tiny($has-border = false) {
-    form-control-size(
-        $padding-vertical-tiny,
-        $font-size-tiny,
-        $line-height-tiny,
-        $has-border
-    );
-}
-
-form-control-small($has-border = false) {
-    form-control-size(
-        $padding-vertical-small,
-        $font-size-small,
-        $line-height-small,
-        $has-border
-    );
-}
-
-form-control-large($has-border = false) {
-    form-control-size(
-        $padding-vertical-large,
-        $font-size-large,
-        $line-height-large,
-        $has-border
-    );
-}
-
-form-control-huge($has-border = false) {
-    form-control-size(
-        $padding-vertical-huge,
-        $font-size-huge,
-        $line-height-huge,
-        $has-border
-    );
-}
-
-
-
+// 域标签
 form-label() {
     font-weight: $form-label-font-weight;
 }
@@ -72,8 +16,6 @@ form-text() {
     border: 1px solid $form-text-border;
     color: $form-text-color;
     outline: none;
-    padding-left: $padding-horizontal-base;
-    padding-right: $padding-horizontal-base;
 
     if ($form-text-border-radius > 0) {
         border-radius: $form-text-border-radius;
@@ -136,7 +78,7 @@ form-text() {
     }
 }
 
-
+// 单选复选框
 form-box() {
 
     display: inline-block;

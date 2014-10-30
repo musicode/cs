@@ -1,0 +1,61 @@
+/**
+ * @file 组件尺寸
+ * @author zhujl
+ */
+
+/**
+ * @param {string} $type 大小类型，可选值有 'base', 'tiny', 'small', 'large', 'huge'
+ * @param {boolean=} $has-border 是否有边框
+ * @param {boolean=} $has-padding-horizontal 是否有水平内边距
+ */
+ui-size($type, $has-border = false, $has-padding-horizontal = false) {
+
+    $hash = {
+        base: {
+            'padding-vertical': $padding-vertical-base,
+            'padding-horizontal': $padding-horizontal-base,
+            'font-size': $font-size-base,
+            'line-height': $line-height-base
+        },
+        tiny: {
+            'padding-vertical': $padding-vertical-tiny,
+            'padding-horizontal': $padding-horizontal-tiny,
+            'font-size': $font-size-tiny,
+            'line-height': $line-height-tiny
+        },
+        small: {
+            'padding-vertical': $padding-vertical-small,
+            'padding-horizontal': $padding-horizontal-small,
+            'font-size': $font-size-small,
+            'line-height': $line-height-small
+        },
+        large: {
+            'padding-vertical': $padding-vertical-large,
+            'padding-horizontal': $padding-horizontal-large,
+            'font-size': $font-size-large,
+            'line-height': $line-height-large
+        },
+        huge: {
+            'padding-vertical': $padding-vertical-huge,
+            'padding-horizontal': $padding-horizontal-huge,
+            'font-size': $font-size-huge,
+            'line-height': $line-height-huge
+        }
+    };
+
+    $style = $hash[$type];
+
+    if (!$has-border) {
+        $style['padding-vertical'] = $style['padding-vertical'] - 1;
+        $style['padding-horizontal'] = $style['padding-horizontal'] - 1;
+    }
+
+    if (!$has-padding-horizontal) {
+        $style['padding-horizontal'] = 0;
+    }
+
+    font-size: $style['font-size'];
+    line-height: $style['line-height'];
+    padding: $style['padding-vertical'] $style['padding-horizontal'];
+    box-sizing: border-box;
+}
