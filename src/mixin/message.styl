@@ -1,0 +1,46 @@
+/**
+ * @file 消息
+ * @author zhujl
+ */
+
+message-type($bg, $color, $border) {
+
+    background-color: $bg;
+    color: $color;
+
+    if ($border is a 'rgba') {
+        border: 1px solid $border;
+    }
+}
+
+message-primary() {
+    message-type(
+        $message-primary-bg,
+        $message-primary-color,
+        $message-primary-border
+    );
+}
+
+message-info() {
+    message-type(
+        $message-info-bg,
+        $message-info-color,
+        $message-info-border
+    );
+}
+
+message-success() {
+    message-type(
+        $message-success-bg,
+        $message-success-color,
+        $message-success-border
+    );
+}
+
+message-error() {
+    message-type(
+        $message-error-bg,
+        $message-error-color,
+        $message-error-border
+    );
+}
