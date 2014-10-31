@@ -8,7 +8,7 @@ list() {
     background-color: $list-bg;
     padding: $list-padding-vertical $list-padding-horizontal;
 
-    if (!(transparent in $list-border)) {
+    if ($list-border is a 'rgba') {
         border: 1px solid $list-border;
     }
 
@@ -29,7 +29,7 @@ list-item() {
     font-size: $list-item-font-size;
     padding: $list-item-padding-vertical $list-item-padding-horizontal;
 
-    if (!(transparent in $list-item-border)) {
+    if ($list-item-border is a 'rgba') {
 
         border-top: 1px solid $list-item-border;
 
