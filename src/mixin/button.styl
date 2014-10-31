@@ -3,15 +3,24 @@
  * @author zhujl
  */
 
+button() {
+
+    border: 1px solid transparent;
+    cursor: pointer;
+    display: inline-block;
+    user-select: none;
+
+    button& {
+        outline: none;
+    }
+}
 
 button-type($bg, $color, $border,
             $bg-disabled, $color-disabled, $border-disabled) {
 
     background-color: $bg;
-    border: 1px solid $border;
+    border-color: $border;
     color: $color;
-    cursor: pointer;
-    display: inline-block;
     border-radius: $btn-border-radius-base;
 
     &:disabled,
@@ -26,11 +35,12 @@ button-type($bg, $color, $border,
             border-color: $border-disabled;
         }
     }
+
 }
 
 
 
-btn-default() {
+button-default() {
     button-type(
         $btn-default-bg,
         $btn-default-color,
@@ -41,7 +51,7 @@ btn-default() {
         $btn-default-border-disabled
     );
 }
-btn-primary() {
+button-primary() {
     button-type(
         $btn-primary-bg,
         $btn-primary-color,
@@ -52,7 +62,7 @@ btn-primary() {
         $btn-primary-border-disabled
     );
 }
-btn-info() {
+button-info() {
     button-type(
         $btn-info-bg,
         $btn-info-color,
@@ -63,7 +73,7 @@ btn-info() {
         $btn-info-border-disabled
     );
 }
-btn-success() {
+button-success() {
     button-type(
         $btn-success-bg,
         $btn-success-color,
@@ -74,7 +84,7 @@ btn-success() {
         $btn-success-border-disabled
     );
 }
-btn-error() {
+button-error() {
     button-type(
         $btn-error-bg,
         $btn-error-color,
@@ -85,8 +95,10 @@ btn-error() {
         $btn-error-border-disabled
     );
 }
-btn-link() {
+button-link() {
     color: $btn-link-color;
-    cursor: pointer;
-    display: inline-block;
+
+    button& {
+        background-color: transparent;
+    }
 }

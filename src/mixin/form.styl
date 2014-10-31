@@ -3,6 +3,25 @@
  * @author zhujl
  */
 
+form-group() {
+
+    clearfix();
+
+    if (!(transparent in $form-group-border)) {
+
+        border-top: 1px solid $form-group-border;
+
+        &:first-child {
+            border-top: none;
+        }
+    }
+
+    if ($form-group-gap > 0) {
+        padding-top: 0.5 * $form-group-gap;
+        padding-bottom: 0.5 * $form-group-gap;
+    }
+
+}
 
 // 域标签
 form-label() {
