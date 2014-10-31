@@ -3,12 +3,16 @@
  * @author zhujl
  */
 
+label() {
+    display: inline-block;
+    border-radius: $label-border-radius-base;
+}
+
 label-type($bg, $color, $border) {
     background-color: $bg;
     border: 1px solid $border;
     color: $color;
-    display: inline-block;
-    border-radius: $label-border-radius-base;
+
 }
 
 label-default() {

@@ -25,13 +25,13 @@ button-type($bg, $color, $border,
 
     &:disabled,
     &[disabled] {
-        if ($bg != $bg-disabled) {
+        if ($bg-disabled is a 'rgba' && $bg != $bg-disabled) {
             background-color: $bg-disabled;
         }
-        if ($color != $color-disabled) {
+        if ($color-disabled is a 'rgba' && $color != $color-disabled) {
             color: $color-disabled;
         }
-        if ($border != $border-disabled) {
+        if ($border-disabled is a 'rgba' && $border != $border-disabled) {
             border-color: $border-disabled;
         }
     }

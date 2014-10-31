@@ -42,30 +42,30 @@ form-text() {
 
     &:hover {
 
-        if ($form-text-bg-hover != $form-text-bg) {
+        if ($form-text-bg-hover is a 'rgba' && $form-text-bg-hover != $form-text-bg) {
             background-color: $form-text-bg-hover;
         }
 
-        if ($form-text-border-hover != $form-text-border) {
+        if ($form-text-border-hover is a 'rgba' && $form-text-border-hover != $form-text-border) {
             border-color: $form-text-border-hover;
         }
 
-        if ($form-text-color-hover != $form-text-color) {
+        if ($form-text-color-hover is a 'rgba' && $form-text-color-hover != $form-text-color) {
             color: $form-text-color-hover;
         }
     }
 
     &:focus {
 
-        if ($form-text-bg-focus != $form-text-bg) {
+        if ($form-text-bg-focus is a 'rgba' && $form-text-bg-focus != $form-text-bg) {
             background-color: $form-text-bg-focus;
         }
 
-        if ($form-text-border-focus != $form-text-border) {
+        if ($form-text-border-focus is a 'rgba' && $form-text-border-focus != $form-text-border) {
             border-color: $form-text-border-focus;
         }
 
-        if ($form-text-color-focus != $form-text-color) {
+        if ($form-text-color-focus is a 'rgba' && $form-text-color-focus != $form-text-color) {
             color: $form-text-color-focus;
         }
     }
