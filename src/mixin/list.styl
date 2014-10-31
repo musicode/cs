@@ -8,6 +8,7 @@ list() {
     background-color: $list-bg;
     padding: $list-padding-vertical $list-padding-horizontal;
 
+
 /**
     if (transparent in $list-border) {
         border: 1px solid $list-border;
@@ -22,6 +23,12 @@ list-item() {
     font-size: $list-item-font-size;
     padding: $list-item-padding-vertical $list-item-padding-horizontal;
 
+    border-top: 1px solid $list-item-border;
+
+    &:first-child {
+        border-top: none;
+    }
+
 /**
     if ($list-item-border !== 'transparent') {
 
@@ -32,4 +39,16 @@ list-item() {
         }
     }
 */
+}
+
+list-item-active() {
+
+    if ($list-item-bg-active != $list-item-bg) {
+        background-color: $list-item-bg-active;
+    }
+
+    if ($list-item-color-active != $list-item-color) {
+        color: $list-item-color-active;
+    }
+
 }
