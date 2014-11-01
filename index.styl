@@ -4,11 +4,21 @@ body {
     padding: 20px;
 }
 
+section {
+    background-color: #F9F7F2;
+    padding: 1rem;
+    + section {
+        margin-top: 1rem;
+    }
+}
+
 h1 {
-    margin: 2rem 0;
+    font-size: $font-size-h1;
+    margin-bottom: 1rem;
 }
 h2 {
-    margin: 1rem 0;
+    font-size: $font-size-h2;
+    margin: 2rem 0;
 }
 
 .form-label {
