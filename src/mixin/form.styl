@@ -23,9 +23,19 @@ form-group() {
 
 }
 
+form-action() {
+    margin-top: $form-action-gap;
+}
+
 // 域标签
 form-label() {
+    float: left;
     font-weight: $form-label-font-weight;
+    margin-right: $form-label-gap;
+}
+
+form-controls() {
+    overflow: hidden;
 }
 
 // 文本输入框
@@ -109,6 +119,15 @@ form-box() {
         margin: 0 $form-box-gap 0 1px;
     }
 
+    & + & {
+        margin-left: 10px;
+    }
+
 }
 
-
+form-inline() {
+    display: inline-block;
+}
+form-block() {
+    display: block;
+}

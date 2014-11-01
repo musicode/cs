@@ -21,26 +21,20 @@ input[type="search"] {
 }
 
 .form-action {
-    margin-top: $form-action-gap;
+    form-action();
 }
 
 .form-label {
-    float: left;
-    margin-right: $form-label-gap;
     form-label();
 }
 
 .form-controls {
-    overflow: hidden;
+    form-controls();
 }
 
 .form-radio,
 .form-checkbox {
     form-box();
-
-    & + & {
-        margin-left: 10px;
-    }
 }
 
 
@@ -49,22 +43,11 @@ input[type="search"] {
     form-text();
     ui-size('form-text', true, true);
 
-    div&,
-    span& {
-
-        display: inline-block;
-
-        input,
-        textarea {
-            border: none;
-        }
-    }
-
 }
 
 .form-inline {
-    display: inline-block;
+    form-inline();
 }
 .form-block {
-    display: block;
+    form-block();
 }

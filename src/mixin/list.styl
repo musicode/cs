@@ -38,16 +38,16 @@ list-item() {
         }
     }
 
-}
+    if ($support-mouse ia a 'boolean' && $support-mouse) {
+        &:hover {
+            if ($list-item-bg-hover != $list-item-bg) {
+                background-color: $list-item-bg-hover;
+            }
 
-list-item-hover() {
-
-    if ($list-item-bg-hover != $list-item-bg) {
-        background-color: $list-item-bg-hover;
-    }
-
-    if ($list-item-color-hover != $list-item-color) {
-        color: $list-item-color-hover;
+            if ($list-item-color-hover != $list-item-color) {
+                color: $list-item-color-hover;
+            }
+        }
     }
 
 }
