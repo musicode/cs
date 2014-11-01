@@ -13,6 +13,14 @@ message-type($bg, $color, $border) {
     }
 }
 
+message-default() {
+    message-type(
+        $message-default-bg,
+        $message-default-color,
+        $message-default-border
+    );
+}
+
 message-primary() {
     message-type(
         $message-primary-bg,
