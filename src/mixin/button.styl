@@ -6,9 +6,21 @@
 button() {
 
     border: 1px solid transparent;
-    cursor: pointer;
     display: inline-block;
-    user-select: none;
+
+    if ($support-mouse ia a 'boolean' && $support-mouse) {
+        cursor: pointer;
+        user-select: none;
+    }
+
+    &:disabled,
+    &[disabled] {
+
+        if ($support-mouse ia a 'boolean' && $support-mouse) {
+            cursor: not-allowed;
+        }
+
+    }
 
     button& {
         outline: none;
@@ -16,15 +28,48 @@ button() {
 }
 
 button-type($bg, $color, $border,
+            $bg-hover, $color-hover, $border-hover,
             $bg-disabled, $color-disabled, $border-disabled) {
 
-    background-color: $bg;
-    border-color: $border;
-    color: $color;
-    border-radius: $btn-border-radius-base;
+    if ($bg is a 'rgba') {
+        background-color: $bg;
+    }
+    else {
+        button&,
+        input& {
+            background-color: transparent;
+        }
+    }
+
+    if ($border is a 'rgba') {
+        border-color: $border;
+    }
+
+    if ($color is a 'rgba') {
+        color: $color;
+    }
+
+    if ($btn-border-radius-base > 0) {
+        border-radius: $btn-border-radius-base;
+    }
+
+    if ($support-mouse ia a 'boolean' && $support-mouse) {
+        &:hover {
+            if ($bg-hover is a 'rgba' && $bg != $bg-hover) {
+                background-color: $bg-hover;
+            }
+            if ($color-hover is a 'rgba' && $color != $color-hover) {
+                color: $color-hover;
+            }
+            if ($border-hover is a 'rgba' && $border != $border-hover) {
+                border-color: $border-hover;
+            }
+        }
+    }
 
     &:disabled,
     &[disabled] {
+
         if ($bg-disabled is a 'rgba' && $bg != $bg-disabled) {
             background-color: $bg-disabled;
         }
@@ -46,6 +91,10 @@ button-default() {
         $btn-default-color,
         $btn-default-border,
 
+        $btn-default-bg-hover,
+        $btn-default-color-hover,
+        $btn-default-border-hover,
+
         $btn-default-bg-disabled,
         $btn-default-color-disabled,
         $btn-default-border-disabled
@@ -56,6 +105,10 @@ button-primary() {
         $btn-primary-bg,
         $btn-primary-color,
         $btn-primary-border,
+
+        $btn-primary-bg-hover,
+        $btn-primary-color-hover,
+        $btn-primary-border-hover,
 
         $btn-primary-bg-disabled,
         $btn-primary-color-disabled,
@@ -68,6 +121,10 @@ button-info() {
         $btn-info-color,
         $btn-info-border,
 
+        $btn-info-bg-hover,
+        $btn-info-color-hover,
+        $btn-info-border-hover,
+
         $btn-info-bg-disabled,
         $btn-info-color-disabled,
         $btn-info-border-disabled
@@ -78,6 +135,10 @@ button-success() {
         $btn-success-bg,
         $btn-success-color,
         $btn-success-border,
+
+        $btn-success-bg-hover,
+        $btn-success-color-hover,
+        $btn-success-border-hover,
 
         $btn-success-bg-disabled,
         $btn-success-color-disabled,
@@ -90,15 +151,29 @@ button-error() {
         $btn-error-color,
         $btn-error-border,
 
+        $btn-error-bg-hover,
+        $btn-error-color-hover,
+        $btn-error-border-hover,
+
         $btn-error-bg-disabled,
         $btn-error-color-disabled,
         $btn-error-border-disabled
     );
 }
 button-link() {
-    color: $btn-link-color;
 
-    button& {
-        background-color: transparent;
-    }
+    button-type(
+        $btn-link-bg,
+        $btn-link-color,
+        $btn-link-border,
+
+        $btn-link-bg-hover,
+        $btn-link-color-hover,
+        $btn-link-border-hover,
+
+        $btn-link-bg-disabled,
+        $btn-link-color-disabled,
+        $btn-link-border-disabled
+    );
+
 }

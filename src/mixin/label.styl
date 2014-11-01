@@ -4,15 +4,15 @@
  */
 
 label() {
+    border: 1px solid transparent;
     display: inline-block;
     border-radius: $label-border-radius-base;
 }
 
 label-type($bg, $color, $border) {
     background-color: $bg;
-    border: 1px solid $border;
+    border-color: $border;
     color: $color;
-
 }
 
 label-default() {

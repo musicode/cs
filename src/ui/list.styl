@@ -11,10 +11,14 @@
 
     list-item();
 
-    &:hover {
-        list-item-hover();
+    if ($support-mouse ia a 'boolean' && $support-mouse) {
+        &:hover {
+            list-item-hover();
+        }
     }
+
     &.active {
         list-item-active();
     }
+
 }
