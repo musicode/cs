@@ -7,6 +7,8 @@ button() {
 
     border: 1px solid transparent;
     display: inline-block;
+    font-weight: $btn-font-weight;
+    box-sizing: border-box;
 
     if ($support-mouse ia a 'boolean' && $support-mouse) {
         cursor: pointer;
@@ -24,12 +26,77 @@ button() {
 
     button& {
         outline: none;
+        // safari 需要写这句
+        margin: 0;
     }
 }
 
-button-type($bg, $color, $border,
-            $bg-hover, $color-hover, $border-hover,
-            $bg-disabled, $color-disabled, $border-disabled) {
+button-size() {
+
+    &:not({$size-tiny-selector}):not({$size-small-selector}):not({$size-large-selector}):not({$size-huge-selector}) {
+
+        font-size: $font-size-base;
+        line-height: $line-height-base;
+        padding: $padding-vertical-base $padding-horizontal-base;
+
+        if ($btn-border-radius-base is a 'unit') {
+            border-radius: $btn-border-radius-base;
+        }
+
+    }
+
+    &{$size-tiny-selector} {
+
+        font-size: $font-size-tiny;
+        line-height: $line-height-tiny;
+        padding: $padding-vertical-tiny $padding-horizontal-tiny;
+
+        if ($btn-border-radius-tiny is a 'unit') {
+            border-radius: $btn-border-radius-tiny;
+        }
+    }
+
+    &{$size-small-selector} {
+
+        font-size: $font-size-small;
+        line-height: $line-height-small;
+        padding: $padding-vertical-small $padding-horizontal-small;
+
+        if ($btn-border-radius-small is a 'unit') {
+            border-radius: $btn-border-radius-small;
+        }
+    }
+
+    &{$size-large-selector} {
+
+        font-size: $font-size-large;
+        line-height: $line-height-large;
+        padding: $padding-vertical-large $padding-horizontal-large;
+
+        if ($btn-border-radius-large is a 'unit') {
+            border-radius: $btn-border-radius-large;
+        }
+    }
+
+    &{$size-huge-selector} {
+
+        font-size: $font-size-huge;
+        line-height: $line-height-huge;
+        padding: $padding-vertical-huge $padding-horizontal-huge;
+
+        if ($btn-border-radius-huge is a 'unit') {
+            border-radius: $btn-border-radius-huge;
+        }
+
+    }
+
+}
+
+
+button-type($bg, $color, $border, $shadow,
+            $bg-hover, $color-hover, $border-hover, $shadow-hover,
+            $bg-active, $color-active, $border-active, $shadow-active,
+            $bg-disabled, $color-disabled, $border-disabled, $shadow-disabled) {
 
     if ($bg is a 'rgba') {
         background-color: $bg;
@@ -49,8 +116,8 @@ button-type($bg, $color, $border,
         color: $color;
     }
 
-    if ($btn-border-radius-base > 0) {
-        border-radius: $btn-border-radius-base;
+    if ($shadow && $shadow != 'none') {
+        box-shaodw: $shadow;
     }
 
     if ($support-mouse ia a 'boolean' && $support-mouse) {
@@ -64,10 +131,29 @@ button-type($bg, $color, $border,
             if ($border-hover is a 'rgba' && $border != $border-hover) {
                 border-color: $border-hover;
             }
+            if ($shadow-hover && $shadow-hover != $shadow) {
+                box-shaodw: $shadow-hover;
+            }
         }
     }
 
-    &:disabled {
+    &:active {
+        if ($bg-active is a 'rgba' && $bg != $bg-active) {
+            background-color: $bg-active;
+        }
+        if ($color-active is a 'rgba' && $color != $color-active) {
+            color: $color-active;
+        }
+        if ($border-active is a 'rgba' && $border != $border-active) {
+            border-color: $border-active;
+        }
+        if ($shadow-active && $shadow-active != $shadow) {
+            box-shaodw: $shadow-active;
+        }
+    }
+
+    &:disabled,
+    &[disabled] {
 
         if ($bg-disabled is a 'rgba' && $bg != $bg-disabled) {
             background-color: $bg-disabled;
@@ -78,10 +164,12 @@ button-type($bg, $color, $border,
         if ($border-disabled is a 'rgba' && $border != $border-disabled) {
             border-color: $border-disabled;
         }
+        if ($shadow-disabled && $shadow-disabled != $shadow) {
+            box-shaodw: $shadow-disabled;
+        }
     }
 
 }
-
 
 
 button-default() {
@@ -89,14 +177,22 @@ button-default() {
         $btn-default-bg,
         $btn-default-color,
         $btn-default-border,
+        $btn-default-shadow,
 
         $btn-default-bg-hover,
         $btn-default-color-hover,
         $btn-default-border-hover,
+        $btn-default-shadow-hover,
+
+        $btn-default-bg-active,
+        $btn-default-color-active,
+        $btn-default-border-active,
+        $btn-default-shadow-active,
 
         $btn-default-bg-disabled,
         $btn-default-color-disabled,
-        $btn-default-border-disabled
+        $btn-default-border-disabled,
+        $btn-default-shadow-disabled
     );
 }
 button-primary() {
@@ -104,14 +200,22 @@ button-primary() {
         $btn-primary-bg,
         $btn-primary-color,
         $btn-primary-border,
+        $btn-primary-shadow,
 
         $btn-primary-bg-hover,
         $btn-primary-color-hover,
         $btn-primary-border-hover,
+        $btn-primary-shadow-hover,
+
+        $btn-primary-bg-active,
+        $btn-primary-color-active,
+        $btn-primary-border-active,
+        $btn-primary-shadow-active,
 
         $btn-primary-bg-disabled,
         $btn-primary-color-disabled,
-        $btn-primary-border-disabled
+        $btn-primary-border-disabled,
+        $btn-primary-shadow-disabled
     );
 }
 button-info() {
@@ -119,14 +223,22 @@ button-info() {
         $btn-info-bg,
         $btn-info-color,
         $btn-info-border,
+        $btn-info-shadow,
 
         $btn-info-bg-hover,
         $btn-info-color-hover,
         $btn-info-border-hover,
+        $btn-info-shadow-hover,
+
+        $btn-info-bg-active,
+        $btn-info-color-active,
+        $btn-info-border-active,
+        $btn-info-shadow-active,
 
         $btn-info-bg-disabled,
         $btn-info-color-disabled,
-        $btn-info-border-disabled
+        $btn-info-border-disabled,
+        $btn-info-shadow-disabled
     );
 }
 button-success() {
@@ -134,14 +246,22 @@ button-success() {
         $btn-success-bg,
         $btn-success-color,
         $btn-success-border,
+        $btn-success-shadow,
 
         $btn-success-bg-hover,
         $btn-success-color-hover,
         $btn-success-border-hover,
+        $btn-success-shadow-hover,
+
+        $btn-success-bg-active,
+        $btn-success-color-active,
+        $btn-success-border-active,
+        $btn-success-shadow-active,
 
         $btn-success-bg-disabled,
         $btn-success-color-disabled,
-        $btn-success-border-disabled
+        $btn-success-border-disabled,
+        $btn-success-shadow-disabled
     );
 }
 button-error() {
@@ -149,14 +269,22 @@ button-error() {
         $btn-error-bg,
         $btn-error-color,
         $btn-error-border,
+        $btn-error-shadow,
 
         $btn-error-bg-hover,
         $btn-error-color-hover,
         $btn-error-border-hover,
+        $btn-error-shadow-hover,
+
+        $btn-error-bg-active,
+        $btn-error-color-active,
+        $btn-error-border-active,
+        $btn-error-shadow-active,
 
         $btn-error-bg-disabled,
         $btn-error-color-disabled,
-        $btn-error-border-disabled
+        $btn-error-border-disabled,
+        $btn-error-shadow-disabled
     );
 }
 button-link() {
@@ -165,14 +293,22 @@ button-link() {
         $btn-link-bg,
         $btn-link-color,
         $btn-link-border,
+        $btn-link-shadow,
 
         $btn-link-bg-hover,
         $btn-link-color-hover,
         $btn-link-border-hover,
+        $btn-link-shadow-hover,
+
+        $btn-link-bg-active,
+        $btn-link-color-active,
+        $btn-link-border-active,
+        $btn-link-shadow-active,
 
         $btn-link-bg-disabled,
         $btn-link-color-disabled,
-        $btn-link-border-disabled
+        $btn-link-border-disabled,
+        $btn-link-shadow-disabled
     );
 
 }

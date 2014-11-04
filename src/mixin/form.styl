@@ -9,11 +9,8 @@ form-group() {
 
     if (!(transparent in $form-group-border)) {
 
-        border-top: 1px solid $form-group-border;
+        border-bottom: 1px solid $form-group-border;
 
-        &:first-child {
-            border-top: none;
-        }
     }
 
     if ($form-group-gap > 0) {
@@ -45,6 +42,7 @@ form-text() {
     border: 1px solid $form-text-border;
     color: $form-text-color;
     outline: none;
+    margin: 0;
 
     if ($form-text-border-radius > 0) {
         border-radius: $form-text-border-radius;

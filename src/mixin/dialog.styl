@@ -1,0 +1,31 @@
+/**
+ * @file 对话框
+ * @author zhujl
+ */
+
+dialog() {
+    absolute: fixed;
+
+    width: $dialog-width;
+}
+
+dialog-close() {
+    color: $dialog-close-color;
+    font-size: $dialog-close-font-size;
+    font-weight: $dialog-close-font-weight;
+    position: absolute;
+    top: $dialog-close-top;
+    right: $dialog-close-right;
+}
+
+dialog-header() {
+    background-color: $dialog-header-bg;
+    color: $dialog-header-color;
+    font-size: $dialog-header-font-size;
+    padding: $dialog-header-padding-vertical $dialog-header-padding-horizontal;
+}
+
+dialog-body() {
+    background-color: $dialog-body-bg;
+    padding: $dialog-body-padding-vertical $dialog-body-padding-horizontal;
+}

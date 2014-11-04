@@ -3,110 +3,146 @@
  * @author zhujl
  */
 
-/**
- * ==============================================================
- * default 按钮
- * ==============================================================
- */
-$btn-default-bg = #FFF;
-$btn-default-border = $gray-light;
-$btn-default-color = $text-color;
-
-$btn-default-bg-hover = darken($btn-default-bg, 5%);
-$btn-default-border-hover = darken($btn-default-border, 5%);
-$btn-default-color-hover = $btn-default-color;
-
-$btn-default-bg-active = darken($btn-default-bg, 5%);
-$btn-default-border-active = darken($btn-default-border, 5%);
-$btn-default-color-active = $btn-default-color;
-
-$btn-default-bg-disabled = #DDD;
-$btn-default-border-disabled = #BBB;
-$btn-default-color-disabled = $text-color;
-
-
-/**
- * ==============================================================
- * primary 按钮
- * ==============================================================
- */
-$btn-primary-bg = $brand-primary;
-$btn-primary-border = darken($btn-primary-bg, 5%);
-$btn-primary-color = #FFF;
-
-$btn-primary-bg-hover = darken($btn-primary-bg, 5%);
-$btn-primary-border-hover = darken($btn-primary-border, 5%);
-$btn-primary-color-hover = $btn-primary-color;
-
-$btn-primary-bg-disabled = #E2B97A;
-$btn-primary-border-disabled = #CBA164;
-$btn-primary-color-disabled = #FFF;
-
-
-/**
- * ==============================================================
- * info 按钮
- * ==============================================================
- */
-$btn-info-bg = $brand-info;
-$btn-info-border = darken($btn-info-bg, 5%);
-$btn-info-color = #FFF;
-
-$btn-info-bg-hover = darken($btn-info-bg, 5%);
-$btn-info-border-hover = darken($btn-info-border, 5%);
-$btn-info-color-hover = $btn-info-color;
-
-$btn-info-bg-disabled = #8EA3B9;
-$btn-info-border-disabled = #6E86A0;
-$btn-info-color-disabled = #FFF;
-
-
-/**
- * ==============================================================
- * success 按钮
- * ==============================================================
- */
-$btn-success-bg = $brand-success;
-$btn-success-border = darken($btn-success-bg, 5%);
-$btn-success-color = #FFF;
-
-$btn-success-bg-hover = darken($btn-success-bg, 5%);
-$btn-success-border-hover = darken($btn-success-border, 5%);
-$btn-success-color-hover = $btn-success-color;
-
-$btn-success-bg-disabled = #A0B790;
-$btn-success-border-disabled = #7E9F67;
-$btn-success-color-disabled = #FFF;
-
-
-/**
- * ==============================================================
- * error 按钮
- * ==============================================================
- */
-$btn-error-bg = $brand-error;
-$btn-error-border = darken($btn-error-bg, 5%);
-$btn-error-color = #FFF;
-
-$btn-error-bg-hover = darken($btn-error-bg, 5%);
-$btn-error-border-hover = darken($btn-error-border, 5%);
-$btn-error-color-hover = $btn-error-color;
-
-$btn-error-bg-disabled = #CDA28F;
-$btn-error-border-disabled = #B18876;
-$btn-error-color-disabled = #FFF;
-
-/**
- * ==============================================================
- * 默认按钮
- * ==============================================================
- */
-$btn-link-color = $gray-darker;
-$btn-link-color-hover = darken($btn-link-color, 5%);
-$btn-link-color-disabled = #999;
+$btn-font-weight = normal;
 
 $btn-border-radius-base = $border-radius-base;
 $btn-border-radius-tiny = $border-radius-base;
 $btn-border-radius-small = $border-radius-base;
 $btn-border-radius-large = $border-radius-base;
 $btn-border-radius-huge = $border-radius-base;
+
+/**
+ * ==============================================================
+ * default
+ * ==============================================================
+ */
+$btn-default-bg = #FFF;
+$btn-default-border = $gray-light;
+$btn-default-color = $text-color;
+$btn-default-shadow = 0 0 3px rgba(0,0,0,1);
+
+$btn-default-bg-hover = darken($btn-default-bg, 5%);
+$btn-default-border-hover = darken($btn-default-border, 5%);
+$btn-default-color-hover = $btn-default-color;
+$btn-default-shadow-hover = 0 0 3px rgba(0,0,0,1);
+
+$btn-default-bg-active = darken($btn-default-bg, 10%);
+$btn-default-border-active = darken($btn-default-border, 10%);
+$btn-default-color-active = $btn-default-color;
+$btn-default-shadow-active = 0 0 3px rgba(0,0,0,1);
+
+$btn-default-bg-disabled = #DDD;
+$btn-default-border-disabled = #BBB;
+$btn-default-color-disabled = $text-color;
+$btn-default-shadow-disabled = none;
+
+/**
+ * ==============================================================
+ * primary
+ * ==============================================================
+ */
+$btn-primary-bg = $brand-primary;
+$btn-primary-border = darken($btn-primary-bg, 5%);
+$btn-primary-color = #FFF;
+$btn-primary-shadow = 0 0 3px rgba(0,0,0,1);
+
+$btn-primary-bg-hover = darken($btn-primary-bg, 5%);
+$btn-primary-border-hover = darken($btn-primary-border, 5%);
+$btn-primary-color-hover = $btn-primary-color;
+$btn-primary-shadow-hover = 0 0 3px rgba(0,0,0,1);
+
+$btn-primary-bg-active = darken($btn-primary-bg, 5%);
+$btn-primary-border-active = darken($btn-primary-border, 5%);
+$btn-primary-color-active = $btn-primary-color;
+$btn-primary-shadow-active = 0 0 3px rgba(0,0,0,1);
+
+$btn-primary-bg-disabled = #E2B97A;
+$btn-primary-border-disabled = #CBA164;
+$btn-primary-color-disabled = #FFF;
+$btn-primary-shadow-disabled = 0 0 3px rgba(0,0,0,1);
+
+/**
+ * ==============================================================
+ * info
+ * ==============================================================
+ */
+$btn-info-bg = $brand-info;
+$btn-info-border = darken($btn-info-bg, 5%);
+$btn-info-color = #FFF;
+$btn-info-shadow = 0 0 3px rgba(0,0,0,1);
+
+$btn-info-bg-hover = darken($btn-info-bg, 5%);
+$btn-info-border-hover = darken($btn-info-border, 5%);
+$btn-info-color-hover = $btn-info-color;
+$btn-info-shadow-hover = 0 0 3px rgba(0,0,0,1);
+
+$btn-info-bg-active = darken($btn-info-bg, 5%);
+$btn-info-border-active = darken($btn-info-border, 5%);
+$btn-info-color-active = $btn-info-color;
+$btn-info-shadow-active = 0 0 3px rgba(0,0,0,1);
+
+$btn-info-bg-disabled = #8EA3B9;
+$btn-info-border-disabled = #6E86A0;
+$btn-info-color-disabled = #FFF;
+$btn-info-shadow-disabled = 0 0 3px rgba(0,0,0,1);
+
+
+/**
+ * ==============================================================
+ * success
+ * ==============================================================
+ */
+$btn-success-bg = $brand-success;
+$btn-success-border = darken($btn-success-bg, 5%);
+$btn-success-color = #FFF;
+$btn-success-shadow = 0 0 3px rgba(0,0,0,1);
+
+$btn-success-bg-hover = darken($btn-success-bg, 5%);
+$btn-success-border-hover = darken($btn-success-border, 5%);
+$btn-success-color-hover = $btn-success-color;
+$btn-success-shadow-hover = 0 0 3px rgba(0,0,0,1);
+
+$btn-success-bg-active = darken($btn-success-bg, 5%);
+$btn-success-border-active = darken($btn-success-border, 5%);
+$btn-success-color-active = $btn-success-color;
+$btn-success-shadow-active = 0 0 3px rgba(0,0,0,1);
+
+$btn-success-bg-disabled = #A0B790;
+$btn-success-border-disabled = #7E9F67;
+$btn-success-color-disabled = #FFF;
+$btn-success-shadow-disabled = 0 0 3px rgba(0,0,0,1);
+
+
+/**
+ * ==============================================================
+ * error
+ * ==============================================================
+ */
+$btn-error-bg = $brand-error;
+$btn-error-border = darken($btn-error-bg, 5%);
+$btn-error-color = #FFF;
+$btn-error-shadow = 0 0 3px rgba(0,0,0,1);
+
+$btn-error-bg-hover = darken($btn-error-bg, 5%);
+$btn-error-border-hover = darken($btn-error-border, 5%);
+$btn-error-color-hover = $btn-error-color;
+$btn-error-shadow-hover = 0 0 3px rgba(0,0,0,1);
+
+$btn-error-bg-active = darken($btn-error-bg, 5%);
+$btn-error-border-active = darken($btn-error-border, 5%);
+$btn-error-color-active = $btn-error-color;
+$btn-error-shadow-active = 0 0 3px rgba(0,0,0,1);
+
+$btn-error-bg-disabled = #CDA28F;
+$btn-error-border-disabled = #B18876;
+$btn-error-color-disabled = #FFF;
+$btn-error-shadow-disabled = 0 0 3px rgba(0,0,0,1);
+
+/**
+ * ==============================================================
+ * 默
+ * ==============================================================
+ */
+$btn-link-color = $gray-darker;
+$btn-link-color-hover = darken($btn-link-color, 5%);
+$btn-link-color-disabled = #999;

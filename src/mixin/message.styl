@@ -3,6 +3,67 @@
  * @author zhujl
  */
 
+message-size() {
+
+    &:not({$size-tiny-selector}):not({$size-small-selector}):not({$size-large-selector}):not({$size-huge-selector}) {
+
+        font-size: $font-size-base;
+        line-height: $line-height-base;
+        padding: $padding-vertical-base $padding-horizontal-base;
+
+        if ($message-border-radius-base is a 'unit') {
+            border-radius: $message-border-radius-base;
+        }
+
+    }
+
+    &{$size-tiny-selector} {
+
+        font-size: $font-size-tiny;
+        line-height: $line-height-tiny;
+        padding: $padding-vertical-tiny $padding-horizontal-tiny;
+
+        if ($message-border-radius-tiny is a 'unit') {
+            border-radius: $message-border-radius-tiny;
+        }
+    }
+
+    &{$size-small-selector} {
+
+        font-size: $font-size-small;
+        line-height: $line-height-small;
+        padding: $padding-vertical-small $padding-horizontal-small;
+
+        if ($message-border-radius-small is a 'unit') {
+            border-radius: $message-border-radius-small;
+        }
+    }
+
+    &{$size-large-selector} {
+
+        font-size: $font-size-large;
+        line-height: $line-height-large;
+        padding: $padding-vertical-large $padding-horizontal-large;
+
+        if ($message-border-radius-large is a 'unit') {
+            border-radius: $message-border-radius-large;
+        }
+    }
+
+    &{$size-huge-selector} {
+
+        font-size: $font-size-huge;
+        line-height: $line-height-huge;
+        padding: $padding-vertical-huge $padding-horizontal-huge;
+
+        if ($message-border-radius-huge is a 'unit') {
+            border-radius: $message-border-radius-huge;
+        }
+
+    }
+
+}
+
 message-type($bg, $color, $border) {
 
     background-color: $bg;

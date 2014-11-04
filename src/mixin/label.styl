@@ -6,47 +6,127 @@
 label() {
     border: 1px solid transparent;
     display: inline-block;
-    border-radius: $label-border-radius-base;
+    font-weight: $label-font-weight;
+    box-sizing: border-box;
 }
 
-label-type($bg, $color, $border) {
-    background-color: $bg;
-    border-color: $border;
-    color: $color;
+label-size() {
+
+    &:not({$size-tiny-selector}):not({$size-small-selector}):not({$size-large-selector}):not({$size-huge-selector}) {
+
+        font-size: $font-size-base;
+        line-height: $line-height-base;
+        padding: $padding-vertical-base $padding-horizontal-base;
+
+        if ($label-border-radius-base is a 'unit') {
+            border-radius: $label-border-radius-base;
+        }
+
+    }
+
+    &{$size-tiny-selector} {
+
+        font-size: $font-size-tiny;
+        line-height: $line-height-tiny;
+        padding: $padding-vertical-tiny $padding-horizontal-tiny;
+
+        if ($label-border-radius-tiny is a 'unit') {
+            border-radius: $label-border-radius-tiny;
+        }
+    }
+
+    &{$size-small-selector} {
+
+        font-size: $font-size-small;
+        line-height: $line-height-small;
+        padding: $padding-vertical-small $padding-horizontal-small;
+
+        if ($label-border-radius-small is a 'unit') {
+            border-radius: $label-border-radius-small;
+        }
+    }
+
+    &{$size-large-selector} {
+
+        font-size: $font-size-large;
+        line-height: $line-height-large;
+        padding: $padding-vertical-large $padding-horizontal-large;
+
+        if ($label-border-radius-large is a 'unit') {
+            border-radius: $label-border-radius-large;
+        }
+    }
+
+    &{$size-huge-selector} {
+
+        font-size: $font-size-huge;
+        line-height: $line-height-huge;
+        padding: $padding-vertical-huge $padding-horizontal-huge;
+
+        if ($label-border-radius-huge is a 'unit') {
+            border-radius: $label-border-radius-huge;
+        }
+
+    }
+
+}
+
+label-type($bg, $color, $border, $shadow) {
+
+    if ($bg is a 'rgba') {
+        background-color: $bg;
+    }
+
+    if ($border is a 'rgba') {
+        border-color: $border;
+    }
+
+    if ($color is a 'rgba') {
+        color: $color;
+    }
+
+    if ($shadow && $shadow != 'none') {
+        box-shadow: $shadow;
+    }
 }
 
 label-default() {
     label-type(
         $label-default-bg,
         $label-default-color,
-        $label-default-border
+        $label-default-border,
+        $label-default-shadow
     );
 }
 label-primary() {
     label-type(
         $label-primary-bg,
         $label-primary-color,
-        $label-primary-border
+        $label-primary-border,
+        $label-primary-shadow
     );
 }
 label-info() {
     label-type(
         $label-info-bg,
         $label-info-color,
-        $label-info-border
+        $label-info-border,
+        $label-info-shadow
     );
 }
 label-success() {
     label-type(
         $label-success-bg,
         $label-success-color,
-        $label-success-border
+        $label-success-border,
+        $label-success-shadow
     );
 }
 label-error() {
     label-type(
         $label-error-bg,
         $label-error-color,
-        $label-error-border
+        $label-error-border,
+        $label-error-shadow
     );
 }
