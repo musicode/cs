@@ -125,6 +125,10 @@ form-box() {
 
 form-inline() {
     display: inline-block;
+
+    if ($form-inline-gap > 0) {
+        margin-left: $form-inline-gap;
+    }
 }
 form-block() {
     display: block;

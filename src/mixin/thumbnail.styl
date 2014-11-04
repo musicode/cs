@@ -5,6 +5,9 @@
 
 thumbnail() {
 
+    display: inline-block;
+    box-sizing: border-box;
+
     if ($thumbnail-bg is a 'rgba') {
         background-color: $thumbnail-bg;
     }
@@ -19,14 +22,171 @@ thumbnail() {
 
 }
 
-thumbnail-rect() {
+thumbnail-size($border-radius-base = 0,
+                $border-radius-tiny = 0,
+                $border-radius-small = 0,
+                $border-radius-large = 0,
+                $border-radius-huge = 0) {
 
+    &:not({$size-tiny-selector}):not({$size-small-selector}):not({$size-large-selector}):not({$size-huge-selector}) {
+
+        width: $thumbnail-width-base;
+        height: $thumbnail-height-base;
+        padding: $thumbnail-padding-base;
+
+        if ($border-radius-base > 0) {
+            border-radius: $border-radius-base;
+        }
+
+        img {
+
+            $offset = 2 * $thumbnail-padding-base;
+
+            if ($thumbnail-border is a 'rgba') {
+                $offset += 2;
+            }
+
+            width: $thumbnail-width-base - $offset;
+            height: $thumbnail-height-base - $offset;
+
+            if ($border-radius-base > 0) {
+                border-radius: $border-radius-base - $offset;
+            }
+        }
+    }
+
+    &{$size-tiny-selector} {
+
+        width: $thumbnail-width-tiny;
+        height: $thumbnail-height-tiny;
+        padding: $thumbnail-padding-tiny;
+
+        if ($border-radius-tiny > 0) {
+            border-radius: $border-radius-tiny;
+        }
+
+        img {
+
+            $offset = 2 * $thumbnail-padding-tiny;
+
+            if ($thumbnail-border is a 'rgba') {
+                $offset += 2;
+            }
+
+            width: $thumbnail-width-tiny - $offset;
+            height: $thumbnail-height-tiny - $offset;
+
+            if ($border-radius-tiny > 0) {
+                border-radius: $border-radius-tiny - $offset;
+            }
+        }
+
+    }
+
+    &{$size-small-selector} {
+
+        width: $thumbnail-width-small;
+        height: $thumbnail-height-small;
+        padding: $thumbnail-padding-small;
+
+        if ($border-radius-small > 0) {
+            border-radius: $border-radius-small;
+        }
+
+        img {
+
+            $offset = 2 * $thumbnail-padding-small;
+
+            if ($thumbnail-border is a 'rgba') {
+                $offset += 2;
+            }
+
+            width: $thumbnail-width-small - $offset;
+            height: $thumbnail-height-small - $offset;
+
+            if ($border-radius-small > 0) {
+                border-radius: $border-radius-small - $offset;
+            }
+        }
+    }
+
+    &{$size-large-selector} {
+
+        width: $thumbnail-width-large;
+        height: $thumbnail-height-large;
+        padding: $thumbnail-padding-large;
+
+        if ($border-radius-large > 0) {
+            border-radius: $border-radius-large;
+        }
+
+        img {
+
+            $offset = 2 * $thumbnail-padding-large;
+
+            if ($thumbnail-border is a 'rgba') {
+                $offset += 2;
+            }
+
+            width: $thumbnail-width-large - $offset;
+            height: $thumbnail-height-large - $offset;
+
+            if ($border-radius-large > 0) {
+                border-radius: $border-radius-large - $offset;
+            }
+        }
+
+    }
+
+    &{$size-huge-selector} {
+
+        width: $thumbnail-width-huge;
+        height: $thumbnail-height-huge;
+        padding: $thumbnail-padding-huge;
+
+        if ($border-radius-huge > 0) {
+            border-radius: $border-radius-huge;
+        }
+
+        img {
+
+            $offset = 2 * $thumbnail-padding-huge;
+
+            if ($thumbnail-border is a 'rgba') {
+                $offset += 2;
+            }
+
+            width: $thumbnail-width-huge - $offset;
+            height: $thumbnail-height-huge - $offset;
+
+            if ($border-radius-huge > 0) {
+                border-radius: $border-radius-huge - $offset;
+            }
+        }
+    }
+
+}
+
+thumbnail-rect() {
+    thumbnail-size();
 }
 
 thumbnail-round() {
-
+    thumbnail-size(
+        $thumbnail-round-base,
+        $thumbnail-round-tiny,
+        $thumbnail-round-small,
+        $thumbnail-round-large,
+        $thumbnail-round-huge
+    );
 }
 
 thumbnail-circle() {
-
+    thumbnail-size(
+        $thumbnail-circle-base,
+        $thumbnail-circle-tiny,
+        $thumbnail-circle-small,
+        $thumbnail-circle-large,
+        $thumbnail-circle-huge
+    );
 }

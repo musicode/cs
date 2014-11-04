@@ -20,6 +20,33 @@ input[type="search"] {
     form-action();
 }
 
+.form-group {
+    form-group();
+
+    .success,
+    .error {
+        display: none;
+        font-size: $font-size-tiny;
+    }
+    .success {
+        color: $brand-success;
+    }
+    .error {
+        color: $brand-error;
+    }
+
+    &.has-success {
+        .success {
+            display: inline-block;
+        }
+    }
+    &.has-error {
+        .error {
+            display: inline-block;
+        }
+    }
+}
+
 .form-label {
     form-label();
 }
