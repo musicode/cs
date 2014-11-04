@@ -7,6 +7,7 @@ thumbnail() {
 
     display: inline-block;
     box-sizing: border-box;
+    position: relative;
 
     if ($thumbnail-bg is a 'rgba') {
         background-color: $thumbnail-bg;
@@ -22,6 +23,66 @@ thumbnail() {
 
 }
 
+thumbnail-size-inner($width, $height, $padding, $border-radius) {
+
+    $offset = 2 * $padding;
+
+    if ($thumbnail-border is a 'rgba') {
+        $offset += 2;
+    }
+
+    $img-width = $width - $offset;
+    $img-height = $height - $offset;
+
+    width: $width;
+    height: $height;
+    padding: $padding;
+
+    if ($border-radius > 0) {
+        border-radius: $border-radius;
+        $img-border-radius = $border-radius - 0.5 * $offset;
+    }
+
+    img {
+
+        width: $img-width;
+        height: $img-height;
+
+        if ($img-border-radius > 0) {
+            border-radius: $img-border-radius;
+        }
+    }
+
+    if ($support-mouse is a 'boolean' && $support-mouse && $thumbnail-mask-hover is a 'rgba') {
+
+        user-select: none;
+
+        &:after {
+
+            background-color: transparent;
+            content: ' ';
+
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: $img-width;
+            height: $img-height;
+            margin-left: -0.5 * $img-width;
+            margin-top: -0.5 * $img-height;
+
+            if ($img-border-radius > 0) {
+                border-radius: $img-border-radius;
+            }
+        }
+
+
+        &:hover:after {
+            background-color: $thumbnail-mask-hover;
+        }
+
+    }
+}
+
 thumbnail-size($border-radius-base = 0,
                 $border-radius-tiny = 0,
                 $border-radius-small = 0,
@@ -30,139 +91,57 @@ thumbnail-size($border-radius-base = 0,
 
     &:not({$size-tiny-selector}):not({$size-small-selector}):not({$size-large-selector}):not({$size-huge-selector}) {
 
-        width: $thumbnail-width-base;
-        height: $thumbnail-height-base;
-        padding: $thumbnail-padding-base;
+        thumbnail-size-inner(
+            $thumbnail-width-base,
+            $thumbnail-height-base,
+            $thumbnail-padding-base,
+            $border-radius-base
+        );
 
-        if ($border-radius-base > 0) {
-            border-radius: $border-radius-base;
-        }
-
-        img {
-
-            $offset = 2 * $thumbnail-padding-base;
-
-            if ($thumbnail-border is a 'rgba') {
-                $offset += 2;
-            }
-
-            width: $thumbnail-width-base - $offset;
-            height: $thumbnail-height-base - $offset;
-
-            if ($border-radius-base > 0) {
-                border-radius: $border-radius-base - $offset;
-            }
-        }
     }
 
     &{$size-tiny-selector} {
 
-        width: $thumbnail-width-tiny;
-        height: $thumbnail-height-tiny;
-        padding: $thumbnail-padding-tiny;
-
-        if ($border-radius-tiny > 0) {
-            border-radius: $border-radius-tiny;
-        }
-
-        img {
-
-            $offset = 2 * $thumbnail-padding-tiny;
-
-            if ($thumbnail-border is a 'rgba') {
-                $offset += 2;
-            }
-
-            width: $thumbnail-width-tiny - $offset;
-            height: $thumbnail-height-tiny - $offset;
-
-            if ($border-radius-tiny > 0) {
-                border-radius: $border-radius-tiny - $offset;
-            }
-        }
+        thumbnail-size-inner(
+            $thumbnail-width-tiny,
+            $thumbnail-width-tiny,
+            $thumbnail-padding-tiny,
+            $border-radius-tiny
+        );
 
     }
 
     &{$size-small-selector} {
 
-        width: $thumbnail-width-small;
-        height: $thumbnail-height-small;
-        padding: $thumbnail-padding-small;
+        thumbnail-size-inner(
+            $thumbnail-width-small,
+            $thumbnail-width-small,
+            $thumbnail-padding-small,
+            $border-radius-small
+        );
 
-        if ($border-radius-small > 0) {
-            border-radius: $border-radius-small;
-        }
-
-        img {
-
-            $offset = 2 * $thumbnail-padding-small;
-
-            if ($thumbnail-border is a 'rgba') {
-                $offset += 2;
-            }
-
-            width: $thumbnail-width-small - $offset;
-            height: $thumbnail-height-small - $offset;
-
-            if ($border-radius-small > 0) {
-                border-radius: $border-radius-small - $offset;
-            }
-        }
     }
 
     &{$size-large-selector} {
 
-        width: $thumbnail-width-large;
-        height: $thumbnail-height-large;
-        padding: $thumbnail-padding-large;
-
-        if ($border-radius-large > 0) {
-            border-radius: $border-radius-large;
-        }
-
-        img {
-
-            $offset = 2 * $thumbnail-padding-large;
-
-            if ($thumbnail-border is a 'rgba') {
-                $offset += 2;
-            }
-
-            width: $thumbnail-width-large - $offset;
-            height: $thumbnail-height-large - $offset;
-
-            if ($border-radius-large > 0) {
-                border-radius: $border-radius-large - $offset;
-            }
-        }
+        thumbnail-size-inner(
+            $thumbnail-width-large,
+            $thumbnail-width-large,
+            $thumbnail-padding-large,
+            $border-radius-large
+        );
 
     }
 
     &{$size-huge-selector} {
 
-        width: $thumbnail-width-huge;
-        height: $thumbnail-height-huge;
-        padding: $thumbnail-padding-huge;
+        thumbnail-size-inner(
+            $thumbnail-width-huge,
+            $thumbnail-width-huge,
+            $thumbnail-padding-huge,
+            $border-radius-huge
+        );
 
-        if ($border-radius-huge > 0) {
-            border-radius: $border-radius-huge;
-        }
-
-        img {
-
-            $offset = 2 * $thumbnail-padding-huge;
-
-            if ($thumbnail-border is a 'rgba') {
-                $offset += 2;
-            }
-
-            width: $thumbnail-width-huge - $offset;
-            height: $thumbnail-height-huge - $offset;
-
-            if ($border-radius-huge > 0) {
-                border-radius: $border-radius-huge - $offset;
-            }
-        }
     }
 
 }
