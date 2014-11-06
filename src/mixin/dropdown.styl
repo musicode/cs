@@ -1,0 +1,68 @@
+/**
+ * @file 下拉菜单
+ * @author zhujl
+ */
+
+dropdown() {
+    position: relative;
+    text-align: left;
+}
+
+dropdown-menu() {
+
+    background-color: $dropdown-menu-bg;
+    position: absolute;
+    left: 0;
+    right: 0;
+
+    if (typeof($dropdown-menu-border) == 'rgba') {
+        border: 1px solid $dropdown-menu-border;
+    }
+
+    if ($dropdown-menu-max-height > 0) {
+        max-height: $dropdown-menu-max-height;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+    if ($dropdown-menu-shadow) {
+        box-shadow: $dropdown-menu-shadow;
+    }
+
+}
+
+dropdown-menu-item() {
+
+    color: $dropdown-menu-item-color;
+    padding: $dropdown-menu-item-padding-vertical $dropdown-menu-item-padding-horizontal;
+
+    if ($support-mouse == true) {
+
+        cursor: pointer;
+
+        &:hover {
+
+            if (typeof($dropdown-menu-item-bg-hover) == 'rgba' && $dropdown-menu-item-bg-hover != $dropdown-menu-bg) {
+                background-color: $dropdown-menu-item-bg-hover;
+            }
+
+            if (typeof($dropdown-menu-item-color-hover) == 'rgba' && $dropdown-menu-item-color-hover != $dropdown-menu-item-color) {
+                color: $dropdown-menu-item-color-hover;
+            }
+        }
+
+    }
+
+}
+
+dropdown-menu-item-active() {
+
+    if (typeof($dropdown-menu-item-bg-active) == 'rgba' && $dropdown-menu-item-bg-active != $dropdown-menu-bg) {
+        background-color: $dropdown-menu-item-bg-active;
+    }
+
+    if (typeof($dropdown-menu-item-color-active) == 'rgba' && $dropdown-menu-item-color-active != $dropdown-menu-item-color) {
+        color: $dropdown-menu-item-color-active;
+    }
+
+}

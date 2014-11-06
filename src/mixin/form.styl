@@ -8,9 +8,7 @@ form-group() {
     clearfix();
 
     if (!(transparent in $form-group-border)) {
-
         border-bottom: 1px solid $form-group-border;
-
     }
 
     if ($form-group-gap > 0) {
@@ -32,7 +30,7 @@ form-label() {
 }
 
 form-controls() {
-    overflow: hidden;
+    float: left;
 }
 
 // 文本输入框
@@ -46,6 +44,10 @@ form-text() {
 
     if ($form-text-border-radius > 0) {
         border-radius: $form-text-border-radius;
+    }
+
+    textarea& {
+        resize: vertical;
     }
 
     &:hover {

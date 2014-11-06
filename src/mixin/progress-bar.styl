@@ -1,0 +1,132 @@
+/**
+ * @file 进度条
+ * @author zhujl
+ */
+
+progress-size() {
+
+    &:not({$size-tiny-selector}):not({$size-small-selector}):not({$size-large-selector}):not({$size-huge-selector}) {
+
+        height: $progress-height-base;
+        line-height: $progress-height-base;
+
+        if (typeof($progress-border-radius-base) == 'unit') {
+            border-radius: $progress-border-radius-base;
+        }
+
+    }
+
+    &{$size-tiny-selector} {
+
+        height: $progress-height-tiny;
+        line-height: $progress-height-tiny;
+
+        if (typeof($progress-border-radius-tiny) == 'unit') {
+            border-radius: $progress-border-radius-tiny;
+        }
+
+    }
+
+    &{$size-small-selector} {
+
+        height: $progress-height-small;
+        line-height: $progress-height-small;
+
+        if (typeof($progress-border-radius-small) == 'unit') {
+            border-radius: $progress-border-radius-small;
+        }
+
+    }
+
+    &{$size-large-selector} {
+
+        height: $progress-height-large;
+        line-height: $progress-height-large;
+
+        if (typeof($progress-border-radius-large) == 'unit') {
+            border-radius: $progress-border-radius-large;
+        }
+
+    }
+
+    &{$size-huge-selector} {
+
+        height: $progress-height-huge;
+        line-height: $progress-height-huge;
+
+        if (typeof($progress-border-radius-huge) == 'unit') {
+            border-radius: $progress-border-radius-huge;
+        }
+
+    }
+}
+
+
+progress-bar-type($bg) {
+
+    if (typeof($bg) == 'rgba') {
+        background-color: $bg;
+    }
+
+    if (typeof($progress-font-size) == 'unit') {
+        font-size: $progress-font-size;
+    }
+
+}
+
+progress() {
+
+    if (typeof($progress-bg) == 'rgba') {
+        background-color: $progress-bg;
+    }
+
+    if (typeof($progress-color) == 'rgba') {
+        color: $progress-color;
+    }
+
+    if ($progress-shadow) {
+        box-shadow: $progress-shadow;
+    }
+
+    overflow: hidden;
+
+}
+
+progress-bar() {
+    height: 100%;
+    text-align: center;
+
+    if ($progress-bar-shadow) {
+        box-shadow: $progress-bar-shadow;
+    }
+}
+
+progress-bar-default() {
+    progress-bar-type(
+        $progress-bar-default-bg
+    );
+}
+
+progress-bar-primary() {
+    progress-bar-type(
+        $progress-bar-primary-bg
+    );
+}
+
+progress-bar-info() {
+    progress-bar-type(
+        $progress-bar-info-bg
+    );
+}
+
+progress-bar-success() {
+    progress-bar-type(
+        $progress-bar-success-bg
+    );
+}
+
+progress-bar-error() {
+    progress-bar-type(
+        $progress-bar-error-bg
+    );
+}

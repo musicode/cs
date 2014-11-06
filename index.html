@@ -6,7 +6,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <title>muse demo</title>
-    <link rel="stylesheet" href="/dep/muse/0.0.1/index.styl">
+    <link rel="stylesheet" href="/dep/muse/0.0.3/index.styl">
 </head>
 
 <body>
@@ -27,12 +27,12 @@
 
         <h2>小型按钮</h2>
 
-        <b class="btn-default small">确定</b>
-        <b class="btn-primary small">确定</b>
-        <b class="btn-info small">确定</b>
-        <b class="btn-success small">确定</b>
-        <b class="btn-error small">确定</b>
-        <b class="btn-link small">确定</b>
+        <a class="btn-default small">确定</a>
+        <a class="btn-primary small">确定</a>
+        <a class="btn-info small">确定</a>
+        <a class="btn-success small">确定</a>
+        <a class="btn-error small">确定</a>
+        <a class="btn-link small">确定</a>
 
 
         <h2>微型按钮</h2>
@@ -166,6 +166,87 @@
     </section>
     <section>
 
+        <h1>进度条</h1>
+
+        <h2>默认</h2>
+
+        <div class="progress">
+            <div class="progress-bar-primary" style="width:30%"></div>
+        </div>
+        <div class="progress">
+            <div class="progress-bar-info" style="width:30%"></div>
+        </div>
+        <div class="progress">
+            <div class="progress-bar-success" style="width:30%"></div>
+        </div>
+        <div class="progress">
+            <div class="progress-bar-error" style="width:30%"></div>
+        </div>
+
+        <h2>超小</h2>
+
+        <div class="progress tiny">
+            <div class="progress-bar-primary" style="width:30%"></div>
+        </div>
+        <div class="progress tiny">
+            <div class="progress-bar-info" style="width:30%"></div>
+        </div>
+        <div class="progress tiny">
+            <div class="progress-bar-success" style="width:30%"></div>
+        </div>
+        <div class="progress tiny">
+            <div class="progress-bar-error" style="width:30%"></div>
+        </div>
+
+        <h2>小型</h2>
+
+        <div class="progress small">
+            <div class="progress-bar-primary" style="width:30%"></div>
+        </div>
+        <div class="progress small">
+            <div class="progress-bar-info" style="width:30%"></div>
+        </div>
+        <div class="progress small">
+            <div class="progress-bar-success" style="width:30%"></div>
+        </div>
+        <div class="progress small">
+            <div class="progress-bar-error" style="width:30%"></div>
+        </div>
+
+        <h2>大型</h2>
+
+        <div class="progress large">
+            <div class="progress-bar-primary" style="width:30%">10%</div>
+        </div>
+        <div class="progress large">
+            <div class="progress-bar-info" style="width:30%">10%</div>
+        </div>
+        <div class="progress large">
+            <div class="progress-bar-success" style="width:30%">10%</div>
+        </div>
+        <div class="progress large">
+            <div class="progress-bar-error" style="width:30%">10%</div>
+        </div>
+
+
+        <h2>超大</h2>
+
+        <div class="progress huge">
+            <div class="progress-bar-primary" style="width:30%">10%</div>
+        </div>
+        <div class="progress huge">
+            <div class="progress-bar-info" style="width:30%">10%</div>
+        </div>
+        <div class="progress huge">
+            <div class="progress-bar-success" style="width:30%">10%</div>
+        </div>
+        <div class="progress huge">
+            <div class="progress-bar-error" style="width:30%">10%</div>
+        </div>
+
+    </section>
+    <section>
+
         <h1>消息</h1>
 
         <div class="message-default">default</div>
@@ -179,10 +260,27 @@
 
         <h1>文本颜色</h1>
 
+        <span class="text-muted">muted</span>
         <span class="text-primary">primary</span>
         <span class="text-info">info</span>
         <span class="text-success">success</span>
         <span class="text-error">error</span>
+
+    </section>
+    <section>
+
+        <h1>翻页</h1>
+
+        <div class="pager">
+            <a>&lt;上一页</a>
+            <a>1</a>
+            <a>2</a>
+            <b class="active">3</b>
+            <a>4</a>
+            <b class="ellipsis">...</b>
+            <a>5</a>
+            <a>下一页&gt;</a>
+        </div>
 
     </section>
     <section>
@@ -225,7 +323,7 @@
                 <label class="form-label">下拉菜单：</label>
                 <div class="form-controls">
                     <div class="dropdown">
-                        <button class="btn btn-default">
+                        <button class="btn-default">
                             <span>请选择</span>
                             <i class="caret"></i>
                         </button>
@@ -346,7 +444,7 @@
 
     </section>
 
-    <section>
+    <section id="thumbnail">
 
         <h1>缩略图</h1>
 
@@ -354,30 +452,36 @@
 
             <a href="#" class="thumbnail">
                 <img src="http://img.funshion.com/pictures/676/650/676650.jpg" />
-            </a href="#">
+                <span class="caption">60x60</span>
+            </a>
 
             <a href="#" class="thumbnail-round">
                 <img src="http://img.funshion.com/pictures/676/650/676650.jpg" />
-            </a href="#">
+                <span class="caption">60x60</span>
+            </a>
 
             <a href="#" class="thumbnail-circle">
                 <img src="http://img.funshion.com/pictures/676/650/676650.jpg" />
-            </a href="#">
+                <span class="caption">60x60</span>
+            </a>
 
         </div>
 
         <div>
 
-            <span class="thumbnail tiny">
+            <span href="#" class="thumbnail tiny">
                 <img src="http://img.funshion.com/pictures/676/650/676650.jpg" />
+                <span class="caption">60x60</span>
             </span>
 
-            <span class="thumbnail-round tiny">
+            <span href="#" class="thumbnail-round tiny">
                 <img src="http://img.funshion.com/pictures/676/650/676650.jpg" />
+                <span class="caption">60x60</span>
             </span>
 
-            <span class="thumbnail-circle tiny">
+            <span href="#" class="thumbnail-circle tiny">
                 <img src="http://img.funshion.com/pictures/676/650/676650.jpg" />
+                <span class="caption">60x60</span>
             </span>
 
         </div>

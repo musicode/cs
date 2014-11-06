@@ -1,0 +1,24 @@
+/**
+ * @file 下拉菜单
+ * @author zhujl
+ */
+
+@import "../variable/dropdown.styl";
+@import "../mixin/dropdown.styl";
+
+.dropdown {
+    dropdown();
+}
+
+.dropdown-menu {
+
+    dropdown-menu();
+
+    li {
+        dropdown-menu-item();
+
+        &.active {
+            dropdown-menu-item-active();
+        }
+    }
+}

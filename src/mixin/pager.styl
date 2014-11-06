@@ -1,0 +1,206 @@
+/**
+ * @file 翻页
+ * @author zhujl
+ */
+
+
+pager() {
+    font-size: 0;
+}
+
+pager-item-gap-separate() {
+
+    margin-left: $pager-item-gap;
+
+    &:first-child {
+        margin-left: 0;
+    }
+
+}
+pager-item-border-separate($border, $border-hover) {
+
+    if (typeof($border) == 'rgba') {
+
+        border: 1px solid $border;
+
+        if ($support-mouse == true && typeof($border-hover) == 'rgba' && $border-hover != $border) {
+            &:hover {
+                border-color: $border-hover;
+            }
+        }
+    }
+
+}
+
+
+pager-item-gap-collapse() {
+
+    if (typeof($pager-item-border) == 'rgba') {
+
+        // 用于放置左右边框
+        margin-left: 1px;
+
+        &:first-child {
+            margin-left: 0;
+        }
+    }
+
+}
+pager-item-border-collapse($border, $border-hover) {
+
+    if (typeof($border) == 'rgba') {
+
+        border-top: 1px solid $border;
+        border-bottom: 1px solid $border;
+
+        position: relative;
+
+        &:before,
+        &:after {
+
+            background-color: $border;
+            content: ' ';
+            width: 1px;
+
+            position: absolute;
+            top: -1px;
+            bottom: -1px;
+
+        }
+
+        &:before {
+            left: -1px;
+        }
+
+        &:after {
+            right: -1px;
+        }
+
+        if ($support-mouse == true && typeof($border-hover) == 'rgba' && $border-hover != $border) {
+
+            &:hover {
+
+                border-top-color: $border-hover;
+                border-bottom-color: $border-hover;
+
+                &:before,
+                &:after {
+                    background-color: $border-hover;
+                    z-index: 1;
+                }
+
+            }
+
+        }
+    }
+
+}
+
+pager-default() {
+
+    if (typeof($pager-item-bg) == 'rgba') {
+        background-color: $pager-item-bg;
+    }
+
+    if (typeof($pager-item-color) == 'rgba') {
+        color: $pager-item-color;
+    }
+
+    if ($support-mouse == true) {
+
+        cursor: pointer;
+
+        &:hover {
+            pager-htn-hover();
+        }
+
+    }
+
+    if ($pager-item-gap > 0) {
+        pager-item-border-separate(
+            $pager-item-border,
+            $pager-item-border-hover
+        );
+    }
+    else {
+        pager-item-border-collapse(
+            $pager-item-border,
+            $pager-item-border-hover
+        );
+    }
+
+}
+
+pager-hover() {
+
+    if (typeof($pager-item-bg-hover) == 'rgba' && $pager-item-bg-hover != $pager-item-bg) {
+        background-color: $pager-item-bg-hover;
+    }
+
+    if (typeof($pager-item-color-hover) == 'rgba' && $pager-item-color-hover != $pager-item-color) {
+        color: $pager-item-color-hover;
+    }
+}
+
+pager-active() {
+
+    if (typeof($pager-item-bg-active) == 'rgba' && $pager-item-bg-active != $pager-item-bg) {
+        background-color: $pager-item-bg-active;
+    }
+
+    if (typeof($pager-item-color-active) == 'rgba' && $pager-item-color-active != $pager-item-color) {
+        color: $pager-item-color-active;
+    }
+
+    if ($support-mouse == true) {
+        cursor: text;
+    }
+
+p($pager-item-border-active);
+
+    if ($pager-item-gap > 0) {
+        pager-item-border-separate(
+            $pager-item-border-active,
+            $pager-item-border-active
+        );
+    }
+    else {
+        pager-item-border-collapse(
+            $pager-item-border-active,
+            $pager-item-border-active
+        );
+    }
+}
+
+pager-item() {
+
+    if ($pager-item-gap > 0) {
+        pager-item-gap-separate();
+    }
+    else {
+        pager-item-gap-collapse();
+    }
+
+    if ($pager-item-font-size > 0) {
+        font-size: $pager-item-font-size;
+    }
+
+    display: inline-block;
+
+}
+
+pager-btn() {
+
+    padding: $pager-item-padding-vertical $pager-item-padding-horizontal;
+
+    if ($support-mouse == true) {
+        user-select: none;
+    }
+
+}
+
+pager-ellipsis() {
+
+    padding: $pager-ellipsis-padding-vertical $pager-ellipsis-padding-horizontal;
+
+}

@@ -3,10 +3,18 @@
  * @author zhujl
  */
 
+@import "../variable/thumbnail.styl";
+@import "../mixin/thumbnail.styl";
+
 .thumbnail,
 .thumbnail-round,
 .thumbnail-circle {
+
     thumbnail();
+
+    .caption {
+        thumbnail-caption();
+    }
 }
 
 .thumbnail {

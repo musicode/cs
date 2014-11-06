@@ -9,6 +9,12 @@ dialog() {
     width: $dialog-width;
 }
 
+dialog-mask() {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
 dialog-close() {
     color: $dialog-close-color;
     font-size: $dialog-close-font-size;
@@ -22,6 +28,8 @@ dialog-header() {
     background-color: $dialog-header-bg;
     color: $dialog-header-color;
     font-size: $dialog-header-font-size;
+    font-family: $dialog-header-font-family;
+    font-weight: $dialog-header-font-weight;
     padding: $dialog-header-padding-vertical $dialog-header-padding-horizontal;
 }
 
