@@ -3,79 +3,17 @@
  * @author zhujl
  */
 
-message-size() {
+message() {
 
-    &:not({$size-tiny-selector}):not({$size-small-selector}):not({$size-large-selector}):not({$size-huge-selector}) {
-
-        font-size: $font-size-base;
-        line-height: $line-height-base;
-        padding: $padding-vertical-base $padding-horizontal-base;
-
-        if ($message-border-radius-base is a 'unit') {
-            border-radius: $message-border-radius-base;
-        }
-
+    if (typeof($message-default-border) == 'rgba') {
+        border: 1px solid transparent;
     }
 
-    &{$size-tiny-selector} {
-
-        font-size: $font-size-tiny;
-        line-height: $line-height-tiny;
-        padding: $padding-vertical-tiny $padding-horizontal-tiny;
-
-        if ($message-border-radius-tiny is a 'unit') {
-            border-radius: $message-border-radius-tiny;
-        }
-    }
-
-    &{$size-small-selector} {
-
-        font-size: $font-size-small;
-        line-height: $line-height-small;
-        padding: $padding-vertical-small $padding-horizontal-small;
-
-        if ($message-border-radius-small is a 'unit') {
-            border-radius: $message-border-radius-small;
-        }
-    }
-
-    &{$size-large-selector} {
-
-        font-size: $font-size-large;
-        line-height: $line-height-large;
-        padding: $padding-vertical-large $padding-horizontal-large;
-
-        if ($message-border-radius-large is a 'unit') {
-            border-radius: $message-border-radius-large;
-        }
-    }
-
-    &{$size-huge-selector} {
-
-        font-size: $font-size-huge;
-        line-height: $line-height-huge;
-        padding: $padding-vertical-huge $padding-horizontal-huge;
-
-        if ($message-border-radius-huge is a 'unit') {
-            border-radius: $message-border-radius-huge;
-        }
-
-    }
-
-}
-
-message-type($bg, $color, $border) {
-
-    background-color: $bg;
-    color: $color;
-
-    if ($border is a 'rgba') {
-        border: 1px solid $border;
-    }
+    ui-size('message');
 }
 
 message-default() {
-    message-type(
+    ui-type(
         $message-default-bg,
         $message-default-color,
         $message-default-border
@@ -83,7 +21,7 @@ message-default() {
 }
 
 message-primary() {
-    message-type(
+    ui-type(
         $message-primary-bg,
         $message-primary-color,
         $message-primary-border
@@ -91,7 +29,7 @@ message-primary() {
 }
 
 message-info() {
-    message-type(
+    ui-type(
         $message-info-bg,
         $message-info-color,
         $message-info-border
@@ -99,7 +37,7 @@ message-info() {
 }
 
 message-success() {
-    message-type(
+    ui-type(
         $message-success-bg,
         $message-success-color,
         $message-success-border
@@ -107,7 +45,7 @@ message-success() {
 }
 
 message-error() {
-    message-type(
+    ui-type(
         $message-error-bg,
         $message-error-color,
         $message-error-border

@@ -1,0 +1,88 @@
+
+ui-type($bg = null, $color = null, $border = null, $shadow = null,
+        $bg-hover = null, $color-hover = null, $border-hover = null, $shadow-hover = null,
+        $bg-active = null, $color-active = null, $border-active = null, $shadow-active = null,
+        $bg-disabled = null, $color-disabled = null, $border-disabled = null, $shadow-disabled = null) {
+
+    if (typeof($bg) == 'rgba') {
+        background-color: $bg;
+    }
+    else {
+        button&,
+        input& {
+            background-color: transparent;
+        }
+    }
+
+    if (typeof($border) == 'rgba') {
+        border-color: $border;
+    }
+
+    if (typeof($color) == 'rgba') {
+        color: $color;
+    }
+
+    if ($shadow) {
+        box-shadow: $shadow;
+    }
+
+    if ($support-mouse == true) {
+        &:hover {
+
+            if (typeof($bg-hover) == 'rgba' && $bg != $bg-hover) {
+                background-color: $bg-hover;
+            }
+
+            if (typeof($color-hover) == 'rgba') {
+                if ($color != $color-hover) {
+                    color: $color-hover;
+                }
+                else {
+                    a& {
+                        color: $color-hover;
+                    }
+                }
+            }
+
+            if (typeof($border-hover) == 'rgba' && $border != $border-hover) {
+                border-color: $border-hover;
+            }
+
+            if ($shadow-hover && $shadow != $shadow-hover) {
+                box-shadow: $shadow-hover;
+            }
+        }
+    }
+
+    &:active {
+        if (typeof($bg-active) == 'rgba' && $bg != $bg-active) {
+            background-color: $bg-active;
+        }
+        if (typeof($color-active) == 'rgba' && $color != $color-active) {
+            color: $color-active;
+        }
+        if (typeof($border-active) == 'rgba' && $border != $border-active) {
+            border-color: $border-active;
+        }
+        if ($shadow-active && $shadow != $shadow-active) {
+            box-shadow: $shadow-active;
+        }
+    }
+
+    &:disabled,
+    &[disabled] {
+        if (typeof($bg-disabled) == 'rgba' && $bg != $bg-disabled) {
+            background-color: $bg-disabled;
+        }
+        if (typeof($color-disabled) == 'rgba' && $color != $color-disabled) {
+            color: $color-disabled;
+        }
+        if (typeof($border-disabled) == 'rgba' && $border != $border-disabled) {
+            border-color: $border-disabled;
+        }
+        if ($shadow-disabled && $shadow != $shadow-disabled) {
+            box-shadow: $shadow-disabled;
+        }
+    }
+
+}

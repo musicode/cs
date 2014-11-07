@@ -4,107 +4,42 @@
  */
 
 badge() {
+
     display: inline-block;
-    font-weight: $badge-font-weight;
+
+    if ($badge-font-weight != 'normal') {
+        font-weight: $badge-font-weight;
+    }
+
+    ui-size('badge');
 }
-
-badge-size() {
-
-    &:not({$size-tiny-selector}):not({$size-small-selector}):not({$size-large-selector}):not({$size-huge-selector}) {
-
-        font-size: $font-size-base;
-        line-height: $badge-line-height-base;
-        padding: $padding-vertical-base $padding-horizontal-base;
-
-        if ($badge-border-radius-base is a 'unit') {
-            border-radius: $badge-border-radius-base;
-        }
-
-    }
-
-    &{$size-tiny-selector} {
-
-        font-size: $font-size-tiny;
-        line-height: $badge-line-height-tiny;
-        padding: $padding-vertical-tiny $padding-horizontal-tiny;
-
-        if ($badge-border-radius-tiny is a 'unit') {
-            border-radius: $badge-border-radius-tiny;
-        }
-    }
-
-    &{$size-small-selector} {
-
-        font-size: $font-size-small;
-        line-height: $badge-line-height-small;
-        padding: $padding-vertical-small $padding-horizontal-small;
-
-        if ($badge-border-radius-small is a 'unit') {
-            border-radius: $badge-border-radius-small;
-        }
-    }
-
-    &{$size-large-selector} {
-
-        font-size: $font-size-large;
-        line-height: $badge-line-height-large;
-        padding: $padding-vertical-large $padding-horizontal-large;
-
-        if ($badge-border-radius-large is a 'unit') {
-            border-radius: $badge-border-radius-large;
-        }
-    }
-
-    &{$size-huge-selector} {
-
-        font-size: $font-size-huge;
-        line-height: $badge-line-height-huge;
-        padding: $padding-vertical-huge $padding-horizontal-huge;
-
-        if ($badge-border-radius-huge is a 'unit') {
-            border-radius: $badge-border-radius-huge;
-        }
-
-    }
-
-}
-
-badge-type($bg, $color) {
-    if ($bg is a 'rgba') {
-        background-color: $bg;
-    }
-    if ($color is a 'rgba') {
-        color: $color;
-    }
-}
-
 
 badge-default() {
-    badge-type(
+    ui-type(
         $badge-default-bg,
         $badge-default-color
     );
 }
 badge-primary() {
-    badge-type(
+    ui-type(
         $badge-primary-bg,
         $badge-primary-color
     );
 }
 badge-info() {
-    badge-type(
+    ui-type(
         $badge-info-bg,
         $badge-info-color
     );
 }
 badge-success() {
-    badge-type(
+    ui-type(
         $badge-success-bg,
         $badge-success-color
     );
 }
 badge-error() {
-    badge-type(
+    ui-type(
         $badge-error-bg,
         $badge-error-color
     );

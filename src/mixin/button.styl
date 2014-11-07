@@ -7,9 +7,11 @@ button() {
 
     border: 1px solid transparent;
     display: inline-block;
-    font-weight: $btn-font-weight;
-    box-sizing: border-box;
     text-align: center;
+
+    if ($btn-font-weight != 'normal') {
+        font-weight: $btn-font-weight;
+    }
 
     if ($support-mouse == true) {
         cursor: pointer;
@@ -31,156 +33,12 @@ button() {
         margin: 0;
     }
 
-}
-
-button-size() {
-
-    &:not({$size-tiny-selector}):not({$size-small-selector}):not({$size-large-selector}):not({$size-huge-selector}) {
-
-        font-size: $font-size-base;
-        line-height: $line-height-base;
-        padding: $padding-vertical-base $padding-horizontal-base;
-
-        if ($btn-border-radius-base is a 'unit') {
-            border-radius: $btn-border-radius-base;
-        }
-
-    }
-
-    &{$size-tiny-selector} {
-
-        font-size: $font-size-tiny;
-        line-height: $line-height-tiny;
-        padding: $padding-vertical-tiny $padding-horizontal-tiny;
-
-        if ($btn-border-radius-tiny is a 'unit') {
-            border-radius: $btn-border-radius-tiny;
-        }
-    }
-
-    &{$size-small-selector} {
-
-        font-size: $font-size-small;
-        line-height: $line-height-small;
-        padding: $padding-vertical-small $padding-horizontal-small;
-
-        if ($btn-border-radius-small is a 'unit') {
-            border-radius: $btn-border-radius-small;
-        }
-    }
-
-    &{$size-large-selector} {
-
-        font-size: $font-size-large;
-        line-height: $line-height-large;
-        padding: $padding-vertical-large $padding-horizontal-large;
-
-        if ($btn-border-radius-large is a 'unit') {
-            border-radius: $btn-border-radius-large;
-        }
-    }
-
-    &{$size-huge-selector} {
-
-        font-size: $font-size-huge;
-        line-height: $line-height-huge;
-        padding: $padding-vertical-huge $padding-horizontal-huge;
-
-        if ($btn-border-radius-huge is a 'unit') {
-            border-radius: $btn-border-radius-huge;
-        }
-
-    }
+    ui-size('btn');
 
 }
-
-
-button-type($bg, $color, $border, $shadow,
-            $bg-hover, $color-hover, $border-hover, $shadow-hover,
-            $bg-active, $color-active, $border-active, $shadow-active,
-            $bg-disabled, $color-disabled, $border-disabled, $shadow-disabled) {
-
-    if (typeof($bg) == 'rgba') {
-        background-color: $bg;
-    }
-    else {
-        button&,
-        input& {
-            background-color: transparent;
-        }
-    }
-
-    if (typeof($border) == 'rgba') {
-        border-color: $border;
-    }
-
-    if (typeof($color) == 'rgba') {
-        color: $color;
-    }
-
-    if ($shadow && $shadow != 'none') {
-        box-shadow: $shadow;
-    }
-
-    if ($support-mouse ia a 'boolean' && $support-mouse) {
-        &:hover {
-            if (typeof($bg-hover) == 'rgba' && $bg != $bg-hover) {
-                background-color: $bg-hover;
-            }
-            if (typeof($color-hover) == 'rgba' && $color != $color-hover) {
-                color: $color-hover;
-            }
-            else {
-                a& {
-                    color: $color-hover;
-                }
-            }
-            if (typeof($border-hover) == 'rgba' && $border != $border-hover) {
-                border-color: $border-hover;
-            }
-            if ($shadow-hover && $shadow-hover != $shadow) {
-                box-shadow: $shadow-hover;
-            }
-        }
-    }
-
-    &:active {
-        if (typeof($bg-active) == 'rgba' && $bg != $bg-active) {
-            background-color: $bg-active;
-        }
-        if (typeof($color-active) == 'rgba' && $color != $color-active) {
-            color: $color-active;
-        }
-        if (typeof($border-active) == 'rgba' && $border != $border-active) {
-            border-color: $border-active;
-        }
-        if ($shadow-active && $shadow-active != $shadow) {
-            box-shadow: $shadow-active;
-        }
-    }
-
-    &:disabled,
-    &[disabled] {
-
-        if (typeof($bg-disabled) == 'rgba' && $bg != $bg-disabled) {
-            background-color: $bg-disabled;
-        }
-        if (typeof($color-disabled) == 'rgba' && $color != $color-disabled) {
-            color: $color-disabled;
-        }
-        if (typeof($border-disabled) == 'rgba' && $border != $border-disabled) {
-            border-color: $border-disabled;
-        }
-        if ($shadow-disabled && $shadow-disabled != $shadow) {
-            box-shadow: $shadow-disabled;
-        }
-    }
-
-}
-
 
 button-default() {
-    button-type(
+    ui-type(
         $btn-default-bg,
         $btn-default-color,
         $btn-default-border,
@@ -202,8 +60,9 @@ button-default() {
         $btn-default-shadow-disabled
     );
 }
+
 button-primary() {
-    button-type(
+    ui-type(
         $btn-primary-bg,
         $btn-primary-color,
         $btn-primary-border,
@@ -225,8 +84,9 @@ button-primary() {
         $btn-primary-shadow-disabled
     );
 }
+
 button-info() {
-    button-type(
+    ui-type(
         $btn-info-bg,
         $btn-info-color,
         $btn-info-border,
@@ -248,8 +108,9 @@ button-info() {
         $btn-info-shadow-disabled
     );
 }
+
 button-success() {
-    button-type(
+    ui-type(
         $btn-success-bg,
         $btn-success-color,
         $btn-success-border,
@@ -271,8 +132,9 @@ button-success() {
         $btn-success-shadow-disabled
     );
 }
+
 button-error() {
-    button-type(
+    ui-type(
         $btn-error-bg,
         $btn-error-color,
         $btn-error-border,
@@ -294,9 +156,10 @@ button-error() {
         $btn-error-shadow-disabled
     );
 }
+
 button-link() {
 
-    button-type(
+    ui-type(
         $btn-link-bg,
         $btn-link-color,
         $btn-link-border,

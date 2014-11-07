@@ -6,180 +6,46 @@
 thumbnail() {
 
     display: inline-block;
-    line-height: 0;
-    box-sizing: border-box;
-    position: relative;
 
-    if ($thumbnail-bg is a 'rgba') {
+    if (typeof($thumbnail-bg) == 'rgba') {
         background-color: $thumbnail-bg;
     }
 
-    if ($thumbnail-border is a 'rgba') {
+    if (typeof($thumbnail-border) == 'rgba') {
         border: 1px solid $thumbnail-border;
     }
 
-    if ($thumbnail-padding > 0) {
-        padding: $thumbnail-padding;
-    }
-
-    if ($thumbnail-shadow && $thumbnail-shadow != 'none') {
+    if ($thumbnail-shadow) {
         box-shadow: $thumbnail-shadow;
     }
 
-}
-
-thumbnail-size-inner($width, $height, $padding, $border-radius) {
-
-    $offset = 2 * $padding;
-
-    if ($thumbnail-border is a 'rgba') {
-        $offset += 2;
-    }
-
-    $img-width = $width - $offset;
-    $img-height = $height - $offset;
-
-    width: $width;
-    height: $height;
-    padding: $padding;
-
-    if ($border-radius > 0) {
-        border-radius: $border-radius;
-        $img-border-radius = $border-radius - 0.5 * $offset;
-    }
-
     img {
-
-        width: $img-width;
-        height: $img-height;
-
-        if ($img-border-radius > 0) {
-            border-radius: $img-border-radius;
-        }
+        width: 100%;
+        height: 100%;
     }
 
-    if ($support-mouse is a 'boolean' && $support-mouse && $thumbnail-mask-hover is a 'rgba') {
+    ui-size('thumbnail');
 
-        user-select: none;
-
-        a&:after {
-
-            background-color: transparent;
-            content: ' ';
-
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            width: $img-width;
-            height: $img-height;
-            margin-left: -0.5 * $img-width;
-            margin-top: -0.5 * $img-height;
-
-            if ($img-border-radius > 0) {
-                border-radius: $img-border-radius;
-            }
-        }
-
-
-        a&:hover:after {
-            background-color: $thumbnail-mask-hover;
-        }
-
-    }
 }
 
-thumbnail-size($border-radius-base = 0,
-                $border-radius-tiny = 0,
-                $border-radius-small = 0,
-                $border-radius-large = 0,
-                $border-radius-huge = 0) {
 
-    &:not({$size-tiny-selector}):not({$size-small-selector}):not({$size-large-selector}):not({$size-huge-selector}) {
-
-        thumbnail-size-inner(
-            $thumbnail-width-base,
-            $thumbnail-height-base,
-            $thumbnail-padding-base,
-            $border-radius-base
-        );
-
-    }
-
-    &{$size-tiny-selector} {
-
-        thumbnail-size-inner(
-            $thumbnail-width-tiny,
-            $thumbnail-width-tiny,
-            $thumbnail-padding-tiny,
-            $border-radius-tiny
-        );
-
-    }
-
-    &{$size-small-selector} {
-
-        thumbnail-size-inner(
-            $thumbnail-width-small,
-            $thumbnail-width-small,
-            $thumbnail-padding-small,
-            $border-radius-small
-        );
-
-    }
-
-    &{$size-large-selector} {
-
-        thumbnail-size-inner(
-            $thumbnail-width-large,
-            $thumbnail-width-large,
-            $thumbnail-padding-large,
-            $border-radius-large
-        );
-
-    }
-
-    &{$size-huge-selector} {
-
-        thumbnail-size-inner(
-            $thumbnail-width-huge,
-            $thumbnail-width-huge,
-            $thumbnail-padding-huge,
-            $border-radius-huge
-        );
-
-    }
-
-}
 
 thumbnail-rect() {
-    thumbnail-size();
+
 }
 
 thumbnail-round() {
-    thumbnail-size(
-        $thumbnail-round-base,
-        $thumbnail-round-tiny,
-        $thumbnail-round-small,
-        $thumbnail-round-large,
-        $thumbnail-round-huge
-    );
+
 }
 
 thumbnail-circle() {
-    thumbnail-size(
-        $thumbnail-circle-base,
-        $thumbnail-circle-tiny,
-        $thumbnail-circle-small,
-        $thumbnail-circle-large,
-        $thumbnail-circle-huge
-    );
+
 }
 
 
 thumbnail-caption() {
     color: $thumbnail-caption-color;
     display: block;
-    font-size: $thumbnail-caption-font-size;
     line-height: 1;
     margin-top: $thumbnail-caption-gap;
     text-align: center;
