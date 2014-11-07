@@ -10,39 +10,40 @@ table() {
     box-sizing: border-box;
 
     thead {
-        background-color: $table-header-bg;
-        color: $table-header-color;
+        ui-type(
+            $table-header-bg,
+            $table-header-color
+        );
     }
 
     th {
-        padding: $table-header-cell-padding-vertical
-                 $table-header-cell-padding-horizontal;
+        padding: $table-header-cell-padding-vertical $table-header-cell-padding-horizontal;
         text-align: $table-header-align;
     }
 
     tbody {
 
-        if ($table-body-odd-row-bg is a 'rgba' && $table-body-odd-row-bg == $table-body-even-row-bg) {
+        if (typeof($table-body-odd-row-bg) == 'rgba' && $table-body-odd-row-bg == $table-body-even-row-bg) {
             background-color: $table-body-odd-row-bg;
         }
         else {
-            if ($table-body-odd-row-bg is a 'rgba') {
+            if (typeof($table-body-odd-row-bg) == 'rgba') {
                 tr:nth-chilid(2n+1) {
                     background-color: $table-body-odd-row-bg;
                 }
             }
-            if ($table-body-even-row-bg is a 'rgba') {
+            if (typeof($table-body-even-row-bg) == 'rgba') {
                 tr:nth-chilid(2n) {
                     background-color: $table-body-even-row-bg;
                 }
             }
         }
 
-        if ($table-body-color is a 'rgba') {
+        if (typeof($table-body-color) == 'rgba') {
             color: $table-body-color;
         }
 
-        if ($table-body-row-border is a 'rgba') {
+        if (typeof($table-body-row-border) == 'rgba') {
             tr {
                 border-bottom: 1px solid $table-body-row-border;
             }
@@ -50,8 +51,7 @@ table() {
     }
 
     td {
-        padding: $table-body-cell-padding-vertical
-                 $table-body-cell-padding-horizontal;
+        padding: $table-body-cell-padding-vertical $table-body-cell-padding-horizontal;
         text-align: $table-body-align;
     }
 

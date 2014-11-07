@@ -7,7 +7,7 @@ form-group() {
 
     clearfix();
 
-    if (!(transparent in $form-group-border)) {
+    if (typeof($form-group-border) == 'rgba') {
         border-bottom: 1px solid $form-group-border;
     }
 
@@ -116,11 +116,11 @@ form-box() {
 
     input {
         cursor: pointer;
-        margin: 0 $form-box-gap 0 1px;
+        margin: 0 $form-box-inner-gap 0 1px;
     }
 
     & + & {
-        margin-left: 10px;
+        margin-left: $form-box-gap;
     }
 
 }

@@ -8,7 +8,7 @@ list() {
     background-color: $list-bg;
     padding: $list-padding-vertical $list-padding-horizontal;
 
-    if ($list-border is a 'rgba') {
+    if (typeof($list-border) == 'rgba') {
         border: 1px solid $list-border;
     }
 
@@ -29,7 +29,7 @@ list-item() {
     font-size: $list-item-font-size;
     padding: $list-item-padding-vertical $list-item-padding-horizontal;
 
-    if ($list-item-border is a 'rgba') {
+    if (typeof($list-item-border) == 'rgba') {
 
         border-top: 1px solid $list-item-border;
 
@@ -38,7 +38,7 @@ list-item() {
         }
     }
 
-    if ($support-mouse ia a 'boolean' && $support-mouse) {
+    if ($support-mouse == true) {
         &:hover {
             if ($list-item-bg-hover != $list-item-bg) {
                 background-color: $list-item-bg-hover;
