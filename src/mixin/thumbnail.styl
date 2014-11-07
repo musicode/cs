@@ -24,29 +24,39 @@ thumbnail() {
         height: 100%;
     }
 
-    ui-size('thumbnail');
-
 }
 
-
-
 thumbnail-rect() {
-
+    ui-size('thumbnail-rect');
 }
 
 thumbnail-round() {
 
+    ui-size('thumbnail-round');
+
+    border-radius: $thumbnail-round;
+
+    img {
+        border-radius: $thumbnail-round-inner;
+    }
 }
 
 thumbnail-circle() {
 
+    ui-size('thumbnail-circle');
+
+    border-radius: $thumbnail-circle;
+
+    img {
+        border-radius: $thumbnail-circle-inner;
+    }
 }
 
 
-thumbnail-caption() {
-    color: $thumbnail-caption-color;
+thumbnail-title() {
+    color: $thumbnail-title-color;
     display: block;
     line-height: 1;
-    margin-top: $thumbnail-caption-gap;
+    margin-top: $thumbnail-title-gap;
     text-align: center;
 }

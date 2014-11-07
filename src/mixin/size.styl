@@ -6,17 +6,10 @@
 ui-size-inner($font-size, $line-height,
               $padding-vertical, $padding-horizontal,
               $width, $height,
-              $border-radius) {
+              $border-radius, $child-selector) {
 
     font-size: $font-size;
     line-height: $line-height;
-
-    if ($padding-vertical == $padding-horizontal) {
-        padding: $padding-vertical;
-    }
-    else {
-        padding: $padding-vertical $padding-horizontal;
-    }
 
     if ($width > 0) {
         width: $width;
@@ -25,10 +18,20 @@ ui-size-inner($font-size, $line-height,
         height: $height;
     }
 
+    if ($padding-vertical > 0 || $padding-horizontal > 0) {
+
+        if ($padding-vertical == $padding-horizontal) {
+            padding: $padding-vertical;
+        }
+        else {
+            padding: $padding-vertical $padding-horizontal;
+        }
+
+    }
+
     if ($border-radius > 0) {
         border-radius: $border-radius;
     }
-
 }
 
 ui-size($name, $has-border = false, $has-padding-horizontal = false) {
@@ -60,7 +63,8 @@ ui-size($name, $has-border = false, $has-padding-horizontal = false) {
             $padding-horizontal,
             $width,
             $height,
-            $border-radius
+            $border-radius,
+            $conf['child-selector']
         );
 
     }
@@ -84,7 +88,8 @@ ui-size($name, $has-border = false, $has-padding-horizontal = false) {
             $padding-horizontal,
             $width,
             $height,
-            $border-radius
+            $border-radius,
+            $conf['child-selector']
         );
     }
 
@@ -107,7 +112,8 @@ ui-size($name, $has-border = false, $has-padding-horizontal = false) {
             $padding-horizontal,
             $width,
             $height,
-            $border-radius
+            $border-radius,
+            $conf['child-selector']
         );
 
     }
@@ -131,7 +137,8 @@ ui-size($name, $has-border = false, $has-padding-horizontal = false) {
             $padding-horizontal,
             $width,
             $height,
-            $border-radius
+            $border-radius,
+            $conf['child-selector']
         );
 
     }
@@ -155,7 +162,8 @@ ui-size($name, $has-border = false, $has-padding-horizontal = false) {
             $padding-horizontal,
             $width,
             $height,
-            $border-radius
+            $border-radius,
+            $conf['child-selector']
         );
 
     }

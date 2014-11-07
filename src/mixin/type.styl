@@ -22,7 +22,7 @@ ui-type($bg = null, $color = null, $border = null, $shadow = null,
         color: $color;
     }
 
-    if ($shadow) {
+    if ($shadow && $shadow != 'none') {
         box-shadow: $shadow;
     }
 
@@ -51,10 +51,15 @@ ui-type($bg = null, $color = null, $border = null, $shadow = null,
             if ($shadow-hover && $shadow != $shadow-hover) {
                 box-shadow: $shadow-hover;
             }
+
+            if ($transition-duration > 0) {
+                transition: background-color $transition-duration;
+            }
         }
     }
 
-    &:active {
+    &:active,
+    &[active] {
         if (typeof($bg-active) == 'rgba' && $bg != $bg-active) {
             background-color: $bg-active;
         }

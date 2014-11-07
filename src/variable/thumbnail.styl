@@ -3,46 +3,163 @@
  * @author zhujl
  */
 
-$size-hash.thumbnail = {
+$thumbnail-border = #DDD;
+$thumbnail-padding-vertical = 1px;
+$thumbnail-padding-horizontal = 1px;
+$thumbnail-font-size = 12px;
+$thumbnail-line-height = 0px;
 
-    'width-base': 80px,
-    'height-base': 80px,
-    'font-size-base': 12px,
-    'line-height-base': 0px,
-    'padding-vertical-base': 1px,
-    'padding-horizontal-base': 1px,
+$thumbnail-round = 4px;
+$thumbnail-round-inner = 2px;
+
+$thumbnail-circle = 1000px;
+$thumbnail-circle-inner = 1000px;
+
+
+$thumbnail-width-base = 80px;
+$thumbnail-height-base = 80px;
+
+$thumbnail-width-tiny = 50px;
+$thumbnail-height-tiny = 50px;
+
+$thumbnail-width-small = 60px;
+$thumbnail-height-small = 60px;
+
+$thumbnail-width-large = 120px;
+$thumbnail-height-large = 120px;
+
+$thumbnail-width-huge = 150px;
+$thumbnail-height-huge = 150px;
+
+
+$size-hash['thumbnail-rect'] = {
+
+    'width-base': $thumbnail-width-base,
+    'height-base': $thumbnail-height-base,
+    'font-size-base': $thumbnail-font-size,
+    'line-height-base': $thumbnail-line-height,
+    'padding-vertical-base': $thumbnail-padding-vertical,
+    'padding-horizontal-base': $thumbnail-padding-horizontal,
     'border-radius-base': 0px,
 
-    'width-tiny': 50px,
-    'height-tiny': 50px,
-    'font-size-tiny': 12px,
-    'line-height-tiny': 0px,
-    'padding-vertical-tiny': 1px,
-    'padding-horizontal-tiny': 1px,
+    'width-tiny': $thumbnail-width-tiny,
+    'height-tiny': $thumbnail-height-tiny,
+    'font-size-tiny': $thumbnail-font-size,
+    'line-height-tiny': $thumbnail-line-height,
+    'padding-vertical-tiny': $thumbnail-padding-vertical,
+    'padding-horizontal-tiny': $thumbnail-padding-horizontal,
     'border-radius-tiny': 0px,
 
-    'width-small': 60px,
-    'height-small': 60px,
-    'font-size-small': 12px,
-    'line-height-small': 0px,
-    'padding-vertical-small': 1px,
-    'padding-horizontal-small': 1px,
+    'width-small': $thumbnail-width-small,
+    'height-small': $thumbnail-height-small,
+    'font-size-small': $thumbnail-font-size,
+    'line-height-small': $thumbnail-line-height,
+    'padding-vertical-small': $thumbnail-padding-vertical,
+    'padding-horizontal-small': $thumbnail-padding-horizontal,
     'border-radius-small': 0px,
 
-    'width-large': 120px,
-    'height-large': 120px,
-    'font-size-large': 12px,
-    'line-height-large': 0px,
-    'padding-vertical-large': 1px,
-    'padding-horizontal-large': 1px,
+    'width-large': $thumbnail-width-large,
+    'height-large': $thumbnail-height-large,
+    'font-size-large': $thumbnail-font-size,
+    'line-height-large': $thumbnail-line-height,
+    'padding-vertical-large': $thumbnail-padding-vertical,
+    'padding-horizontal-large': $thumbnail-padding-horizontal,
     'border-radius-large': 0px,
 
-    'width-huge': 150px,
-    'height-huge': 150px,
-    'font-size-huge': 12px,
-    'line-height-huge': 0px,
-    'padding-vertical-huge': 1px,
-    'padding-horizontal-huge': 1px,
+    'width-huge': $thumbnail-width-huge,
+    'height-huge': $thumbnail-height-huge,
+    'font-size-huge': $thumbnail-font-size,
+    'line-height-huge': $thumbnail-line-height,
+    'padding-vertical-huge': $thumbnail-padding-vertical,
+    'padding-horizontal-huge': $thumbnail-padding-horizontal,
+    'border-radius-huge': 0px
+
+};
+
+$size-hash['thumbnail-round'] = {
+
+    'width-base': $thumbnail-width-base,
+    'height-base': $thumbnail-height-base,
+    'font-size-base': $thumbnail-font-size,
+    'line-height-base': $thumbnail-line-height,
+    'padding-vertical-base': $thumbnail-padding-vertical,
+    'padding-horizontal-base': $thumbnail-padding-horizontal,
+    'border-radius-base': 0px,
+
+    'width-tiny': $thumbnail-width-tiny,
+    'height-tiny': $thumbnail-height-tiny,
+    'font-size-tiny': $thumbnail-font-size,
+    'line-height-tiny': $thumbnail-line-height,
+    'padding-vertical-tiny': $thumbnail-padding-vertical,
+    'padding-horizontal-tiny': $thumbnail-padding-horizontal,
+    'border-radius-tiny': 0px,
+
+    'width-small': $thumbnail-width-small,
+    'height-small': $thumbnail-height-small,
+    'font-size-small': $thumbnail-font-size,
+    'line-height-small': $thumbnail-line-height,
+    'padding-vertical-small': $thumbnail-padding-vertical,
+    'padding-horizontal-small': $thumbnail-padding-horizontal,
+    'border-radius-small': 0px,
+
+    'width-large': $thumbnail-width-large,
+    'height-large': $thumbnail-height-large,
+    'font-size-large': $thumbnail-font-size,
+    'line-height-large': $thumbnail-line-height,
+    'padding-vertical-large': $thumbnail-padding-vertical,
+    'padding-horizontal-large': $thumbnail-padding-horizontal,
+    'border-radius-large': 0px,
+
+    'width-huge': $thumbnail-width-huge,
+    'height-huge': $thumbnail-height-huge,
+    'font-size-huge': $thumbnail-font-size,
+    'line-height-huge': $thumbnail-line-height,
+    'padding-vertical-huge': $thumbnail-padding-vertical,
+    'padding-horizontal-huge': $thumbnail-padding-horizontal,
+    'border-radius-huge': 0px
+
+};
+
+$size-hash['thumbnail-circle'] = {
+
+    'width-base': $thumbnail-width-base,
+    'height-base': $thumbnail-height-base,
+    'font-size-base': $thumbnail-font-size,
+    'line-height-base': $thumbnail-line-height,
+    'padding-vertical-base': $thumbnail-padding-vertical,
+    'padding-horizontal-base': $thumbnail-padding-horizontal,
+    'border-radius-base': 0px,
+
+    'width-tiny': $thumbnail-width-tiny,
+    'height-tiny': $thumbnail-height-tiny,
+    'font-size-tiny': $thumbnail-font-size,
+    'line-height-tiny': $thumbnail-line-height,
+    'padding-vertical-tiny': $thumbnail-padding-vertical,
+    'padding-horizontal-tiny': $thumbnail-padding-horizontal,
+    'border-radius-tiny': 0px,
+
+    'width-small': $thumbnail-width-small,
+    'height-small': $thumbnail-height-small,
+    'font-size-small': $thumbnail-font-size,
+    'line-height-small': $thumbnail-line-height,
+    'padding-vertical-small': $thumbnail-padding-vertical,
+    'padding-horizontal-small': $thumbnail-padding-horizontal,
+    'border-radius-small': 0px,
+
+    'width-large': $thumbnail-width-large,
+    'height-large': $thumbnail-height-large,
+    'font-size-large': $thumbnail-font-size,
+    'line-height-large': $thumbnail-line-height,
+    'padding-vertical-large': $thumbnail-padding-vertical,
+    'padding-horizontal-large': $thumbnail-padding-horizontal,
+    'border-radius-large': 0px,
+
+    'width-huge': $thumbnail-width-huge,
+    'height-huge': $thumbnail-height-huge,
+    'font-size-huge': $thumbnail-font-size,
+    'line-height-huge': $thumbnail-line-height,
+    'padding-vertical-huge': $thumbnail-padding-vertical,
+    'padding-horizontal-huge': $thumbnail-padding-horizontal,
     'border-radius-huge': 0px
 
 };
@@ -50,11 +167,11 @@ $size-hash.thumbnail = {
 
 $thumbnail-bg = #FFF;
 
-$thumbnail-border = #DDD;
+
 $thumbnail-shadow = none;
 
-$thumbnail-caption-color = $text-color;
-$thumbnail-caption-gap = 8px;
+$thumbnail-title-color = $text-color;
+$thumbnail-title-gap = 8px;
 
 $thumbnail-mask-hover = rgba(0,0,0,0.3);
 
