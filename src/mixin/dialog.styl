@@ -19,9 +19,18 @@ dialog-close() {
     color: $dialog-close-color;
     font-size: $dialog-close-font-size;
     font-weight: $dialog-close-font-weight;
+    width: $dialog-close-width;
+    height: $dialog-close-height;
+    line-height: $dialog-close-height;
+    text-align: center;
+
     position: absolute;
     top: $dialog-close-top;
     right: $dialog-close-right;
+
+    if ($support-mouse == true) {
+        cursor: pointer;
+    }
 }
 
 dialog-header() {
