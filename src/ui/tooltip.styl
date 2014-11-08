@@ -1,0 +1,52 @@
+/**
+ * @file 工具提示
+ * @author zhujl
+ */
+
+@import "../variable/tooltip.styl";
+@import "../mixin/tooltip.styl";
+
+.tooltip {
+    tooltip();
+
+    &:before,
+    &:after {
+        content: ' ';
+        position: absolute;
+        border: @tooltip-arrow-size solid transparent;
+    }
+}
+.tooltip-top {
+
+    &:before,
+    &:after {
+        left: 50%;
+        margin-left: -8px;
+    }
+    &:before {
+        border-top-color: @tooltip-border;
+        bottom: -16px;
+    }
+    &:after {
+        border-top-color: @tooltip-bg;
+        bottom: -15px;
+    }
+
+}
+.tooltip-bottom {
+
+    &:before,
+    &:after {
+        left: 50%;
+        margin-left: -8px;
+    }
+    &:before {
+        border-bottom-color: @tooltip-border;
+        top: -17px;
+    }
+    &:after {
+        border-bottom-color: @tooltip-bg;
+        top: -16px;
+    }
+
+}

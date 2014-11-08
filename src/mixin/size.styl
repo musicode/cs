@@ -8,7 +8,10 @@ ui-size-inner($font-size, $line-height,
               $width, $height,
               $border-radius) {
 
-    font-size: $font-size;
+    if ($font-size > 0) {
+        font-size: $font-size;
+    }
+
     line-height: $line-height;
 
     if ($width > 0) {
@@ -46,7 +49,6 @@ ui-size($name, $has-border = false, $has-padding-horizontal = false) {
 
     &:not({$size-tiny-selector}):not({$size-small-selector}):not({$size-large-selector}):not({$size-huge-selector}) {
 
-        $font-size = $conf['font-size-base'] || $font-size-base;
         $line-height = $conf['line-height-base'] || $line-height-base;
         $padding-vertical = $conf['padding-vertical-base'] || $padding-vertical-base;
         $padding-horizontal = $conf['padding-horizontal-base'] || $padding-horizontal-base;
@@ -56,8 +58,9 @@ ui-size($name, $has-border = false, $has-padding-horizontal = false) {
 
         $border-radius = $conf['border-radius-base'] || $border-radius-base;
 
+        // 字体默认大小随 body 走，这里不要强行设置成 $font-size-base
         ui-size-inner(
-            $font-size,
+            $conf['font-size-base'],
             $line-height,
             $padding-vertical,
             $padding-horizontal,

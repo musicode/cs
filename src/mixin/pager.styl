@@ -6,6 +6,9 @@
 
 pager() {
     font-size: 0;
+    if ($support-mouse == true) {
+        user-select: none;
+    }
 }
 
 pager-item-gap-separate() {
@@ -156,7 +159,6 @@ pager-active() {
         cursor: text;
     }
 
-p($pager-item-border-active);
 
     if ($pager-item-gap > 0) {
         pager-item-border-separate(
@@ -192,10 +194,6 @@ pager-item() {
 pager-btn() {
 
     padding: $pager-item-padding-vertical $pager-item-padding-horizontal;
-
-    if ($support-mouse == true) {
-        user-select: none;
-    }
 
 }
 

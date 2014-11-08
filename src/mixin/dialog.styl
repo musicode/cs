@@ -5,11 +5,10 @@
 
 dialog() {
     position: fixed;
-
-    width: $dialog-width;
 }
 
 dialog-mask() {
+    background-color: $dialog-mask-bg;
     position: absolute;
     top: 0;
     left: 0;
@@ -30,6 +29,12 @@ dialog-close() {
 
     if ($support-mouse == true) {
         cursor: pointer;
+
+        if (typeof($dialog-close-color-hover) == 'rgba' && $dialog-close-color-hover != $dialog-close-color) {
+            &:hover {
+                color: $dialog-close-color-hover;
+            }
+        }
     }
 }
 
@@ -40,6 +45,15 @@ dialog-header() {
     font-family: $dialog-header-font-family;
     font-weight: $dialog-header-font-weight;
     padding: $dialog-header-padding-vertical $dialog-header-padding-horizontal;
+
+    if ($support-mouse == true) {
+        cursor: move;
+        user-select: none;
+    }
+}
+
+dialog-title() {
+    display: inline-block;
 }
 
 dialog-body() {

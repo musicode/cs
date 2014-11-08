@@ -1,0 +1,83 @@
+/**
+ * @file 标签页
+ * @author zhujl
+ */
+
+tab-nav() {
+    text-align: left;
+}
+
+nav-item() {
+
+    display: inline-block;
+
+    if ($support-mouse == true) {
+        cursor: pointer;
+    }
+
+    ui-size('nav-item');
+
+}
+
+tab-panel() {
+    display: none;
+}
+
+tab-nav-primary() {
+
+    border-bottom: 1px solid $tab-nav-primary-border;
+
+}
+
+tab-item-primary() {
+
+    border-bottom: 4px solid transparent;
+
+    ui-type(
+
+        $tab-item-primary-bg,
+        $tab-item-primary-color,
+        $tab-item-primary-border,
+        $tab-item-primary-shadow,
+
+        $tab-item-primary-bg-hover,
+        $tab-item-primary-color-hover,
+        $tab-item-primary-border-hover,
+        $tab-item-primary-shadow-hover,
+
+        $tab-item-primary-bg-active,
+        $tab-item-primary-color-active,
+        $tab-item-primary-border-active,
+        $tab-item-primary-shadow-active
+    );
+
+}
+
+tab-nav-info() {
+
+    border-bottom: 1px solid $tab-nav-info-border;
+
+}
+tab-item-info() {
+
+    border-bottom: 4px solid transparent;
+
+    ui-type(
+
+        $tab-item-info-bg,
+        $tab-item-info-color,
+        $tab-item-info-border,
+        $tab-item-info-shadow,
+
+        $tab-item-info-bg-hover,
+        $tab-item-info-color-hover,
+        $tab-item-info-border-hover,
+        $tab-item-info-shadow-hover,
+
+        $tab-item-info-bg-active,
+        $tab-item-info-color-active,
+        $tab-item-info-border-active,
+        $tab-item-info-shadow-active
+    );
+
+}

@@ -26,7 +26,8 @@ form-action() {
 form-label() {
     float: left;
     font-weight: $form-label-font-weight;
-    margin-right: $form-label-gap;
+    padding-right: $form-label-gap;
+    text-align: right;
 }
 
 form-controls() {
@@ -126,10 +127,15 @@ form-box() {
 }
 
 form-inline() {
+
     display: inline-block;
 
     if ($form-inline-gap > 0) {
         margin-left: $form-inline-gap;
+    }
+
+    &:empty {
+        display: none;
     }
 }
 form-block() {
