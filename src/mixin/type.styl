@@ -59,7 +59,7 @@ ui-type($bg = null, $color = null, $border = null, $shadow = null,
     }
 
     &:active,
-    ${$active-selector} {
+    &{$active-selector} {
         if (typeof($bg-active) == 'rgba' && $bg != $bg-active) {
             background-color: $bg-active;
         }
@@ -75,7 +75,7 @@ ui-type($bg = null, $color = null, $border = null, $shadow = null,
     }
 
     &:disabled,
-    ${$disabled-selector} {
+    &{$disabled-selector} {
         if (typeof($bg-disabled) == 'rgba' && $bg != $bg-disabled) {
             background-color: $bg-disabled;
         }
