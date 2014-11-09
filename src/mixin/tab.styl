@@ -10,6 +10,7 @@ tab-nav() {
 nav-item() {
 
     display: inline-block;
+    position: relative;
 
     if ($support-mouse == true) {
         cursor: pointer;
@@ -21,6 +22,41 @@ nav-item() {
 
 tab-panel() {
     display: none;
+}
+
+tab-nav-default() {
+
+    if (typeof($tab-nav-default-border) == 'rgba') {
+        border: 1px solid;
+    }
+
+    ui-type(
+        $tab-nav-default-bg,
+        $tab-nav-default-color,
+        $tab-nav-default-border
+    );
+}
+
+tab-item-default() {
+
+    ui-type(
+
+        $tab-item-default-bg,
+        $tab-item-default-color,
+        $tab-item-default-border,
+        $tab-item-default-shadow,
+
+        $tab-item-default-bg-hover,
+        $tab-item-default-color-hover,
+        $tab-item-default-border-hover,
+        $tab-item-default-shadow-hover,
+
+        $tab-item-default-bg-active,
+        $tab-item-default-color-active,
+        $tab-item-default-border-active,
+        $tab-item-default-shadow-active
+    );
+
 }
 
 tab-nav-primary() {

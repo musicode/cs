@@ -7,6 +7,8 @@ form-group() {
 
     clearfix();
 
+    position: relative;
+
     if (typeof($form-group-border) == 'rgba') {
         border-bottom: 1px solid $form-group-border;
     }
@@ -31,7 +33,38 @@ form-label() {
 }
 
 form-controls() {
-    float: left;
+
+}
+
+input-group() {
+
+    display: inline-block;
+
+}
+
+input-group-addon() {
+
+    display: inline-block;
+    vertical-align: top;
+
+    if (typeof($input-group-addon-border) == 'rgba') {
+        border: 1px solid;
+    }
+
+    ui-type(
+        $input-group-addon-bg,
+        $input-group-addon-color,
+        $input-group-addon-border
+    );
+
+    ui-size('input-group-addon');
+
+    &:first-child {
+        border-right: none;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+
 }
 
 // 文本输入框

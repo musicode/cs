@@ -78,3 +78,24 @@ input[type="search"] {
 .form-block {
     form-block();
 }
+
+
+.input-group {
+
+    input-group();
+
+    .form-text {
+        border-radius: 0;
+
+        & + .input-group-addon {
+            border-left: none;
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+    }
+
+}
+
+.input-group-addon {
+    input-group-addon();
+}
