@@ -11,36 +11,28 @@ badge() {
         font-weight: $badge-font-weight;
     }
 
+    min-width: $badge-min-width;
+    text-align: center;
+
     ui-size('badge');
 }
 
 badge-default() {
-    ui-type(
-        $badge-default-bg,
-        $badge-default-color
-    );
+    ui-type($type-hash['badge-default']);
 }
+
 badge-primary() {
-    ui-type(
-        $badge-primary-bg,
-        $badge-primary-color
-    );
+    ui-type($type-hash['badge-primary']);
 }
+
 badge-info() {
-    ui-type(
-        $badge-info-bg,
-        $badge-info-color
-    );
+    ui-type($type-hash['badge-info']);
 }
+
 badge-success() {
-    ui-type(
-        $badge-success-bg,
-        $badge-success-color
-    );
+    ui-type($type-hash['badge-success']);
 }
+
 badge-error() {
-    ui-type(
-        $badge-error-bg,
-        $badge-error-color
-    );
+    ui-type($type-hash['badge-error']);
 }

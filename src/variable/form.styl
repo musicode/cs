@@ -3,17 +3,85 @@
  * $author zhujl
  */
 
-$size-hash.form = {
+$size-hash['form'] = {
 
-    'padding-horizontal-base': 0px,
+    'base': {
+        'border-top-width': 0,
+        'border-right-width': 0,
+        'border-bottom-width': 0,
+        'border-left-width': 0,
 
-    'padding-horizontal-tiny': 0px,
+        'padding-vertical': $padding-vertical-base,
+        'padding-horizontal': 0px,
+        'font-size': $font-size-base,
+        'line-height': $line-height-base
+    },
 
-    'padding-horizontal-small': 0px,
+    'tiny': {
+        'padding-vertical': $padding-vertical-base,
+        'padding-horizontal': 0px,
+        'font-size': $font-size-base,
+        'line-height': $line-height-base
+    },
 
-    'padding-horizontal-large': 0px,
+    'small': {
+        'padding-vertical': $padding-vertical-base,
+        'padding-horizontal': 0px,
+        'font-size': $font-size-base,
+        'line-height': $line-height-base
+    },
 
-    'padding-horizontal-huge': 0px
+    'large': {
+        'padding-vertical': $padding-vertical-base,
+        'padding-horizontal': 0px,
+        'font-size': $font-size-base,
+        'line-height': $line-height-base
+    },
+
+    'huge': {
+        'padding-vertical': $padding-vertical-base,
+        'padding-horizontal': 0px,
+        'font-size': $font-size-base,
+        'line-height': $line-height-base
+    }
+};
+
+$size-hash['form-text'] = {
+
+    'base': {
+        'border-top-width': 1px,
+        'border-right-width': 1px,
+        'border-bottom-width': 1px,
+        'border-left-width': 1px,
+        'border-radius': $border-radius-base,
+        'padding-vertical': $padding-vertical-base,
+        'padding-horizontal': $padding-horizontal-base
+    },
+
+    'small': {
+        'border-top-width': 1px,
+        'border-right-width': 1px,
+        'border-bottom-width': 1px,
+        'border-left-width': 1px,
+        'border-radius': $border-radius-small,
+        'padding-vertical': $padding-vertical-small,
+        'padding-horizontal': $padding-horizontal-small
+    }
+};
+
+
+$size-hash['form-hint'] = {
+    'base': {
+        'font-size': $font-size-tiny,
+        'padding-vertical': 0,
+        'padding-horizontal': 0
+    }
+};
+
+$type-hash['form-hint'] = {
+    'default': {
+        'color': $gray-light
+    }
 };
 
 /**
@@ -31,6 +99,15 @@ $form-group-border = none;
  */
 $form-label-font-weight = normal;
 $form-label-gap = 5px;
+
+/**
+ * ================================================
+ * form-required
+ * ================================================
+ */
+$form-required-color = $brand-error;
+$form-required-font-size = $font-size-tiny;
+$form-required-gap = 5px;
 
 
 /**
@@ -57,44 +134,54 @@ $form-action-gap = 20px;
  */
 $form-inline-gap = 5px;
 
+
+/**
+ * ================================================
+ * form-block
+ * ================================================
+ */
+$form-block-gap = 8px;
+
+
 /**
  * ================================================
  * form-text
  * ================================================
  */
-$form-text-border-radius = $border-radius-base;
 $form-text-color-placeholder = #CCC;
 
-// default
-$form-text-bg = #FFF;
-$form-text-border = #CCC;
-$form-text-color = $text-color;
+$type-hash['form-text'] = {
 
-// hover
-$form-text-bg-hover = #FFF;
-$form-text-border-hover = $brand-primary;
-$form-text-color-hover = $text-color;
+    'default': {
+        'bg': #FFF,
+        'border': #CCC,
+        'color': $text-color
+    },
 
-// focus
-$form-text-bg-focus = #FFF;
-$form-text-border-focus = $brand-primary;
-$form-text-color-focus = $text-color;
+    'hover': {
+        'bg': #FFF,
+        'border': $brand-primary,
+        'color': $text-color
+    },
 
-// disabled
-$form-text-bg-disabled = $gray-lighter;
-$form-text-border-disabled = $gray-light;
-$form-text-color-disabled = $gray-light;
+    'focus': {
+        'bg': #FFF,
+        'border': $brand-primary,
+        'color': $text-color
+    },
 
-/**
- * ================================================
- * input-group-addon
- * ================================================
- */
-$size-hash['input-group-addon'] = {
-    'padding-vertical': 5px,
-    'padding-horizontal': 8px
+    'disabled': {
+        'bg': $gray-lighter,
+        'border': $gray-light,
+        'color': $gray-light
+    }
 };
 
-$input-group-addon-bg = #EFEFEF;
-$input-group-addon-color = $gray-darker;
-$input-group-addon-border = $form-text-border;
+$type-hash['input-group-addon'] = {
+
+    'default': {
+        'bg': #EFEFEF,
+        'border': #CCC,
+        'color': $gray-darker
+    }
+};

@@ -4,24 +4,22 @@
  */
 
 dialog() {
-    background-color: $dialog-body-bg;
     position: fixed;
+    ui-type($type-hash['dialog']);
 }
 
 dialog-mask() {
-    background-color: $dialog-mask-bg;
+
+    ui-type($type-hash['dialog-mask']);
+
     position: absolute;
     top: 0;
     left: 0;
 }
 
 dialog-close() {
-    color: $dialog-close-color;
-    font-size: $dialog-close-font-size;
+
     font-weight: $dialog-close-font-weight;
-    width: $dialog-close-width;
-    height: $dialog-close-height;
-    line-height: $dialog-close-height;
     text-align: center;
 
     position: absolute;
@@ -30,27 +28,26 @@ dialog-close() {
 
     if ($support-mouse == true) {
         cursor: pointer;
-
-        if (typeof($dialog-close-color-hover) == 'rgba' && $dialog-close-color-hover != $dialog-close-color) {
-            &:hover {
-                color: $dialog-close-color-hover;
-            }
-        }
     }
+
+    ui-size('dialog-close');
+    ui-type($type-hash['dialog-close']);
+
 }
 
 dialog-header() {
-    background-color: $dialog-header-bg;
-    color: $dialog-header-color;
-    font-size: $dialog-header-font-size;
+
     font-family: $dialog-header-font-family;
     font-weight: $dialog-header-font-weight;
-    padding: $dialog-header-padding-vertical $dialog-header-padding-horizontal;
 
     if ($support-mouse == true) {
         cursor: move;
         user-select: none;
     }
+
+    ui-size('dialog-header');
+    ui-type($type-hash['dialog-header']);
+
 }
 
 dialog-title() {
@@ -58,5 +55,5 @@ dialog-title() {
 }
 
 dialog-body() {
-    padding: $dialog-body-padding-vertical $dialog-body-padding-horizontal;
+    ui-size('dialog-body');
 }

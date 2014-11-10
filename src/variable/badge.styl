@@ -4,65 +4,103 @@
  */
 
 $badge-font-weight = normal;
+$badge-min-width = 22px;
 
-$size-hash.badge = {
-    'line-height-base': $line-height-tiny,
-    'border-radius-base': 30px,
+$size-hash['badge'] = {
 
-    'line-height-tiny': $line-height-tiny,
-    'border-radius-tiny': 30px,
+    'base': {
+        'border-top-width': 0,
+        'border-right-width': 0,
+        'border-bottom-width': 0,
+        'border-left-width': 0,
+        'line-height': $line-height-tiny,
+        'border-radius': 30px,
+        'font-size': $font-size-base,
+        'padding-vertical': $padding-vertical-base,
+        'padding-horizontal': $padding-horizontal-base
+    },
 
-    'line-height-small': $line-height-tiny,
-    'border-radius-small': 30px,
+    'tiny': {
+        'border-top-width': 0,
+        'border-right-width': 0,
+        'border-bottom-width': 0,
+        'border-left-width': 0,
+        'line-height': $line-height-tiny,
+        'border-radius': 30px,
+        'font-size': $font-size-tiny,
+        'padding-vertical': $padding-vertical-tiny,
+        'padding-horizontal': $padding-horizontal-tiny
+    },
 
-    'line-height-large': $line-height-tiny,
-    'border-radius-large': 30px,
+    'small': {
+        'border-top-width': 0,
+        'border-right-width': 0,
+        'border-bottom-width': 0,
+        'border-left-width': 0,
+        'line-height': $line-height-tiny,
+        'border-radius': 30px,
+        'font-size': $font-size-small,
+        'padding-vertical': $padding-vertical-small,
+        'padding-horizontal': $padding-horizontal-small
+    },
 
-    'line-height-huge': $line-height-tiny,
-    'border-radius-huge': 30px
+    'large': {
+        'border-top-width': 0,
+        'border-right-width': 0,
+        'border-bottom-width': 0,
+        'border-left-width': 0,
+        'line-height': $line-height-tiny,
+        'border-radius': 30px,
+        'font-size': $font-size-large,
+        'padding-vertical': $padding-vertical-large,
+        'padding-horizontal': $padding-horizontal-large
+    },
+
+    'huge': {
+        'border-top-width': 0,
+        'border-right-width': 0,
+        'border-bottom-width': 0,
+        'border-left-width': 0,
+        'line-height': $line-height-tiny,
+        'border-radius': 30px,
+        'font-size': $font-size-huge,
+        'padding-vertical': $padding-vertical-huge,
+        'padding-horizontal': $padding-horizontal-huge
+    }
+
 };
 
-/**
- * ==============================================================
- * default
- * ==============================================================
- */
-$badge-default-bg = $gray-base;
-$badge-default-color = #FFF;
+$type-hash['badge-default'] = {
+    'default': {
+        'bg': $gray-base,
+        'color': #FFF
+    }
+};
 
+$type-hash['badge-primary'] = {
+    'default': {
+        'bg': $brand-primary,
+        'color': #FFF
+    }
+};
 
-/**
- * ==============================================================
- * primary
- * ==============================================================
- */
-$badge-primary-bg = $brand-primary;
-$badge-primary-color = #FFF;
+$type-hash['badge-info'] = {
+    'default': {
+        'bg': $brand-info,
+        'color': #FFF
+    }
+};
 
+$type-hash['badge-success'] = {
+    'default': {
+        'bg': $brand-success,
+        'color': #FFF
+    }
+};
 
-/**
- * ==============================================================
- * info
- * ==============================================================
- */
-$badge-info-bg = $brand-info;
-$badge-info-color = #FFF;
-
-
-/**
- * ==============================================================
- * success
- * ==============================================================
- */
-$badge-success-bg = $brand-success;
-$badge-success-color = #FFF;
-
-
-/**
- * ==============================================================
- * error
- * ==============================================================
- */
-$badge-error-bg = $brand-error;
-$badge-error-color = #FFF;
-
+$type-hash['badge-error'] = {
+    'default': {
+        'bg': $brand-error,
+        'color': #FFF
+    }
+};

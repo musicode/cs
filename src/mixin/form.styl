@@ -8,6 +8,7 @@ form-group() {
     clearfix();
 
     position: relative;
+    line-height: 0;
 
     if (typeof($form-group-border) == 'rgba') {
         border-bottom: 1px solid $form-group-border;
@@ -32,6 +33,21 @@ form-label() {
     text-align: right;
 }
 
+form-required() {
+    margin-right: $form-required-gap;
+    &:after {
+        content: '*';
+        color: $form-required-color;
+        font-size: $form-required-font-size;
+    }
+}
+
+form-hint() {
+
+    ui-size('form-hint');
+    ui-type($type-hash['form-hint']);
+
+}
 form-controls() {
 
 }
@@ -39,6 +55,7 @@ form-controls() {
 input-group() {
 
     display: inline-block;
+    font-size: 0;
 
 }
 
@@ -47,17 +64,7 @@ input-group-addon() {
     display: inline-block;
     vertical-align: top;
 
-    if (typeof($input-group-addon-border) == 'rgba') {
-        border: 1px solid;
-    }
-
-    ui-type(
-        $input-group-addon-bg,
-        $input-group-addon-color,
-        $input-group-addon-border
-    );
-
-    ui-size('input-group-addon');
+    ui-type($type-hash['input-group-addon']);
 
     &:first-child {
         border-right: none;
@@ -70,9 +77,6 @@ input-group-addon() {
 // 文本输入框
 form-text() {
 
-    background-color: $form-text-bg;
-    border: 1px solid $form-text-border;
-    color: $form-text-color;
     outline: none;
     margin: 0;
 
@@ -81,50 +85,10 @@ form-text() {
     }
 
     textarea& {
-        resize: vertical;
+        resize: none;
     }
 
-    &:hover {
-
-        if ($form-text-bg-hover is a 'rgba' && $form-text-bg-hover != $form-text-bg) {
-            background-color: $form-text-bg-hover;
-        }
-
-        if ($form-text-border-hover is a 'rgba' && $form-text-border-hover != $form-text-border) {
-            border-color: $form-text-border-hover;
-        }
-
-        if ($form-text-color-hover is a 'rgba' && $form-text-color-hover != $form-text-color) {
-            color: $form-text-color-hover;
-        }
-    }
-
-    &:focus {
-
-        if ($form-text-bg-focus is a 'rgba' && $form-text-bg-focus != $form-text-bg) {
-            background-color: $form-text-bg-focus;
-        }
-
-        if ($form-text-border-focus is a 'rgba' && $form-text-border-focus != $form-text-border) {
-            border-color: $form-text-border-focus;
-        }
-
-        if ($form-text-color-focus is a 'rgba' && $form-text-color-focus != $form-text-color) {
-            color: $form-text-color-focus;
-        }
-    }
-
-    &:disabled {
-
-        cursor: not-allowed;
-
-        // 禁用具有最高优先级，所以不能像前面那样 if
-        // 否则无法覆盖样式
-        background-color: $form-text-bg-disabled;
-        border-color: $form-text-border-disabled;
-        color: $form-text-color-disabled;
-
-    }
+    ui-type($type-hash['form-text']);
 
     // 不能合并写
     &::-webkit-input-placeholder { /* WebKit browsers */
@@ -148,6 +112,7 @@ form-placeholder-wrapper() {
 }
 
 form-placeholder() {
+    border-color: transparent;
     color: $form-text-color-placeholder;
     position: absolute;
     left: 0;
@@ -155,6 +120,7 @@ form-placeholder() {
 }
 
 form-number() {
+    display: inline-block;
     position: relative;
 }
 
@@ -162,12 +128,16 @@ form-number() {
 form-box() {
 
     display: inline-block;
-    user-select: none;
-    cursor: pointer;
+
+    if ($support-mouse) {
+        user-select: none;
+        cursor: pointer;
+    }
 
     input {
         cursor: pointer;
         margin: 0 $form-box-inner-gap 0 1px;
+        vertical-align: text-top;
     }
 
     & + & {
@@ -188,6 +158,17 @@ form-inline() {
         display: none;
     }
 }
+
 form-block() {
+
     display: block;
+
+    if ($form-block-gap > 0) {
+        margin-top: $form-block-gap;
+    }
+
+    &:empty {
+        display: none;
+    }
 }
+

@@ -3,31 +3,82 @@
  * @author zhujl
  */
 
+$size-hash['dialog-header'] = {
 
-$dialog-header-bg = #F5F5F5;
-$dialog-header-color = #555;
-$dialog-header-font-size = $font-size-large;
+    'base': {
+        'border-top-width': 0,
+        'border-right-width': 0,
+        'border-bottom-width': 1px,
+        'border-left-width': 0,
+        'border-radius': 0,
+        'font-size': $font-size-large,
+        'line-height': $line-height-base,
+        'padding-vertical': 15px,
+        'padding-horizontal': 20px,
+    }
+
+};
+
+$size-hash['dialog-close'] = {
+
+    'base': {
+        'font-size': 30px,
+        'width': 30px,
+        'height': 30px,
+        'line-height': 30px,
+        'padding-vertical': 0,
+        'padding-horizontal': 0
+    }
+
+};
+
+$size-hash['dialog-body'] = {
+
+    'base': {
+        'padding-vertical': 20px,
+        'padding-horizontal': 20px,
+        'font-size': $font-size-base,
+        'line-height': $line-height-base,
+    }
+}
+
+$type-hash['dialog'] = {
+
+    'default': {
+        'bg': #FFF
+    }
+};
+
+$type-hash['dialog-header'] = {
+
+    'default': {
+        'bg': #F5F5F5,
+        'color': #555,
+        'border': #CCC
+    }
+};
+
+$type-hash['dialog-close'] = {
+
+    'default': {
+        color: #CCC
+    },
+    'hover': {
+        color: #999
+    }
+};
+
+$type-hash['dialog-mask'] = {
+
+    'default': {
+        'bg': #000,
+        'opacity': 0.3
+    }
+};
+
 $dialog-header-font-weight = normal;
 $dialog-header-font-family = $font-family-title;
 
-$dialog-header-padding-vertical = 15px;
-$dialog-header-padding-horizontal = 20px;
-
-
-$dialog-body-bg = #FFF;
-$dialog-body-padding-vertical = 20px;
-$dialog-body-padding-horizontal = 20px;
-
-
-$dialog-close-color = #CCC;
-$dialog-close-color-hover = #999;
-
-$dialog-close-font-size = 30px;
 $dialog-close-font-weight = normal;
 $dialog-close-top = 13px;
 $dialog-close-right = 13px;
-$dialog-close-width = 30px;
-$dialog-close-height = 30px;
-
-
-$dialog-mask-bg = rgba(0,0,0,0.3);

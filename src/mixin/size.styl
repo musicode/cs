@@ -3,23 +3,48 @@
  * @author zhujl
  */
 
-ui-size-inner($font-size, $line-height,
-              $padding-vertical, $padding-horizontal,
-              $width, $height,
-              $border-radius) {
+ui-size-inner($conf) {
 
-    if ($font-size > 0) {
-        font-size: $font-size;
+    $font-size = $conf['font-size'];
+    $line-height = $conf['line-height'];
+
+    $border-top-width = $conf['border-top-width'];
+    $border-right-width = $conf['border-right-width'];
+    $border-bottom-width = $conf['border-bottom-width'];
+    $border-left-width = $conf['border-left-width'];
+
+    $padding-vertical = $conf['padding-vertical'];
+    $padding-horizontal = $conf['padding-horizontal'];
+
+    $width = $conf['width'];
+    $height = $conf['height'];
+    $border-radius = $conf['border-radius'];
+
+    $real-height = $font-size * $line-height;
+
+    border-style: solid;
+
+    if ($border-top-width > 0) {
+        border-top-width: $border-top-width;
+
+        $real-height += 1;
     }
 
+    if ($border-right-width > 0) {
+        border-right-width: $border-right-width;
+    }
+
+    if ($border-bottom-width > 0) {
+        border-bottom-width: $border-bottom-width;
+        $real-height += 1;
+    }
+
+    if ($border-left-width > 0) {
+        border-left-width: $border-left-width;
+    }
+
+    font-size: $font-size;
     line-height: $line-height;
-
-    if ($width > 0) {
-        width: $width;
-    }
-    if ($height > 0) {
-        height: $height;
-    }
 
     if ($padding-vertical > 0 || $padding-horizontal > 0) {
 
@@ -30,6 +55,22 @@ ui-size-inner($font-size, $line-height,
             padding: $padding-vertical $padding-horizontal;
         }
 
+        $real-height += 2 * $padding-vertical;
+
+    }
+
+    if ($width > 0) {
+        width: $width;
+    }
+    if ($height > 0) {
+        height: $height;
+    }
+    else {
+        // line-height 是 x.x 的格式，不是具体的像素值
+        input&,
+        button& {
+            height: round($real-height);
+        }
     }
 
     if ($border-radius > 0) {
@@ -47,122 +88,94 @@ ui-size($name, $has-border = false, $has-padding-horizontal = false) {
 
     box-sizing: border-box;
 
-    //&:not({$size-tiny-selector}):not({$size-small-selector}):not({$size-large-selector}):not({$size-huge-selector}) {
-    & {
-        $font-size = $conf['font-size-base'] || $font-size-base;
-        $line-height = $conf['line-height-base'] || $line-height-base;
-        $padding-vertical = $conf['padding-vertical-base'] || $padding-vertical-base;
-        $padding-horizontal = $conf['padding-horizontal-base'] || $padding-horizontal-base;
-
-        $width = $conf['width-base'];
-        $height = $conf['height-base'];
-
-        $border-radius = $conf['border-radius-base'] || $border-radius-base;
-
-        ui-size-inner(
-            $font-size,
-            $line-height,
-            $padding-vertical,
-            $padding-horizontal,
-            $width,
-            $height,
-            $border-radius
-        );
-
+    if ($conf['base']) {
+        //&:not({$size-tiny-selector}):not({$size-small-selector}):not({$size-large-selector}):not({$size-huge-selector}) {
+        & {
+            if ($conf['base']['font-size'] == null) {
+                $conf['base']['font-size'] = $font-size-base;
+            }
+            if ($conf['base']['line-height'] == null) {
+                $conf['base']['line-height'] = $line-height-base;
+            }
+            if ($conf['base']['padding-vertical'] == null) {
+                $conf['base']['padding-vertical'] = $padding-vertical-base;
+            }
+            if ($conf['base']['padding-horizontal'] == null) {
+                $conf['base']['padding-horizontal'] = $padding-horizontal-base;
+            }
+            ui-size-inner($conf['base']);
+        }
     }
 
-    &{$size-tiny-selector} {
-
-        $font-size = $conf['font-size-tiny'] || $font-size-tiny;
-        $line-height = $conf['line-height-tiny'] || $line-height-tiny;
-        $padding-vertical = $conf['padding-vertical-tiny'] || $padding-vertical-tiny;
-        $padding-horizontal = $conf['padding-horizontal-tiny'] || $padding-horizontal-tiny;
-
-        $width = $conf['width-tiny'];
-        $height = $conf['height-tiny'];
-
-        $border-radius = $conf['border-radius-tiny'] || $border-radius-tiny;
-
-        ui-size-inner(
-            $font-size,
-            $line-height,
-            $padding-vertical,
-            $padding-horizontal,
-            $width,
-            $height,
-            $border-radius
-        );
+    if ($conf['tiny']) {
+        &{$size-tiny-selector} {
+            if ($conf['tiny']['font-size'] == null) {
+                $conf['tiny']['font-size'] = $font-size-tiny;
+            }
+            if ($conf['tiny']['line-height'] == null) {
+                $conf['tiny']['line-height'] = $line-height-tiny;
+            }
+            if ($conf['tiny']['padding-vertical'] == null) {
+                $conf['tiny']['padding-vertical'] = $padding-vertical-tiny;
+            }
+            if ($conf['tiny']['padding-horizontal'] == null) {
+                $conf['tiny']['padding-horizontal'] = $padding-horizontal-tiny;
+            }
+            ui-size-inner($conf['tiny']);
+        }
     }
 
-    &{$size-small-selector} {
-
-        $font-size = $conf['font-size-small'] || $font-size-small;
-        $line-height = $conf['line-height-small'] || $line-height-small;
-        $padding-vertical = $conf['padding-vertical-small'] || $padding-vertical-small;
-        $padding-horizontal = $conf['padding-horizontal-small'] || $padding-horizontal-small;
-
-        $width = $conf['width-small'];
-        $height = $conf['height-small'];
-
-        $border-radius = $conf['border-radius-small'] || $border-radius-small;
-
-        ui-size-inner(
-            $font-size,
-            $line-height,
-            $padding-vertical,
-            $padding-horizontal,
-            $width,
-            $height,
-            $border-radius
-        );
-
+    if ($conf['small']) {
+        &{$size-small-selector} {
+            if ($conf['small']['font-size'] == null) {
+                $conf['small']['font-size'] = $font-size-small;
+            }
+            if ($conf['small']['line-height'] == null) {
+                $conf['small']['line-height'] = $line-height-small;
+            }
+            if ($conf['small']['padding-vertical'] == null) {
+                $conf['small']['padding-vertical'] = $padding-vertical-small;
+            }
+            if ($conf['small']['padding-horizontal'] == null) {
+                $conf['small']['padding-horizontal'] = $padding-horizontal-small;
+            }
+            ui-size-inner($conf['small']);
+        }
     }
 
-    &{$size-large-selector} {
-
-        $font-size = $conf['font-size-large'] || $font-size-large;
-        $line-height = $conf['line-height-large'] || $line-height-large;
-        $padding-vertical = $conf['padding-vertical-large'] || $padding-vertical-large;
-        $padding-horizontal = $conf['padding-horizontal-large'] || $padding-horizontal-large;
-
-        $width = $conf['width-large'];
-        $height = $conf['height-large'];
-
-        $border-radius = $conf['border-radius-large'] || $border-radius-large;
-
-        ui-size-inner(
-            $font-size,
-            $line-height,
-            $padding-vertical,
-            $padding-horizontal,
-            $width,
-            $height,
-            $border-radius
-        );
-
+    if ($conf['large']) {
+        &{$size-large-selector} {
+            if ($conf['large']['font-size'] == null) {
+                $conf['large']['font-size'] = $font-size-large;
+            }
+            if ($conf['large']['line-height'] == null) {
+                $conf['large']['line-height'] = $line-height-large;
+            }
+            if ($conf['large']['padding-vertical'] == null) {
+                $conf['large']['padding-vertical'] = $padding-vertical-large;
+            }
+            if ($conf['large']['padding-horizontal'] == null) {
+                $conf['large']['padding-horizontal'] = $padding-horizontal-large;
+            }
+            ui-size-inner($conf['large']);
+        }
     }
 
-    &{$size-huge-selector} {
-
-        $font-size = $conf['font-size-huge'] || $font-size-huge;
-        $line-height = $conf['line-height-huge'] || $line-height-huge;
-        $padding-vertical = $conf['padding-vertical-huge'] || $padding-vertical-huge;
-        $padding-horizontal = $conf['padding-horizontal-huge'] || $padding-horizontal-huge;
-
-        $width = $conf['width-huge'];
-        $height = $conf['height-huge'];
-
-        $border-radius = $conf['border-radius-huge'] || $border-radius-huge;
-
-        ui-size-inner(
-            $font-size,
-            $line-height,
-            $padding-vertical,
-            $padding-horizontal,
-            $width,
-            $height,
-            $border-radius
-        );
-
+    if ($conf['huge']) {
+        &{$size-huge-selector} {
+            if ($conf['huge']['font-size'] == null) {
+                $conf['huge']['font-size'] = $font-size-huge;
+            }
+            if ($conf['huge']['line-height'] == null) {
+                $conf['huge']['line-height'] = $line-height-huge;
+            }
+            if ($conf['huge']['padding-vertical'] == null) {
+                $conf['huge']['padding-vertical'] = $padding-vertical-huge;
+            }
+            if ($conf['huge']['padding-horizontal'] == null) {
+                $conf['huge']['padding-horizontal'] = $padding-horizontal-huge;
+            }
+            ui-size-inner($conf['huge']);
+        }
     }
 }

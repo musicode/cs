@@ -4,50 +4,25 @@
  */
 
 message() {
-
-    if (typeof($message-default-border) == 'rgba') {
-        border: 1px solid transparent;
-    }
-
     ui-size('message');
 }
 
 message-default() {
-    ui-type(
-        $message-default-bg,
-        $message-default-color,
-        $message-default-border
-    );
+    ui-type($type-hash['message-default']);
 }
 
 message-primary() {
-    ui-type(
-        $message-primary-bg,
-        $message-primary-color,
-        $message-primary-border
-    );
+    ui-type($type-hash['message-primary']);
 }
 
 message-info() {
-    ui-type(
-        $message-info-bg,
-        $message-info-color,
-        $message-info-border
-    );
+    ui-type($type-hash['message-info']);
 }
 
 message-success() {
-    ui-type(
-        $message-success-bg,
-        $message-success-color,
-        $message-success-border
-    );
+    ui-type($type-hash['message-success']);
 }
 
 message-error() {
-    ui-type(
-        $message-error-bg,
-        $message-error-color,
-        $message-error-border
-    );
+    ui-type($type-hash['message-error']);
 }

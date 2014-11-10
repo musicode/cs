@@ -11,22 +11,16 @@
     pager();
 
     a,
-    .active,
     .ellipsis {
         pager-item();
     }
 
-    a,
-    .active {
-        pager-btn();
-    }
-
     a {
-        pager-default();
-    }
+        pager-btn();
 
-    .active {
-        pager-active();
+        &.active {
+            cursor: text;
+        }
     }
 
     .ellipsis {

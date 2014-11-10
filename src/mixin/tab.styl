@@ -5,7 +5,6 @@
 
 tab-nav() {
     text-align: left;
-    font-size: 0;
 }
 
 nav-item() {
@@ -16,9 +15,8 @@ nav-item() {
 
     if ($support-mouse == true) {
         cursor: pointer;
+        user-select: none;
     }
-
-    ui-size('nav-item');
 
 }
 
@@ -27,95 +25,31 @@ tab-panel() {
 }
 
 tab-nav-default() {
-
-    if (typeof($tab-nav-default-border) == 'rgba') {
-        border: 1px solid;
-    }
-
-    ui-type(
-        $tab-nav-default-bg,
-        $tab-nav-default-color,
-        $tab-nav-default-border
-    );
+    ui-type($type-hash['tab-nav-default']);
+    ui-size('tab-nav-default');
 }
 
 tab-item-default() {
-
-    ui-type(
-
-        $tab-item-default-bg,
-        $tab-item-default-color,
-        $tab-item-default-border,
-        $tab-item-default-shadow,
-
-        $tab-item-default-bg-hover,
-        $tab-item-default-color-hover,
-        $tab-item-default-border-hover,
-        $tab-item-default-shadow-hover,
-
-        $tab-item-default-bg-active,
-        $tab-item-default-color-active,
-        $tab-item-default-border-active,
-        $tab-item-default-shadow-active
-    );
-
+    ui-type($type-hash['tab-item-default']);
+    ui-size('tab-item-default');
 }
 
 tab-nav-primary() {
-
-    border-bottom: 1px solid $tab-nav-primary-border;
-
+    ui-type($type-hash['tab-nav-primary']);
+    ui-size('tab-nav-primary');
 }
 
 tab-item-primary() {
-
-    border-bottom: 4px solid transparent;
-
-    ui-type(
-
-        $tab-item-primary-bg,
-        $tab-item-primary-color,
-        $tab-item-primary-border,
-        $tab-item-primary-shadow,
-
-        $tab-item-primary-bg-hover,
-        $tab-item-primary-color-hover,
-        $tab-item-primary-border-hover,
-        $tab-item-primary-shadow-hover,
-
-        $tab-item-primary-bg-active,
-        $tab-item-primary-color-active,
-        $tab-item-primary-border-active,
-        $tab-item-primary-shadow-active
-    );
-
+    ui-type($type-hash['tab-item-primary']);
+    ui-size('tab-item-primary');
 }
 
 tab-nav-info() {
-
-    border-bottom: 1px solid $tab-nav-info-border;
-
+    ui-type($type-hash['tab-nav-info']);
+    ui-size('tab-nav-info');
 }
+
 tab-item-info() {
-
-    border-bottom: 4px solid transparent;
-
-    ui-type(
-
-        $tab-item-info-bg,
-        $tab-item-info-color,
-        $tab-item-info-border,
-        $tab-item-info-shadow,
-
-        $tab-item-info-bg-hover,
-        $tab-item-info-color-hover,
-        $tab-item-info-border-hover,
-        $tab-item-info-shadow-hover,
-
-        $tab-item-info-bg-active,
-        $tab-item-info-color-active,
-        $tab-item-info-border-active,
-        $tab-item-info-shadow-active
-    );
-
+    ui-type($type-hash['tab-item-info']);
+    ui-size('tab-item-info');
 }

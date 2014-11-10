@@ -249,11 +249,40 @@
 
         <h1>消息</h1>
 
+        <h2>默认</h2>
         <div class="message-default">default</div>
         <div class="message-primary">primary</div>
         <div class="message-info">info</div>
         <div class="message-success">success</div>
         <div class="message-error">error</div>
+
+        <h2>超小</h2>
+        <div class="message-default tiny">default</div>
+        <div class="message-primary tiny">primary</div>
+        <div class="message-info tiny">info</div>
+        <div class="message-success tiny">success</div>
+        <div class="message-error tiny">error</div>
+
+        <h2>小型</h2>
+        <div class="message-default small">default</div>
+        <div class="message-primary small">primary</div>
+        <div class="message-info small">info</div>
+        <div class="message-success small">success</div>
+        <div class="message-error small">error</div>
+
+        <h2>大型</h2>
+        <div class="message-default large">default</div>
+        <div class="message-primary large">primary</div>
+        <div class="message-info large">info</div>
+        <div class="message-success large">success</div>
+        <div class="message-error large">error</div>
+
+        <h2>超大</h2>
+        <div class="message-default huge">default</div>
+        <div class="message-primary huge">primary</div>
+        <div class="message-info huge">info</div>
+        <div class="message-success huge">success</div>
+        <div class="message-error huge">error</div>
 
     </section>
     <section>
@@ -275,7 +304,7 @@
             <a>&lt;上一页</a>
             <a>1</a>
             <a>2</a>
-            <b class="active">3</b>
+            <a class="active">3</a>
             <a>4</a>
             <b class="ellipsis">...</b>
             <a>5</a>
@@ -300,6 +329,12 @@
                 <label class="form-label huge">文本输入框：</label>
                 <div class="form-controls">
                     <input class="form-text huge" type="text" name="username" placeholder="请输入用户名" />
+
+                    <div class="form-inline">
+                        <span class="form-hint">
+                            请输入XXX
+                        </span>
+                    </div>
                 </div>
             </div>
 
@@ -315,6 +350,18 @@
                 <label class="form-label">文本输入框：</label>
                 <div class="form-controls">
                     <input class="form-text" type="text" name="username" placeholder="请输入用户名" />
+                    <span class="error">请输入用户名</span>
+                </div>
+            </div>
+
+            <div class="form-group has-error">
+                <label class="form-label">文本输入框：</label>
+                <div class="form-controls">
+                    <div class="input-group">
+                        <span class="input-group-addon">￥</span>
+                        <input class="form-text" type="text" name="username" placeholder="请输入用户名" />
+                        <span class="input-group-addon">元</span>
+                    </div>
                     <span class="error">请输入用户名</span>
                 </div>
             </div>
@@ -539,6 +586,12 @@
     <section>
 
         <h1>标签页</h1>
+
+        <div class="tab-nav-default">
+            <b class="nav-item active">哈哈</b>
+            <b class="nav-item">啊啊</b>
+        </div>
+
 
         <div class="tab-nav-primary">
             <b class="nav-item active">哈哈</b>

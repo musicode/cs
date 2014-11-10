@@ -5,12 +5,7 @@
 
 progress() {
 
-    ui-type(
-        $progress-bg,
-        $progress-color,
-        null,
-        $progress-shadow
-    );
+    ui-type($type-hash['progress-default']);
 
     ui-size('progress');
 
@@ -19,42 +14,26 @@ progress() {
 }
 
 progress-bar() {
-
     height: 100%;
     text-align: center;
-
-    if ($progress-bar-shadow) {
-        box-shadow: $progress-bar-shadow;
-    }
-
 }
 
 progress-bar-default() {
-    ui-type(
-        $progress-bar-default-bg
-    );
+    ui-type($type-hash['progress-bar-default']);
 }
 
 progress-bar-primary() {
-    ui-type(
-        $progress-bar-primary-bg
-    );
+    ui-type($type-hash['progress-bar-primary']);
 }
 
 progress-bar-info() {
-    ui-type(
-        $progress-bar-info-bg
-    );
+    ui-type($type-hash['progress-bar-info']);
 }
 
 progress-bar-success() {
-    ui-type(
-        $progress-bar-success-bg
-    );
+    ui-type($type-hash['progress-bar-success']);
 }
 
 progress-bar-error() {
-    ui-type(
-        $progress-bar-error-bg
-    );
+    ui-type($type-hash['progress-bar-error']);
 }

@@ -6,146 +6,229 @@
 $btn-font-weight = normal;
 $btn-gap = 10px;
 
-$size-hash.btn = {
-    'border-radius-base': $border-radius-base,
-    'border-radius-tiny': $border-radius-base,
-    'border-radius-small': $border-radius-base,
-    'border-radius-large': $border-radius-base,
-    'border-radius-huge': $border-radius-base
+$size-hash['btn'] = {
+
+    'base': {
+        'border-top-width': 1px,
+        'border-right-width': 1px,
+        'border-bottom-width': 1px,
+        'border-left-width': 1px,
+        'border-radius': $border-radius-base,
+        'font-size': $font-size-base,
+        'line-height': $line-height-base,
+        'padding-vertical': $padding-vertical-base,
+        'padding-horizontal': $padding-horizontal-base
+    },
+
+    'tiny': {
+        'border-top-width': 1px,
+        'border-right-width': 1px,
+        'border-bottom-width': 1px,
+        'border-left-width': 1px,
+        'border-radius': $border-radius-base,
+        'font-size': $font-size-tiny,
+        'line-height': $line-height-tiny,
+        'padding-vertical': $padding-vertical-tiny,
+        'padding-horizontal': $padding-horizontal-tiny
+    },
+
+    'small': {
+        'border-top-width': 1px,
+        'border-right-width': 1px,
+        'border-bottom-width': 1px,
+        'border-left-width': 1px,
+        'border-radius': $border-radius-base,
+        'font-size': $font-size-small,
+        'line-height': $line-height-small,
+        'padding-vertical': $padding-vertical-small,
+        'padding-horizontal': $padding-horizontal-small
+    },
+
+    'large': {
+        'border-top-width': 1px,
+        'border-right-width': 1px,
+        'border-bottom-width': 1px,
+        'border-left-width': 1px,
+        'border-radius': $border-radius-base,
+        'font-size': $font-size-large,
+        'line-height': $line-height-large,
+        'padding-vertical': $padding-vertical-large,
+        'padding-horizontal': $padding-horizontal-large
+    },
+
+    'huge': {
+        'border-top-width': 1px,
+        'border-right-width': 1px,
+        'border-bottom-width': 1px,
+        'border-left-width': 1px,
+        'border-radius': $border-radius-base,
+        'font-size': $font-size-huge,
+        'line-height': $line-height-huge,
+        'padding-vertical': $padding-vertical-huge,
+        'padding-horizontal': $padding-horizontal-huge
+    }
+
 };
 
-/**
- * ==============================================================
- * default
- * ==============================================================
- */
-$btn-default-bg = #FFF;
-$btn-default-border = $gray-light;
-$btn-default-color = $gray-darker;
-$btn-default-shadow = none;
+$type-hash['btn-default'] = {
+    'default': {
+        'bg': #FFF,
+        'border': $gray-light,
+        'color': $gray-darker,
+        'shadow': none
+    },
+    'hover': {
+        'bg': darken(#FFF, 5%),
+        'border': darken($gray-light, 5%),
+        'color': $gray-darker,
+        'shadow': none
+    },
+    'active': {
+        'bg': darken(#FFF, 10%),
+        'border': darken($gray-light, 10%),
+        'color': $gray-darker,
+        'shadow': inset 0 3px 5px rgba(0,0,0,.125)
+    },
+    'disabled': {
+        'bg': #DDD,
+        'border': #BBB,
+        'color': $text-color,
+        'shadow': none
+    },
+};
 
-$btn-default-bg-hover = darken($btn-default-bg, 5%);
-$btn-default-border-hover = darken($btn-default-border, 5%);
-$btn-default-color-hover = $btn-default-color;
-$btn-default-shadow-hover = none;
+$type-hash['btn-primary'] = {
+    'default': {
+        bg: $brand-primary,
+        border: darken($brand-primary, 5%),
+        color: #FFF,
+        shadow: none
+    },
+    'hover': {
+        bg: darken($brand-primary, 5%),
+        border: darken($brand-primary, 10%),
+        color: #FFF,
+        shadow: none
+    },
+    'active': {
+        bg: darken($brand-primary, 5%),
+        border: darken($brand-primary, 10%),
+        color: #FFF,
+        shadow: inset 0 3px 5px rgba(0,0,0,.125)
+    },
+    'disabled': {
+        bg: #DFC7A3,
+        border: #C5AB84,
+        color: #FFF,
+        shadow: none
+    }
+};
 
-$btn-default-bg-active = darken($btn-default-bg, 10%);
-$btn-default-border-active = darken($btn-default-border, 10%);
-$btn-default-color-active = $btn-default-color;
-$btn-default-shadow-active = inset 0 3px 5px rgba(0,0,0,.125);
+$type-hash['btn-info'] = {
+    'default': {
+        bg: $brand-info,
+        border: darken($brand-info, 5%),
+        color: #FFF,
+        shadow: none
+    },
 
-$btn-default-bg-disabled = #DDD;
-$btn-default-border-disabled = #BBB;
-$btn-default-color-disabled = $text-color;
-$btn-default-shadow-disabled = none;
+    'hover': {
+        bg: darken($brand-info, 5%),
+        border: darken($brand-info, 10%),
+        color: #FFF,
+        shadow: none
+    },
 
-/**
- * ==============================================================
- * primary
- * ==============================================================
- */
-$btn-primary-bg = $brand-primary;
-$btn-primary-border = darken($btn-primary-bg, 5%);
-$btn-primary-color = #FFF;
-$btn-primary-shadow = none;
+    'active': {
+        bg: darken($brand-info, 5%),
+        border: darken($brand-info, 10%),
+        color: #FFF,
+        shadow: inset 0 3px 5px rgba(0,0,0,.125)
+    },
 
-$btn-primary-bg-hover = darken($btn-primary-bg, 5%);
-$btn-primary-border-hover = darken($btn-primary-border, 5%);
-$btn-primary-color-hover = $btn-primary-color;
-$btn-primary-shadow-hover = none;
+    'disabled': {
+        bg: #8EA3B9,
+        border: #6E86A0,
+        color: #FFF,
+        shadow: none
+    }
+};
 
-$btn-primary-bg-active = darken($btn-primary-bg, 5%);
-$btn-primary-border-active = darken($btn-primary-border, 5%);
-$btn-primary-color-active = $btn-primary-color;
-$btn-primary-shadow-active = inset 0 3px 5px rgba(0,0,0,.125);
+$type-hash['btn-success'] = {
 
-$btn-primary-bg-disabled = #DFC7A3;
-$btn-primary-border-disabled = #C5AB84;
-$btn-primary-color-disabled = #FFF;
-$btn-primary-shadow-disabled = none;
+    'default': {
+        bg: $brand-success,
+        border: darken($brand-success, 5%),
+        color: #FFF,
+        shadow: none
+    },
 
-/**
- * ==============================================================
- * info
- * ==============================================================
- */
-$btn-info-bg = $brand-info;
-$btn-info-border = darken($btn-info-bg, 5%);
-$btn-info-color = #FFF;
-$btn-info-shadow = none;
+    'hover': {
 
-$btn-info-bg-hover = darken($btn-info-bg, 5%);
-$btn-info-border-hover = darken($btn-info-border, 5%);
-$btn-info-color-hover = $btn-info-color;
-$btn-info-shadow-hover = none;
+        bg: darken($brand-success, 5%),
+        border: darken($brand-success, 10%),
+        color: #FFF,
+        shadow: none
+    },
 
-$btn-info-bg-active = darken($btn-info-bg, 5%);
-$btn-info-border-active = darken($btn-info-border, 5%);
-$btn-info-color-active = $btn-info-color;
-$btn-info-shadow-active = inset 0 3px 5px rgba(0,0,0,.125);
+    'active': {
+        bg: darken($brand-success, 5%),
+        border: darken($brand-success, 10%),
+        color: #FFF,
+        shadow: inset 0 3px 5px rgba(0,0,0,.125)
+    },
 
-$btn-info-bg-disabled = #8EA3B9;
-$btn-info-border-disabled = #6E86A0;
-$btn-info-color-disabled = #FFF;
-$btn-info-shadow-disabled = none;
+    'disabled': {
+        bg: #A0B790,
+        border: #7E9F67,
+        color: #FFF,
+        shadow: none
+    }
+};
 
+$type-hash['btn-error'] = {
 
-/**
- * ==============================================================
- * success
- * ==============================================================
- */
-$btn-success-bg = $brand-success;
-$btn-success-border = darken($btn-success-bg, 5%);
-$btn-success-color = #FFF;
-$btn-success-shadow = none;
+    'default': {
+        bg: $brand-error,
+        border: darken($brand-error, 5%),
+        color: #FFF,
+        shadow: none
+    },
 
-$btn-success-bg-hover = darken($btn-success-bg, 5%);
-$btn-success-border-hover = darken($btn-success-border, 5%);
-$btn-success-color-hover = $btn-success-color;
-$btn-success-shadow-hover = none;
+    'hover': {
+        bg: darken($brand-error, 5%),
+        border: darken($brand-error, 10%),
+        color: #FFF,
+        shadow: none
+    },
 
-$btn-success-bg-active = darken($btn-success-bg, 5%);
-$btn-success-border-active = darken($btn-success-border, 5%);
-$btn-success-color-active = $btn-success-color;
-$btn-success-shadow-active = inset 0 3px 5px rgba(0,0,0,.125);
+    'active': {
+        bg: darken($brand-error, 5%),
+        border: darken($brand-error, 10%),
+        color: #FFF,
+        shadow: inset 0 3px 5px rgba(0,0,0,.125)
+    },
 
-$btn-success-bg-disabled = #A0B790;
-$btn-success-border-disabled = #7E9F67;
-$btn-success-color-disabled = #FFF;
-$btn-success-shadow-disabled = none;
+    'disabled': {
+        bg: #CDA28F,
+        border: #B18876,
+        color: #FFF,
+        shadow: none
+    }
+};
 
+$type-hash['btn-link'] = {
 
-/**
- * ==============================================================
- * error
- * ==============================================================
- */
-$btn-error-bg = $brand-error;
-$btn-error-border = darken($btn-error-bg, 5%);
-$btn-error-color = #FFF;
-$btn-error-shadow = none;
+    'default': {
+        color: $gray-darker
+    },
 
-$btn-error-bg-hover = darken($btn-error-bg, 5%);
-$btn-error-border-hover = darken($btn-error-border, 5%);
-$btn-error-color-hover = $btn-error-color;
-$btn-error-shadow-hover = none;
+    'hover': {
+        color: darken($gray-darker, 5%)
+    },
 
-$btn-error-bg-active = darken($btn-error-bg, 5%);
-$btn-error-border-active = darken($btn-error-border, 5%);
-$btn-error-color-active = $btn-error-color;
-$btn-error-shadow-active = inset 0 3px 5px rgba(0,0,0,.125);
+    'disabled': {
+        color: #999
+    }
 
-$btn-error-bg-disabled = #CDA28F;
-$btn-error-border-disabled = #B18876;
-$btn-error-color-disabled = #FFF;
-$btn-error-shadow-disabled = none;
-
-/**
- * ==============================================================
- * 默
- * ==============================================================
- */
-$btn-link-color = $gray-darker;
-$btn-link-color-hover = darken($btn-link-color, 5%);
-$btn-link-color-disabled = #999;
+};

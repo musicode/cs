@@ -7,10 +7,6 @@ label() {
 
     display: inline-block;
 
-    if (typeof($label-default-border) == 'rgba') {
-        border: 1px solid transparent;
-    }
-
     if ($label-font-weight != 'normal') {
         font-weight: $label-font-weight;
     }
@@ -19,46 +15,21 @@ label() {
 }
 
 label-default() {
-    ui-type(
-        $label-default-bg,
-        $label-default-color,
-        $label-default-border,
-        $label-default-shadow
-    );
+    ui-type($type-hash['label-default']);
 }
 
 label-primary() {
-    ui-type(
-        $label-primary-bg,
-        $label-primary-color,
-        $label-primary-border,
-        $label-primary-shadow
-    );
+    ui-type($type-hash['label-primary']);
 }
 
 label-info() {
-    ui-type(
-        $label-info-bg,
-        $label-info-color,
-        $label-info-border,
-        $label-info-shadow
-    );
+    ui-type($type-hash['label-info']);
 }
 
 label-success() {
-    ui-type(
-        $label-success-bg,
-        $label-success-color,
-        $label-success-border,
-        $label-success-shadow
-    );
+    ui-type($type-hash['label-success']);
 }
 
 label-error() {
-    ui-type(
-        $label-error-bg,
-        $label-error-color,
-        $label-error-border,
-        $label-error-shadow
-    );
+    ui-type($type-hash['label-error']);
 }

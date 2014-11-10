@@ -1,11 +1,14 @@
 
-ui-type($bg = null, $color = null, $border = null, $shadow = null,
-        $bg-hover = null, $color-hover = null, $border-hover = null, $shadow-hover = null,
-        $bg-active = null, $color-active = null, $border-active = null, $shadow-active = null,
-        $bg-disabled = null, $color-disabled = null, $border-disabled = null, $shadow-disabled = null) {
+ui-type($conf) {
 
-    if (typeof($bg) == 'rgba') {
-        background-color: $bg;
+    $default = $conf['default'];
+    $hover = $conf['hover'];
+    $focus = $conf['focus'];
+    $active = $conf['active'];
+    $disabled = $conf['disabled'];
+
+    if (typeof($default['bg']) == 'rgba') {
+        background-color: $default['bg'];
     }
     else {
         button&,
@@ -14,42 +17,56 @@ ui-type($bg = null, $color = null, $border = null, $shadow = null,
         }
     }
 
-    if (typeof($border) == 'rgba') {
-        border-color: $border;
+    if (typeof($default['border']) == 'rgba') {
+        border-color: $default['border'];
+    }
+    else {
+        border-color: transparent;
     }
 
-    if (typeof($color) == 'rgba') {
-        color: $color;
+    if (typeof($default['color']) == 'rgba') {
+        color: $default['color'];
     }
 
-    if ($shadow && $shadow != 'none') {
-        box-shadow: $shadow;
+    if ($default['opacity'] > 0 && $default['opacity'] < 1) {
+        opacity($default['opacity']);
     }
 
-    if ($support-mouse == true) {
+    if ($default['shadow'] && $default['shadow'] != 'none') {
+        box-shadow: $default['shadow'];
+    }
+
+
+
+    $need-hover-bg = typeof($hover['bg']) == 'rgba' && $hover['bg'] != $default['bg'];
+    $need-hover-color = typeof($hover['color']) == 'rgba';
+    $need-hover-border = typeof($hover['border']) == 'rgba' && $hover['border'] != $default['border'];
+    $need-hover-shadow = $hover['shadow'] && $hover['shadow'] != $default['shadow'];
+
+    if ($support-mouse == true || $need-hover-bg || $need-hover-color || $need-hover-border || $need-hover-shadow) {
         &:hover {
 
-            if (typeof($bg-hover) == 'rgba' && $bg != $bg-hover) {
-                background-color: $bg-hover;
+            if ($need-hover-bg) {
+                background-color: $hover['bg'];
             }
 
-            if (typeof($color-hover) == 'rgba') {
-                if ($color != $color-hover) {
-                    color: $color-hover;
+            if ($need-hover-color) {
+                if ($hover['color'] != $default['color']) {
+                    color: $hover['color'];
                 }
                 else {
                     a& {
-                        color: $color-hover;
+                        color: $hover['color'];
                     }
                 }
             }
 
-            if (typeof($border-hover) == 'rgba' && $border != $border-hover) {
-                border-color: $border-hover;
+            if ($need-hover-border) {
+                border-color: $hover['border'];
             }
 
-            if ($shadow-hover && $shadow != $shadow-hover) {
-                box-shadow: $shadow-hover;
+            if ($need-hover-shadow) {
+                box-shadow: $hover['shadow'];
             }
 
             if ($transition-duration > 0) {
@@ -58,36 +75,81 @@ ui-type($bg = null, $color = null, $border = null, $shadow = null,
         }
     }
 
-    &:active,
-    &{$active-selector} {
-        if (typeof($bg-active) == 'rgba' && $bg != $bg-active) {
-            background-color: $bg-active;
-        }
-        if (typeof($color-active) == 'rgba' && $color != $color-active) {
-            color: $color-active;
-        }
-        if (typeof($border-active) == 'rgba' && $border != $border-active) {
-            border-color: $border-active;
-        }
-        if ($shadow-active && $shadow != $shadow-active) {
-            box-shadow: $shadow-active;
+    $need-focus-bg = typeof($focus['bg']) == 'rgba' && $focus['bg'] != $default['bg'];
+    $need-focus-color = typeof($focus['color']) == 'rgba' && $focus['color'] != $default['color'];
+    $need-focus-border = typeof($focus['border']) == 'rgba' && $focus['border'] != $default['border'];
+    $need-focus-shadow = $focus['shadow'] && $focus['shadow'] != $default['shadow'];
+
+    if ($need-focus-bg || $need-focus-color || $need-focus-border || $need-focus-shadow) {
+        &:focus {
+            if ($need-focus-bg) {
+                background-color: $focus['bg'];
+            }
+            if ($need-focus-color) {
+                color: $focus['color'];
+            }
+            if ($need-focus-border) {
+                border-color: $focus['border'];
+            }
+            if ($need-focus-shadow) {
+                box-shadow: $focus['shadow'];
+            }
         }
     }
 
-    &:disabled,
-    &{$disabled-selector} {
-        if (typeof($bg-disabled) == 'rgba' && $bg != $bg-disabled) {
-            background-color: $bg-disabled;
-        }
-        if (typeof($color-disabled) == 'rgba' && $color != $color-disabled) {
-            color: $color-disabled;
-        }
-        if (typeof($border-disabled) == 'rgba' && $border != $border-disabled) {
-            border-color: $border-disabled;
-        }
-        if ($shadow-disabled && $shadow != $shadow-disabled) {
-            box-shadow: $shadow-disabled;
+    $need-active-bg = typeof($active['bg']) == 'rgba' && $active['bg'] != $default['bg'];
+    $need-active-color = typeof($active['color']) == 'rgba' && $active['color'] != $default['color'];
+    $need-active-border = typeof($active['border']) == 'rgba' && $active['border'] != $default['border'];
+    $need-active-shadow = $active['shadow'] && $active['shadow'] != $default['shadow']
+
+    if ($need-active-bg || $need-active-color || $need-active-border || $need-active-shadow) {
+
+        &:active,
+        &[active],
+        &{$active-selector} {
+            if ($need-active-bg) {
+                background-color: $active['bg'];
+            }
+            if ($need-active-color) {
+                color: $active['color'];
+            }
+            if ($need-active-border) {
+                border-color: $active['border'];
+            }
+            if ($need-active-shadow) {
+                box-shadow: $active['shadow'];
+            }
         }
     }
 
+
+    $need-disabled-bg = typeof($disabled['bg']) == 'rgba' && $disabled['bg'] != $default['bg'];
+    $need-disabled-color = typeof($disabled['color']) == 'rgba' && $disabled['color'] != $default['color'];
+    $need-disabled-border = typeof($disabled['border']) == 'rgba' && $disabled['border'] != $default['border'];
+    $need-disabled-shadow = $disabled['shadow'] && $disabled['shadow'] != $default['shadow']
+
+    if ($need-disabled-bg || $need-disabled-color || $need-disabled-border || $need-disabled-shadow) {
+
+        &:disabled,
+        &[disabled], // IE 不加这句没用
+        &{$disabled-selector} {
+
+            if ($support-mouse == true) {
+                cursor: not-allowed;
+            }
+
+            if ($need-disabled-bg) {
+                background-color: $disabled['bg'];
+            }
+            if ($need-disabled-color) {
+                color: $disabled['color'];
+            }
+            if ($need-disabled-border) {
+                border-color: $disabled['border'];
+            }
+            if ($need-disabled-shadow) {
+                box-shadow: $disabled['shadow'];
+            }
+        }
+    }
 }

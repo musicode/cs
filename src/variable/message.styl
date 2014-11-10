@@ -3,71 +3,110 @@
  * @author zhujl
  */
 
-$size-hash.message = {
+$size-hash['message'] = {
 
-    'font-size-base': $font-size-tiny,
-    'border-radius-base': $border-radius-base,
+    'base': {
+        'font-size': $font-size-tiny,
+        'border-top-width': 1px,
+        'border-right-width': 1px,
+        'border-bottom-width': 1px,
+        'border-left-width': 1px,
+        'border-radius': $border-radius-base,
+        'font-size': $font-size-base,
+        'line-height': $line-height-base,
+        'padding-vertical': $padding-vertical-base,
+        'padding-horizontal': $padding-horizontal-base
+    },
 
-    'font-size-tiny': $font-size-tiny,
-    'border-radius-tiny': $border-radius-base,
+    'tiny': {
+        'font-size': $font-size-tiny,
+        'border-top-width': 1px,
+        'border-right-width': 1px,
+        'border-bottom-width': 1px,
+        'border-left-width': 1px,
+        'border-radius': $border-radius-base,
+        'font-size': $font-size-tiny,
+        'line-height': $line-height-tiny,
+        'padding-vertical': $padding-vertical-tiny,
+        'padding-horizontal': $padding-horizontal-tiny
+    },
 
-    'font-size-small': $font-size-tiny,
-    'border-radius-small': $border-radius-base,
+    'small': {
+        'font-size': $font-size-tiny,
+        'border-top-width': 1px,
+        'border-right-width': 1px,
+        'border-bottom-width': 1px,
+        'border-left-width': 1px,
+        'border-radius': $border-radius-base,
+        'font-size': $font-size-small,
+        'line-height': $line-height-small,
+        'padding-vertical': $padding-vertical-small,
+        'padding-horizontal': $padding-horizontal-small
+    },
 
-    'font-size-large': $font-size-tiny,
-    'border-radius-large': $border-radius-base,
+    'large': {
+        'font-size': $font-size-tiny,
+        'border-top-width': 1px,
+        'border-right-width': 1px,
+        'border-bottom-width': 1px,
+        'border-left-width': 1px,
+        'border-radius': $border-radius-base,
+        'font-size': $font-size-large,
+        'line-height': $line-height-large,
+        'padding-vertical': $padding-vertical-large,
+        'padding-horizontal': $padding-horizontal-large
+    },
 
-    'font-size-huge': $font-size-tiny,
-    'border-radius-huge': $border-radius-base
-
+    'huge': {
+        'font-size': $font-size-tiny,
+        'border-top-width': 1px,
+        'border-right-width': 1px,
+        'border-bottom-width': 1px,
+        'border-left-width': 1px,
+        'border-radius': $border-radius-base,
+        'font-size': $font-size-huge,
+        'line-height': $line-height-huge,
+        'padding-vertical': $padding-vertical-huge,
+        'padding-horizontal': $padding-horizontal-huge
+    }
 };
 
+$type-hash['message-default'] = {
+    'default': {
+        bg: $gray-lighter,
+        border: $gray-light,
+        color: $text-color
+    }
+};
 
-/**
- * ==============================================================
- * default
- * ==============================================================
- */
-$message-default-bg = $gray-lighter;
-$message-default-border = $gray-light;
-$message-default-color = $text-color;
+$type-hash['message-primary'] = {
+    'default': {
+        bg: $brand-primary-lighter,
+        border: $brand-primary-light,
+        color: $brand-primary
+    }
+};
 
+$type-hash['message-info'] = {
+    'default': {
+        bg: $brand-info-lighter,
+        border: $brand-info-light,
+        color: $brand-info
+    }
+};
 
-/**
- * ==============================================================
- * primary
- * ==============================================================
- */
-$message-primary-bg = $brand-primary-lighter;
-$message-primary-border = $brand-primary-light;
-$message-primary-color = $brand-primary;
+$type-hash['message-success'] = {
+    'default': {
+        bg: $brand-success-lighter,
+        border: $brand-success-light,
+        color: $brand-success
+    }
+};
 
-
-/**
- * ==============================================================
- * info
- * ==============================================================
- */
-$message-info-bg = $brand-info-lighter;
-$message-info-border = $brand-info-light;
-$message-info-color = $brand-info;
-
-
-/**
- * ==============================================================
- * success
- * ==============================================================
- */
-$message-success-bg = $brand-success-lighter;
-$message-success-border = $brand-success-light;
-$message-success-color = $brand-success;
-
-
-/**
- * ==============================================================
- * error
- * ==============================================================
- */
-$message-error-bg = $brand-error-lighter;
-$message-error-border = $brand-error-light;
-$message-error-color = $brand-error;
+$type-hash['message-error'] = {
+    'default': {
+        bg: $brand-error-lighter,
+        border: $brand-error-light,
+        color: $brand-error
+    }
+};

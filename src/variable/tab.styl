@@ -3,51 +3,133 @@
  * @author zhujl
  */
 
-$size-hash['nav-item'] = {
+$size-hash['tab-nav-default'] = {
 
-    'padding-vertical-base': 12px,
-    'padding-horizontal-base': 36px,
-
-    'border-radius-base': 0px,
-    'border-radius-tiny': 0px,
-    'border-radius-small': 0px,
-    'border-radius-large': 0px,
-    'border-radius-huge': 0px
-
+    'base': {
+        'border-top-width': 1px,
+        'border-right-width': 1px,
+        'border-bottom-width': 1px,
+        'border-left-width': 1px,
+        'font-size': 0,
+        'padding-vertical': 0,
+        'padding-horizontal': 0
+    }
 };
 
-$tab-nav-default-bg = #F8F8F8;
-$tab-nav-default-border = #DDD;
+$type-hash['tab-nav-default'] = {
 
-$tab-item-default-color = $gray-darker;
+    'default': {
+        'bg': #F8F8F8,
+        'border': #DDD
+    }
+};
 
-$tab-item-default-bg-hover = #FFF;
-$tab-item-default-color-hover = $gray-darker;
-$tab-item-default-border-hover = $tab-nav-default-border;
+$size-hash['tab-item-default'] = {
+    'base': {
+        'padding-vertical': 12px,
+        'padding-horizontal': 38px
+    }
+};
 
-$tab-item-default-bg-active = #FFF;
-$tab-item-default-color-active = $brand-default;
-$tab-item-default-border-active = $brand-default;
+$type-hash['tab-item-default'] = {
+
+    'default': {
+        'color': $gray-darker
+    },
+
+    'hover': {
+        'bg': #FFF,
+        'color': $gray-darker,
+        'border': $tab-nav-default-border
+    },
+
+    'active': {
+        'bg': #FFF,
+        'color': $brand-default,
+        'border': $brand-default
+    }
+};
 
 
 
-$tab-nav-primary-border = #CCC;
+$size-hash['tab-nav-primary'] = {
 
-$tab-item-primary-color = $gray-darker;
+    'base': {
+        'border-bottom-width': 1px,
+        'font-size': 0,
+        'padding-vertical': 0,
+        'padding-horizontal': 0
+    }
+};
 
-$tab-item-primary-color-hover = $brand-primary;
-$tab-item-primary-border-hover = $brand-primary;
+$type-hash['tab-nav-primary'] = {
+    'default': {
+        'border': #CCC
+    }
+};
 
-$tab-item-primary-color-active = $brand-primary;
-$tab-item-primary-border-active = $brand-primary;
+$size-hash['tab-item-primary'] = {
+    'base': {
+        'border-bottom-width': 4px,
+        'padding-vertical': 12px,
+        'padding-horizontal': 36px
+    }
+};
 
+$type-hash['tab-item-primary'] = {
 
-$tab-nav-info-border = #CCC;
+    'default': {
+        'color': $gray-darker
+    },
 
-$tab-item-info-color = $gray-darker;
+    'hover': {
+        'color': $brand-primary,
+        'border': $brand-primary
+    },
 
-$tab-item-info-color-hover = $brand-info;
-$tab-item-info-border-hover = $brand-info;
+    'active': {
+        'color': $brand-primary,
+        'border': $brand-primary
+    }
+};
 
-$tab-item-info-color-active = $brand-info;
-$tab-item-info-border-active = $brand-info;
+$size-hash['tab-nav-info'] = {
+
+    'base': {
+        'border-bottom-width': 1px,
+        'font-size': 0,
+        'padding-vertical': 0,
+        'padding-horizontal': 0
+    }
+};
+
+$type-hash['tab-nav-info'] = {
+    'default': {
+        'border': #CCC
+    }
+};
+
+$size-hash['tab-item-info'] = {
+    'base': {
+        'border-bottom-width': 4px,
+        'padding-vertical': 12px,
+        'padding-horizontal': 36px
+    }
+};
+
+$type-hash['tab-item-info'] = {
+
+    'default': {
+        'color': $gray-darker
+    },
+
+    'hover': {
+        'color': $brand-info,
+        'border': $brand-info
+    },
+
+    'active': {
+        'color': $brand-info,
+        'border': $brand-info
+    }
+};

@@ -3,24 +3,48 @@
  * @author zhujl
  */
 
-$pager-item-gap = 0;
-$pager-item-font-size = $font-size-base;
+$pager-item-gap = 0px;
 
-$pager-item-padding-vertical = 7px;
-$pager-item-padding-horizontal = 12px;
+$size-hash['pager-btn'] = {
 
-$pager-item-bg = #FFF;
-$pager-item-border = #DDD;
-$pager-item-color = $gray-dark;
+    'base': {
+        'border-top-width': 1px,
+        'border-right-width': 1px,
+        'border-bottom-width': 1px,
+        'border-left-width': 1px,
+        'padding-vertical': 6px,
+        'padding-horizontal': 13px
+    }
+};
 
-$pager-item-bg-hover = $pager-item-bg;
-$pager-item-border-hover = $brand-primary;
-$pager-item-color-hover = $pager-item-color;
+$size-hash['pager-ellipsis'] = {
+    'base': {
+        'padding-vertical': 7px,
+        'padding-horizontal': 3px
+    }
+};
 
-$pager-item-bg-active = $brand-primary;
-$pager-item-border-active = $brand-primary;
-$pager-item-color-active = #FFF;
+$type-hash['pager-btn'] = {
+
+    'default': {
+        'bg': #FFF,
+        'border': #DDD,
+        'color': $gray-dark
+    }
+
+    'hover': {
+        'bg': #FFF,
+        'border': $brand-primary,
+        'color': $brand-primary
+    },
+
+    'active': {
+        'bg': $brand-primary,
+        'border': $brand-primary,
+        'color': #FFF
+    }
+};
 
 
-$pager-ellipsis-padding-vertical = 8px;
-$pager-ellipsis-padding-horizontal = 10px;
+
+

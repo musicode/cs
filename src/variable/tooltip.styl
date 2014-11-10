@@ -4,13 +4,24 @@
  */
 
 $tooltip-bg = #555;
-$tooltip-border = none;
-$tooltip-color = #FFF;
-$tooltip-shadow = 1px 1px 1px rgba(0,0,0,0.2);
+$tooltip-border = none
 
-$size-hash.tooltip = {
-    'font-size-base': 12px,
-    'padding-vertical': 5px,
-    'padding-horizontal': 12px,
-    'border-radius': 4px
+$size-hash['tooltip'] = {
+
+    'base': {
+        'font-size': 12px,
+        'padding-vertical': 5px,
+        'padding-horizontal': 12px,
+        'border-radius': 4px
+    }
+};
+
+$type-hash['tooltip'] = {
+
+    'default': {
+        'bg': #555,
+        'border': none,
+        'color': #FFF,
+        'shadow': 1px 1px 1px rgba(0,0,0,0.2)
+    }
 };

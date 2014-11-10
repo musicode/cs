@@ -3,74 +3,93 @@
  * @author zhujl
  */
 
-$size-hash.progress = {
+$size-hash['progress'] = {
 
-    'font-size-base': 12px,
-    'height-base': 12px,
-    'padding-vertical-base': 0px,
-    'padding-horizontal-base': 0px,
-    'border-radius-base': 2px,
+    'base': {
+        'font-size': 12px,
+        'height': 12px,
+        'padding-vertical': 0px,
+        'padding-horizontal': 0px,
+        'border-radius': 2px,
+        'font-size': $font-size-tiny,
+        'line-height': 1
+    },
 
-    'font-size-tiny': 12px,
-    'height-tiny': 4px,
-    'padding-vertical-tiny': 0px,
-    'padding-horizontal-tiny': 0px,
-    'border-radius-tiny': 2px,
+    'tiny': {
+        'font-size': 12px,
+        'height': 4px,
+        'padding-vertical': 0px,
+        'padding-horizontal': 0px,
+        'border-radius': 2px,
+        'font-size': $font-size-tiny,
+        'line-height': 1
+    },
 
-    'font-size-small': 12px,
-    'height-small': 8px,
-    'padding-vertical-small': 0px,
-    'padding-horizontal-small': 0px,
-    'border-radius-small': 2px,
+    'small': {
+        'font-size': 12px,
+        'height': 8px,
+        'padding-vertical': 0px,
+        'padding-horizontal': 0px,
+        'border-radius': 2px,
+        'font-size': $font-size-tiny,
+        'line-height': 1
+    },
 
-    'font-size-large': 12px,
-    'height-large': 16px,
-    'padding-vertical-large': 0px,
-    'padding-horizontal-large': 0px,
-    'border-radius-large': 4px,
+    'large': {
+        'font-size': 12px,
+        'height': 16px,
+        'padding-vertical': 0px,
+        'padding-horizontal': 0px,
+        'border-radius': 4px,
+        'font-size': $font-size-tiny,
+        'line-height': 1.3333333333333333
+    },
 
-    'font-size-huge': 12px,
-    'height-huge': 20px,
-    'padding-vertical-huge': 0px,
-    'padding-horizontal-huge': 0px,
-    'border-radius-huge': 4px
-
+    'huge': {
+        'font-size': 12px,
+        'height': 20px,
+        'padding-vertical': 0px,
+        'padding-horizontal': 0px,
+        'border-radius': 4px,
+        'font-size': $font-size-tiny,
+        'line-height': 1.6666666666666667
+    }
 };
 
-$progress-bg = #F5F5F5;
-$progress-color = #FFF;
-$progress-shadow = inset 0 1px 2px rgba(0,0,0,.1);
-
-$progress-bar-shadow = inset 0 -1px 0 rgba(0,0,0,.15);
-
-/**
- * ==============================================================
- * primary
- * ==============================================================
- */
-$progress-bar-primary-bg = $brand-primary;
+$type-hash['progress-default'] = {
+    'default': {
+        'bg': #F5F5F5,
+        'color': #FFF,
+        'shadow': inset 0 1px 2px rgba(0,0,0,.1)
+    }
+};
 
 
-/**
- * ==============================================================
- * info
- * ==============================================================
- */
-$progress-bar-info-bg = $brand-info;
+$type-hash['progress-bar-primary'] = {
+    'default': {
+        'bg': $brand-primary,
+        'shadow': inset 0 -1px 0 rgba(0,0,0,.15)
+    }
+};
 
+$type-hash['progress-bar-info'] = {
+    'default': {
+        'bg': $brand-info,
+        'shadow': inset 0 -1px 0 rgba(0,0,0,.15)
+    }
+};
 
-/**
- * ==============================================================
- * success
- * ==============================================================
- */
-$progress-bar-success-bg = $brand-success;
+$type-hash['progress-bar-success'] = {
+    'default': {
+        'bg': $brand-success,
+        'shadow': inset 0 -1px 0 rgba(0,0,0,.15)
+    }
+};
 
-
-/**
- * ==============================================================
- * error
- * ==============================================================
- */
-$progress-bar-error-bg = $brand-error;
+$type-hash['progress-bar-error'] = {
+    'default': {
+        'bg': $brand-error,
+        'shadow': inset 0 -1px 0 rgba(0,0,0,.15)
+    }
+};
 

@@ -9,17 +9,20 @@
 input[type="search"] {
     appearance: textfield;
 }
+button,
+input {
+    font-family: $font-family-title;
+}
 
 .form-label,
 .form-static,
 .form-radio,
-.form-checkbox,
-.form-inline,
-.form-block {
+.form-checkbox {
     ui-size('form');
 }
 
-.form-text
+.form-text,
+.input-group-addon,
 .placeholder {
     ui-size('form-text');
 }
@@ -59,6 +62,9 @@ input[type="search"] {
 
 .form-label {
     form-label();
+}
+.form-required {
+    form-required();
 }
 
 .form-controls {
@@ -101,6 +107,10 @@ input[type="search"] {
     .icon-caret-down {
         bottom: 2px;
     }
+}
+
+.form-hint {
+    form-hint();
 }
 
 .form-inline {

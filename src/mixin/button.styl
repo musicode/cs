@@ -5,7 +5,6 @@
 
 button() {
 
-    border: 1px solid transparent;
     display: inline-block;
     text-align: center;
 
@@ -16,15 +15,6 @@ button() {
     if ($support-mouse == true) {
         cursor: pointer;
         user-select: none;
-    }
-
-    &:disabled,
-    &[disabled] {
-
-        if ($support-mouse == true) {
-            cursor: not-allowed;
-        }
-
     }
 
     button& {
@@ -38,149 +28,27 @@ button() {
 }
 
 button-default() {
-    ui-type(
-        $btn-default-bg,
-        $btn-default-color,
-        $btn-default-border,
-        $btn-default-shadow,
-
-        $btn-default-bg-hover,
-        $btn-default-color-hover,
-        $btn-default-border-hover,
-        $btn-default-shadow-hover,
-
-        $btn-default-bg-active,
-        $btn-default-color-active,
-        $btn-default-border-active,
-        $btn-default-shadow-active,
-
-        $btn-default-bg-disabled,
-        $btn-default-color-disabled,
-        $btn-default-border-disabled,
-        $btn-default-shadow-disabled
-    );
+    ui-type($type-hash['btn-default']);
 }
 
 button-primary() {
-    ui-type(
-        $btn-primary-bg,
-        $btn-primary-color,
-        $btn-primary-border,
-        $btn-primary-shadow,
-
-        $btn-primary-bg-hover,
-        $btn-primary-color-hover,
-        $btn-primary-border-hover,
-        $btn-primary-shadow-hover,
-
-        $btn-primary-bg-active,
-        $btn-primary-color-active,
-        $btn-primary-border-active,
-        $btn-primary-shadow-active,
-
-        $btn-primary-bg-disabled,
-        $btn-primary-color-disabled,
-        $btn-primary-border-disabled,
-        $btn-primary-shadow-disabled
-    );
+    ui-type($type-hash['btn-primary']);
 }
 
 button-info() {
-    ui-type(
-        $btn-info-bg,
-        $btn-info-color,
-        $btn-info-border,
-        $btn-info-shadow,
-
-        $btn-info-bg-hover,
-        $btn-info-color-hover,
-        $btn-info-border-hover,
-        $btn-info-shadow-hover,
-
-        $btn-info-bg-active,
-        $btn-info-color-active,
-        $btn-info-border-active,
-        $btn-info-shadow-active,
-
-        $btn-info-bg-disabled,
-        $btn-info-color-disabled,
-        $btn-info-border-disabled,
-        $btn-info-shadow-disabled
-    );
+    ui-type($type-hash['btn-info']);
 }
 
 button-success() {
-    ui-type(
-        $btn-success-bg,
-        $btn-success-color,
-        $btn-success-border,
-        $btn-success-shadow,
-
-        $btn-success-bg-hover,
-        $btn-success-color-hover,
-        $btn-success-border-hover,
-        $btn-success-shadow-hover,
-
-        $btn-success-bg-active,
-        $btn-success-color-active,
-        $btn-success-border-active,
-        $btn-success-shadow-active,
-
-        $btn-success-bg-disabled,
-        $btn-success-color-disabled,
-        $btn-success-border-disabled,
-        $btn-success-shadow-disabled
-    );
+    ui-type($type-hash['btn-success']);
 }
 
 button-error() {
-    ui-type(
-        $btn-error-bg,
-        $btn-error-color,
-        $btn-error-border,
-        $btn-error-shadow,
-
-        $btn-error-bg-hover,
-        $btn-error-color-hover,
-        $btn-error-border-hover,
-        $btn-error-shadow-hover,
-
-        $btn-error-bg-active,
-        $btn-error-color-active,
-        $btn-error-border-active,
-        $btn-error-shadow-active,
-
-        $btn-error-bg-disabled,
-        $btn-error-color-disabled,
-        $btn-error-border-disabled,
-        $btn-error-shadow-disabled
-    );
+    ui-type($type-hash['btn-error']);
 }
 
 button-link() {
-
-    ui-type(
-        $btn-link-bg,
-        $btn-link-color,
-        $btn-link-border,
-        $btn-link-shadow,
-
-        $btn-link-bg-hover,
-        $btn-link-color-hover,
-        $btn-link-border-hover,
-        $btn-link-shadow-hover,
-
-        $btn-link-bg-active,
-        $btn-link-color-active,
-        $btn-link-border-active,
-        $btn-link-shadow-active,
-
-        $btn-link-bg-disabled,
-        $btn-link-color-disabled,
-        $btn-link-border-disabled,
-        $btn-link-shadow-disabled
-    );
-
+    ui-type($type-hash['btn-link']);
 }
 
 btn-block() {
