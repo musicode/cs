@@ -5,57 +5,29 @@
 
 list() {
 
-    background-color: $list-bg;
-    padding: $list-padding-vertical $list-padding-horizontal;
-
-    if (typeof($list-border) == 'rgba') {
-        border: 1px solid $list-border;
-    }
-
-    if ($list-border-radius > 0) {
-        border-radius: $list-border-radius;
-    }
-
-    if ($list-box-shadow) {
-        box-shadow: $list-box-shadow;
-    }
+    ui-size('list');
+    ui-type($type-hash['list']);
 
 }
 
 list-item() {
 
-    color: $list-item-color;
     display: block;
-    font-size: $list-item-font-size;
-    padding: $list-item-padding-vertical $list-item-padding-horizontal;
 
-    if (typeof($list-item-border) == 'rgba') {
+    ui-size('list-item');
+    ui-type($type-hash['list-item']);
 
-        border-top: 1px solid $list-item-border;
-
+    if ($size-hash['list-item']['base']['border-top-width'] > 0) {
         &:first-child {
             border-top: none;
         }
     }
 
-    if ($support-mouse == true) {
-        &:hover {
-            if ($list-item-bg-hover != $list-item-bg) {
-                background-color: $list-item-bg-hover;
-            }
-
-            if ($list-item-color-hover != $list-item-color) {
-                color: $list-item-color-hover;
-            }
+    if ($size-hash['list-item']['base']['border-bottom-width'] > 0) {
+        &:last-child {
+            border-bottom: none;
         }
     }
 
 }
 
-list-item-active() {
-
-    // 因为要覆盖 hover，所以这里不能 if
-    background-color: $list-item-bg-active;
-    color: $list-item-color-active;
-
-}

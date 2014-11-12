@@ -5,19 +5,9 @@
 
 thumbnail() {
 
+    ui-type($type-hash['thumbnail']);
+
     display: inline-block;
-
-    if (typeof($thumbnail-bg) == 'rgba') {
-        background-color: $thumbnail-bg;
-    }
-
-    if (typeof($thumbnail-border) == 'rgba') {
-        border: 1px solid $thumbnail-border;
-    }
-
-    if ($thumbnail-shadow) {
-        box-shadow: $thumbnail-shadow;
-    }
 
     img {
         width: 100%;
@@ -54,9 +44,12 @@ thumbnail-circle() {
 
 
 thumbnail-title() {
-    color: $thumbnail-title-color;
+
     display: block;
-    line-height: 1;
     margin-top: $thumbnail-title-gap;
     text-align: center;
+
+    ui-size('thumbnail-title');
+    ui-type($type-hash['thumbnail-title']);
+
 }

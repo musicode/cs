@@ -3,39 +3,52 @@
  * @author zhujl
  */
 
-$list-padding-vertical = 0px;
-$list-padding-horizontal = 10px;
-$list-border-radius = 6px;
-$list-box-shadow = $box-shadow;
+$size-hash['list'] = {
 
-$type
+    'base': {
+        'padding-vertical': 0px,
+        'padding-horizontal': 10px,
+        'border-radius': 6px
+    }
+
+};
+
+
 $type-hash['list'] = {
 
     'default': {
         'bg': #FFF,
         'border': transparent
+        'shadow': $box-shadow
     }
 }
 
+$size-hash['list-item'] = {
 
+    'base': {
+        'border-top-width': 1px,
+        'padding-vertical': 18px,
+        'padding-horizontal': 0px,
+    }
 
+};
 
-$list-item-font-size = $font-size-base;
+$type-hash['list-item'] = {
 
-$list-item-padding-vertical = 18px;
-$list-item-padding-horizontal = 0px;
+    'default': {
+        'bg': #FFF,
+        'color': $text-color,
+        'border': #E6E6E6
+    },
 
+    'hover': {
+        'bg': $gray-lighter,
+        'color': $list-item-color
+    },
 
-$list-item-bg = $FFF;
-$list-item-color = $text-color;
-$list-item-border = #E6E6E6;
-
-
-$list-item-bg-hover = $gray-lighter;
-$list-item-color-hover = $list-item-color;
-
-
-$list-item-bg-active = #FFF;
-$list-item-color-active = $brand-info;
-
+    'active': {
+        'bg': #FFF,
+        'color': $brand-info
+    }
+};
 

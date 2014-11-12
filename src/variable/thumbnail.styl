@@ -4,6 +4,11 @@
  */
 
 $thumbnail-border = #DDD;
+$thumbnail-border-top-width = 1px;
+$thumbnail-border-right-width = 1px;
+$thumbnail-border-bottom-width = 1px;
+$thumbnail-border-left-width = 1px;
+
 $thumbnail-padding-vertical = 1px;
 $thumbnail-padding-horizontal = 1px;
 $thumbnail-font-size = 12px;
@@ -34,143 +39,250 @@ $thumbnail-height-huge = 150px;
 
 $size-hash['thumbnail-rect'] = {
 
-    'width-base': $thumbnail-width-base,
-    'height-base': $thumbnail-height-base,
-    'font-size-base': $thumbnail-font-size,
-    'line-height-base': $thumbnail-line-height,
-    'padding-vertical-base': $thumbnail-padding-vertical,
-    'padding-horizontal-base': $thumbnail-padding-horizontal,
-    'border-radius-base': 0px,
+    'base': {
+        'border-top-width': $thumbnail-border-top-width,
+        'border-right-width': $thumbnail-border-right-width,
+        'border-bottom-width': $thumbnail-border-bottom-width,
+        'border-left-width': $thumbnail-border-left-width,
+        'width': $thumbnail-width-base,
+        'height': $thumbnail-height-base,
+        'font-size': $thumbnail-font-size,
+        'line-height': $thumbnail-line-height,
+        'padding-vertical': $thumbnail-padding-vertical,
+        'padding-horizontal': $thumbnail-padding-horizontal,
+        'border-radius': 0px
+    },
 
-    'width-tiny': $thumbnail-width-tiny,
-    'height-tiny': $thumbnail-height-tiny,
-    'font-size-tiny': $thumbnail-font-size,
-    'line-height-tiny': $thumbnail-line-height,
-    'padding-vertical-tiny': $thumbnail-padding-vertical,
-    'padding-horizontal-tiny': $thumbnail-padding-horizontal,
-    'border-radius-tiny': 0px,
+    'tiny': {
+        'border-top-width': $thumbnail-border-top-width,
+        'border-right-width': $thumbnail-border-right-width,
+        'border-bottom-width': $thumbnail-border-bottom-width,
+        'border-left-width': $thumbnail-border-left-width,
+        'width': $thumbnail-width-tiny,
+        'height': $thumbnail-height-tiny,
+        'font-size': $thumbnail-font-size,
+        'line-height': $thumbnail-line-height,
+        'padding-vertical': $thumbnail-padding-vertical,
+        'padding-horizontal': $thumbnail-padding-horizontal,
+        'border-radius': 0px
+    },
 
-    'width-small': $thumbnail-width-small,
-    'height-small': $thumbnail-height-small,
-    'font-size-small': $thumbnail-font-size,
-    'line-height-small': $thumbnail-line-height,
-    'padding-vertical-small': $thumbnail-padding-vertical,
-    'padding-horizontal-small': $thumbnail-padding-horizontal,
-    'border-radius-small': 0px,
+    'small': {
+        'border-top-width': $thumbnail-border-top-width,
+        'border-right-width': $thumbnail-border-right-width,
+        'border-bottom-width': $thumbnail-border-bottom-width,
+        'border-left-width': $thumbnail-border-left-width,
+        'width': $thumbnail-width-small,
+        'height': $thumbnail-height-small,
+        'font-size': $thumbnail-font-size,
+        'line-height': $thumbnail-line-height,
+        'padding-vertical': $thumbnail-padding-vertical,
+        'padding-horizontal': $thumbnail-padding-horizontal,
+        'border-radius': 0px
+    },
 
-    'width-large': $thumbnail-width-large,
-    'height-large': $thumbnail-height-large,
-    'font-size-large': $thumbnail-font-size,
-    'line-height-large': $thumbnail-line-height,
-    'padding-vertical-large': $thumbnail-padding-vertical,
-    'padding-horizontal-large': $thumbnail-padding-horizontal,
-    'border-radius-large': 0px,
+    'large': {
+        'border-top-width': $thumbnail-border-top-width,
+        'border-right-width': $thumbnail-border-right-width,
+        'border-bottom-width': $thumbnail-border-bottom-width,
+        'border-left-width': $thumbnail-border-left-width,
+        'width': $thumbnail-width-large,
+        'height': $thumbnail-height-large,
+        'font-size': $thumbnail-font-size,
+        'line-height': $thumbnail-line-height,
+        'padding-vertical': $thumbnail-padding-vertical,
+        'padding-horizontal': $thumbnail-padding-horizontal,
+        'border-radius': 0px
+    },
 
-    'width-huge': $thumbnail-width-huge,
-    'height-huge': $thumbnail-height-huge,
-    'font-size-huge': $thumbnail-font-size,
-    'line-height-huge': $thumbnail-line-height,
-    'padding-vertical-huge': $thumbnail-padding-vertical,
-    'padding-horizontal-huge': $thumbnail-padding-horizontal,
-    'border-radius-huge': 0px
+    'huge': {
+        'border-top-width': $thumbnail-border-top-width,
+        'border-right-width': $thumbnail-border-right-width,
+        'border-bottom-width': $thumbnail-border-bottom-width,
+        'border-left-width': $thumbnail-border-left-width,
+        'width': $thumbnail-width-huge,
+        'height': $thumbnail-height-huge,
+        'font-size': $thumbnail-font-size,
+        'line-height': $thumbnail-line-height,
+        'padding-vertical': $thumbnail-padding-vertical,
+        'padding-horizontal': $thumbnail-padding-horizontal,
+        'border-radius': 0px
+    }
 
 };
 
 $size-hash['thumbnail-round'] = {
 
-    'width-base': $thumbnail-width-base,
-    'height-base': $thumbnail-height-base,
-    'font-size-base': $thumbnail-font-size,
-    'line-height-base': $thumbnail-line-height,
-    'padding-vertical-base': $thumbnail-padding-vertical,
-    'padding-horizontal-base': $thumbnail-padding-horizontal,
-    'border-radius-base': 0px,
+    'base': {
+        'border-top-width': $thumbnail-border-top-width,
+        'border-right-width': $thumbnail-border-right-width,
+        'border-bottom-width': $thumbnail-border-bottom-width,
+        'border-left-width': $thumbnail-border-left-width,
+        'width': $thumbnail-width-base,
+        'height': $thumbnail-height-base,
+        'font-size': $thumbnail-font-size,
+        'line-height': $thumbnail-line-height,
+        'padding-vertical': $thumbnail-padding-vertical,
+        'padding-horizontal': $thumbnail-padding-horizontal,
+        'border-radius': 0px
+    },
 
-    'width-tiny': $thumbnail-width-tiny,
-    'height-tiny': $thumbnail-height-tiny,
-    'font-size-tiny': $thumbnail-font-size,
-    'line-height-tiny': $thumbnail-line-height,
-    'padding-vertical-tiny': $thumbnail-padding-vertical,
-    'padding-horizontal-tiny': $thumbnail-padding-horizontal,
-    'border-radius-tiny': 0px,
+    'tiny': {
+        'border-top-width': $thumbnail-border-top-width,
+        'border-right-width': $thumbnail-border-right-width,
+        'border-bottom-width': $thumbnail-border-bottom-width,
+        'border-left-width': $thumbnail-border-left-width,
+        'width': $thumbnail-width-tiny,
+        'height': $thumbnail-height-tiny,
+        'font-size': $thumbnail-font-size,
+        'line-height': $thumbnail-line-height,
+        'padding-vertical': $thumbnail-padding-vertical,
+        'padding-horizontal': $thumbnail-padding-horizontal,
+        'border-radius': 0px
+    },
 
-    'width-small': $thumbnail-width-small,
-    'height-small': $thumbnail-height-small,
-    'font-size-small': $thumbnail-font-size,
-    'line-height-small': $thumbnail-line-height,
-    'padding-vertical-small': $thumbnail-padding-vertical,
-    'padding-horizontal-small': $thumbnail-padding-horizontal,
-    'border-radius-small': 0px,
+    'small': {
+        'border-top-width': $thumbnail-border-top-width,
+        'border-right-width': $thumbnail-border-right-width,
+        'border-bottom-width': $thumbnail-border-bottom-width,
+        'border-left-width': $thumbnail-border-left-width,
+        'width': $thumbnail-width-small,
+        'height': $thumbnail-height-small,
+        'font-size': $thumbnail-font-size,
+        'line-height': $thumbnail-line-height,
+        'padding-vertical': $thumbnail-padding-vertical,
+        'padding-horizontal': $thumbnail-padding-horizontal,
+        'border-radius': 0px
+    },
 
-    'width-large': $thumbnail-width-large,
-    'height-large': $thumbnail-height-large,
-    'font-size-large': $thumbnail-font-size,
-    'line-height-large': $thumbnail-line-height,
-    'padding-vertical-large': $thumbnail-padding-vertical,
-    'padding-horizontal-large': $thumbnail-padding-horizontal,
-    'border-radius-large': 0px,
+    'large': {
+        'border-top-width': $thumbnail-border-top-width,
+        'border-right-width': $thumbnail-border-right-width,
+        'border-bottom-width': $thumbnail-border-bottom-width,
+        'border-left-width': $thumbnail-border-left-width,
+        'width': $thumbnail-width-large,
+        'height': $thumbnail-height-large,
+        'font-size': $thumbnail-font-size,
+        'line-height': $thumbnail-line-height,
+        'padding-vertical': $thumbnail-padding-vertical,
+        'padding-horizontal': $thumbnail-padding-horizontal,
+        'border-radius': 0px
+    },
 
-    'width-huge': $thumbnail-width-huge,
-    'height-huge': $thumbnail-height-huge,
-    'font-size-huge': $thumbnail-font-size,
-    'line-height-huge': $thumbnail-line-height,
-    'padding-vertical-huge': $thumbnail-padding-vertical,
-    'padding-horizontal-huge': $thumbnail-padding-horizontal,
-    'border-radius-huge': 0px
-
+    'huge': {
+        'border-top-width': $thumbnail-border-top-width,
+        'border-right-width': $thumbnail-border-right-width,
+        'border-bottom-width': $thumbnail-border-bottom-width,
+        'border-left-width': $thumbnail-border-left-width,
+        'width': $thumbnail-width-huge,
+        'height': $thumbnail-height-huge,
+        'font-size': $thumbnail-font-size,
+        'line-height': $thumbnail-line-height,
+        'padding-vertical': $thumbnail-padding-vertical,
+        'padding-horizontal': $thumbnail-padding-horizontal,
+        'border-radius': 0px
+    }
 };
 
 $size-hash['thumbnail-circle'] = {
 
-    'width-base': $thumbnail-width-base,
-    'height-base': $thumbnail-height-base,
-    'font-size-base': $thumbnail-font-size,
-    'line-height-base': $thumbnail-line-height,
-    'padding-vertical-base': $thumbnail-padding-vertical,
-    'padding-horizontal-base': $thumbnail-padding-horizontal,
-    'border-radius-base': 0px,
+    'base': {
+        'border-top-width': $thumbnail-border-top-width,
+        'border-right-width': $thumbnail-border-right-width,
+        'border-bottom-width': $thumbnail-border-bottom-width,
+        'border-left-width': $thumbnail-border-left-width,
+        'width': $thumbnail-width-base,
+        'height': $thumbnail-height-base,
+        'font-size': $thumbnail-font-size,
+        'line-height': $thumbnail-line-height,
+        'padding-vertical': $thumbnail-padding-vertical,
+        'padding-horizontal': $thumbnail-padding-horizontal,
+        'border-radius': 0px,
+    },
 
-    'width-tiny': $thumbnail-width-tiny,
-    'height-tiny': $thumbnail-height-tiny,
-    'font-size-tiny': $thumbnail-font-size,
-    'line-height-tiny': $thumbnail-line-height,
-    'padding-vertical-tiny': $thumbnail-padding-vertical,
-    'padding-horizontal-tiny': $thumbnail-padding-horizontal,
-    'border-radius-tiny': 0px,
+    'tiny': {
+        'border-top-width': $thumbnail-border-top-width,
+        'border-right-width': $thumbnail-border-right-width,
+        'border-bottom-width': $thumbnail-border-bottom-width,
+        'border-left-width': $thumbnail-border-left-width,
+        'width': $thumbnail-width-tiny,
+        'height': $thumbnail-height-tiny,
+        'font-size': $thumbnail-font-size,
+        'line-height': $thumbnail-line-height,
+        'padding-vertical': $thumbnail-padding-vertical,
+        'padding-horizontal': $thumbnail-padding-horizontal,
+        'border-radius': 0px,
+    },
 
-    'width-small': $thumbnail-width-small,
-    'height-small': $thumbnail-height-small,
-    'font-size-small': $thumbnail-font-size,
-    'line-height-small': $thumbnail-line-height,
-    'padding-vertical-small': $thumbnail-padding-vertical,
-    'padding-horizontal-small': $thumbnail-padding-horizontal,
-    'border-radius-small': 0px,
+    'small': {
+        'border-top-width': $thumbnail-border-top-width,
+        'border-right-width': $thumbnail-border-right-width,
+        'border-bottom-width': $thumbnail-border-bottom-width,
+        'border-left-width': $thumbnail-border-left-width,
+        'width': $thumbnail-width-small,
+        'height': $thumbnail-height-small,
+        'font-size': $thumbnail-font-size,
+        'line-height': $thumbnail-line-height,
+        'padding-vertical': $thumbnail-padding-vertical,
+        'padding-horizontal': $thumbnail-padding-horizontal,
+        'border-radius': 0px,
+    },
 
-    'width-large': $thumbnail-width-large,
-    'height-large': $thumbnail-height-large,
-    'font-size-large': $thumbnail-font-size,
-    'line-height-large': $thumbnail-line-height,
-    'padding-vertical-large': $thumbnail-padding-vertical,
-    'padding-horizontal-large': $thumbnail-padding-horizontal,
-    'border-radius-large': 0px,
+    'large': {
+        'border-top-width': $thumbnail-border-top-width,
+        'border-right-width': $thumbnail-border-right-width,
+        'border-bottom-width': $thumbnail-border-bottom-width,
+        'border-left-width': $thumbnail-border-left-width,
+        'width': $thumbnail-width-large,
+        'height': $thumbnail-height-large,
+        'font-size': $thumbnail-font-size,
+        'line-height': $thumbnail-line-height,
+        'padding-vertical': $thumbnail-padding-vertical,
+        'padding-horizontal': $thumbnail-padding-horizontal,
+        'border-radius': 0px,
+    },
 
-    'width-huge': $thumbnail-width-huge,
-    'height-huge': $thumbnail-height-huge,
-    'font-size-huge': $thumbnail-font-size,
-    'line-height-huge': $thumbnail-line-height,
-    'padding-vertical-huge': $thumbnail-padding-vertical,
-    'padding-horizontal-huge': $thumbnail-padding-horizontal,
-    'border-radius-huge': 0px
+    'huge': {
+        'border-top-width': $thumbnail-border-top-width,
+        'border-right-width': $thumbnail-border-right-width,
+        'border-bottom-width': $thumbnail-border-bottom-width,
+        'border-left-width': $thumbnail-border-left-width,
+        'width': $thumbnail-width-huge,
+        'height': $thumbnail-height-huge,
+        'font-size': $thumbnail-font-size,
+        'line-height': $thumbnail-line-height,
+        'padding-vertical': $thumbnail-padding-vertical,
+        'padding-horizontal': $thumbnail-padding-horizontal,
+        'border-radius': 0px
+    }
+};
 
+$type-hash['thumbnail'] = {
+    'default': {
+        'bg': #FFF,
+        'border': $thumbnail-border,
+        'shadow': none,
+    }
 };
 
 
-$thumbnail-bg = #FFF;
+$size-hash['thumbnail-title'] = {
+    'base': {
+        'font-size': 12px,
+        'line-height': 1,
+        'padding-vertical': 0,
+        'padding-horizontal': 0
+    }
+};
+
+$type-hash['thumbnail-title'] = {
+
+    'default': {
+        'color': $text-color
+    }
+};
 
 
-$thumbnail-shadow = none;
-
-$thumbnail-title-color = $text-color;
 $thumbnail-title-gap = 8px;
 
 $thumbnail-mask-hover = rgba(0,0,0,0.3);

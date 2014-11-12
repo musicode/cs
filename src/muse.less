@@ -212,7 +212,7 @@ input.btn-link {
   border-left-width: 1px;
   font-size: 12px;
   line-height: 1;
-  padding: 2px;
+  padding: 2px 4px;
   border-radius: 2px;
 }
 input.btn-default.tiny,
@@ -509,7 +509,7 @@ input.label-error {
   border-left-width: 1px;
   font-size: 12px;
   line-height: 1;
-  padding: 2px;
+  padding: 2px 4px;
   border-radius: 2px;
 }
 input.label-default.tiny,
@@ -672,7 +672,7 @@ input.message-error {
   border-left-width: 1px;
   font-size: 12px;
   line-height: 1;
-  padding: 2px;
+  padding: 2px 4px;
   border-radius: 2px;
 }
 input.message-default.tiny,
@@ -830,7 +830,7 @@ input.badge-error {
   border-style: solid;
   font-size: 12px;
   line-height: 1;
-  padding: 2px;
+  padding: 2px 4px;
   border-radius: 30px;
 }
 input.badge-default.tiny,
@@ -1046,6 +1046,10 @@ input.badge-error.huge {
   margin-left: -1px;
   display: inline-block;
 }
+.pager a:hover,
+.pager .ellipsis:hover {
+  position: relative;
+}
 .pager a {
   cursor: pointer;
   -webkit-box-sizing: border-box;
@@ -1091,7 +1095,7 @@ input.pager a {
   border-style: solid;
   font-size: 14px;
   line-height: 1.6;
-  padding: 7px 3px;
+  padding: 7px 10px;
 }
 input.pager .ellipsis {
   height: 36px;
@@ -1287,7 +1291,7 @@ input.placeholder.small {
 .form-checkbox input {
   cursor: pointer;
   margin: 0 5px 0 1px;
-  vertical-align: text-top;
+  vertical-align: middle;
 }
 .form-radio + .form-radio,
 .form-checkbox + .form-checkbox {
@@ -1400,9 +1404,6 @@ input.form-hint {
 .form-block {
   display: block;
   margin-top: 8px;
-}
-.form-block:empty {
-  display: none;
 }
 .input-group {
   display: inline-block;
@@ -1789,7 +1790,7 @@ input.tab-nav-info .nav-item {
 }
 .dropdown-menu li {
   color: #888;
-  padding: 6px 6px;
+  padding: 6px 12px;
   line-height: 1.6;
   cursor: pointer;
 }
