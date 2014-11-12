@@ -648,7 +648,7 @@ input.label-error.huge {
   border-right-width: 1px;
   border-bottom-width: 1px;
   border-left-width: 1px;
-  font-size: 14px;
+  font-size: 12px;
   line-height: 1.6;
   padding: 6px 12px;
   border-radius: 2px;
@@ -658,7 +658,7 @@ input.message-primary,
 input.message-info,
 input.message-success,
 input.message-error {
-  height: 36px;
+  height: 33px;
 }
 .message-default.tiny,
 .message-primary.tiny,
@@ -714,7 +714,7 @@ input.message-error.small {
   border-right-width: 1px;
   border-bottom-width: 1px;
   border-left-width: 1px;
-  font-size: 16px;
+  font-size: 12px;
   line-height: 1.8;
   padding: 8px 14px;
   border-radius: 2px;
@@ -724,7 +724,7 @@ input.message-primary.large,
 input.message-info.large,
 input.message-success.large,
 input.message-error.large {
-  height: 47px;
+  height: 40px;
 }
 .message-default.huge,
 .message-primary.huge,
@@ -736,7 +736,7 @@ input.message-error.large {
   border-right-width: 1px;
   border-bottom-width: 1px;
   border-left-width: 1px;
-  font-size: 18px;
+  font-size: 12px;
   line-height: 2;
   padding: 10px 18px;
   border-radius: 2px;
@@ -746,7 +746,7 @@ input.message-primary.huge,
 input.message-info.huge,
 input.message-success.huge,
 input.message-error.huge {
-  height: 58px;
+  height: 46px;
 }
 .message-default {
   background-color: #f8f8f8;
@@ -799,7 +799,7 @@ input.message-error.huge {
 .badge-success,
 .badge-error {
   display: inline-block;
-  min-width: 22px;
+  min-width: 20px;
   text-align: center;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -1111,6 +1111,7 @@ input {
 .form-static,
 .form-radio,
 .form-checkbox {
+  display: inline-block;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
@@ -1134,60 +1135,60 @@ input.form-checkbox {
 .form-radio.tiny,
 .form-checkbox.tiny {
   border-style: solid;
-  font-size: 14px;
-  line-height: 1.6;
-  padding: 6px 0px;
+  font-size: 12px;
+  line-height: 1;
+  padding: 2px 0px;
 }
 input.form-label.tiny,
 input.form-static.tiny,
 input.form-radio.tiny,
 input.form-checkbox.tiny {
-  height: 34px;
+  height: 16px;
 }
 .form-label.small,
 .form-static.small,
 .form-radio.small,
 .form-checkbox.small {
   border-style: solid;
-  font-size: 14px;
-  line-height: 1.6;
-  padding: 6px 0px;
+  font-size: 12px;
+  line-height: 1.285714285714286;
+  padding: 4px 0px;
 }
 input.form-label.small,
 input.form-static.small,
 input.form-radio.small,
 input.form-checkbox.small {
-  height: 34px;
+  height: 23px;
 }
 .form-label.large,
 .form-static.large,
 .form-radio.large,
 .form-checkbox.large {
   border-style: solid;
-  font-size: 14px;
-  line-height: 1.6;
-  padding: 6px 0px;
+  font-size: 16px;
+  line-height: 1.8;
+  padding: 8px 0px;
 }
 input.form-label.large,
 input.form-static.large,
 input.form-radio.large,
 input.form-checkbox.large {
-  height: 34px;
+  height: 45px;
 }
 .form-label.huge,
 .form-static.huge,
 .form-radio.huge,
 .form-checkbox.huge {
   border-style: solid;
-  font-size: 14px;
-  line-height: 1.6;
-  padding: 6px 0px;
+  font-size: 18px;
+  line-height: 2;
+  padding: 10px 0px;
 }
 input.form-label.huge,
 input.form-static.huge,
 input.form-radio.huge,
 input.form-checkbox.huge {
-  height: 34px;
+  height: 56px;
 }
 .form-text,
 .input-group-addon,
@@ -1213,6 +1214,24 @@ input.input-group-addon,
 input.placeholder {
   height: 36px;
 }
+.form-text.tiny,
+.input-group-addon.tiny,
+.placeholder.tiny {
+  border-style: solid;
+  border-top-width: 1px;
+  border-right-width: 1px;
+  border-bottom-width: 1px;
+  border-left-width: 1px;
+  font-size: 12px;
+  line-height: 1;
+  padding: 2px 4px;
+  border-radius: 2px;
+}
+input.form-text.tiny,
+input.input-group-addon.tiny,
+input.placeholder.tiny {
+  height: 18px;
+}
 .form-text.small,
 .input-group-addon.small,
 .placeholder.small {
@@ -1230,6 +1249,42 @@ input.form-text.small,
 input.input-group-addon.small,
 input.placeholder.small {
   height: 25px;
+}
+.form-text.large,
+.input-group-addon.large,
+.placeholder.large {
+  border-style: solid;
+  border-top-width: 1px;
+  border-right-width: 1px;
+  border-bottom-width: 1px;
+  border-left-width: 1px;
+  font-size: 16px;
+  line-height: 1.8;
+  padding: 8px 14px;
+  border-radius: 2px;
+}
+input.form-text.large,
+input.input-group-addon.large,
+input.placeholder.large {
+  height: 47px;
+}
+.form-text.huge,
+.input-group-addon.huge,
+.placeholder.huge {
+  border-style: solid;
+  border-top-width: 1px;
+  border-right-width: 1px;
+  border-bottom-width: 1px;
+  border-left-width: 1px;
+  font-size: 18px;
+  line-height: 2;
+  padding: 10px 18px;
+  border-radius: 2px;
+}
+input.form-text.huge,
+input.input-group-addon.huge,
+input.placeholder.huge {
+  height: 58px;
 }
 .form-action {
   margin-top: 20px;
@@ -1281,7 +1336,6 @@ input.placeholder.small {
 }
 .form-radio,
 .form-checkbox {
-  display: inline-block;
   -webkit-user-select: none;
       -ms-user-select: none;
           user-select: none;
@@ -1857,20 +1911,312 @@ input.tooltip {
   border-bottom-color: ;
   top: -16px;
 }
-/**
-//@import "./ui/list.styl";
-
-
-
-
-
-
-
-
-
-@import "./ui/thumbnail.styl";
-
-
-
-
-*/
+.list {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: #fff;
+  border-color: transparent;
+  -webkit-box-shadow: 1px 1px 0 rgba(0,0,0,0.15);
+          box-shadow: 1px 1px 0 rgba(0,0,0,0.15);
+}
+.list {
+  border-style: solid;
+  font-size: 14px;
+  line-height: 1.6;
+  padding: 0px 10px;
+  border-radius: 6px;
+}
+input.list {
+  height: 22px;
+}
+.list:hover {
+  -webkit-transition: background-color 0.2s;
+          transition: background-color 0.2s;
+}
+.list-item {
+  display: block;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: #fff;
+  border-color: #e6e6e6;
+  color: #888;
+}
+.list-item {
+  border-style: solid;
+  border-top-width: 1px;
+  font-size: 14px;
+  line-height: 1.6;
+  padding: 18px 0px;
+}
+input.list-item {
+  height: 59px;
+}
+.list-item:hover {
+  background-color: #f8f8f8;
+  -webkit-transition: background-color 0.2s;
+          transition: background-color 0.2s;
+}
+.list-item:active,
+.list-item[active],
+.list-item.active {
+  color: #6287d5;
+}
+.list-item:first-child {
+  border-top: none;
+}
+.thumbnail,
+.thumbnail-round,
+.thumbnail-circle {
+  background-color: #fff;
+  border-color: #ddd;
+  display: inline-block;
+}
+.thumbnail:hover,
+.thumbnail-round:hover,
+.thumbnail-circle:hover {
+  -webkit-transition: background-color 0.2s;
+          transition: background-color 0.2s;
+}
+.thumbnail img,
+.thumbnail-round img,
+.thumbnail-circle img {
+  width: 100%;
+  height: 100%;
+}
+.thumbnail .title,
+.thumbnail-round .title,
+.thumbnail-circle .title {
+  display: block;
+  margin-top: 8px;
+  text-align: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-color: transparent;
+  color: #888;
+}
+.thumbnail .title,
+.thumbnail-round .title,
+.thumbnail-circle .title {
+  border-style: solid;
+  font-size: 12px;
+  line-height: 1;
+}
+input.thumbnail .title,
+input.thumbnail-round .title,
+input.thumbnail-circle .title {
+  height: 12px;
+}
+button.thumbnail .title,
+button.thumbnail-round .title,
+button.thumbnail-circle .title,
+input.thumbnail .title,
+input.thumbnail-round .title,
+input.thumbnail-circle .title {
+  background-color: transparent;
+}
+.thumbnail .title:hover,
+.thumbnail-round .title:hover,
+.thumbnail-circle .title:hover {
+  -webkit-transition: background-color 0.2s;
+          transition: background-color 0.2s;
+}
+.thumbnail {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.thumbnail {
+  border-style: solid;
+  border-top-width: 1px;
+  border-right-width: 1px;
+  border-bottom-width: 1px;
+  border-left-width: 1px;
+  font-size: 12px;
+  line-height: 0px;
+  padding: 1px;
+  width: 80px;
+  height: 80px;
+}
+.thumbnail.tiny {
+  border-style: solid;
+  border-top-width: 1px;
+  border-right-width: 1px;
+  border-bottom-width: 1px;
+  border-left-width: 1px;
+  font-size: 12px;
+  line-height: 0px;
+  padding: 1px;
+  width: 50px;
+  height: 50px;
+}
+.thumbnail.small {
+  border-style: solid;
+  border-top-width: 1px;
+  border-right-width: 1px;
+  border-bottom-width: 1px;
+  border-left-width: 1px;
+  font-size: 12px;
+  line-height: 0px;
+  padding: 1px;
+  width: 60px;
+  height: 60px;
+}
+.thumbnail.large {
+  border-style: solid;
+  border-top-width: 1px;
+  border-right-width: 1px;
+  border-bottom-width: 1px;
+  border-left-width: 1px;
+  font-size: 12px;
+  line-height: 0px;
+  padding: 1px;
+  width: 120px;
+  height: 120px;
+}
+.thumbnail.huge {
+  border-style: solid;
+  border-top-width: 1px;
+  border-right-width: 1px;
+  border-bottom-width: 1px;
+  border-left-width: 1px;
+  font-size: 12px;
+  line-height: 0px;
+  padding: 1px;
+  width: 150px;
+  height: 150px;
+}
+.thumbnail-round {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 4px;
+}
+.thumbnail-round {
+  border-style: solid;
+  border-top-width: 1px;
+  border-right-width: 1px;
+  border-bottom-width: 1px;
+  border-left-width: 1px;
+  font-size: 12px;
+  line-height: 0px;
+  padding: 1px;
+  width: 80px;
+  height: 80px;
+}
+.thumbnail-round.tiny {
+  border-style: solid;
+  border-top-width: 1px;
+  border-right-width: 1px;
+  border-bottom-width: 1px;
+  border-left-width: 1px;
+  font-size: 12px;
+  line-height: 0px;
+  padding: 1px;
+  width: 50px;
+  height: 50px;
+}
+.thumbnail-round.small {
+  border-style: solid;
+  border-top-width: 1px;
+  border-right-width: 1px;
+  border-bottom-width: 1px;
+  border-left-width: 1px;
+  font-size: 12px;
+  line-height: 0px;
+  padding: 1px;
+  width: 60px;
+  height: 60px;
+}
+.thumbnail-round.large {
+  border-style: solid;
+  border-top-width: 1px;
+  border-right-width: 1px;
+  border-bottom-width: 1px;
+  border-left-width: 1px;
+  font-size: 12px;
+  line-height: 0px;
+  padding: 1px;
+  width: 120px;
+  height: 120px;
+}
+.thumbnail-round.huge {
+  border-style: solid;
+  border-top-width: 1px;
+  border-right-width: 1px;
+  border-bottom-width: 1px;
+  border-left-width: 1px;
+  font-size: 12px;
+  line-height: 0px;
+  padding: 1px;
+  width: 150px;
+  height: 150px;
+}
+.thumbnail-round img {
+  border-radius: 2px;
+}
+.thumbnail-circle {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 1000px;
+}
+.thumbnail-circle {
+  border-style: solid;
+  border-top-width: 1px;
+  border-right-width: 1px;
+  border-bottom-width: 1px;
+  border-left-width: 1px;
+  font-size: 12px;
+  line-height: 0px;
+  padding: 1px;
+  width: 80px;
+  height: 80px;
+}
+.thumbnail-circle.tiny {
+  border-style: solid;
+  border-top-width: 1px;
+  border-right-width: 1px;
+  border-bottom-width: 1px;
+  border-left-width: 1px;
+  font-size: 12px;
+  line-height: 0px;
+  padding: 1px;
+  width: 50px;
+  height: 50px;
+}
+.thumbnail-circle.small {
+  border-style: solid;
+  border-top-width: 1px;
+  border-right-width: 1px;
+  border-bottom-width: 1px;
+  border-left-width: 1px;
+  font-size: 12px;
+  line-height: 0px;
+  padding: 1px;
+  width: 60px;
+  height: 60px;
+}
+.thumbnail-circle.large {
+  border-style: solid;
+  border-top-width: 1px;
+  border-right-width: 1px;
+  border-bottom-width: 1px;
+  border-left-width: 1px;
+  font-size: 12px;
+  line-height: 0px;
+  padding: 1px;
+  width: 120px;
+  height: 120px;
+}
+.thumbnail-circle.huge {
+  border-style: solid;
+  border-top-width: 1px;
+  border-right-width: 1px;
+  border-bottom-width: 1px;
+  border-left-width: 1px;
+  font-size: 12px;
+  line-height: 0px;
+  padding: 1px;
+  width: 150px;
+  height: 150px;
+}
+.thumbnail-circle img {
+  border-radius: 1000px;
+}
