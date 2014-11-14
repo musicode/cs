@@ -30,8 +30,16 @@ tab-nav-default() {
 }
 
 tab-item-default() {
+
     ui-type($type-hash['tab-item-default']);
     ui-size('tab-item-default');
+
+    $size-default = $size-hash['tab-item-default']['base'];
+    $border-left-width = $size-default['border-left-width'];
+
+    if ($border-left-width > 0 && $border-left-width == $size-default['border-right-width']) {
+        margin-left: -1 * $border-left-width;
+    }
 }
 
 tab-nav-primary() {

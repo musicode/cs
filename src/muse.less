@@ -799,7 +799,6 @@ input.message-error.huge {
 .badge-success,
 .badge-error {
   display: inline-block;
-  min-width: 20px;
   text-align: center;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -812,7 +811,8 @@ input.message-error.huge {
   border-style: solid;
   font-size: 14px;
   line-height: 1;
-  padding: 6px 12px;
+  padding: 6px;
+  min-width: 27px;
   border-radius: 30px;
 }
 input.badge-default,
@@ -830,7 +830,8 @@ input.badge-error {
   border-style: solid;
   font-size: 12px;
   line-height: 1;
-  padding: 2px 4px;
+  padding: 2px;
+  min-width: 17px;
   border-radius: 30px;
 }
 input.badge-default.tiny,
@@ -848,7 +849,8 @@ input.badge-error.tiny {
   border-style: solid;
   font-size: 12px;
   line-height: 1;
-  padding: 4px 6px;
+  padding: 4px;
+  min-width: 21px;
   border-radius: 30px;
 }
 input.badge-default.small,
@@ -866,7 +868,8 @@ input.badge-error.small {
   border-style: solid;
   font-size: 16px;
   line-height: 1;
-  padding: 8px 14px;
+  padding: 8px;
+  min-width: 34px;
   border-radius: 30px;
 }
 input.badge-default.large,
@@ -884,7 +887,8 @@ input.badge-error.large {
   border-style: solid;
   font-size: 18px;
   line-height: 1;
-  padding: 10px 18px;
+  padding: 10px;
+  min-width: 39px;
   border-radius: 30px;
 }
 input.badge-default.huge,
@@ -1345,7 +1349,6 @@ input.placeholder.huge {
 .form-checkbox input {
   cursor: pointer;
   margin: 0 5px 0 1px;
-  vertical-align: middle;
 }
 .form-radio + .form-radio,
 .form-checkbox + .form-checkbox {
@@ -1675,10 +1678,11 @@ input.tab-nav-default {
   height: 2;
 }
 .tab-nav-default .nav-item {
-  border-color: transparent;
+  border-color: #ddd;
   color: #555;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  margin-left: -1px;
 }
 button.tab-nav-default .nav-item,
 input.tab-nav-default .nav-item {
@@ -1699,6 +1703,8 @@ a.tab-nav-default .nav-item:hover {
 }
 .tab-nav-default .nav-item {
   border-style: solid;
+  border-right-width: 1px;
+  border-left-width: 1px;
   font-size: 14px;
   line-height: 1.6;
   padding: 12px 38px;
@@ -1818,99 +1824,224 @@ input.tab-nav-info .nav-item {
   display: none;
 }
 .dropdown {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   display: inline-block;
-  line-height: 0;
   position: relative;
   text-align: left;
+}
+.dropdown {
+  border-style: solid;
+  font-size: 14px;
+  line-height: 0;
+}
+input.dropdown {
+  height: 0px;
 }
 .dropdown + .dropdown {
   margin-left: 10px;
 }
 .dropdown .btn-default {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   text-align: left;
+  width: 100%;
+}
+.dropdown .caret {
+  float: right;
+  margin-top: 8px;
+  width: 0px;
+  height: 0px;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #666;
+}
+.dropdown.open .dropdown-menu {
+  display: block;
 }
 .dropdown-menu {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   background-color: #fff;
+  border-color: #ccc;
   display: none;
+  overflow-x: hidden;
+  overflow-y: auto;
   position: absolute;
   left: 0;
   right: 0;
-  margin-top: -1px;
   z-index: 2;
-  border: 1px solid #ccc;
-  max-height: 170px;
-  overflow-x: hidden;
-  overflow-y: auto;
+  margin-top: -1px;
+}
+.dropdown-menu {
+  border-style: solid;
+  border-top-width: 1px;
+  border-right-width: 1px;
+  border-bottom-width: 1px;
+  border-left-width: 1px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+input.dropdown-menu {
+  height: 24px;
+}
+.dropdown-menu:hover {
+  -webkit-transition: background-color 0.2s;
+          transition: background-color 0.2s;
 }
 .dropdown-menu li {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-color: transparent;
   color: #888;
-  padding: 6px 12px;
-  line-height: 1.6;
   cursor: pointer;
+}
+.dropdown-menu li {
+  border-style: solid;
+  font-size: 14px;
+  line-height: 1.6;
+  padding: 6px 12px;
+}
+input.dropdown-menu li {
+  height: 34px;
+}
+button.dropdown-menu li,
+input.dropdown-menu li {
+  background-color: transparent;
 }
 .dropdown-menu li:hover {
   background-color: #fffbef;
+  -webkit-transition: background-color 0.2s;
+          transition: background-color 0.2s;
 }
+a.dropdown-menu li:hover {
+  color: #888;
+}
+.dropdown-menu li:active,
+.dropdown-menu li[active],
 .dropdown-menu li.active {
   background-color: #f90;
   color: #fff;
 }
 .tooltip {
   position: absolute;
-  background-color: #555;
-  border-color: transparent;
-  color: #fff;
-  -webkit-box-shadow: 1px 1px 1px rgba(0,0,0,0.2);
-          box-shadow: 1px 1px 1px rgba(0,0,0,0.2);
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
-.tooltip:hover {
-  -webkit-transition: background-color 0.2s;
-          transition: background-color 0.2s;
-}
 .tooltip {
   border-style: solid;
+  border-top-width: 1px;
+  border-right-width: 1px;
+  border-bottom-width: 1px;
+  border-left-width: 1px;
   font-size: 12px;
   line-height: 1.6;
   padding: 5px 12px;
   border-radius: 4px;
 }
 input.tooltip {
-  height: 29px;
+  height: 31px;
 }
 .tooltip:before,
 .tooltip:after {
-  content: ' ';
   position: absolute;
-  border: solid transparent;
+  content: ' ';
+  border: 5px solid transparent;
+}
+.tooltip-default {
+  background-color: #fff;
+  border-color: #ccc;
+  color: #555;
+  -webkit-box-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+          box-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+.tooltip-default:hover {
+  -webkit-transition: background-color 0.2s;
+          transition: background-color 0.2s;
+}
+.tooltip-default:before {
+  border-color: #ccc;
+}
+.tooltip-default:after {
+  border-color: #fff;
+}
+.tooltip-inverted {
+  background-color: #555;
+  border-color: #4d4d4d;
+  color: #fff;
+  -webkit-box-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+          box-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+.tooltip-inverted:hover {
+  -webkit-transition: background-color 0.2s;
+          transition: background-color 0.2s;
+}
+.tooltip-inverted:before {
+  border-color: #4d4d4d;
+}
+.tooltip-inverted:after {
+  border-color: #555;
 }
 .tooltip-top:before,
 .tooltip-top:after {
   left: 50%;
-  margin-left: -8px;
+  margin-left: -5px;
+  border-bottom-width: 0;
+  border-left-color: transparent;
+  border-right-color: transparent;
 }
 .tooltip-top:before {
-  border-top-color: ;
-  bottom: -16px;
+  bottom: -5px;
 }
 .tooltip-top:after {
-  border-top-color: ;
-  bottom: -15px;
+  bottom: -4px;
+}
+.tooltip-right:before,
+.tooltip-right:after {
+  top: 50%;
+  margin-top: -5px;
+  border-left-width: 0;
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+}
+.tooltip-right:before {
+  left: -5px;
+}
+.tooltip-right:after {
+  left: -4px;
 }
 .tooltip-bottom:before,
 .tooltip-bottom:after {
   left: 50%;
-  margin-left: -8px;
+  margin-left: -5px;
+  border-top-width: 0;
+  border-left-color: transparent;
+  border-right-color: transparent;
 }
 .tooltip-bottom:before {
-  border-bottom-color: ;
-  top: -17px;
+  top: -5px;
 }
 .tooltip-bottom:after {
-  border-bottom-color: ;
-  top: -16px;
+  top: -4px;
 }
+.tooltip-left:before,
+.tooltip-left:after {
+  top: 50%;
+  margin-top: -5px;
+  border-right-width: 0;
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+}
+.tooltip-left:before {
+  right: -5px;
+}
+.tooltip-left:after {
+  right: -4px;
+}
+/**
+@import "./ui/list.styl";
+*/
 .thumbnail,
 .thumbnail-round,
 .thumbnail-circle {
@@ -2102,7 +2233,7 @@ input.thumbnail-circle .title {
 .thumbnail-circle {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  border-radius: 1000px;
+  border-radius: 50%;
 }
 .thumbnail-circle {
   border-style: solid;
@@ -2165,5 +2296,5 @@ input.thumbnail-circle .title {
   height: 150px;
 }
 .thumbnail-circle img {
-  border-radius: 1000px;
+  border-radius: 50%;
 }

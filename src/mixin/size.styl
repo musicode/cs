@@ -18,6 +18,7 @@ ui-size-inner($conf) {
 
     $width = $conf['width'];
     $height = $conf['height'];
+    $min-width = $conf['min-width'];
     $border-radius = $conf['border-radius'];
 
     $real-height = $font-size * $line-height;
@@ -65,11 +66,25 @@ ui-size-inner($conf) {
     if ($height > 0) {
         height: $height;
     }
-    else {
+    else if ($support-ie == true) {
         // line-height 是 x.x 的格式，不是具体的像素值
         input& {
             height: round($real-height);
         }
+    }
+
+    if ($min-width > 0) {
+        min-width: $min-width;
+    }
+    if ($min-height > 0) {
+        min-height: $min-height;
+    }
+
+    if ($max-width > 0) {
+        max-width: $max-width;
+    }
+    if ($max-height > 0) {
+        max-height: $max-height;
     }
 
     if ($border-radius > 0) {

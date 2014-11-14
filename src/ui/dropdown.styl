@@ -10,7 +10,22 @@
     dropdown();
 
     .btn-default {
+        ellipsis();
         dropdown-button();
+    }
+
+    .caret {
+        dropdown-caret();
+        dropdown-caret-down();
+    }
+
+    &.open {
+        .caret {
+           dropdown-caret-top();
+        }
+        .dropdown-menu {
+            display: block;
+        }
     }
 }
 
@@ -20,9 +35,5 @@
 
     li {
         dropdown-menu-item();
-
-        &.active {
-            dropdown-menu-item-active();
-        }
     }
 }
