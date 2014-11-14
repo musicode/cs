@@ -65,7 +65,7 @@ ui-size-inner($conf) {
     if ($height > 0) {
         height: $height;
     }
-    else if ($support-ie == true) {
+    else {
         // line-height 是 x.x 的格式，不是具体的像素值
         input& {
             height: round($real-height);

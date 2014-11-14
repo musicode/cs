@@ -129,9 +129,10 @@ form-box() {
     }
 
     input {
-        cursor: pointer;
+        if ($support-mouse) {
+            cursor: pointer;
+        }
         margin: 0 $form-box-inner-gap 0 1px;
-        vertical-align: middle;
     }
 
     & + & {
