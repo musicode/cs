@@ -1883,7 +1883,6 @@ input.dropdown {
   border-left-width: 1px;
   font-size: 14px;
   line-height: 1.6;
-  max-height: 170px;
 }
 input.dropdown-menu {
   height: 24px;
@@ -2041,9 +2040,6 @@ input.tooltip {
 .tooltip-left:after {
   right: -4px;
 }
-/**
-@import "./ui/list.styl";
-*/
 .thumbnail,
 .thumbnail-round,
 .thumbnail-circle {
@@ -2062,11 +2058,6 @@ input.tooltip {
 .thumbnail-circle img {
   width: 100%;
   height: 100%;
-}
-a.thumbnail:hover:after,
-a.thumbnail-round:hover:after,
-a.thumbnail-circle:hover:after {
-  background-color: #000;
 }
 .thumbnail .title,
 .thumbnail-round .title,
@@ -2304,4 +2295,45 @@ input.thumbnail-circle .title {
 }
 .thumbnail-circle img {
   border-radius: 50%;
+}
+body {
+  padding: 20px;
+}
+section {
+  background-color: #f9f7f2;
+  padding: 1rem;
+  -webkit-box-shadow: 1px 1px 0 rgba(0,0,0,0.15);
+          box-shadow: 1px 1px 0 rgba(0,0,0,0.15);
+}
+section + section {
+  margin-top: 1rem;
+}
+h1 {
+  font-size: 36px;
+  margin-bottom: 1rem;
+}
+h2 {
+  font-size: 30px;
+  margin: 2rem 0;
+}
+.form-label {
+  width: 150px;
+  text-align: right;
+}
+.dialog {
+  position: relative;
+}
+.group {
+  margin-top: 14px;
+}
+.progress,
+.message-default,
+.message-primary,
+.message-info,
+.message-success,
+.message-error {
+  margin-top: 7px;
+}
+.dropdown {
+  width: 12em;
 }
