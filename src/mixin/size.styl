@@ -6,6 +6,7 @@
 ui-size-inner($conf) {
 
     $font-size = $conf['font-size'];
+    $font-weight = $conf['font-weight'];
     $line-height = $conf['line-height'];
 
     $border-top-width = $conf['border-top-width'];
@@ -48,6 +49,11 @@ ui-size-inner($conf) {
     }
 
     font-size: $font-size;
+
+    if ($font-weight && $font-weight != normal) {
+        font-weight: $font-weight;
+    }
+
     line-height: $line-height;
 
     if ($padding-vertical > 0 || $padding-horizontal > 0) {

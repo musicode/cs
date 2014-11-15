@@ -32,8 +32,12 @@ ui-type($conf) {
         opacity($default['opacity']);
     }
 
-    if ($default['shadow'] && $default['shadow'] != 'none') {
-        box-shadow: $default['shadow'];
+    if ($default['box-shadow'] && $default['box-shadow'] != 'none') {
+        box-shadow: $default['box-shadow'];
+    }
+
+    if ($default['text-shadow'] && $default['text-shadow'] != 'none') {
+        text-shadow: $default['text-shadow'];
     }
 
 

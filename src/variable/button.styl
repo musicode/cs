@@ -3,7 +3,7 @@
  * @author zhujl
  */
 
-$btn-font-weight = normal;
+// 连续按钮的水平间距
 $btn-gap = 10px;
 
 $size-hash['btn'] = {
@@ -13,11 +13,7 @@ $size-hash['btn'] = {
         'border-right-width': 1px,
         'border-bottom-width': 1px,
         'border-left-width': 1px,
-        'border-radius': $border-radius-base,
-        'font-size': $font-size-base,
-        'line-height': $line-height-base,
-        'padding-vertical': $padding-vertical-base,
-        'padding-horizontal': $padding-horizontal-base
+        'border-radius': $border-radius-base
     },
 
     'tiny': {
@@ -25,11 +21,7 @@ $size-hash['btn'] = {
         'border-right-width': 1px,
         'border-bottom-width': 1px,
         'border-left-width': 1px,
-        'border-radius': $border-radius-base,
-        'font-size': $font-size-tiny,
-        'line-height': $line-height-tiny,
-        'padding-vertical': $padding-vertical-tiny,
-        'padding-horizontal': $padding-horizontal-tiny
+        'border-radius': $border-radius-base
     },
 
     'small': {
@@ -37,11 +29,7 @@ $size-hash['btn'] = {
         'border-right-width': 1px,
         'border-bottom-width': 1px,
         'border-left-width': 1px,
-        'border-radius': $border-radius-base,
-        'font-size': $font-size-small,
-        'line-height': $line-height-small,
-        'padding-vertical': $padding-vertical-small,
-        'padding-horizontal': $padding-horizontal-small
+        'border-radius': $border-radius-base
     },
 
     'large': {
@@ -49,11 +37,7 @@ $size-hash['btn'] = {
         'border-right-width': 1px,
         'border-bottom-width': 1px,
         'border-left-width': 1px,
-        'border-radius': $border-radius-base,
-        'font-size': $font-size-large,
-        'line-height': $line-height-large,
-        'padding-vertical': $padding-vertical-large,
-        'padding-horizontal': $padding-horizontal-large
+        'border-radius': $border-radius-base
     },
 
     'huge': {
@@ -61,11 +45,7 @@ $size-hash['btn'] = {
         'border-right-width': 1px,
         'border-bottom-width': 1px,
         'border-left-width': 1px,
-        'border-radius': $border-radius-base,
-        'font-size': $font-size-huge,
-        'line-height': $line-height-huge,
-        'padding-vertical': $padding-vertical-huge,
-        'padding-horizontal': $padding-horizontal-huge
+        'border-radius': $border-radius-base
     }
 
 };
@@ -74,161 +54,146 @@ $type-hash['btn-default'] = {
     'default': {
         'bg': #FFF,
         'border': $gray-light,
-        'color': $gray-darker,
-        'shadow': none
+        'color': $gray-darker
     },
     'hover': {
         'bg': darken(#FFF, 5%),
         'border': darken($gray-light, 5%),
-        'color': $gray-darker,
-        'shadow': none
+        'color': $gray-darker
     },
     'active': {
         'bg': darken(#FFF, 10%),
         'border': darken($gray-light, 10%),
         'color': $gray-darker,
-        'shadow': inset 0 3px 5px rgba(0,0,0,.125)
+        'box-shadow': inset 0 3px 5px rgba(0,0,0,.125)
     },
     'disabled': {
         'bg': #DDD,
         'border': #BBB,
-        'color': $text-color,
-        'shadow': none
+        'color': $text-color
     },
 };
 
 $type-hash['btn-primary'] = {
     'default': {
-        bg: $brand-primary,
-        border: darken($brand-primary, 5%),
-        color: #FFF,
-        shadow: none
+        'bg': $brand-primary,
+        'border': darken($brand-primary, 5%),
+        'color': #FFF
     },
     'hover': {
-        bg: darken($brand-primary, 5%),
-        border: darken($brand-primary, 10%),
-        color: #FFF,
-        shadow: none
+        'bg': darken($brand-primary, 5%),
+        'border': darken($brand-primary, 10%),
+        'color': #FFF
     },
     'active': {
-        bg: darken($brand-primary, 5%),
-        border: darken($brand-primary, 10%),
-        color: #FFF,
-        shadow: inset 0 3px 5px rgba(0,0,0,.125)
+        'bg': darken($brand-primary, 5%),
+        'border': darken($brand-primary, 10%),
+        'color': #FFF,
+        'box-shadow': inset 0 3px 5px rgba(0,0,0,.125)
     },
     'disabled': {
-        bg: #DFC7A3,
-        border: #C5AB84,
-        color: #FFF,
-        shadow: none
+        'bg': #DFC7A3,
+        'border': #C5AB84,
+        'color': #FFF
     }
 };
 
 $type-hash['btn-info'] = {
     'default': {
-        bg: $brand-info,
-        border: darken($brand-info, 5%),
-        color: #FFF,
-        shadow: none
+        'bg': $brand-info,
+        'border': darken($brand-info, 5%),
+        'color': #FFF
     },
 
     'hover': {
-        bg: darken($brand-info, 5%),
-        border: darken($brand-info, 10%),
-        color: #FFF,
-        shadow: none
+        'bg': darken($brand-info, 5%),
+        'border': darken($brand-info, 10%),
+        'color': #FFF
     },
 
     'active': {
-        bg: darken($brand-info, 5%),
-        border: darken($brand-info, 10%),
-        color: #FFF,
-        shadow: inset 0 3px 5px rgba(0,0,0,.125)
+        'bg': darken($brand-info, 5%),
+        'border': darken($brand-info, 10%),
+        'color': #FFF,
+        'box-shadow': inset 0 3px 5px rgba(0,0,0,.125)
     },
 
     'disabled': {
-        bg: #8EA3B9,
-        border: #6E86A0,
-        color: #FFF,
-        shadow: none
+        'bg': #8EA3B9,
+        'border': #6E86A0,
+        'color': #FFF
     }
 };
 
 $type-hash['btn-success'] = {
 
     'default': {
-        bg: $brand-success,
-        border: darken($brand-success, 5%),
-        color: #FFF,
-        shadow: none
+        'bg': $brand-success,
+        'border': darken($brand-success, 5%),
+        'color': #FFF
     },
 
     'hover': {
 
-        bg: darken($brand-success, 5%),
-        border: darken($brand-success, 10%),
-        color: #FFF,
-        shadow: none
+        'bg': darken($brand-success, 5%),
+        'border': darken($brand-success, 10%),
+        'color': #FFF
     },
 
     'active': {
-        bg: darken($brand-success, 5%),
-        border: darken($brand-success, 10%),
-        color: #FFF,
-        shadow: inset 0 3px 5px rgba(0,0,0,.125)
+        'bg': darken($brand-success, 5%),
+        'border': darken($brand-success, 10%),
+        'color': #FFF,
+        'box-shadow': inset 0 3px 5px rgba(0,0,0,.125)
     },
 
     'disabled': {
-        bg: #A0B790,
-        border: #7E9F67,
-        color: #FFF,
-        shadow: none
+        'bg': #A0B790,
+        'border': #7E9F67,
+        'color': #FFF
     }
 };
 
 $type-hash['btn-error'] = {
 
     'default': {
-        bg: $brand-error,
-        border: darken($brand-error, 5%),
-        color: #FFF,
-        shadow: none
+        'bg': $brand-error,
+        'border': darken($brand-error, 5%),
+        'color': #FFF
     },
 
     'hover': {
-        bg: darken($brand-error, 5%),
-        border: darken($brand-error, 10%),
-        color: #FFF,
-        shadow: none
+        'bg': darken($brand-error, 5%),
+        'border': darken($brand-error, 10%),
+        'color': #FFF
     },
 
     'active': {
-        bg: darken($brand-error, 5%),
-        border: darken($brand-error, 10%),
-        color: #FFF,
-        shadow: inset 0 3px 5px rgba(0,0,0,.125)
+        'bg': darken($brand-error, 5%),
+        'border': darken($brand-error, 10%),
+        'color': #FFF,
+        'box-shadow': inset 0 3px 5px rgba(0,0,0,.125)
     },
 
     'disabled': {
-        bg: #CDA28F,
-        border: #B18876,
-        color: #FFF,
-        shadow: none
+        'bg': #CDA28F,
+        'border': #B18876,
+        'color': #FFF
     }
 };
 
 $type-hash['btn-link'] = {
 
     'default': {
-        color: $gray-darker
+        'color': $gray-darker
     },
 
     'hover': {
-        color: darken($gray-darker, 5%)
+        'color': darken($gray-darker, 5%)
     },
 
     'disabled': {
-        color: #999
+        'color': #999
     }
 
 };

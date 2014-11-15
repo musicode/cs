@@ -6,13 +6,9 @@
 $size-hash['dialog-header'] = {
 
     'base': {
-        'border-top-width': 0,
-        'border-right-width': 0,
         'border-bottom-width': 1px,
-        'border-left-width': 0,
-        'border-radius': 0,
         'font-size': $font-size-large,
-        'line-height': $line-height-base,
+        'font-family': $font-family-title,
         'padding-vertical': 15px,
         'padding-horizontal': 20px,
     }
@@ -36,9 +32,7 @@ $size-hash['dialog-body'] = {
 
     'base': {
         'padding-vertical': 20px,
-        'padding-horizontal': 20px,
-        'font-size': $font-size-base,
-        'line-height': $line-height-base,
+        'padding-horizontal': 20px
     }
 }
 
@@ -61,10 +55,10 @@ $type-hash['dialog-header'] = {
 $type-hash['dialog-close'] = {
 
     'default': {
-        color: #CCC
+        'color': #CCC
     },
     'hover': {
-        color: #999
+        'color': #999
     }
 };
 
@@ -76,9 +70,5 @@ $type-hash['dialog-mask'] = {
     }
 };
 
-$dialog-header-font-weight = normal;
-$dialog-header-font-family = $font-family-title;
-
-$dialog-close-font-weight = normal;
 $dialog-close-top = 13px;
 $dialog-close-right = 13px;
