@@ -45,9 +45,9 @@ ui-type($conf) {
     $need-hover-bg = typeof($hover['bg']) == 'rgba' && $hover['bg'] != $default['bg'];
     $need-hover-color = typeof($hover['color']) == 'rgba';
     $need-hover-border = typeof($hover['border']) == 'rgba' && $hover['border'] != $default['border'];
-    $need-hover-shadow = $hover['shadow'] && $hover['shadow'] != $default['shadow'];
+    $need-hover-box-shadow = $hover['box-shadow'] && $hover['box-shadow'] != $default['box-shadow'];
 
-    if ($support-mouse == true || $need-hover-bg || $need-hover-color || $need-hover-border || $need-hover-shadow) {
+    if ($support-mouse == true || $need-hover-bg || $need-hover-color || $need-hover-border || $need-hover-box-shadow) {
         &:hover {
 
             if ($need-hover-bg) {
@@ -69,8 +69,8 @@ ui-type($conf) {
                 border-color: $hover['border'];
             }
 
-            if ($need-hover-shadow) {
-                box-shadow: $hover['shadow'];
+            if ($need-hover-box-shadow) {
+                box-shadow: $hover['box-shadow'];
             }
 
             if ($transition-duration > 0) {
@@ -82,9 +82,9 @@ ui-type($conf) {
     $need-focus-bg = typeof($focus['bg']) == 'rgba' && $focus['bg'] != $default['bg'];
     $need-focus-color = typeof($focus['color']) == 'rgba' && $focus['color'] != $default['color'];
     $need-focus-border = typeof($focus['border']) == 'rgba' && $focus['border'] != $default['border'];
-    $need-focus-shadow = $focus['shadow'] && $focus['shadow'] != $default['shadow'];
+    $need-focus-box-shadow = $focus['box-shadow'] && $focus['box-shadow'] != $default['box-shadow'];
 
-    if ($need-focus-bg || $need-focus-color || $need-focus-border || $need-focus-shadow) {
+    if ($need-focus-bg || $need-focus-color || $need-focus-border || $need-focus-box-shadow) {
         &:focus {
             if ($need-focus-bg) {
                 background-color: $focus['bg'];
@@ -95,8 +95,8 @@ ui-type($conf) {
             if ($need-focus-border) {
                 border-color: $focus['border'];
             }
-            if ($need-focus-shadow) {
-                box-shadow: $focus['shadow'];
+            if ($need-focus-box-shadow) {
+                box-shadow: $focus['box-shadow'];
             }
         }
     }
@@ -104,9 +104,9 @@ ui-type($conf) {
     $need-active-bg = typeof($active['bg']) == 'rgba' && $active['bg'] != $default['bg'];
     $need-active-color = typeof($active['color']) == 'rgba' && $active['color'] != $default['color'];
     $need-active-border = typeof($active['border']) == 'rgba' && $active['border'] != $default['border'];
-    $need-active-shadow = $active['shadow'] && $active['shadow'] != $default['shadow']
+    $need-active-box-shadow = $active['box-shadow'] && $active['box-shadow'] != $default['box-shadow']
 
-    if ($need-active-bg || $need-active-color || $need-active-border || $need-active-shadow) {
+    if ($need-active-bg || $need-active-color || $need-active-border || $need-active-box-shadow) {
 
         &:active,
         &[active],
@@ -120,8 +120,8 @@ ui-type($conf) {
             if ($need-active-border) {
                 border-color: $active['border'];
             }
-            if ($need-active-shadow) {
-                box-shadow: $active['shadow'];
+            if ($need-active-box-shadow) {
+                box-shadow: $active['box-shadow'];
             }
         }
     }
@@ -130,9 +130,9 @@ ui-type($conf) {
     $need-disabled-bg = typeof($disabled['bg']) == 'rgba' && $disabled['bg'] != $default['bg'];
     $need-disabled-color = typeof($disabled['color']) == 'rgba' && $disabled['color'] != $default['color'];
     $need-disabled-border = typeof($disabled['border']) == 'rgba' && $disabled['border'] != $default['border'];
-    $need-disabled-shadow = $disabled['shadow'] && $disabled['shadow'] != $default['shadow']
+    $need-disabled-box-shadow = $disabled['box-shadow'] && $disabled['box-shadow'] != $default['box-shadow']
 
-    if ($need-disabled-bg || $need-disabled-color || $need-disabled-border || $need-disabled-shadow) {
+    if ($need-disabled-bg || $need-disabled-color || $need-disabled-border || $need-disabled-box-shadow) {
 
         &:disabled,
         &[disabled], // IE 不加这句没用
@@ -152,8 +152,8 @@ ui-type($conf) {
             if ($need-disabled-border) {
                 border-color: $disabled['border'];
             }
-            if ($need-disabled-shadow) {
-                box-shadow: $disabled['shadow'];
+            if ($need-disabled-box-shadow) {
+                box-shadow: $disabled['box-shadow'];
             }
         }
     }
