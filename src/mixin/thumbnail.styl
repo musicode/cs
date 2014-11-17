@@ -5,6 +5,7 @@
 
 thumbnail() {
 
+    ui-size('thumbnail');
     ui-type($type-hash['thumbnail']);
 
     display: inline-block;
@@ -22,13 +23,8 @@ thumbnail() {
 
 }
 
-thumbnail-rect() {
-    ui-size('thumbnail-rect');
-}
 
 thumbnail-round() {
-
-    ui-size('thumbnail-round');
 
     border-radius: $thumbnail-round;
 
@@ -38,8 +34,6 @@ thumbnail-round() {
 }
 
 thumbnail-circle() {
-
-    ui-size('thumbnail-circle');
 
     border-radius: $thumbnail-circle;
 

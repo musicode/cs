@@ -6,25 +6,17 @@
 @import "../variable/thumbnail.styl";
 @import "../mixin/thumbnail.styl";
 
-.thumbnail,
-.thumbnail-round,
-.thumbnail-circle {
+.thumbnail {
 
     thumbnail();
 
+    &.round {
+        thumbnail-round();
+    }
+    &.circle {
+        thumbnail-circle();
+    }
     .title {
         thumbnail-title();
     }
-}
-
-.thumbnail {
-    thumbnail-rect();
-}
-
-.thumbnail-round {
-    thumbnail-round();
-}
-
-.thumbnail-circle {
-    thumbnail-circle();
 }

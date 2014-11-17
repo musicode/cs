@@ -36,77 +36,13 @@ $thumbnail-height-large = 120px;
 $thumbnail-width-huge = 150px;
 $thumbnail-height-huge = 150px;
 
+$thumbnail-title-gap = 8px;
 
-$size-hash['thumbnail-rect'] = {
+$thumbnail-bg-hover = #000;
+$thumbnail-opacity-hover = 0.3;
 
-    'base': {
-        'border-top-width': $thumbnail-border-top-width,
-        'border-right-width': $thumbnail-border-right-width,
-        'border-bottom-width': $thumbnail-border-bottom-width,
-        'border-left-width': $thumbnail-border-left-width,
-        'width': $thumbnail-width-base,
-        'height': $thumbnail-height-base,
-        'font-size': $thumbnail-font-size,
-        'line-height': $thumbnail-line-height,
-        'padding-vertical': $thumbnail-padding-vertical,
-        'padding-horizontal': $thumbnail-padding-horizontal
-    },
 
-    'tiny': {
-        'border-top-width': $thumbnail-border-top-width,
-        'border-right-width': $thumbnail-border-right-width,
-        'border-bottom-width': $thumbnail-border-bottom-width,
-        'border-left-width': $thumbnail-border-left-width,
-        'width': $thumbnail-width-tiny,
-        'height': $thumbnail-height-tiny,
-        'font-size': $thumbnail-font-size,
-        'line-height': $thumbnail-line-height,
-        'padding-vertical': $thumbnail-padding-vertical,
-        'padding-horizontal': $thumbnail-padding-horizontal
-    },
-
-    'small': {
-        'border-top-width': $thumbnail-border-top-width,
-        'border-right-width': $thumbnail-border-right-width,
-        'border-bottom-width': $thumbnail-border-bottom-width,
-        'border-left-width': $thumbnail-border-left-width,
-        'width': $thumbnail-width-small,
-        'height': $thumbnail-height-small,
-        'font-size': $thumbnail-font-size,
-        'line-height': $thumbnail-line-height,
-        'padding-vertical': $thumbnail-padding-vertical,
-        'padding-horizontal': $thumbnail-padding-horizontal
-    },
-
-    'large': {
-        'border-top-width': $thumbnail-border-top-width,
-        'border-right-width': $thumbnail-border-right-width,
-        'border-bottom-width': $thumbnail-border-bottom-width,
-        'border-left-width': $thumbnail-border-left-width,
-        'width': $thumbnail-width-large,
-        'height': $thumbnail-height-large,
-        'font-size': $thumbnail-font-size,
-        'line-height': $thumbnail-line-height,
-        'padding-vertical': $thumbnail-padding-vertical,
-        'padding-horizontal': $thumbnail-padding-horizontal
-    },
-
-    'huge': {
-        'border-top-width': $thumbnail-border-top-width,
-        'border-right-width': $thumbnail-border-right-width,
-        'border-bottom-width': $thumbnail-border-bottom-width,
-        'border-left-width': $thumbnail-border-left-width,
-        'width': $thumbnail-width-huge,
-        'height': $thumbnail-height-huge,
-        'font-size': $thumbnail-font-size,
-        'line-height': $thumbnail-line-height,
-        'padding-vertical': $thumbnail-padding-vertical,
-        'padding-horizontal': $thumbnail-padding-horizontal
-    }
-
-};
-
-$size-hash['thumbnail-round'] = {
+$size-hash['thumbnail'] = {
 
     'base': {
         'border-top-width': $thumbnail-border-top-width,
@@ -172,74 +108,7 @@ $size-hash['thumbnail-round'] = {
         'padding-vertical': $thumbnail-padding-vertical,
         'padding-horizontal': $thumbnail-padding-horizontal
     }
-};
 
-$size-hash['thumbnail-circle'] = {
-
-    'base': {
-        'border-top-width': $thumbnail-border-top-width,
-        'border-right-width': $thumbnail-border-right-width,
-        'border-bottom-width': $thumbnail-border-bottom-width,
-        'border-left-width': $thumbnail-border-left-width,
-        'width': $thumbnail-width-base,
-        'height': $thumbnail-height-base,
-        'font-size': $thumbnail-font-size,
-        'line-height': $thumbnail-line-height,
-        'padding-vertical': $thumbnail-padding-vertical,
-        'padding-horizontal': $thumbnail-padding-horizontal
-    },
-
-    'tiny': {
-        'border-top-width': $thumbnail-border-top-width,
-        'border-right-width': $thumbnail-border-right-width,
-        'border-bottom-width': $thumbnail-border-bottom-width,
-        'border-left-width': $thumbnail-border-left-width,
-        'width': $thumbnail-width-tiny,
-        'height': $thumbnail-height-tiny,
-        'font-size': $thumbnail-font-size,
-        'line-height': $thumbnail-line-height,
-        'padding-vertical': $thumbnail-padding-vertical,
-        'padding-horizontal': $thumbnail-padding-horizontal
-    },
-
-    'small': {
-        'border-top-width': $thumbnail-border-top-width,
-        'border-right-width': $thumbnail-border-right-width,
-        'border-bottom-width': $thumbnail-border-bottom-width,
-        'border-left-width': $thumbnail-border-left-width,
-        'width': $thumbnail-width-small,
-        'height': $thumbnail-height-small,
-        'font-size': $thumbnail-font-size,
-        'line-height': $thumbnail-line-height,
-        'padding-vertical': $thumbnail-padding-vertical,
-        'padding-horizontal': $thumbnail-padding-horizontal
-    },
-
-    'large': {
-        'border-top-width': $thumbnail-border-top-width,
-        'border-right-width': $thumbnail-border-right-width,
-        'border-bottom-width': $thumbnail-border-bottom-width,
-        'border-left-width': $thumbnail-border-left-width,
-        'width': $thumbnail-width-large,
-        'height': $thumbnail-height-large,
-        'font-size': $thumbnail-font-size,
-        'line-height': $thumbnail-line-height,
-        'padding-vertical': $thumbnail-padding-vertical,
-        'padding-horizontal': $thumbnail-padding-horizontal
-    },
-
-    'huge': {
-        'border-top-width': $thumbnail-border-top-width,
-        'border-right-width': $thumbnail-border-right-width,
-        'border-bottom-width': $thumbnail-border-bottom-width,
-        'border-left-width': $thumbnail-border-left-width,
-        'width': $thumbnail-width-huge,
-        'height': $thumbnail-height-huge,
-        'font-size': $thumbnail-font-size,
-        'line-height': $thumbnail-line-height,
-        'padding-vertical': $thumbnail-padding-vertical,
-        'padding-horizontal': $thumbnail-padding-horizontal
-    }
 };
 
 $type-hash['thumbnail'] = {
@@ -266,10 +135,5 @@ $type-hash['thumbnail-title'] = {
     }
 };
 
-
-$thumbnail-title-gap = 8px;
-
-$thumbnail-bg-hover = #000;
-$thumbnail-opacity-hover = 0.3;
 
 
