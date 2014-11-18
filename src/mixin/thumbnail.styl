@@ -15,9 +15,64 @@ thumbnail() {
         height: 100%;
     }
 
-    a&:hover {
+    $offset-horizontal = $thumbnail-border-left-width + $thumbnail-border-right-width + 2 * $thumbnail-padding-horizontal;
+    $offset-vertical = $thumbnail-border-top-width + $thumbnail-border-bottom-width + 2 * $thumbnail-padding-vertical
+
+    a& {
+
+        position: relative;
+
         &:after {
+
+            opacity(0);
+
             background-color: $thumbnail-bg-hover;
+            content: ' ';
+            position: absolute;
+            left: 0;
+            top: 0;
+
+            width: $size-hash['thumbnail']['base']['width'] - $offset-horizontal;
+            height: $size-hash['thumbnail']['base']['height'] - $offset-vertical;
+            position: absolute;
+
+        }
+    }
+
+    a&:hover:after {
+
+        opacity($thumbnail-opacity-hover);
+
+        if ($transition-duration > 0) {
+            transition: $transition-duration opacity;
+        }
+    }
+
+    &{$size-tiny-selector} {
+        a&:after {
+            width: $size-hash['thumbnail']['tiny']['width'] - $offset-horizontal;
+            height: $size-hash['thumbnail']['tiny']['height'] - $offset-vertical;
+        }
+    }
+
+    &{$size-small-selector} {
+        a&:after {
+            width: $size-hash['thumbnail']['small']['width'] - $offset-horizontal;
+            height: $size-hash['thumbnail']['small']['height'] - $offset-vertical;
+        }
+    }
+
+    &{$size-large-selector} {
+        a&:after {
+            width: $size-hash['thumbnail']['large']['width'] - $offset-horizontal;
+            height: $size-hash['thumbnail']['large']['height'] - $offset-vertical;
+        }
+    }
+
+    &{$size-huge-selector} {
+        a&:after {
+            width: $size-hash['thumbnail']['huge']['width'] - $offset-horizontal;
+            height: $size-hash['thumbnail']['huge']['height'] - $offset-vertical;
         }
     }
 
@@ -26,19 +81,19 @@ thumbnail() {
 
 thumbnail-round() {
 
-    border-radius: $thumbnail-round;
-
-    img {
-        border-radius: $thumbnail-round-inner;
+    &,
+    img,
+    a&:hover:after {
+        border-radius: $thumbnail-round;
     }
 }
 
 thumbnail-circle() {
 
-    border-radius: $thumbnail-circle;
-
-    img {
-        border-radius: $thumbnail-circle-inner;
+    &,
+    img,
+    a&:hover:after {
+        border-radius: $thumbnail-circle;
     }
 }
 

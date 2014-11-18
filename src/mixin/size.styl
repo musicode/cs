@@ -6,6 +6,7 @@
 ui-size-inner($conf) {
 
     $font-size = $conf['font-size'];
+    $font-family = $conf['font-family'];
     $font-weight = $conf['font-weight'];
     $line-height = $conf['line-height'];
 
@@ -50,6 +51,9 @@ ui-size-inner($conf) {
 
     font-size: $font-size;
 
+    if ($font-family) {
+        font-family: $font-family;
+    }
     if ($font-weight && $font-weight != normal) {
         font-weight: $font-weight;
     }

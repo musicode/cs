@@ -16,6 +16,10 @@ nav-item() {
     if ($support-mouse == true) {
         cursor: pointer;
         user-select: none;
+
+        &{$active-selector} {
+            cursor: text;
+        }
     }
 
 }
