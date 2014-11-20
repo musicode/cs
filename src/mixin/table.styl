@@ -27,12 +27,12 @@ table() {
         }
         else {
             if (typeof($table-body-odd-row-bg) == 'rgba') {
-                tr:nth-chilid(2n+1) {
+                tr:nth-child(odd) {
                     background-color: $table-body-odd-row-bg;
                 }
             }
             if (typeof($table-body-even-row-bg) == 'rgba') {
-                tr:nth-chilid(2n) {
+                tr:nth-child(even) {
                     background-color: $table-body-even-row-bg;
                 }
             }

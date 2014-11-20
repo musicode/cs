@@ -1311,6 +1311,14 @@ input.placeholder.huge {
   padding-top: 5px;
   padding-bottom: 5px;
 }
+.form-group:after,
+.form-group:before {
+  content: ' ';
+  display: table;
+}
+.form-group:after {
+  clear: both;
+}
 .form-group .success,
 .form-group .error {
   display: none;
