@@ -8,7 +8,6 @@ form-group() {
     clearfix();
 
     position: relative;
-    line-height: 0;
 
     if (typeof($form-group-border) == 'rgba') {
         border-bottom: 1px solid $form-group-border;
@@ -55,14 +54,12 @@ form-controls() {
 input-group() {
 
     display: inline-block;
-    font-size: 0;
-
+    clearfix();
 }
 
 input-group-addon() {
 
-    display: inline-block;
-    vertical-align: top;
+    float: left;
 
     ui-type($type-hash['input-group-addon']);
 
@@ -77,7 +74,6 @@ input-group-addon() {
 // 文本输入框
 form-text() {
 
-    outline: none;
     margin: 0;
 
     textarea& {
@@ -132,7 +128,7 @@ form-box() {
         if ($support-mouse) {
             cursor: pointer;
         }
-        margin: 0 $form-box-inner-gap 0 1px;
+        margin-right: $form-box-inner-gap;
     }
 
     & + & {

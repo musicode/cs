@@ -26,19 +26,14 @@ ui-size-inner($conf) {
     $max-height = $conf['max-height'];
     $border-radius = $conf['border-radius'];
 
-    $real-height = $font-size * $line-height;
-
     border-style: solid;
 
     if ($border-top-width > 0 && $border-top-width == $border-right-width && $border-top-width == $border-bottom-width && $border-top-width == $border-left-width) {
         border-width: $border-top-width;
-        $real-height += 2 * $border-top-width;
     }
     else {
         if ($border-top-width > 0) {
             border-top-width: $border-top-width;
-
-            $real-height += $border-top-width;
         }
 
         if ($border-right-width > 0) {
@@ -47,7 +42,6 @@ ui-size-inner($conf) {
 
         if ($border-bottom-width > 0) {
             border-bottom-width: $border-bottom-width;
-            $real-height += $border-bottom-width;
         }
 
         if ($border-left-width > 0) {
@@ -55,8 +49,9 @@ ui-size-inner($conf) {
         }
     }
 
-    font-size: $font-size;
-
+    if ($font-size > 0) {
+        font-size: $font-size;
+    }
     if ($font-family) {
         font-family: $font-family;
     }
@@ -64,7 +59,9 @@ ui-size-inner($conf) {
         font-weight: $font-weight;
     }
 
-    line-height: $line-height;
+    if ($line-height > 0) {
+        line-height: $line-height;
+    }
 
     if ($padding-vertical > 0 || $padding-horizontal > 0) {
 
@@ -75,8 +72,6 @@ ui-size-inner($conf) {
             padding: $padding-vertical $padding-horizontal;
         }
 
-        $real-height += 2 * $padding-vertical;
-
     }
 
     if ($width > 0) {
@@ -84,12 +79,6 @@ ui-size-inner($conf) {
     }
     if ($height > 0) {
         height: $height;
-    }
-    else if ($support-ie == true) {
-        // line-height 是 x.x 的格式，不是具体的像素值
-        input& {
-            height: round($real-height);
-        }
     }
 
     if ($min-width > 0) {
@@ -123,21 +112,18 @@ ui-size($name, $has-border = false, $has-padding-horizontal = false) {
 
     if ($conf['base']) {
         //&:not({$size-tiny-selector}):not({$size-small-selector}):not({$size-large-selector}):not({$size-huge-selector}) {
-        & {
-            if ($conf['base']['font-size'] == null) {
-                $conf['base']['font-size'] = $font-size-base;
-            }
-            if ($conf['base']['line-height'] == null) {
-                $conf['base']['line-height'] = $line-height-base;
-            }
-            if ($conf['base']['padding-vertical'] == null) {
-                $conf['base']['padding-vertical'] = $padding-vertical-base;
-            }
-            if ($conf['base']['padding-horizontal'] == null) {
-                $conf['base']['padding-horizontal'] = $padding-horizontal-base;
-            }
-            ui-size-inner($conf['base']);
+
+        if ($conf['base']['line-height'] == null) {
+            $conf['base']['line-height'] = $line-height-base;
         }
+        if ($conf['base']['padding-vertical'] == null) {
+            $conf['base']['padding-vertical'] = $padding-vertical-base;
+        }
+        if ($conf['base']['padding-horizontal'] == null) {
+            $conf['base']['padding-horizontal'] = $padding-horizontal-base;
+        }
+        ui-size-inner($conf['base']);
+
     }
 
     if ($conf['tiny']) {

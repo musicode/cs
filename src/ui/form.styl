@@ -9,9 +9,21 @@
 input[type="search"] {
     appearance: textfield;
 }
+
+// 隐藏 IE 10+ 输入框后面的 x
+input::-ms-clear {
+    display: none;
+}
+
 button,
-input {
-    font-family: $font-family-title;
+select,
+input,
+textarea {
+    font-family: inherit;
+    font-size: inherit;
+    outline: 0;
+    margin: 0;
+    padding: 0;
 }
 
 .form-label,
@@ -27,7 +39,6 @@ input {
 .placeholder {
     ui-size('form-text');
 }
-
 
 .form-action {
     form-action();
@@ -81,6 +92,23 @@ input {
 
 .form-text {
     form-text();
+
+    if ($support-ie) {
+        height: 36px;
+
+        &.tiny {
+            height: 18px;
+        }
+        &.small {
+            height: 26px;
+        }
+        &.large {
+            height: 48px;
+        }
+        &.huge {
+            height: 60px;
+        }
+    }
 }
 
 .placeholder-wrapper {
@@ -127,6 +155,7 @@ input {
     input-group();
 
     .form-text {
+        float: left;
         border-radius: 0;
 
         & + .input-group-addon {
