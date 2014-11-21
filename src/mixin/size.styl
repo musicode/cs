@@ -30,23 +30,29 @@ ui-size-inner($conf) {
 
     border-style: solid;
 
-    if ($border-top-width > 0) {
-        border-top-width: $border-top-width;
-
-        $real-height += 1;
+    if ($border-top-width > 0 && $border-top-width == $border-right-width && $border-top-width == $border-bottom-width && $border-top-width == $border-left-width) {
+        border-width: $border-top-width;
+        $real-height += 2 * $border-top-width;
     }
+    else {
+        if ($border-top-width > 0) {
+            border-top-width: $border-top-width;
 
-    if ($border-right-width > 0) {
-        border-right-width: $border-right-width;
-    }
+            $real-height += $border-top-width;
+        }
 
-    if ($border-bottom-width > 0) {
-        border-bottom-width: $border-bottom-width;
-        $real-height += 1;
-    }
+        if ($border-right-width > 0) {
+            border-right-width: $border-right-width;
+        }
 
-    if ($border-left-width > 0) {
-        border-left-width: $border-left-width;
+        if ($border-bottom-width > 0) {
+            border-bottom-width: $border-bottom-width;
+            $real-height += $border-bottom-width;
+        }
+
+        if ($border-left-width > 0) {
+            border-left-width: $border-left-width;
+        }
     }
 
     font-size: $font-size;

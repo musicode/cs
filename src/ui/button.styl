@@ -6,6 +6,12 @@
 @import "../variable/button.styl";
 @import "../mixin/button.styl";
 
+button {
+    outline: none;
+    // safari 需要写这句
+    margin: 0;
+}
+
 .btn-default,
 .btn-primary,
 .btn-info,
