@@ -1182,14 +1182,19 @@ input.form-hint {
 .input-group:after {
   clear: both;
 }
+.input-group .placeholder-wrapper,
 .input-group .form-text {
   float: left;
-  border-radius: 0;
 }
+.input-group .placeholder-wrapper + .input-group-addon,
 .input-group .form-text + .input-group-addon {
   border-left: none;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
+}
+.input-group .form-text {
+  float: left;
+  border-radius: 0;
 }
 .input-group-addon {
   float: left;
