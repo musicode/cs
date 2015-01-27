@@ -99,9 +99,18 @@ form-text() {
 
 // 模拟 Placeholder
 form-placeholder-wrapper() {
+    background-color: #FFF;
     display: inline-block;
     position: relative;
+    line-height: 0;
+
+    .form-text {
+        background-color: transparent;
+        position: relative;
+        z-index: $zindex-tiny;
+    }
 }
+
 
 form-placeholder() {
     border-color: transparent;
