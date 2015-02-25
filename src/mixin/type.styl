@@ -1,5 +1,5 @@
 
-ui-type($conf) {
+ui-type($conf, $child-selector = '') {
 
     $default = $conf['default'];
     $hover = $conf['hover'];
@@ -7,39 +7,42 @@ ui-type($conf) {
     $active = $conf['active'];
     $disabled = $conf['disabled'];
 
-    if (typeof($default['bg']) == 'rgba') {
-        background-color: $default['bg'];
-    }
-    else {
-        button&,
-        input& {
-            background-color: transparent;
+    & {$child-selector} {
+
+        if (typeof($default['bg']) == 'rgba') {
+            background-color: $default['bg'];
         }
-    }
+        else {
+            button&,
+            input& {
+                background-color: transparent;
+            }
+        }
 
-    if (typeof($default['border']) == 'rgba') {
-        border-color: $default['border'];
-    }
-    else {
-        border-color: transparent;
-    }
+        if (typeof($default['border']) == 'rgba') {
+            border-color: $default['border'];
+        }
+        else {
+            border-color: transparent;
+        }
 
-    if (typeof($default['color']) == 'rgba') {
-        color: $default['color'];
-    }
+        if (typeof($default['color']) == 'rgba') {
+            color: $default['color'];
+        }
 
-    if ($default['opacity'] > 0 && $default['opacity'] < 1) {
-        opacity($default['opacity']);
-    }
+        if ($default['opacity'] > 0 && $default['opacity'] < 1) {
+            opacity($default['opacity']);
+        }
 
-    if ($default['box-shadow'] && $default['box-shadow'] != 'none') {
-        box-shadow: $default['box-shadow'];
-    }
+        if ($default['box-shadow'] && $default['box-shadow'] != 'none') {
+            box-shadow: $default['box-shadow'];
+        }
 
-    if ($default['text-shadow'] && $default['text-shadow'] != 'none') {
-        text-shadow: $default['text-shadow'];
-    }
+        if ($default['text-shadow'] && $default['text-shadow'] != 'none') {
+            text-shadow: $default['text-shadow'];
+        }
 
+    }
 
 
     $need-hover-bg = typeof($hover['bg']) == 'rgba' && $hover['bg'] != $default['bg'];
@@ -48,7 +51,7 @@ ui-type($conf) {
     $need-hover-box-shadow = $hover['box-shadow'] && $hover['box-shadow'] != $default['box-shadow'];
 
     if ($support-mouse == true || $need-hover-bg || $need-hover-color || $need-hover-border || $need-hover-box-shadow) {
-        &:hover {
+        &:hover {$child-selector} {
 
             if ($need-hover-bg) {
                 background-color: $hover['bg'];
@@ -85,7 +88,7 @@ ui-type($conf) {
     $need-focus-box-shadow = $focus['box-shadow'] && $focus['box-shadow'] != $default['box-shadow'];
 
     if ($need-focus-bg || $need-focus-color || $need-focus-border || $need-focus-box-shadow) {
-        &:focus {
+        &:focus {$child-selector} {
             if ($need-focus-bg) {
                 background-color: $focus['bg'];
             }
@@ -108,9 +111,9 @@ ui-type($conf) {
 
     if ($need-active-bg || $need-active-color || $need-active-border || $need-active-box-shadow) {
 
-        &:active,
-        &[active],
-        &{$active-selector} {
+        &:active {$child-selector},
+        &[active] {$child-selector},
+        &{$active-selector} {$child-selector} {
             if ($need-active-bg) {
                 background-color: $active['bg'];
             }
@@ -134,9 +137,9 @@ ui-type($conf) {
 
     if ($need-disabled-bg || $need-disabled-color || $need-disabled-border || $need-disabled-box-shadow) {
 
-        &:disabled,
-        &[disabled], // IE 不加这句没用
-        &{$disabled-selector} {
+        &:disabled {$child-selector},
+        &[disabled] {$child-selector}, // IE 不加这句没用
+        &{$disabled-selector} {$child-selector} {
 
             if ($support-mouse == true) {
                 cursor: not-allowed;

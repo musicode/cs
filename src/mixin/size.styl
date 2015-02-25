@@ -100,7 +100,7 @@ ui-size-inner($conf) {
     }
 }
 
-ui-size($name, $has-border = false, $has-padding-horizontal = false) {
+ui-size($name, $child-selector = '') {
 
     $conf = $size-hash[$name];
 
@@ -108,26 +108,30 @@ ui-size($name, $has-border = false, $has-padding-horizontal = false) {
         $conf = { };
     }
 
-    box-sizing: border-box;
+    & {$child-selector} {
+        box-sizing: border-box;
+    }
 
     if ($conf['base']) {
         //&:not({$size-tiny-selector}):not({$size-small-selector}):not({$size-large-selector}):not({$size-huge-selector}) {
 
-        if ($conf['base']['line-height'] == null) {
-            $conf['base']['line-height'] = $line-height-base;
+        & {$child-selector} {
+            if ($conf['base']['line-height'] == null) {
+                $conf['base']['line-height'] = $line-height-base;
+            }
+            if ($conf['base']['padding-vertical'] == null) {
+                $conf['base']['padding-vertical'] = $padding-vertical-base;
+            }
+            if ($conf['base']['padding-horizontal'] == null) {
+                $conf['base']['padding-horizontal'] = $padding-horizontal-base;
+            }
+            ui-size-inner($conf['base']);
         }
-        if ($conf['base']['padding-vertical'] == null) {
-            $conf['base']['padding-vertical'] = $padding-vertical-base;
-        }
-        if ($conf['base']['padding-horizontal'] == null) {
-            $conf['base']['padding-horizontal'] = $padding-horizontal-base;
-        }
-        ui-size-inner($conf['base']);
 
     }
 
     if ($conf['tiny']) {
-        &{$size-tiny-selector} {
+        &{$size-tiny-selector} {$child-selector} {
             if ($conf['tiny']['font-size'] == null) {
                 $conf['tiny']['font-size'] = $font-size-tiny;
             }
@@ -145,7 +149,7 @@ ui-size($name, $has-border = false, $has-padding-horizontal = false) {
     }
 
     if ($conf['small']) {
-        &{$size-small-selector} {
+        &{$size-small-selector} {$child-selector} {
             if ($conf['small']['font-size'] == null) {
                 $conf['small']['font-size'] = $font-size-small;
             }
@@ -163,7 +167,7 @@ ui-size($name, $has-border = false, $has-padding-horizontal = false) {
     }
 
     if ($conf['large']) {
-        &{$size-large-selector} {
+        &{$size-large-selector} {$child-selector} {
             if ($conf['large']['font-size'] == null) {
                 $conf['large']['font-size'] = $font-size-large;
             }
@@ -181,7 +185,7 @@ ui-size($name, $has-border = false, $has-padding-horizontal = false) {
     }
 
     if ($conf['huge']) {
-        &{$size-huge-selector} {
+        &{$size-huge-selector} {$child-selector} {
             if ($conf['huge']['font-size'] == null) {
                 $conf['huge']['font-size'] = $font-size-huge;
             }
