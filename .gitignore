@@ -2,4 +2,7 @@
 /node_modules
 /.edp*
 *.js
+*.mp4
+module.conf
+video.html
 edp*
