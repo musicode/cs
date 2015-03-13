@@ -83,6 +83,11 @@ thumbnail() {
 thumbnail-round() {
 
     img,
+    img& {
+        background-color: transparent;
+    }
+
+    img,
     img&,
     a&:hover:after {
         border-radius: $thumbnail-round;
@@ -90,6 +95,11 @@ thumbnail-round() {
 }
 
 thumbnail-circle() {
+
+    img,
+    img& {
+        background-color: transparent;
+    }
 
     img,
     img&,
