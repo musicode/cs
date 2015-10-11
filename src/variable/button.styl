@@ -1,10 +1,8 @@
 /**
  * @file 按钮
- * @author zhujl
+ * @author musicode
  */
 
-// 连续按钮的水平间距
-$btn-block-gap = 10px;
 
 $size-hash['btn'] = {
 
@@ -53,18 +51,18 @@ $size-hash['btn'] = {
 $type-hash['btn-default'] = {
     'default': {
         'bg': #FFF,
-        'border': $gray-light,
-        'color': $gray-darker
+        'border': $brand-muted-light,
+        'color': $brand-muted-darker
     },
     'hover': {
         'bg': darken(#FFF, 5%),
-        'border': darken($gray-light, 5%),
-        'color': $gray-darker
+        'border': darken($brand-muted-light, 5%),
+        'color': $brand-muted-darker
     },
     'active': {
         'bg': darken(#FFF, 10%),
-        'border': darken($gray-light, 10%),
-        'color': $gray-darker,
+        'border': darken($brand-muted-light, 10%),
+        'color': $brand-muted-darker,
         'box-shadow': inset 0 3px 5px rgba(0,0,0,.125)
     },
     'disabled': {
@@ -185,7 +183,7 @@ $type-hash['btn-error'] = {
 $type-hash['btn-link'] = {
 
     'default': {
-        'color': $gray-darker
+        'color': $brand-muted-darker
     },
 
     'hover': {

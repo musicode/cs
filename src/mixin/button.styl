@@ -1,50 +1,41 @@
 /**
  * @file 按钮
- * @author zhujl
+ * @author musicode
  */
 
 button() {
 
     display: inline-block;
     text-align: center;
+    user-select: none;
+    vertical-align: baseline;
 
     if ($support-mouse == true) {
         cursor: pointer;
-        user-select: none;
     }
 
-    ui-size('btn');
+    ui-base();
 
 }
 
-button-default() {
-    ui-type($type-hash['btn-default']);
+button-reset() {
+    outline: none;
+    margin: 0; // safari 需要这句
 }
 
-button-primary() {
-    ui-type($type-hash['btn-primary']);
+button-link($color, $color-hover) {
+
+    color: $color;
+
+    if ($support-mouse == true) {
+        &:hover {
+            color: $color-hover;
+            text-decoration: underline;
+        }
+    }
 }
 
-button-info() {
-    ui-type($type-hash['btn-info']);
-}
-
-button-success() {
-    ui-type($type-hash['btn-success']);
-}
-
-button-error() {
-    ui-type($type-hash['btn-error']);
-}
-
-button-link() {
-    ui-type($type-hash['btn-link']);
-}
-
-btn-block() {
+button-block() {
+    display: block;
     width: 100%;
-
-    & + & {
-        margin-top: $btn-block-gap;
-    }
 }

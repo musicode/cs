@@ -1,24 +1,31 @@
 /**
  * @file 文本
- * @author zhujl
+ * @author musicode
  */
 
-.text-muted {
-    color: $gray-base;
-}
-
-.text-primary {
-    color: $brand-primary;
-}
-
-.text-info {
-    color: $brand-info;
-}
-
-.text-success {
-    color: $brand-success;
-}
-
-.text-error {
-    color: $brand-error;
+.{$ui-prefix}text {
+    &.primary {
+        color: $brand-primary;
+    }
+    &.secondary {
+        color: $brand-secondary;
+    }
+    &.success {
+        color: $brand-success;
+    }
+    &.error {
+        color: $brand-error;
+    }
+    &.info {
+        color: $brand-info;
+    }
+    &.warning {
+        color: $brand-warning;
+    }
+    &.danger {
+        color: $brand-danger;
+    }
+    &.muted {
+        color: $brand-muted;
+    }
 }

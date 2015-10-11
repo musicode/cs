@@ -1,50 +1,29 @@
 /**
  * @file 按钮
- * @author zhujl
+ * @author musicode
  */
 
-@import "../variable/button.styl";
 @import "../mixin/button.styl";
 
+
+input,
 button {
-    outline: none;
-    // safari 需要写这句
-    margin: 0;
+    &.{$ui-prefix}btn {
+        button-reset();
+    }
 }
 
-.btn-default,
-.btn-primary,
-.btn-info,
-.btn-success,
-.btn-error,
-.btn-link {
+.{$ui-prefix}btn {
+
     button();
-}
 
-.btn-default {
-    button-default();
-}
+    ui-color-variant(true);
+    ui-size-variant(true);
 
-.btn-primary {
-    button-primary();
-}
-
-.btn-info {
-    button-info();
-}
-
-.btn-success {
-    button-success();
-}
-
-.btn-error {
-    button-error();
-}
-
-.btn-link {
-    button-link();
-}
-
-.btn-block {
-    btn-block();
+    &.link {
+        button-link($link-color, $link-color-hover);
+    }
+    &.block {
+        button-block();
+    }
 }

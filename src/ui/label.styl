@@ -1,35 +1,12 @@
 /**
  * @file 标签
- * @author zhujl
+ * @author musicode
  */
 
-@import "../variable/label.styl";
 @import "../mixin/label.styl";
 
-.label-default,
-.label-primary,
-.label-info,
-.label-success,
-.label-error {
+.{$ui-prefix}label {
     label();
-}
-
-.label-default {
-    label-default();
-}
-
-.label-primary {
-    label-primary();
-}
-
-.label-info {
-    label-info();
-}
-
-.label-success {
-    label-success();
-}
-
-.label-error {
-    label-error();
+    ui-color-variant(false);
+    ui-size-variant(false);
 }
