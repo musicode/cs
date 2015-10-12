@@ -9,17 +9,22 @@
 
     progress()
 
-    ui-size-variant(has-font: true, has-line-height: true)
+    meter-selector = ' .' + $ui-prefix + 'meter';
+
+    ui-brand-variant(has-bg: true, append: meter-selector)
+
+    ui-size-variant(has-font: true, has-line-height: true, append: meter-selector)
 
     &.round
         ui-size-variant(has-round: true)
+        ui-size-variant(has-round: true, append: meter-selector)
 
     &.radius
         ui-size-variant(has-radius: true)
+        ui-size-variant(has-radius: true, append: meter-selector)
 
 
 .{$ui-prefix}meter
 
     meter()
 
-    ui-brand-variant(has-bg: true)

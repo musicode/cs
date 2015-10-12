@@ -32,11 +32,20 @@ ui-brand(brand, has-border, has-bg)
         background-color bg
 
 
-ui-brand-variant(has-border = false, has-bg = false)
+ui-brand-variant(append = '', has-border = false, has-bg = false)
 
     for brand in $brand-hash
+
+        selector = ''
+
         if brand
-            &.{brand}
+            selector = '.' + brand
+
+        if append
+           selector = selector + append
+
+        if selector
+            &{selector}
                 ui-brand($brand-hash[brand], has-border, has-bg)
         else
             ui-brand($brand-hash[brand], has-border, has-bg)
@@ -68,11 +77,20 @@ ui-size(size, has-font, has-line-height, has-padding, has-border, has-round, has
         border-radius size['radius-size']
 
 
-ui-size-variant(has-font = false, has-line-height = false, has-padding = false, has-border = false, has-round = false, has-radius = false)
+ui-size-variant(append = '', has-font = false, has-line-height = false, has-padding = false, has-border = false, has-round = false, has-radius = false)
 
     for size in $size-hash
+
+        selector = ''
+
         if size
-            &.{size}
+            selector = '.' + size
+
+        if append
+           selector = selector + append
+
+        if selector
+            &{selector}
                 ui-size($size-hash[size], has-font, has-line-height, has-padding, has-border, has-round, has-radius)
         else
             ui-size($size-hash[size], has-font, has-line-height, has-padding, has-border, has-round, has-radius)
