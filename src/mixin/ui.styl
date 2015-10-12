@@ -5,8 +5,11 @@ ui()
     box-sizing border-box
     font-weight normal
 
+    if @display == 'inline-block' or @display == 'inline'
+        vertical-align baseline
 
-ui-brand-variant(brand, has-border = false, has-bg = false)
+
+ui-brand(brand, has-border, has-bg)
 
     color = brand['base-reversed']
     border = brand['dark']
@@ -28,6 +31,51 @@ ui-brand-variant(brand, has-border = false, has-bg = false)
     if bg is a 'rgba'
         background-color bg
 
+
+ui-brand-variant(has-border = false, has-bg = false)
+
+    for brand in $brand-hash
+        if brand
+            &.{brand}
+                ui-brand($brand-hash[brand], has-border, has-bg)
+        else
+            ui-brand($brand-hash[brand], has-border, has-bg)
+
+
+
+
+ui-size(size, has-font, has-line-height, has-padding, has-border, has-round, has-radius)
+
+    if has-font
+        font-size size['font-size']
+
+    if has-line-height
+        line-height size['line-height']
+
+    if has-padding
+
+        padding-offset = 1
+        if has-border
+            padding-offset = 0
+
+        padding: size['padding-vertical'] + padding-offset size['padding-horizontal'] + padding-offset
+
+
+    if has-round
+        border-radius size['round-size']
+
+    if has-radius
+        border-radius size['radius-size']
+
+
+ui-size-variant(has-font = false, has-line-height = false, has-padding = false, has-border = false, has-round = false, has-radius = false)
+
+    for size in $size-hash
+        if size
+            &.{size}
+                ui-size($size-hash[size], has-font, has-line-height, has-padding, has-border, has-round, has-radius)
+        else
+            ui-size($size-hash[size], has-font, has-line-height, has-padding, has-border, has-round, has-radius)
 
 
 

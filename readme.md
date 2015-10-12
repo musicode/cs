@@ -68,3 +68,19 @@
 4. expanded 展开
 5. round 圆形
 6. radius 圆角
+
+## 问题
+
+组件水平对齐
+
+尽可能丰富的组件
+
+目标是尽可能提速
+
+组件：
+
+* 左图右文
+* input-button
+* input-addon
+* button-icon
+* icon-button

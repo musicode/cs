@@ -9,42 +9,17 @@
 
     progress()
 
-    height $progress-base-height
+    ui-size-variant(has-font: true, has-line-height: true)
 
-    &.tiny
-        height $progress-tiny-height
+    &.round
+        ui-size-variant(has-round: true)
 
-    &.small
-        height $progress-small-height
-
-    &.large
-        height $progress-large-height
-
-    &.huge
-        height $progress-huge-height
-
-
-    &.primary > .{$ui-prefix}meter
-        ui-primary(false, true)
-
-    &.secondary > .{$ui-prefix}meter
-        ui-secondary(false, true)
-
-    &.success > .{$ui-prefix}meter
-        ui-success(false, true)
-
-    &.error > .{$ui-prefix}meter
-        ui-error(false, true)
-
-    &.info > .{$ui-prefix}meter
-        ui-info(false, true)
-
-    &.warning > .{$ui-prefix}meter
-        ui-warning(false, true)
-
-    &.danger > .{$ui-prefix}meter
-        ui-danger(false, true)
+    &.radius
+        ui-size-variant(has-radius: true)
 
 
 .{$ui-prefix}meter
+
     meter()
+
+    ui-brand-variant(has-bg: true)

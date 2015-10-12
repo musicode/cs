@@ -14,34 +14,19 @@
 
     button()
 
-    ui-base(has-border: true)
-
-
-    &.tiny
-        ui-tiny(has-border: true)
-
-    &.small
-        ui-small(has-border: true)
-
-    &.large
-        ui-large(has-border: true)
-
-    &.huge
-        ui-huge(has-border: true)
-
-    for type in $brand-hash
-        &.{type}
-            ui-brand-variant(brand: $brand-hash[type], has-bg: true, has-border: true)
+    ui-brand-variant(has-border: true, has-bg: true)
+    ui-size-variant(has-border: true, has-font: true,
+                    has-line-height: true, has-padding: true)
 
     &.round
-        ui-round-variant()
+        ui-size-variant(has-round: true)
 
     &.radius
-        ui-radius-variant()
-
-    &.link
-        button-link($link-color, $link-color-hover)
+        ui-size-variant(has-radius: true)
 
     &.block
         button-block()
+
+    &.link
+        button-link($link-color, $link-color-hover)
 
