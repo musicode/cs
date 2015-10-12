@@ -1,0 +1,50 @@
+/**
+ * @file 进度条
+ * @author musicode
+ */
+
+@import "../mixin/progress.styl"
+
+.{$ui-prefix}progress
+
+    progress()
+
+    height $progress-base-height
+
+    &.tiny
+        height $progress-tiny-height
+
+    &.small
+        height $progress-small-height
+
+    &.large
+        height $progress-large-height
+
+    &.huge
+        height $progress-huge-height
+
+
+    &.primary > .{$ui-prefix}meter
+        ui-primary(false, true)
+
+    &.secondary > .{$ui-prefix}meter
+        ui-secondary(false, true)
+
+    &.success > .{$ui-prefix}meter
+        ui-success(false, true)
+
+    &.error > .{$ui-prefix}meter
+        ui-error(false, true)
+
+    &.info > .{$ui-prefix}meter
+        ui-info(false, true)
+
+    &.warning > .{$ui-prefix}meter
+        ui-warning(false, true)
+
+    &.danger > .{$ui-prefix}meter
+        ui-danger(false, true)
+
+
+.{$ui-prefix}meter
+    meter()

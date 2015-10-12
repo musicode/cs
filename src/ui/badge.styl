@@ -3,33 +3,45 @@
  * @author musicode
  */
 
-@import "../variable/badge.styl";
 @import "../mixin/badge.styl";
 
-.badge-default,
-.badge-primary,
-.badge-info,
-.badge-success,
-.badge-error {
+.{$ui-prefix}badge
+
     badge();
-}
 
-.badge-default {
-    badge-default();
-}
+    ui-base()
 
-.badge-primary {
-    badge-primary();
-}
+    &.tiny
+        ui-tiny()
 
-.badge-info {
-    badge-info();
-}
+    &.small
+        ui-small()
 
-.badge-success {
-    badge-success();
-}
+    &.large
+        ui-large()
 
-.badge-error {
-    badge-error();
-}
+    &.huge
+        ui-huge()
+
+    &.primary
+        ui-primary(false, true)
+
+    &.secondary
+        ui-secondary(false, true)
+
+    &.success
+        ui-success(false, true)
+
+    &.error
+        ui-error(false, true)
+
+    &.info
+        ui-info(false, true)
+
+    &.warning
+        ui-warning(false, true)
+
+    &.danger
+        ui-danger(false, true)
+
+    ui-round-variant();

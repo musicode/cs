@@ -3,47 +3,58 @@
  * @author musicode
  */
 
-// base 是页面基准大小，比如 body { font-size: $base-font-size; }
-$base-padding-horizontal = 16px;
-$base-padding-vertical = 6px;
-$base-font-size = 14px;
-$base-line-height = 1.6;
-$base-round-size = 18px;
-$base-radius-size = 2px;
-$base-border-width = 1px;
+$size-base = {
+    font-size: 14px,
+    line-height: 1.6,
+    padding-horizontal: 16px,
+    padding-vertical: 6px,
+    round-size: 18px,
+    radius-size: 2px
+}
 
+$size-tiny = {
+    font-size: 12px,
+    line-height: 1.2,
+    padding-horizontal: 6px,
+    padding-vertical: 2px,
+    round-size: 11px,
+    radius-size: 2px
+}
 
-$tiny-padding-horizontal = 6px;
-$tiny-padding-vertical = 2px;
-$tiny-font-size = 12px;
-$tiny-line-height = 1.2;
-$tiny-round-size = 11px;
-$tiny-radius-size = 2px;
-$tiny-border-width = 1px;
+$size-small = {
+    font-size: 14px,
+    line-height: 1.3,
+    padding-horizontal: 12px,
+    padding-vertical: 4px,
+    round-size: 14px,
+    radius-size: 2px
+}
 
+$size-large = {
+    font-size: 16px,
+    line-height: 1.8,
+    padding-horizontal: 20px,
+    padding-vertical: 10px,
+    round-size: 25px,
+    radius-size: 6px
+}
 
-$small-padding-horizontal = 12px;
-$small-padding-vertical = 4px;
-$small-font-size = 14px;
-$small-line-height = 1.3;
-$small-round-size = 14px;
-$small-radius-size = 2px;
-$small-border-width = 1px;
+$size-huge = {
+    font-size: 18px,
+    line-height: 2,
+    padding-horizontal: 24px,
+    padding-vertical: 16px,
+    round-size: 35px,
+    radius-size: 8px
+}
 
+$size-hash = {
 
-$large-padding-horizontal = 20px;
-$large-padding-vertical = 10px;
-$large-font-size = 16px;
-$large-line-height = 1.8;
-$large-round-size = 25px;
-$large-radius-size = 6px;
-$large-border-width = 1px;
+    '': $size-base,
 
+    tiny: $size-tiny,
+    small: $size-small,
+    large: $size-large,
+    huge: $size-huge
 
-$huge-padding-horizontal = 24px;
-$huge-padding-vertical = 16px;
-$huge-font-size = 18px;
-$huge-line-height = 2;
-$huge-round-size = 35px;
-$huge-radius-size = 8px;
-$huge-border-width = 1px;
+}

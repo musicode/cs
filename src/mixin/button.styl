@@ -3,39 +3,39 @@
  * @author musicode
  */
 
-button() {
+button()
 
-    display: inline-block;
-    text-align: center;
-    user-select: none;
-    vertical-align: baseline;
+    ui()
 
-    if ($support-mouse == true) {
-        cursor: pointer;
-    }
+    display inline-block
+    text-align center
+    user-select none
+    vertical-align baseline
 
-    ui-base();
+    if ($support-mouse == true)
+        cursor pointer
 
-}
 
-button-reset() {
-    outline: none;
-    margin: 0; // safari 需要这句
-}
 
-button-link($color, $color-hover) {
 
-    color: $color;
+button-reset()
 
-    if ($support-mouse == true) {
-        &:hover {
-            color: $color-hover;
-            text-decoration: underline;
-        }
-    }
-}
+    outline none
+    margin 0 // safari 需要这句
 
-button-block() {
-    display: block;
-    width: 100%;
-}
+
+button-link($color, $color-hover)
+
+    color $color
+
+    if ($support-mouse == true)
+        &hover
+            color $color-hover
+            text-decoration underline
+
+
+button-block()
+
+    display block
+    width 100%
+

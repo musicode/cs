@@ -9,10 +9,6 @@ form-group() {
 
     position: relative;
 
-    if (typeof($form-group-border) == 'rgba') {
-        border-bottom: 1px solid $form-group-border;
-    }
-
     if ($form-group-gap > 0) {
         padding-top: 0.5 * $form-group-gap;
         padding-bottom: 0.5 * $form-group-gap;
@@ -24,7 +20,6 @@ form-action() {
     margin-top: $form-action-gap;
 }
 
-// 域标签
 form-label() {
     float: left;
     font-weight: $form-label-font-weight;

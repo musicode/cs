@@ -3,27 +3,45 @@
  * @author musicode
  */
 
-@import "../mixin/button.styl";
+@import "../mixin/button.styl"
 
 
-input,
-button {
-    &.{$ui-prefix}btn {
-        button-reset();
-    }
-}
+.{$ui-prefix}btn
 
-.{$ui-prefix}btn {
+    input&,
+    button&
+        button-reset()
 
-    button();
+    button()
 
-    ui-color-variant(true);
-    ui-size-variant(true);
+    ui-base(has-border: true)
 
-    &.link {
-        button-link($link-color, $link-color-hover);
-    }
-    &.block {
-        button-block();
-    }
-}
+
+    &.tiny
+        ui-tiny(has-border: true)
+
+    &.small
+        ui-small(has-border: true)
+
+    &.large
+        ui-large(has-border: true)
+
+    &.huge
+        ui-huge(has-border: true)
+
+    for type in $brand-hash
+        &.{type}
+            ui-brand-variant(brand: $brand-hash[type], has-bg: true, has-border: true)
+
+    &.round
+        ui-round-variant()
+
+    &.radius
+        ui-radius-variant()
+
+    &.link
+        button-link($link-color, $link-color-hover)
+
+    &.block
+        button-block()
+

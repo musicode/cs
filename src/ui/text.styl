@@ -3,29 +3,14 @@
  * @author musicode
  */
 
-.{$ui-prefix}text {
-    &.primary {
-        color: $brand-primary;
-    }
-    &.secondary {
-        color: $brand-secondary;
-    }
-    &.success {
-        color: $brand-success;
-    }
-    &.error {
-        color: $brand-error;
-    }
-    &.info {
-        color: $brand-info;
-    }
-    &.warning {
-        color: $brand-warning;
-    }
-    &.danger {
-        color: $brand-danger;
-    }
-    &.muted {
-        color: $brand-muted;
-    }
-}
+@import "../mixin/text.styl"
+
+.{$ui-prefix}text
+
+    text()
+
+    for type in $brand-hash
+        &.{type}
+            ui-brand-variant(brand: $brand-hash[type])
+
+

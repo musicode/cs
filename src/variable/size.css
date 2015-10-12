@@ -1,0 +1,11 @@
+/**
+ * @file 尺寸
+ * @author musicode
+ */
+body {
+  font: 'tiny';
+  font: 'small';
+  font: '';
+  font: 'large';
+  font: 'huge';
+}
