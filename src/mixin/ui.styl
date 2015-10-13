@@ -9,11 +9,19 @@ ui()
         vertical-align baseline
 
 
-ui-brand(brand, has-border, has-bg)
+ui-brand(brand, color-level, has-border, has-bg)
 
-    color = brand['base-reversed']
-    border = brand['dark']
-    bg = brand['base']
+    color = brand[color-level + '-reversed']
+    bg = brand[color-level]
+
+    if color-level == 'lighter'
+        border = brand['light']
+    else if color-level == 'light'
+        border = brand['base']
+    else if color-level == 'base'
+        border = brand['dark']
+    else if color-level == 'dark'
+        border = brand['darker']
 
     if !has-bg
         color = bg
@@ -32,7 +40,7 @@ ui-brand(brand, has-border, has-bg)
         background-color bg
 
 
-ui-brand-variant(append = '', has-border = false, has-bg = false)
+ui-brand-variant(append = '', color-level = 'base', has-border = false, has-bg = false)
 
     for brand in $brand-hash
 
@@ -46,9 +54,9 @@ ui-brand-variant(append = '', has-border = false, has-bg = false)
 
         if selector
             &{selector}
-                ui-brand($brand-hash[brand], has-border, has-bg)
+                ui-brand($brand-hash[brand], color-level, has-border, has-bg)
         else
-            ui-brand($brand-hash[brand], has-border, has-bg)
+            ui-brand($brand-hash[brand], color-level, has-border, has-bg)
 
 
 
@@ -62,12 +70,7 @@ ui-size(size, has-font, has-line-height, has-padding, has-border, has-round, has
         line-height size['line-height']
 
     if has-padding
-
-        padding-offset = 1
-        if has-border
-            padding-offset = 0
-
-        padding: size['padding-vertical'] + padding-offset size['padding-horizontal'] + padding-offset
+        padding: size['padding-vertical'] size['padding-horizontal']
 
 
     if has-round

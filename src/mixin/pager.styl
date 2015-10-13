@@ -3,8 +3,7 @@
  * @author musicode
  */
 
-
-pager() {
+pager-container() {
     font-size: 0;
     if ($support-mouse == true) {
         user-select: none;
@@ -32,6 +31,10 @@ pager-item() {
 
 }
 
+
+pager-current()
+
+
 pager-btn() {
 
     if ($support-mouse == true) {
@@ -41,8 +44,7 @@ pager-btn() {
     ui-type($type-hash['pager-btn']);
 }
 
-pager-ellipsis() {
+pager-ellipsis()
 
     ui-size('pager-ellipsis');
 
-}

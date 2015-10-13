@@ -3,29 +3,87 @@
  * @author musicode
  */
 
-form-group() {
+input-reset
 
-    clearfix();
+    input[type="search"]
+        appearance textfield
 
-    position: relative;
 
-    if ($form-group-gap > 0) {
+    // 隐藏 IE 10+ 输入框后面的 x
+    input::-ms-clear
+        display none
+
+
+    button,
+    select,
+    input,
+    textarea
+        font-family inherit
+        font-size inherit
+        outline 0
+        margin 0
+        padding 0
+
+
+form-group()
+
+    position relative
+    clearfix()
+    ui()
+
+    if $form-group-gap > 0
         padding-top: 0.5 * $form-group-gap;
         padding-bottom: 0.5 * $form-group-gap;
+
+
+form-label()
+    float: left;
+    font-weight: $form-label-font-weight;
+    padding-right: $form-label-gap;
+    text-align: right;
+
+
+form-controls()
+
+    // 避免 inline-block 水平间隙
+    font-size 0
+
+
+/**
+ * 静态文本
+ */
+form-static()
+
+/**
+ * 文本输入框，取自 input type
+ */
+form-text()
+
+    margin 0
+
+    textarea&
+        resize none
+
+    // 不能合并写
+    &::-webkit-input-placeholder { /* WebKit browsers */
+        color: $form-text-color-placeholder;
+    }
+    &:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+        color: $form-text-color-placeholder;
+    }
+    &::-moz-placeholder { /* Mozilla Firefox 19+ */
+        color: $form-text-color-placeholder;
+    }
+    &:-ms-input-placeholder { /* Internet Explorer 10+ */
+        color: $form-text-color-placeholder;
     }
 
-}
 
 form-action() {
     margin-top: $form-action-gap;
 }
 
-form-label() {
-    float: left;
-    font-weight: $form-label-font-weight;
-    padding-right: $form-label-gap;
-    text-align: right;
-}
+
 
 form-required() {
     margin-right: $form-required-gap;
@@ -42,9 +100,7 @@ form-hint() {
     ui-type($type-hash['form-hint']);
 
 }
-form-controls() {
 
-}
 
 input-group() {
 
@@ -69,27 +125,11 @@ input-group-addon() {
 // 文本输入框
 form-text() {
 
-    margin: 0;
 
-    textarea& {
-        resize: none;
-    }
 
     ui-type($type-hash['form-text']);
 
-    // 不能合并写
-    &::-webkit-input-placeholder { /* WebKit browsers */
-        color: $form-text-color-placeholder;
-    }
-    &:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-        color: $form-text-color-placeholder;
-    }
-    &::-moz-placeholder { /* Mozilla Firefox 19+ */
-        color: $form-text-color-placeholder;
-    }
-    &:-ms-input-placeholder { /* Internet Explorer 10+ */
-        color: $form-text-color-placeholder;
-    }
+
 }
 
 // 模拟 Placeholder
