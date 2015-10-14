@@ -6,7 +6,7 @@
 @import "../mixin/button.styl"
 
 
-.{$ui-prefix}btn
+.{$ui-prefix}button
 
     input&,
     button&
@@ -14,9 +14,17 @@
 
     button()
 
-    ui-brand-variant(has-border: true, has-bg: true)
-    ui-size-variant(has-border: true, has-font: true,
-                    has-line-height: true, has-padding: true)
+    ui-brand-variant(
+        has-border: true,
+        has-bg: true
+    )
+
+    ui-size-variant(
+        has-border: true,
+        has-font: true,
+        has-line-height: true,
+        has-padding: true
+    )
 
     &.round
         ui-size-variant(has-round: true)
@@ -24,8 +32,8 @@
     &.radius
         ui-size-variant(has-radius: true)
 
-    &.block
-        button-block()
+    &.fluid
+        ui-fluid()
 
     &.link
         button-link($link-color, $link-color-hover)

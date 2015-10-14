@@ -5,21 +5,19 @@
 
 @import "../variable/typography.styl"
 
-body {
-    background-color: $bg-color;
-    color: $text-color;
-    font: $font-size-base/$line-height-base $font-family-title;
-}
 
-a {
-    color: $link-color;
-    text-decoration: none;
+body
 
-    &:hover {
-        color: $link-color-hover;
-    }
-}
+    background-color $bg-color
+    color $text-color
+    font-size $size-base['font-size'];
+    font-family $font-family-title;
+    line-height $size-base['line-height']
 
-small {
-    font-size: $font-size-tiny;
-}
+a
+    color $link-color
+    text-decoration none
+
+    if $support-mouse
+        &:hover
+            color $link-color-hover

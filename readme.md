@@ -54,7 +54,7 @@
 5. info 信息色
 6. warning 警告色
 7. danger 危险色
-8. gray 灰色（灰色是一种很特别的色...）
+8. muted 灰色（灰色是一种很特别的色...）
 
 其中每种颜色又分为 5 种，命名方式为 xx-lighter xx-light xx xx-dark xx-darker
 

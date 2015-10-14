@@ -3,11 +3,15 @@
 ui()
 
     box-sizing border-box
-    font-weight normal
 
     if @display == 'inline-block' or @display == 'inline'
         vertical-align baseline
 
+
+ui-fluid()
+
+    display block
+    width 100%
 
 ui-brand(brand, color-level, has-border, has-bg)
 
@@ -40,6 +44,7 @@ ui-brand(brand, color-level, has-border, has-bg)
         background-color bg
 
 
+
 ui-brand-variant(append = '', color-level = 'base', has-border = false, has-bg = false)
 
     for brand in $brand-hash
@@ -61,7 +66,7 @@ ui-brand-variant(append = '', color-level = 'base', has-border = false, has-bg =
 
 
 
-ui-size(size, has-font, has-line-height, has-padding, has-border, has-round, has-radius)
+ui-size(size, is-item, has-font, has-line-height, has-margin-horizontal, has-padding, has-border, has-round, has-radius)
 
     if has-font
         font-size size['font-size']
@@ -69,18 +74,24 @@ ui-size(size, has-font, has-line-height, has-padding, has-border, has-round, has
     if has-line-height
         line-height size['line-height']
 
+    if has-margin-horizontal
+        margin-left size['margin-horizontal']
+
+    if has-margin-horizontal and is-item
+        &:first-child
+            margin-left 0
+
     if has-padding
         padding: size['padding-vertical'] size['padding-horizontal']
 
-
     if has-round
         border-radius size['round-size']
-
-    if has-radius
+    else if has-radius
         border-radius size['radius-size']
 
 
-ui-size-variant(append = '', has-font = false, has-line-height = false, has-padding = false, has-border = false, has-round = false, has-radius = false)
+
+ui-size-variant(append = '', is-item = false, has-font = false, has-line-height = false, has-margin-horizontal = false, has-padding = false, has-border = false, has-round = false, has-radius = false)
 
     for size in $size-hash
 
@@ -94,9 +105,9 @@ ui-size-variant(append = '', has-font = false, has-line-height = false, has-padd
 
         if selector
             &{selector}
-                ui-size($size-hash[size], has-font, has-line-height, has-padding, has-border, has-round, has-radius)
+                ui-size($size-hash[size], is-item, has-font, has-line-height, has-margin-horizontal, has-padding, has-border, has-round, has-radius)
         else
-            ui-size($size-hash[size], has-font, has-line-height, has-padding, has-border, has-round, has-radius)
+            ui-size($size-hash[size], is-item, has-font, has-line-height, has-margin-horizontal, has-padding, has-border, has-round, has-radius)
 
 
 

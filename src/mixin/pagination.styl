@@ -1,0 +1,41 @@
+/**
+ * @file 分页
+ * @author musicode
+ */
+
+pagination()
+
+    font-size 0
+    line-height 0
+    user-select none
+
+    ui()
+
+    ul&
+        list-style none
+        padding 0
+
+
+
+pagination-item()
+
+    display inline-block
+
+    ui()
+
+
+pagination-button(checked-selector = '', disabled-selector = '')
+
+    if $support-mouse
+
+        cursor: $cursor-clickable;
+
+        if checked-selector
+            &{checked-selector}
+                cursor: $cursor-checked
+
+        if disabled-selector
+            &{disabled-selector}
+                cursor: $cursor-disabled
+
+

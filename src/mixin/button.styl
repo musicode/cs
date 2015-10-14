@@ -10,7 +10,7 @@ button()
     user-select none
 
     if ($support-mouse == true)
-        cursor pointer
+        cursor $cursor-clickable
 
     ui()
 
@@ -29,10 +29,4 @@ button-link($color, $color-hover)
         &:hover
             color $color-hover
             text-decoration underline
-
-
-button-block()
-
-    display block
-    width 100%
 

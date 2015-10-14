@@ -3,9 +3,21 @@
  * @author musicode
  */
 
-@import "../variable/table.styl";
 @import "../mixin/table.styl";
+@import "../variable/table.styl";
 
-.table {
-    table();
-}
+.{$ui-prefix}table
+
+    table()
+
+    &.striped
+        table-striped()
+
+    &.row-bordered
+        table-row-bordered()
+
+    &.col-bordered
+        table-col-bordered()
+
+    &.cell-bordered
+        table-cell-bordered()

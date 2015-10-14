@@ -1,0 +1,30 @@
+/**
+ * @file 分页
+ * @author musicode
+ */
+
+@import "../variable/pagination.styl";
+@import "../mixin/pagination.styl";
+
+.{$ui-prefix}pagination
+
+    pagination()
+
+    ui-size-variant(
+        has-font: true,
+        has-line-height: true,
+        has-padding: true,
+        has-margin-horizontal: true,
+        is-item: true,
+        append: '> li'
+    );
+
+    > li
+        pagination-item()
+
+    > .{$ui-prefix}item
+        pagination-button(
+            checked-selector: '.active',
+            disabled-selector: '.disabled'
+        )
+

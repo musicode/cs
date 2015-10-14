@@ -1,0 +1,29 @@
+/**
+ * @file 标签页
+ * @author musicode
+ */
+
+@import "../mixin/tabs.styl";
+
+.{$ui-prefix}tabs
+
+    tabs()
+
+    item-selector = ' > .' + $ui-prefix + 'item';
+
+    ui-brand-variant(
+        has-bg: true,
+        append: item-selector + '.active'
+    )
+
+    ui-size-variant(
+        has-font: true,
+        has-line-height: true,
+        has-padding: true,
+        append: item-selector
+    )
+
+    {item-selector}
+        tabs-item(
+            checked-selector: '.active'
+        )
