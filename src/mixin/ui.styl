@@ -13,10 +13,38 @@ ui-fluid()
     display block
     width 100%
 
-ui-brand(brand, color-level, has-border, has-bg)
 
-    color = brand[color-level + '-reversed']
+ui-clickable(checked-selector = null, disabled-selector = null)
+
+    if $support-mouse
+
+        cursor: $cursor-clickable;
+
+        if checked-selector
+            &{checked-selector}
+                cursor: $cursor-checked
+
+        if disabled-selector
+            &{disabled-selector}
+                cursor: $cursor-disabled
+
+
+ui-style(color = null, border = null, bg = null)
+
+    if color is a 'rgba'
+        color color
+
+    if border is a 'rgba'
+        border 1px solid border
+
+    if bg is a 'rgba'
+        background-color bg
+
+
+ui-brand(brand, color-level = 'base', has-border = false, has-bg = false)
+
     bg = brand[color-level]
+    color = brand[color-level + '-reversed']
 
     if color-level == 'lighter'
         border = brand['light']
@@ -34,14 +62,7 @@ ui-brand(brand, color-level, has-border, has-bg)
     if !has-border
         border = null
 
-    if color is a 'rgba'
-        color color
-
-    if border is a 'rgba'
-        border 1px solid border
-
-    if bg is a 'rgba'
-        background-color bg
+    ui-style(color: color, bg: bg, border: border)
 
 
 
@@ -66,7 +87,7 @@ ui-brand-variant(append = '', color-level = 'base', has-border = false, has-bg =
 
 
 
-ui-size(size, is-item, has-font, has-line-height, has-margin-horizontal, has-padding, has-border, has-round, has-radius)
+ui-size(size, has-font, has-line-height, has-margin-vertical, has-margin-horizontal, has-padding, has-border, has-round, has-radius)
 
     if has-font
         font-size size['font-size']
@@ -75,11 +96,15 @@ ui-size(size, is-item, has-font, has-line-height, has-margin-horizontal, has-pad
         line-height size['line-height']
 
     if has-margin-horizontal
-        margin-left size['margin-horizontal']
-
-    if has-margin-horizontal and is-item
+        margin-left size['margin-horizontal'];
         &:first-child
             margin-left 0
+
+
+    if has-margin-vertical
+        margin-top size['margin-vertical'];
+        &:first-child
+            margin-top 0
 
     if has-padding
         padding: size['padding-vertical'] size['padding-horizontal']
@@ -91,9 +116,25 @@ ui-size(size, is-item, has-font, has-line-height, has-margin-horizontal, has-pad
 
 
 
-ui-size-variant(append = '', is-item = false, has-font = false, has-line-height = false, has-margin-horizontal = false, has-padding = false, has-border = false, has-round = false, has-radius = false)
+ui-size-variant(append = '', has-font = false, has-line-height = false, has-margin-vertical = false, has-margin-horizontal = false, has-padding = false, has-border = false, has-round = false, has-radius = false)
+
+
 
     for size in $size-hash
+
+        apply()
+            ui-size(
+                size: $size-hash[size],
+                has-font: has-font,
+                has-line-height: has-line-height,
+                has-margin-vertical: has-margin-vertical,
+                has-margin-horizontal: has-margin-horizontal,
+                has-padding: has-padding,
+                has-border: has-border,
+                has-round: has-round,
+                has-radius: has-radius
+            )
+
 
         selector = ''
 
@@ -105,9 +146,10 @@ ui-size-variant(append = '', is-item = false, has-font = false, has-line-height 
 
         if selector
             &{selector}
-                ui-size($size-hash[size], is-item, has-font, has-line-height, has-margin-horizontal, has-padding, has-border, has-round, has-radius)
+                apply()
+
         else
-            ui-size($size-hash[size], is-item, has-font, has-line-height, has-margin-horizontal, has-padding, has-border, has-round, has-radius)
+            apply()
 
 
 

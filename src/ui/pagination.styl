@@ -10,19 +10,31 @@
 
     pagination()
 
+    item-selector = '> a'
+    button-selector = '> .' + $ui-prefix + 'item'
+
     ui-size-variant(
         has-font: true,
+        has-margin-horizontal: true,
+        append: item-selector
+    )
+
+    ui-size-variant(
         has-line-height: true,
         has-padding: true,
-        has-margin-horizontal: true,
-        is-item: true,
-        append: '> li'
-    );
+        append: button-selector
+    )
 
-    > li
+    ui-brand-variant(
+        has-border: true,
+        has-bg: true,
+        append: button-selector + '.active'
+    )
+
+    {item-selector}
         pagination-item()
 
-    > .{$ui-prefix}item
+    {button-selector}
         pagination-button(
             checked-selector: '.active',
             disabled-selector: '.disabled'

@@ -3,31 +3,17 @@
  * @author musicode
  */
 
-list() {
+list()
 
-    ui-size('list');
-    ui-type($type-hash['list']);
+    ui()
 
-}
+list-unstyled()
 
-list-item() {
+    list-style none
+    padding 0
 
-    display: block;
 
-    ui-size('list-item');
-    ui-type($type-hash['list-item']);
+list-item()
 
-    if ($size-hash['list-item']['base']['border-top-width'] > 0) {
-        &:first-child {
-            border-top: none;
-        }
-    }
-
-    if ($size-hash['list-item']['base']['border-bottom-width'] > 0) {
-        &:last-child {
-            border-bottom: none;
-        }
-    }
-
-}
+    display block
 

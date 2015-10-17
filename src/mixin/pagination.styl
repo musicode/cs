@@ -3,18 +3,17 @@
  * @author musicode
  */
 
+@import "./list.styl";
+
 pagination()
 
     font-size 0
-    line-height 0
     user-select none
 
     ui()
 
     ul&
-        list-style none
-        padding 0
-
+        list-unstyled()
 
 
 pagination-item()
@@ -26,16 +25,15 @@ pagination-item()
 
 pagination-button(checked-selector = '', disabled-selector = '')
 
-    if $support-mouse
+    ui-style(
+        border: $pagination-button-border,
+        color: $pagination-button-color,
+        bg: $pagination-button-bg
+    );
 
-        cursor: $cursor-clickable;
-
-        if checked-selector
-            &{checked-selector}
-                cursor: $cursor-checked
-
-        if disabled-selector
-            &{disabled-selector}
-                cursor: $cursor-disabled
+    ui-clickable(
+        checked-selector: checked-selector,
+        disabled-selector: disabled-selector
+    );
 
 
