@@ -5,35 +5,81 @@
 
 @import "../mixin/button.styl"
 
++prefix-classes($ui-prefix)
 
-.{$ui-prefix}button
+    .button
 
-    button()
+        button()
 
-    ui-brand-variant(
-        has-border: true,
-        has-bg: true
-    )
-
-    ui-size-variant(
-        has-border: true,
-        has-font: true,
-        has-line-height: true,
-        has-padding: true
-    )
-
-    &.round
-        ui-size-variant(has-round: true)
-
-    &.radius
-        ui-size-variant(has-radius: true)
-
-    &.fluid
-        ui-fluid()
-
-    &.link
-        ui-link(
-            color: $link-color,
-            hover-color: $link-color-hover
+        ui-brand-variant(
+            has-border: true,
+            has-color: true,
+            has-bg: true,
+            hover-selector: '&.hover, &:hover',
+            active-selector: '&.active, &:active',
+            disabled-selector: '&.disabled, &[disabled]'
         )
+
+        ui-size-variant(
+            has-border: true,
+            has-font: true,
+            has-line-height: true,
+            has-padding: true
+        )
+
+        ui-clickable(
+            disabled-selector: '&.disabled, &[disabled]'
+        )
+
+        &.link
+            ui-link(
+                color: $link-color,
+                hover-selector: '&.hover, &:hover'
+            )
+
+        &.round
+            ui-size-variant(
+                has-round: true
+            )
+
+        &.radius
+            ui-size-variant(
+                has-radius: true
+            )
+
+        &.fluid
+            ui-fluid()
+
+    .buttons
+        buttons()
+
+        > .button
+
+            border-radius 0
+            margin-left -1px
+
+            &:first-child
+                margin-left 0
+
+            ui-size-variant(
+                has-left-round: true,
+                child-selector: '&.round:first-child'
+            )
+
+            ui-size-variant(
+                has-right-round: true,
+                child-selector: '&.round:last-child'
+            )
+
+            ui-size-variant(
+                has-left-radius: true,
+                child-selector: '&.radius:first-child'
+            )
+
+            ui-size-variant(
+                has-right-radius: true,
+                child-selector: '&.radius:last-child'
+            )
+
+
 
