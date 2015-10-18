@@ -130,9 +130,8 @@ ui-brand-variant(child-selector = '', level = 'base',
             )
 
         if brand
-            &{'.' + brand}
-                {child-selector}
-                    apply()
+            &{'.' + brand}{child-selector}
+                apply()
         else
             {child-selector}
                 apply()
@@ -230,9 +229,8 @@ ui-size-variant(child-selector = '',
             )
 
         if size
-            &{'.' + size}
-                {child-selector}
-                    apply()
+            &{'.' + size}{child-selector}
+                apply()
 
         else
             {child-selector}
