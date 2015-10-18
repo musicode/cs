@@ -55,33 +55,41 @@
 
         > .button
 
+            margin-left -1px
+
+            {$selector-first-child}
+                margin-left 0
+
+            {$selector-hover}
+                position relative
+                z-index 1
+
             &.round,
             &.radius
                 border-radius 0
 
-            margin-left -1px
-
-            &:first-child
-                margin-left 0
-
             ui-size-variant(
                 has-left-round: true,
-                child-selector: '&.round:first-child'
+                append-selector: '.round',
+                child-selector: $selector-first-child
             )
 
             ui-size-variant(
                 has-right-round: true,
-                child-selector: '&.round:last-child'
+                append-selector: '.round',
+                child-selector: $selector-last-child
             )
 
             ui-size-variant(
                 has-left-radius: true,
-                child-selector: '&.radius:first-child'
+                append-selector: '.radius',
+                child-selector: $selector-first-child
             )
 
             ui-size-variant(
                 has-right-radius: true,
-                child-selector: '&.radius:last-child'
+                append-selector: '.radius',
+                child-selector: $selector-last-child
             )
 
 

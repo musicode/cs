@@ -52,6 +52,7 @@ ui-style(bg = null, border = null, color = null)
         color color
 
 
+
 ui-brand(brand, level = 'base',
     has-border = false, has-color = false, has-bg = false,
     has-hover = false, has-active = false, has-disabled = false)
@@ -103,13 +104,14 @@ ui-brand(brand, level = 'base',
     if has-disabled
         {$selector-disabled}
             ui-style(
-                border: lighten(border, 40%),
+                border: lighten(border, 30%),
                 color: lighten(color, 60%),
-                bg: lighten(bg, 40%),
+                bg: lighten(bg, 35%),
             )
 
 
-ui-brand-variant(child-selector = '', level = 'base',
+ui-brand-variant(level = 'base',
+    append-selector = '', child-selector = '',
     has-border = false, has-color = false, has-bg = false,
     has-hover = false, has-active = false, has-disabled = false)
 
@@ -128,11 +130,20 @@ ui-brand-variant(child-selector = '', level = 'base',
                 has-disabled: has-disabled
             )
 
+        selector = '&'
+
         if brand
-            &{'.' + brand}{child-selector}
-                apply()
-        else
-            {child-selector}
+            selector += '.' + brand
+
+        if append-selector
+            selector += append-selector;
+
+        {selector}
+
+            if child-selector
+                {child-selector}
+                    apply()
+            else
                 apply()
 
 
@@ -190,7 +201,8 @@ ui-size(size,
         border-bottom-right-radius size['radius-size'];
 
 
-ui-size-variant(child-selector = '',
+ui-size-variant(append-selector = '',
+    child-selector = '',
     has-font = false,
     has-line-height = false,
     has-margin-vertical = false,
@@ -227,12 +239,20 @@ ui-size-variant(child-selector = '',
                 has-right-radius: has-right-radius
             )
 
-        if size
-            &{'.' + size}{child-selector}
-                apply()
+        selector = '&'
 
-        else
-            {child-selector}
+        if size
+            selector += '.' + size
+
+        if append-selector
+            selector += append-selector;
+
+        {selector}
+
+            if child-selector
+                {child-selector}
+                    apply()
+            else
                 apply()
 
 
