@@ -28,6 +28,15 @@ ui-clickable(checked-selector = null, disabled-selector = null)
             &{disabled-selector}
                 cursor: $cursor-disabled
 
+ui-link(color, hover-color)
+
+    color color
+
+    if ($support-mouse == true)
+        &:hover
+            color hover-color
+            text-decoration underline
+
 
 ui-style(color = null, border = null, bg = null)
 

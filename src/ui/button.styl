@@ -1,5 +1,5 @@
 /**
- * @file 按钮
+ * @file button
  * @author musicode
  */
 
@@ -7,10 +7,6 @@
 
 
 .{$ui-prefix}button
-
-    input&,
-    button&
-        button-reset()
 
     button()
 
@@ -36,5 +32,8 @@
         ui-fluid()
 
     &.link
-        button-link($link-color, $link-color-hover)
+        ui-link(
+            color: $link-color,
+            hover-color: $link-color-hover
+        )
 

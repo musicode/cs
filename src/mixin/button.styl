@@ -9,24 +9,13 @@ button()
     text-align center
     user-select none
 
-    if ($support-mouse == true)
-        cursor $cursor-clickable
+    input&,
+    button&
+        outline 0
+        border 0
+        margin 0 // safari 需要这句
+        background-color transparent
 
     ui()
 
-
-button-reset()
-
-    outline none
-    margin 0 // safari 需要这句
-
-
-button-link($color, $color-hover)
-
-    color $color
-
-    if ($support-mouse == true)
-        &:hover
-            color $color-hover
-            text-decoration underline
 

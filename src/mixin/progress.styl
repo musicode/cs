@@ -7,8 +7,13 @@
 
 progress()
 
-    background-color $progress-bg-color
     overflow hidden
+
+    ui-style(
+        bg: $progress-bg,
+        border: $progress-border
+    )
+
     ui()
 
 
