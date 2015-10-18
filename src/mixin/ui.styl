@@ -14,29 +14,28 @@ ui-fluid()
     width 100%
 
 
-ui-clickable(checked-selector = null,
-             disabled-selector = null)
+ui-clickable(has-checked = false, has-disabled = false)
 
     if $support-mouse
 
         cursor: $cursor-clickable;
 
-        if checked-selector
-            {checked-selector}
+        if has-checked
+            {$selector-checked}
                 cursor: $cursor-checked
 
-        if disabled-selector
-            {disabled-selector}
+        if has-disabled
+            {$selector-disabled}
                 cursor: $cursor-disabled
 
 
-ui-link(color, hover-selector)
+ui-link(color, has-hover)
 
     color color
     text-decoration none
 
-    if $support-mouse and hover-selector
-        {hover-selector}
+    if $support-mouse and has-hover
+        {$selector-hover}
             color darken(color, 10%)
             text-decoration underline
 
@@ -55,7 +54,7 @@ ui-style(bg = null, border = null, color = null)
 
 ui-brand(brand, level = 'base',
     has-border = false, has-color = false, has-bg = false,
-    hover-selector = null, active-selector = null, disabled-selector = null)
+    has-hover = false, has-active = false, has-disabled = false)
 
     bg = brand[level]
     color = brand[level + '-reversed']
@@ -85,24 +84,24 @@ ui-brand(brand, level = 'base',
         bg: bg,
     )
 
-    if hover-selector
-        {hover-selector}
+    if has-hover
+        {$selector-hover}
             ui-style(
                 border: darken(border, 6%),
                 color: darken(color, 5%),
                 bg: darken(bg, 6%),
             )
 
-    if active-selector
-        {active-selector}
+    if has-active
+        {$selector-active}
             ui-style(
                 border: darken(border, 14%),
                 color: darken(color, 5%),
                 bg: darken(bg, 14%),
             )
 
-    if disabled-selector
-        {disabled-selector}
+    if has-disabled
+        {$selector-disabled}
             ui-style(
                 border: lighten(border, 40%),
                 color: lighten(color, 60%),
@@ -112,7 +111,7 @@ ui-brand(brand, level = 'base',
 
 ui-brand-variant(child-selector = '', level = 'base',
     has-border = false, has-color = false, has-bg = false,
-    hover-selector = null, active-selector = null, disabled-selector = null)
+    has-hover = false, has-active = false, has-disabled = false)
 
     for brand in $brand-hash
 
@@ -124,9 +123,9 @@ ui-brand-variant(child-selector = '', level = 'base',
                 has-color: has-color,
                 has-bg: has-bg,
                 has-radius: has-radius,
-                hover-selector: hover-selector,
-                active-selector: active-selector,
-                disabled-selector: disabled-selector
+                has-hover: has-hover,
+                has-active: has-active,
+                has-disabled: has-disabled
             )
 
         if brand

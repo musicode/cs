@@ -15,9 +15,9 @@
             has-border: true,
             has-color: true,
             has-bg: true,
-            hover-selector: '&.hover, &:hover',
-            active-selector: '&.active, &:active',
-            disabled-selector: '&.disabled, &[disabled]'
+            has-hover: true,
+            has-active: true,
+            has-disabled: true
         )
 
         ui-size-variant(
@@ -28,13 +28,13 @@
         )
 
         ui-clickable(
-            disabled-selector: '&.disabled, &[disabled]'
+            has-disabled: true
         )
 
         &.link
             ui-link(
                 color: $link-color,
-                hover-selector: '&.hover, &:hover'
+                has-hover: true
             )
 
         &.round
