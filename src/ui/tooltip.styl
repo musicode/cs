@@ -3,10 +3,27 @@
  * @author musicode
  */
 
-@import "../variable/tooltip.styl";
-@import "../mixin/tooltip.styl";
+@import "../variable/tooltip.styl"
+@import "../mixin/tooltip.styl"
 
 +prefix-classes($ui-prefix)
 
     .tooltip
+
         tooltip()
+
+        &.reversed
+            tooltip-reversed()
+
+        &.top
+            tooltip-top()
+
+        &.right
+            tooltip-right()
+
+        &.bottom
+            tooltip-bottom()
+
+        &.left
+            tooltip-left()
+

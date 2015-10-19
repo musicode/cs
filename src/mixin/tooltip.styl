@@ -7,8 +7,96 @@ tooltip()
 
     position absolute
 
+    background-color $tooltip-bg
+    border 1px solid $tooltip-border
+    color $tooltip-color
+
+    font-size $tooltip-font-size
+    border-radius $tooltip-radius-size
+    padding $tooltip-padding-vertical $tooltip-padding-horizontal
+
+    ui()
+
     &:before,
     &:after
         position absolute
         content ' '
+        border: $tooltip-arrow-size solid transparent
+
+
+tooltip-reversed()
+
+    background-color $tooltip-color
+    color $tooltip-color
+
+
+tooltip-top()
+
+    &:before,
+    &:after
+        left 50%
+        margin-left -1 * $tooltip-arrow-size
+
+        border-bottom-width 0
+        border-left-color transparent
+        border-right-color transparent
+
+    &:before
+        bottom -1 * $tooltip-arrow-size
+
+    &:after
+        bottom -1 * $tooltip-arrow-size + 1
+
+
+tooltip-right()
+
+    &:before,
+    &:after
+        top 50%
+        margin-top -1 * $tooltip-arrow-size
+
+        border-left-width 0
+        border-top-color transparent
+        border-bottom-color transparent
+
+    &:before
+        left -1 * $tooltip-arrow-size
+
+    &:after
+        left -1 * $tooltip-arrow-size + 1
+
+
+tooltip-bottom()
+    &:before,
+    &:after
+        left 50%
+        margin-left -1 * $tooltip-arrow-size
+        border-top-width 0
+        border-left-color transparent
+        border-right-color transparent
+
+    &:before
+        top -1 * $tooltip-arrow-size
+
+    &:after
+        top -1 * $tooltip-arrow-size + 1
+
+
+tooltip-left()
+
+    &:before,
+    &:after
+        top 50%
+        margin-top -1 * $tooltip-arrow-size
+
+        border-right-width 0
+        border-top-color transparent
+        border-bottom-color transparent
+
+    &:before
+        right -1 * $tooltip-arrow-size
+
+    &:after
+        right -1 * $tooltip-arrow-size + 1
+
 
