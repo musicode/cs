@@ -6,25 +6,7 @@
 @import "../variable/tooltip.styl";
 @import "../mixin/tooltip.styl";
 
-.tooltip {
-    tooltip();
-}
-.tooltip-default {
-    tooltip-default();
-}
-.tooltip-inverted {
-    tooltip-inverted();
-}
++prefix-classes($ui-prefix)
 
-.tooltip-top {
-    tooltip-top();
-}
-.tooltip-right {
-    tooltip-right();
-}
-.tooltip-bottom {
-    tooltip-bottom();
-}
-.tooltip-left {
-    tooltip-left();
-}
+    .tooltip
+        tooltip()
