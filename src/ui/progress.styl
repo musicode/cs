@@ -5,42 +5,44 @@
 
 @import "../mixin/progress.styl"
 
-.{$ui-prefix}progress
++prefix-classes($ui-prefix)
 
-    progress()
+    .progress
 
-    meter-selector = ' .' + $ui-prefix + 'meter';
+        progress()
 
-    ui-brand-variant(
-        has-bg: true,
-        append: meter-selector
-    )
+        meter-selector = ' > .meter';
 
-    ui-size-variant(
-        has-font: true,
-        has-padding: true,
-        has-line-height: true,
-        append: meter-selector
-    )
-
-    &.round
-        ui-size-variant(
-            has-round: true
-        )
-        ui-size-variant(
-            has-round: true,
-            append: meter-selector
+        ui-brand-variant(
+            has-bg: true,
+            append-selector: meter-selector
         )
 
-    &.radius
         ui-size-variant(
-            has-radius: true
-        )
-        ui-size-variant(
-            has-radius: true,
-            append: meter-selector
+            has-font: true,
+            has-padding: true,
+            has-line-height: true,
+            append-selector: meter-selector
         )
 
-    {meter-selector}
-        meter()
+        &.round
+            ui-size-variant(
+                has-round: true
+            )
+            ui-size-variant(
+                has-round: true,
+                append-selector: meter-selector
+            )
+
+        &.radius
+            ui-size-variant(
+                has-radius: true
+            )
+            ui-size-variant(
+                has-radius: true,
+                append-selector: meter-selector
+            )
+
+        {meter-selector}
+            meter()
 

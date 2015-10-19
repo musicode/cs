@@ -5,17 +5,31 @@
 
 @import "../mixin/label.styl"
 
-.{$ui-prefix}label
++prefix-classes($ui-prefix)
 
-    label()
+    .label
 
-    ui-brand-variant(has-bg: true)
+        label()
 
-    ui-size-variant(has-font: true,
-                    has-line-height: true,
-                    has-padding: true)
+        ui-brand-variant(
+            has-bg: true,
+            has-color: true
+        )
 
-    &.radius
-        ui-size-variant(has-radius: true)
+        ui-size-variant(
+            has-font: true,
+            has-line-height: true,
+            has-padding: true
+        )
+
+        &.round
+            ui-size-variant(
+                has-round: true
+            )
+
+        &.radius
+            ui-size-variant(
+                has-radius: true
+            )
 
 

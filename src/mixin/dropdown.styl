@@ -3,63 +3,30 @@
  * @author musicode
  */
 
-dropdown() {
+dropdown()
 
-    ui-size('dropdown');
+    display inline-block
+    position relative
+    text-align left
 
-    display: inline-block;
-    position: relative;
-    text-align: left;
+    ui()
 
-    & + & {
-        margin-left: $dropdown-gap;
-    }
-}
 
-dropdown-button() {
-    text-align: left;
-    width: 100%;
-}
-dropdown-caret() {
-    float: right;
-    margin-top: $dropdown-caret-top;
-}
-dropdown-caret-down() {
-    triangle(bottom, $dropdown-caret-size, $dropdown-caret-color);
-}
-dropdown-caret-up() {
-    triangle(top, $dropdown-caret-size, $dropdown-caret-color);
-}
+dropdown-menu()
 
-dropdown-menu() {
+    display none
+    overflow-x hidden
+    overflow-y auto
 
-    ui-size('dropdown-menu');
+    position absolute
+    left 0
+    right 0
 
-    ui-type($type-hash['dropdown-menu']);
 
-    display: none;
-    overflow-x: hidden;
-    overflow-y: auto;
+dropdown-menu-item()
 
-    position: absolute;
-    left: 0;
-    right: 0;
-    z-index: $zindex-small;
+    if $support-mouse
+        cursor pointer
 
-    $border-top-width = $size-hash['dropdown-menu']['base']['border-top-width'];
 
-    if ($border-top-width > 0) {
-        margin-top: -1 * $border-top-width;
-    }
-}
 
-dropdown-menu-item() {
-
-    ui-size('dropdown-menu-item');
-    ui-type($type-hash['dropdown-menu-item']);
-
-    if ($support-mouse == true) {
-        cursor: pointer;
-    }
-
-}

@@ -5,17 +5,20 @@
 
 @import "../mixin/badge.styl";
 
-.{$ui-prefix}badge
++prefix-classes($ui-prefix)
 
-    badge();
+    .badge
 
-    ui-brand-variant(
-        has-bg: true
-    )
+        badge()
 
-    ui-size-variant(
-        has-font: true,
-        has-line-height: true,
-        has-padding: true,
-        has-round: true
-    )
+        ui-brand-variant(
+            has-bg: true,
+            has-color: true
+        )
+
+        ui-size-variant(
+            has-font: true,
+            has-line-height: true,
+            has-padding: true,
+            has-round: true
+        )

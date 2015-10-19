@@ -9,12 +9,26 @@
 
     message()
 
-    ui-brand-variant(has-border: true, has-bg: true, color-level: 'lighter')
-    ui-size-variant(has-border: true, has-font: true,
-                    has-line-height: true, has-padding: true)
+    ui-brand-variant(
+        has-border: true,
+        has-color: true,
+        has-bg: true,
+        level: 'lighter'
+    )
+
+    ui-size-variant(
+        has-border: true,
+        has-font: true,
+        has-line-height: true,
+        has-padding: true
+    )
 
     &.round
-        ui-size-variant(has-round: true)
+        ui-size-variant(
+            has-round: true
+        )
 
     &.radius
-        ui-size-variant(has-radius: true)
+        ui-size-variant(
+            has-radius: true
+        )

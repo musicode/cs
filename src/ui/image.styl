@@ -1,0 +1,50 @@
+/**
+ * @file 图片
+ * @author musicode
+ */
+
+@import "../variable/image.styl";
+@import "../mixin/image.styl";
+
++prefix-classes($ui-prefix)
+
+    .image
+
+        image()
+
+        img&
+            ui-size-variant(
+                size-hash: $image-size-hash,
+                has-width: true,
+                has-height: true
+            )
+            &.round
+                ui-size-variant(
+                    size-hash: $image-size-hash,
+                    has-round: true
+                )
+            &.radius
+                ui-size-variant(
+                    size-hash: $image-size-hash,
+                    has-radius: true
+                )
+
+        ui-size-variant(
+            size-hash: $image-size-hash,
+            has-width: true,
+            has-height: true,
+            append-selector: ' > img'
+        )
+        &.round
+            ui-size-variant(
+                size-hash: $image-size-hash,
+                has-round: true,
+                append-selector: ' > img'
+            )
+        &.radius
+            ui-size-variant(
+                size-hash: $image-size-hash,
+                has-radius: true,
+                append-selector: ' > img'
+            )
+

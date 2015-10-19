@@ -5,12 +5,19 @@
 
 @import "../mixin/text.styl"
 
-.{$ui-prefix}text
++prefix-classes($ui-prefix)
 
-    text()
+    .text
 
-    ui-brand-variant()
+        text()
 
-    ui-size-variant(has-font: true)
+        ui-brand-variant(
+            has-color: true
+        )
+
+        ui-size-variant(
+            has-font: true,
+            has-line-height: true
+        )
 
 

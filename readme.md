@@ -1,6 +1,6 @@
-# CS
+# CSS
 
-combo style
+combo semantic style
 
 ## 为何重复造轮子
 

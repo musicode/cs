@@ -7,6 +7,13 @@ ui()
     if @display == 'inline-block' or @display == 'inline'
         vertical-align baseline
 
+    input&,
+    button&
+        outline 0
+        border 0
+        margin 0
+        background-color transparent
+
 
 ui-fluid()
 
@@ -53,21 +60,18 @@ ui-style(bg = null, border = null, color = null)
 
 
 
-ui-brand(brand, level = 'base',
-    has-border = false, has-color = false, has-bg = false,
-    has-hover = false, has-active = false, has-disabled = false)
+ui-brand(brand,
+    level = 'base',
+    has-border = false,
+    has-color = false,
+    has-bg = false,
+    has-hover = false,
+    has-active = false,
+    has-disabled = false)
 
     bg = brand[level]
     color = brand[level + '-reversed']
-
-    if level == 'lighter'
-        border = brand['light']
-    else if level == 'light'
-        border = brand['base']
-    else if level == 'base'
-        border = brand['dark']
-    else if level == 'dark'
-        border = brand['darker']
+    border = darken(bg, 20%)
 
     if !has-bg
         color = bg
@@ -111,9 +115,14 @@ ui-brand(brand, level = 'base',
 
 
 ui-brand-variant(level = 'base',
-    append-selector = '', child-selector = '',
-    has-border = false, has-color = false, has-bg = false,
-    has-hover = false, has-active = false, has-disabled = false)
+    append-selector = '',
+    child-selector = '',
+    has-border = false,
+    has-color = false,
+    has-bg = false,
+    has-hover = false,
+    has-active = false,
+    has-disabled = false)
 
     for brand in $brand-hash
 
@@ -148,8 +157,14 @@ ui-brand-variant(level = 'base',
 
 
 ui-size(size,
-    has-font, has-line-height,
-    has-margin-vertical, has-margin-horizontal, has-padding, has-border,
+    has-border,
+    has-font,
+    has-line-height,
+    has-width,
+    has-height,
+    has-margin-vertical,
+    has-margin-horizontal,
+    has-padding,
     has-round = false,
     has-left-round = false,
     has-right-round = false,
@@ -163,6 +178,12 @@ ui-size(size,
 
     if has-line-height
         line-height size['line-height']
+
+    if has-width
+        width size['width']
+
+    if has-height
+        height size['height']
 
     if has-margin-horizontal
         margin-left size['margin-horizontal'];
@@ -201,10 +222,13 @@ ui-size(size,
         border-bottom-right-radius size['radius-size'];
 
 
-ui-size-variant(append-selector = '',
+ui-size-variant(size-hash = $size-hash,
+    append-selector = '',
     child-selector = '',
     has-font = false,
     has-line-height = false,
+    has-width = false,
+    has-height = false,
     has-margin-vertical = false,
     has-margin-horizontal = false,
     has-padding = false,
@@ -220,13 +244,15 @@ ui-size-variant(append-selector = '',
 
 
 
-    for size in $size-hash
+    for size in size-hash
 
         apply()
             ui-size(
-                size: $size-hash[size],
+                size: size-hash[size],
                 has-font: has-font,
                 has-line-height: has-line-height,
+                has-width: has-width,
+                has-height: has-height,
                 has-margin-vertical: has-margin-vertical,
                 has-margin-horizontal: has-margin-horizontal,
                 has-padding: has-padding,
