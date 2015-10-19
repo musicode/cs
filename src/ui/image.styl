@@ -12,39 +12,20 @@
 
         image()
 
-        img&
-            ui-size-variant(
-                size-hash: $image-size-hash,
-                has-width: true,
-                has-height: true
-            )
-            &.round
-                ui-size-variant(
-                    size-hash: $image-size-hash,
-                    has-round: true
-                )
-            &.radius
-                ui-size-variant(
-                    size-hash: $image-size-hash,
-                    has-radius: true
-                )
-
         ui-size-variant(
             size-hash: $image-size-hash,
             has-width: true,
-            has-height: true,
-            append-selector: ' > img'
+            has-height: true
         )
+
         &.round
             ui-size-variant(
                 size-hash: $image-size-hash,
-                has-round: true,
-                append-selector: ' > img'
+                has-round: true
             )
         &.radius
             ui-size-variant(
                 size-hash: $image-size-hash,
-                has-radius: true,
-                append-selector: ' > img'
+                has-radius: true
             )
 
