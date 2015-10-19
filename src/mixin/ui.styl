@@ -1,5 +1,4 @@
 
-
 ui()
 
     if @display == 'inline-block' or @display == 'inline'
@@ -52,7 +51,6 @@ ui-style(bg = null, border = null, color = null)
 
     if color is a 'rgba'
         color color
-
 
 ui-hover(bg = null, border = null, color = null)
 
@@ -112,7 +110,8 @@ ui-disabled(bg = null, border = null, color = null)
                     bg: bg
                 )
 
-
+ui-darken-border(border)
+    return darken(border, 20%)
 
 ui-brand(brand,
     level = 'base',
@@ -132,7 +131,7 @@ ui-brand(brand,
         color = brand[level + '-reversed']
         bg = brand[level]
 
-    border = darken(bg, 20%)
+    border = ui-darken-border(bg, 20%)
 
     ui-style(
         border: has-border ? border : null,

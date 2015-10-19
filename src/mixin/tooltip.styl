@@ -3,16 +3,25 @@
  * @author musicode
  */
 
+tooltip-style(bg = null, border = null, color = null)
+
+    background-color bg
+    border-color border
+    color color
+
+    &:before
+        border-color border
+
+    &:after
+        border-color bg
+
+
 tooltip()
 
     position absolute
-
-    background-color $tooltip-bg
-    border 1px solid $tooltip-border
-    color $tooltip-color
-
-    font-size $tooltip-font-size
+    border 1px solid
     border-radius $tooltip-radius-size
+    font-size $tooltip-font-size
     padding $tooltip-padding-vertical $tooltip-padding-horizontal
 
     ui()
@@ -21,13 +30,22 @@ tooltip()
     &:after
         position absolute
         content ' '
-        border: $tooltip-arrow-size solid transparent
+        border 0 solid transparent
+
+    tooltip-style(
+        bg: $tooltip-bg,
+        color: $tooltip-color,
+        border: ui-darken-border($tooltip-bg)
+    )
 
 
 tooltip-reversed()
 
-    background-color $tooltip-color
-    color $tooltip-color
+    tooltip-style(
+        bg: $tooltip-color,
+        color: $tooltip-bg,
+        border: ui-darken-border($tooltip-color)
+    )
 
 
 tooltip-top()
@@ -37,7 +55,7 @@ tooltip-top()
         left 50%
         margin-left -1 * $tooltip-arrow-size
 
-        border-bottom-width 0
+        border-width $tooltip-arrow-size $tooltip-arrow-size 0 $tooltip-arrow-size
         border-left-color transparent
         border-right-color transparent
 
@@ -55,7 +73,7 @@ tooltip-right()
         top 50%
         margin-top -1 * $tooltip-arrow-size
 
-        border-left-width 0
+        border-width $tooltip-arrow-size $tooltip-arrow-size $tooltip-arrow-size 0
         border-top-color transparent
         border-bottom-color transparent
 
@@ -67,11 +85,13 @@ tooltip-right()
 
 
 tooltip-bottom()
+
     &:before,
     &:after
         left 50%
         margin-left -1 * $tooltip-arrow-size
-        border-top-width 0
+
+        border-width 0 $tooltip-arrow-size $tooltip-arrow-size $tooltip-arrow-size
         border-left-color transparent
         border-right-color transparent
 
@@ -89,7 +109,7 @@ tooltip-left()
         top 50%
         margin-top -1 * $tooltip-arrow-size
 
-        border-right-width 0
+        border-width $tooltip-arrow-size 0 $tooltip-arrow-size $tooltip-arrow-size
         border-top-color transparent
         border-bottom-color transparent
 
