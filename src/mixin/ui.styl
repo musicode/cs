@@ -39,7 +39,7 @@ ui-style(bg = null, border = null, color = null)
         background-color bg
 
     if border is a 'rgba'
-        border 1px solid border
+        border-color border
 
     if color is a 'rgba'
         color color
@@ -223,6 +223,9 @@ ui-size(size,
     has-left-radius = false,
     has-right-radius = false)
 
+    if has-border
+        border 1px solid transparent
+
     if has-font
         font-size size['font-size']
 
@@ -247,7 +250,13 @@ ui-size(size,
             margin-top 0
 
     if has-padding
-        padding: size['padding-vertical'] size['padding-horizontal']
+
+        padding-vertical = size['padding-vertical']
+
+        if !has-border
+            padding-vertical += 1px
+
+        padding: padding-vertical size['padding-horizontal'];
 
     if has-round
         border-radius size['round-size']

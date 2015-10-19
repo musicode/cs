@@ -4,13 +4,14 @@
  */
 
 tabs()
+
     display block
     font-size 0
-    line-height 0
     user-select none
     ui()
 
-tabs-item(checked-selector = '')
+
+tabs-item()
 
     display inline-block
     position relative
@@ -18,10 +19,6 @@ tabs-item(checked-selector = '')
 
     if $support-mouse
         cursor $cursor-clickable
-
-        if checked-selector
-            &{checked-selector}
-                cursor $cursor-checked
 
 
 

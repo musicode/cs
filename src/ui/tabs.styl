@@ -3,27 +3,38 @@
  * @author musicode
  */
 
-@import "../mixin/tabs.styl";
+@import "../variable/tabs.styl"
+@import "../mixin/tabs.styl"
 
-.{$ui-prefix}tabs
++prefix-classes($ui-prefix)
 
-    tabs()
+    .tabs
 
-    item-selector = ' > .' + $ui-prefix + 'item';
+        tabs()
 
-    ui-brand-variant(
-        has-bg: true,
-        append: item-selector + '.active'
-    )
+        selector-item = ' > .item';
 
-    ui-size-variant(
-        has-font: true,
-        has-line-height: true,
-        has-padding: true,
-        append: item-selector
-    )
-
-    {item-selector}
-        tabs-item(
-            checked-selector: '.active'
+        ui-brand-variant(
+            reversed: true,
+            has-hover: true,
+            has-active: true,
+            selector-append: selector-item
         )
+
+        ui-brand-variant(
+            reversed: true,
+            has-bg: true,
+            has-checked: true,
+            selector-append: selector-item,
+            selector-child: $selector-checked
+        )
+
+        ui-size-variant(
+            has-font: true,
+            has-line-height: true,
+            has-padding: true,
+            selector-append: selector-item
+        )
+
+        {selector-item}
+            tabs-item()

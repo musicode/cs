@@ -6,18 +6,20 @@
 @import "../mixin/table.styl";
 @import "../variable/table.styl";
 
-.{$ui-prefix}table
++prefix-classes($ui-prefix)
 
-    table()
+    .table
 
-    &.striped
-        table-striped()
+        table()
 
-    &.row-bordered
-        table-row-bordered()
+        &.striped
+            table-striped()
 
-    &.col-bordered
-        table-col-bordered()
+        &.row-bordered
+            table-row-bordered()
 
-    &.cell-bordered
-        table-cell-bordered()
+        &.col-bordered
+            table-col-bordered()
+
+        &.cell-bordered
+            table-cell-bordered()
