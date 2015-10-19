@@ -32,9 +32,12 @@ pagination-button()
         bg: $pagination-button-bg
     )
 
-    ui-clickable(
-        has-checked: true,
-        has-disabled: true
+    ui-disabled(
+        border: $pagination-button-border,
+        color: $pagination-button-color,
+        bg: $pagination-button-bg
     )
 
+    if $support-mouse
+        cursor $cursor-clickable
 

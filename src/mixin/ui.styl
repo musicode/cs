@@ -22,21 +22,6 @@ ui-fluid()
     width 100%
 
 
-ui-clickable(has-checked = false, has-disabled = false)
-
-    if $support-mouse
-
-        cursor: $cursor-clickable;
-
-        if has-checked
-            {$selector-checked}
-                cursor: $cursor-checked
-
-        if has-disabled
-            {$selector-disabled}
-                cursor: $cursor-disabled
-
-
 ui-link(color, has-hover)
 
     color color
@@ -58,6 +43,65 @@ ui-style(bg = null, border = null, color = null)
 
     if color is a 'rgba'
         color color
+
+
+ui-hover(bg = null, border = null, color = null)
+
+    {$selector-hover}
+
+        ui-style(
+            border: darken(border, 6%),
+            color: darken(color, 5%),
+            bg: darken(bg, 6%)
+        )
+
+ui-active(bg = null, border = null, color = null)
+
+    {$selector-active}
+
+        ui-style(
+            border: darken(border, 14%),
+            color: darken(color, 5%),
+            bg: darken(bg, 14%)
+        )
+
+ui-checked(bg = null, border = null, color = null)
+
+    {$selector-checked}
+
+        cursor $cursor-checked
+
+        ui-style(
+            border: darken(border, 14%),
+            color: darken(color, 5%),
+            bg: darken(bg, 14%)
+        )
+
+ui-disabled(bg = null, border = null, color = null)
+
+    {$selector-disabled}
+
+        cursor $cursor-disabled
+
+        border = lighten(border, 30%)
+        color = lighten(color, 60%)
+        bg = lighten(bg, 35%)
+
+        ui-style(
+            border: border,
+            color: color,
+            bg: bg
+        )
+
+        if $support-mouse
+
+            {$selector-hover},
+            {$selector-active}
+                ui-style(
+                    border: border,
+                    color: color,
+                    bg: bg
+                )
 
 
 
@@ -88,36 +132,32 @@ ui-brand(brand,
     )
 
     if has-hover
-        {$selector-hover}
-            ui-style(
-                border: darken(border, 6%),
-                color: darken(color, 5%),
-                bg: darken(bg, 6%),
-            )
+        ui-hover(
+            border: border,
+            color: color,
+            bg: bg
+        )
 
     if has-active
-        {$selector-active}
-            ui-style(
-                border: darken(border, 14%),
-                color: darken(color, 5%),
-                bg: darken(bg, 14%),
-            )
+        ui-active(
+            border: border,
+            color: color,
+            bg: bg
+        )
 
     if has-checked
-        {$selector-checked}
-            ui-style(
-                border: darken(border, 14%),
-                color: darken(color, 5%),
-                bg: darken(bg, 14%),
-            )
+        ui-checked(
+            border: border,
+            color: color,
+            bg: bg
+        )
 
     if has-disabled
-        {$selector-disabled}
-            ui-style(
-                border: lighten(border, 30%),
-                color: lighten(color, 60%),
-                bg: lighten(bg, 35%),
-            )
+        ui-disabled(
+            border: border,
+            color: color,
+            bg: bg
+        )
 
 
 ui-brand-variant(level = 'base',
