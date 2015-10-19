@@ -3,6 +3,7 @@
  * @author musicode
  */
 
+@import "../variable/progress.styl"
 @import "../mixin/progress.styl"
 
 +prefix-classes($ui-prefix)
@@ -11,38 +12,39 @@
 
         progress()
 
-        meter-selector = ' > .meter';
+        selector-meter = ' > .meter';
 
         ui-brand-variant(
+            reversed: true,
             has-bg: true,
-            append-selector: meter-selector
+            selector-child: selector-meter
         )
 
         ui-size-variant(
             has-font: true,
             has-padding: true,
             has-line-height: true,
-            append-selector: meter-selector
+            selector-child: selector-meter
         )
 
-        &.round
+        {$selector-round}
             ui-size-variant(
                 has-round: true
             )
             ui-size-variant(
                 has-round: true,
-                append-selector: meter-selector
+                selector-child: selector-meter
             )
 
-        &.radius
+        {$selector-radius}
             ui-size-variant(
                 has-radius: true
             )
             ui-size-variant(
                 has-radius: true,
-                append-selector: meter-selector
+                selector-child: selector-meter
             )
 
-        {meter-selector}
-            meter()
+        {selector-meter}
+            progress-meter()
 

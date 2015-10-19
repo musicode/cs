@@ -3,6 +3,7 @@
  * @author musicode
  */
 
+@import "../variable/badge.styl";
 @import "../mixin/badge.styl";
 
 +prefix-classes($ui-prefix)
@@ -12,6 +13,7 @@
         badge()
 
         ui-brand-variant(
+            reversed: true,
             has-bg: true,
             has-color: true
         )

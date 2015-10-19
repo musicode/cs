@@ -5,19 +5,26 @@
 
 @import "../variable/typography.styl"
 
++prefix-classes($ui-prefix)
 
-body
+    html
+        box-sizing border-box
 
-    background-color $bg-color
-    color $text-color
-    font-size $size-base['font-size'];
-    font-family $font-family-title;
-    line-height $size-base['line-height']
+    *,
+    *:before,
+    *:after
+        box-sizing inherit
 
-a
-    color $link-color
-    text-decoration none
+    body
 
-    if $support-mouse
-        &:hover
-            color $link-color-hover
+        background-color $bg-color
+        color $text-color
+        font-size $size-base['font-size'];
+        font-family $font-family-title;
+        line-height $size-base['line-height']
+
+    .link
+        ui-link(
+            color: $link-color,
+            has-hover: true
+        );

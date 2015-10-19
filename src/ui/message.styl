@@ -3,6 +3,7 @@
  * @author musicode
  */
 
+@import "../variable/message.styl";
 @import "../mixin/message.styl";
 
 +prefix-classes($ui-prefix)
@@ -12,6 +13,7 @@
         message()
 
         ui-brand-variant(
+            reversed: true,
             has-border: true,
             has-color: true,
             has-bg: true,
@@ -25,12 +27,12 @@
             has-padding: true
         )
 
-        &.round
+        {$selector-round}
             ui-size-variant(
                 has-round: true
             )
 
-        &.radius
+        {$selector-radius}
             ui-size-variant(
                 has-radius: true
             )

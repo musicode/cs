@@ -12,36 +12,42 @@
 
         pagination()
 
-        item-selector = '> a'
-        button-selector = '> .item'
+        selector-item = '> a'
+        selector-button = '> .item'
 
         ui-size-variant(
             has-font: true,
             has-margin-horizontal: true,
-            append-selector: item-selector
+            selector-append: selector-item
         )
 
         ui-size-variant(
             has-line-height: true,
             has-padding: true,
-            append-selector: button-selector
+            selector-append: selector-button
         )
 
         ui-brand-variant(
-            has-border: true,
-            has-color: true,
-            has-bg: true,
+            reversed: true,
             has-hover: true,
             has-active: true,
             has-checked: true,
             has-disabled: true,
-            append-selector: button-selector,
-            child-selector: $selector-active
+            selector-append: selector-button
         )
 
-        {item-selector}
+        ui-brand-variant(
+            reversed: true,
+            has-border: true,
+            has-color: true,
+            has-bg: true,
+            selector-append: selector-button,
+            selector-child: $selector-active
+        )
+
+        {selector-item}
             pagination-item()
 
-        {button-selector}
+        {selector-button}
             pagination-button()
 

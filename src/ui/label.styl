@@ -3,6 +3,7 @@
  * @author musicode
  */
 
+@import "../variable/label.styl"
 @import "../mixin/label.styl"
 
 +prefix-classes($ui-prefix)
@@ -12,6 +13,7 @@
         label()
 
         ui-brand-variant(
+            reversed: true,
             has-bg: true,
             has-color: true
         )
@@ -22,12 +24,12 @@
             has-padding: true
         )
 
-        &.round
+        {$selector-round}
             ui-size-variant(
                 has-round: true
             )
 
-        &.radius
+        {$selector-radius}
             ui-size-variant(
                 has-radius: true
             )
