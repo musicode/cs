@@ -6,37 +6,42 @@
 @import "../variable/pagination.styl";
 @import "../mixin/pagination.styl";
 
-.{$ui-prefix}pagination
++prefix-classes($ui-prefix)
 
-    pagination()
+    .pagination
 
-    item-selector = '> a'
-    button-selector = '> .' + $ui-prefix + 'item'
+        pagination()
 
-    ui-size-variant(
-        has-font: true,
-        has-margin-horizontal: true,
-        append: item-selector
-    )
+        item-selector = '> a'
+        button-selector = '> .item'
 
-    ui-size-variant(
-        has-line-height: true,
-        has-padding: true,
-        append: button-selector
-    )
-
-    ui-brand-variant(
-        has-border: true,
-        has-bg: true,
-        append: button-selector + '.active'
-    )
-
-    {item-selector}
-        pagination-item()
-
-    {button-selector}
-        pagination-button(
-            checked-selector: '.active',
-            disabled-selector: '.disabled'
+        ui-size-variant(
+            has-font: true,
+            has-margin-horizontal: true,
+            append-selector: item-selector
         )
+
+        ui-size-variant(
+            has-line-height: true,
+            has-padding: true,
+            append-selector: button-selector
+        )
+
+        ui-brand-variant(
+            has-border: true,
+            has-color: true,
+            has-bg: true,
+            has-hover: true,
+            has-active: true,
+            has-checked: true,
+            has-disabled: true,
+            append-selector: button-selector,
+            child-selector: $selector-active
+        )
+
+        {item-selector}
+            pagination-item()
+
+        {button-selector}
+            pagination-button()
 

@@ -5,30 +5,32 @@
 
 @import "../mixin/message.styl";
 
-.message
++prefix-classes($ui-prefix)
 
-    message()
+    .message
 
-    ui-brand-variant(
-        has-border: true,
-        has-color: true,
-        has-bg: true,
-        level: 'lighter'
-    )
+        message()
 
-    ui-size-variant(
-        has-border: true,
-        has-font: true,
-        has-line-height: true,
-        has-padding: true
-    )
-
-    &.round
-        ui-size-variant(
-            has-round: true
+        ui-brand-variant(
+            has-border: true,
+            has-color: true,
+            has-bg: true,
+            level: 'lighter'
         )
 
-    &.radius
         ui-size-variant(
-            has-radius: true
+            has-border: true,
+            has-font: true,
+            has-line-height: true,
+            has-padding: true
         )
+
+        &.round
+            ui-size-variant(
+                has-round: true
+            )
+
+        &.radius
+            ui-size-variant(
+                has-radius: true
+            )

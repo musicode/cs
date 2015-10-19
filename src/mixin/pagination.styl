@@ -8,7 +8,6 @@
 pagination()
 
     font-size 0
-    user-select none
 
     ui()
 
@@ -23,17 +22,19 @@ pagination-item()
     ui()
 
 
-pagination-button(checked-selector = '', disabled-selector = '')
+pagination-button()
+
+    user-select none
 
     ui-style(
         border: $pagination-button-border,
         color: $pagination-button-color,
         bg: $pagination-button-bg
-    );
+    )
 
     ui-clickable(
-        checked-selector: checked-selector,
-        disabled-selector: disabled-selector
-    );
+        has-checked: true,
+        has-disabled: true
+    )
 
 
