@@ -1,55 +1,73 @@
 /**
- * @file 对话框
+ * @file Dialog
  * @author musicode
  */
 
-dialog() {
-    position: fixed;
-    ui-type($type-hash['dialog']);
-}
+dialog()
 
-dialog-mask() {
+    position fixed
+    text-align left
 
-    ui-type($type-hash['dialog-mask']);
+    ui-set('background-color', $dialog-bg)
+    ui-set('border-radius', $dialog-radius)
 
-    position: absolute;
-    top: 0;
-    left: 0;
-}
+    if $dialog-border is a 'rgba'
+        border 1px solid $dialog-border
 
-dialog-close() {
+    ui()
 
-    text-align: center;
 
-    position: absolute;
-    top: $dialog-close-top;
-    right: $dialog-close-right;
+dialog-header()
 
-    if ($support-mouse == true) {
-        cursor: pointer;
-    }
+    user-select none
 
-    ui-size('dialog-close');
-    ui-type($type-hash['dialog-close']);
+    ui-set('padding', $dialog-header-padding-vertical $dialog-padding-horizontal)
 
-}
+    if $support-mouse
+        ui-set('cursor', $cursor-move)
 
-dialog-header() {
+    if $dialog-header-border is a 'rgba'
+        border-bottom 1px solid $dialog-header-border
 
-    if ($support-mouse == true) {
-        cursor: move;
-        user-select: none;
-    }
 
-    ui-size('dialog-header');
-    ui-type($type-hash['dialog-header']);
+dialog-title()
 
-}
+    display inline-block
 
-dialog-title() {
-    display: inline-block;
-}
+    ui-set('font-size', $dialog-title-font-size)
+    ui-set('font-weight', $dialog-title-font-weight)
 
-dialog-body() {
-    ui-size('dialog-body');
-}
+
+dialog-close()
+
+    ui()
+
+    position absolute
+    top $dialog-close-top
+    right $dialog-padding-horizontal
+
+    ui-set('font-size', $dialog-close-font-size)
+
+    if $support-mouse
+        ui-set('cursor', $cursor-clickable)
+
+
+dialog-body()
+
+    ui-set('padding', $dialog-body-padding-vertical $dialog-padding-horizontal)
+
+
+dialog-footer()
+
+    font-size 0
+    text-align right
+
+    ui-set('padding', $dialog-footer-padding-vertical $dialog-padding-horizontal)
+
+    if $dialog-footer-border is a 'rgba'
+        border-top 1px solid $dialog-footer-border
+
+    {$selector-button} + {$selector-button}
+        ui-set('margin-left', $dialog-footer-button-gap)
+
+

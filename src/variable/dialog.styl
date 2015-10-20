@@ -1,74 +1,31 @@
 /**
- * @file 对话框
+ * @file Dialog
  * @author musicode
  */
 
-$size-hash['dialog-header'] = {
 
-    'base': {
-        'border-bottom-width': 1px,
-        'font-size': $font-size-large,
-        'font-family': $font-family-title,
-        'padding-vertical': 9px,
-        'padding-horizontal': 20px,
-    }
+$selector-dialog = '.dialog'
+$selector-dialog-header = '.header'
+$selector-dialog-title = '.title'
+$selector-dialog-close = '.close'
+$selector-dialog-body = '.body'
+$selector-dialog-footer = '.footer'
 
-};
+$dialog-radius = 4px
+$dialog-padding-horizontal = 15px
+$dialog-header-padding-vertical = 15px
+$dialog-body-padding-vertical = 15px
+$dialog-footer-padding-vertical = 15px
+$dialog-footer-button-gap = 10px;
 
-$size-hash['dialog-close'] = {
+$dialog-title-font-size = 16px
+$dialog-title-font-weight = bold
 
-    'base': {
-        'font-size': 30px,
-        'width': 30px,
-        'height': 30px,
-        'line-height': 30px,
-        'padding-vertical': 0,
-        'padding-horizontal': 0
-    }
+$dialog-close-font-size = 20px
+$dialog-close-top = 11px
 
-};
+$dialog-bg = #FFF
+$dialog-border = #DDD
 
-$size-hash['dialog-body'] = {
-
-    'base': {
-        'padding-vertical': 20px,
-        'padding-horizontal': 20px
-    }
-}
-
-$type-hash['dialog'] = {
-
-    'default': {
-        'bg': #FFF
-    }
-};
-
-$type-hash['dialog-header'] = {
-
-    'default': {
-        'bg': #F5F5F5,
-        'color': #555,
-        'border': #CCC
-    }
-};
-
-$type-hash['dialog-close'] = {
-
-    'default': {
-        'color': #CCC
-    },
-    'hover': {
-        'color': #999
-    }
-};
-
-$type-hash['dialog-mask'] = {
-
-    'default': {
-        'bg': #000,
-        'opacity': 0.3
-    }
-};
-
-$dialog-close-top = 7px;
-$dialog-close-right = 13px;
+$dialog-header-border = #EEE;
+$dialog-footer-border = #EEE;

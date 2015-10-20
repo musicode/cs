@@ -1,32 +1,27 @@
 /**
- * @file 对话框
+ * @file Dialog
  * @author musicode
  */
 
-@import "../variable/dialog.styl";
-@import "../mixin/dialog.styl";
+@import '../variable/dialog.styl'
+@import '../mixin/dialog.styl'
 
-.dialog {
-    dialog();
-}
++prefix-classes($ui-prefix)
 
-.dialog-header {
+    {$selector-dialog}
+        dialog()
 
-    dialog-header();
+        > {$selector-dialog-header}
+            dialog-header()
 
-    h1 {
-        dialog-title();
-    }
-}
+            > {$selector-dialog-title}
+                dialog-title()
 
-.dialog-body {
-    dialog-body();
-}
+            > {$selector-dialog-close}
+                dialog-close()
 
-.dialog-close {
-    dialog-close();
-}
+        > {$selector-dialog-body}
+            dialog-body()
 
-.dialog-mask {
-    dialog-mask();
-}
+        > {$selector-dialog-footer}
+            dialog-footer()
