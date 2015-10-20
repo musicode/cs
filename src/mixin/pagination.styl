@@ -1,5 +1,5 @@
 /**
- * @file 分页
+ * @file Pagination
  * @author musicode
  */
 
@@ -24,8 +24,8 @@ pagination-item()
 
 pagination-button()
 
-    user-select none
     border 1px solid $pagination-button-border
+    user-select none
 
     ui-style(
         color: $pagination-button-color,
@@ -39,5 +39,5 @@ pagination-button()
     )
 
     if $support-mouse
-        cursor $cursor-clickable
+        ui-set('cursor', $cursor-clickable)
 

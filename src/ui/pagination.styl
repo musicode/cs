@@ -1,25 +1,25 @@
 /**
- * @file 分页
+ * @file Pagination
  * @author musicode
  */
 
-@import "../variable/pagination.styl"
-@import "../mixin/pagination.styl"
+@import '../variable/pagination.styl'
+@import '../mixin/pagination.styl'
 
 +prefix-classes($ui-prefix)
 
-    .pagination
+    {$selector-pagination}
 
         pagination()
 
-        selector-item = '> a'
-        selector-button = '> .item'
+        selector-item = '> ' + $selector-pagination-item
+        selector-button = '> ' + $selector-pagination-button
 
         ui-size-variant(
-            selector-append: selector-item,
+            selector-child: selector-item,
             each: @(size) {
-                font-size size['font'];
-                margin-left size['margin-horizontal'];
+                ui-set('font-size', size['font'])
+                ui-set('margin-left', size['margin-horizontal'])
                 &:first-child {
                     margin-left 0
                 }
@@ -27,16 +27,16 @@
         )
 
         ui-size-variant(
-            selector-append: selector-button,
+            selector-child: selector-button,
             each: @(size) {
-                line-height size['line-height'];
-                padding: size['padding-vertical'] size['padding-horizontal']
+                ui-set('line-height', size['line-height'])
+                ui-set('padding', size['padding-vertical'] size['padding-horizontal'])
             }
         )
 
         ui-brand-variant(
             reversed: true,
-            selector-append: selector-button,
+            selector-child: selector-button,
             each: @(bg, border, color) {
                 ui-hover(bg, border, color)
                 ui-active(bg, border, color)
@@ -46,8 +46,8 @@
 
         ui-brand-variant(
             reversed: true,
-            selector-append: selector-button,
-            selector-child: $selector-active,
+            selector-child: selector-button,
+            selector-grandchild: $selector-active,
             each: @(bg, border, color) {
                 ui-style(bg, border, color)
             }
