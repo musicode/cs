@@ -28,9 +28,9 @@ ui-set(name, value)
 
 ui-opacity(value)
 
-    opacity value
+    ui-set('opacity', value)
 
-    if $support-ie8
+    if $support-ie8 and value
         filter unquote('alpha(opacity=' + 100 * value + ')')
 
 
@@ -71,6 +71,27 @@ ui-link(color, has-hover)
             color darken(color, 10%)
             text-decoration underline
 
+ui-apply(
+        style,
+        selector = '',
+        selector-child = '',
+        selector-grandchild = '')
+
+    if selector
+        {selector}
+            if selector-child
+                {selector-child}
+                    if selector-grandchild
+                        {selector-grandchild}
+                            style()
+                    else
+                        style()
+            else
+                style()
+    else
+        style()
+
+
 
 ui-style(bg = null, border = null, color = null)
 
@@ -83,63 +104,86 @@ ui-style(bg = null, border = null, color = null)
     if color is a 'rgba'
         color color
 
-ui-hover(bg = null, border = null, color = null)
 
-    {$selector-hover}
 
-        ui-style(
-            border: darken(border, 6%),
-            color: darken(color, 5%),
-            bg: darken(bg, 6%)
-        )
+ui-hover(bg = null, border = null, color = null, selector = $selector-hover)
 
-ui-active(bg = null, border = null, color = null)
+    ui-apply(
+        selector: selector,
+        style: @() {
+            ui-style(
+                border: darken(border, 6%),
+                color: darken(color, 5%),
+                bg: darken(bg, 6%)
+            )
+        }
+    )
 
-    {$selector-active}
 
-        ui-style(
-            border: darken(border, 14%),
-            color: darken(color, 5%),
-            bg: darken(bg, 14%)
-        )
 
-ui-checked(bg = null, border = null, color = null)
+ui-active(bg = null, border = null, color = null, selector = $selector-active)
 
-    {$selector-checked}
+    ui-apply(
+        selector: selector,
+        style: @() {
+            ui-style(
+                border: darken(border, 14%),
+                color: darken(color, 5%),
+                bg: darken(bg, 14%)
+            )
+        }
+    )
 
-        cursor $cursor-checked
 
-        ui-style(
-            border: darken(border, 14%),
-            color: darken(color, 5%),
-            bg: darken(bg, 14%)
-        )
 
-ui-disabled(bg = null, border = null, color = null)
+ui-checked(bg = null, border = null, color = null, selector = $selector-checked)
 
-    {$selector-disabled}
+    ui-apply(
+        selector: selector,
+        style: @() {
+            cursor $cursor-checked
+            ui-style(
+                border: darken(border, 14%),
+                color: darken(color, 5%),
+                bg: darken(bg, 14%)
+            )
+        }
+    )
 
-        cursor $cursor-disabled
 
-        border = lighten(border, 30%)
-        color = lighten(color, 60%)
-        bg = lighten(bg, 35%)
 
-        ui-style(
-            border: border,
-            color: color,
-            bg: bg
-        )
 
-        if $support-mouse
+ui-disabled(bg = null, border = null, color = null, selector = $selector-disabled)
 
-            {$selector-hover},
-            {$selector-active}
-                ui-style(
-                    border: border,
-                    color: color,
-                    bg: bg
-                )
+    ui-apply(
+        selector: selector,
+        style: @() {
+            cursor $cursor-disabled
+
+            border = lighten(border, 30%)
+            color = lighten(color, 60%)
+            bg = lighten(bg, 35%)
+
+            ui-style(
+                border: border,
+                color: color,
+                bg: bg
+            )
+
+            if ($support-mouse) {
+
+                {$selector-hover},
+                {$selector-active} {
+                    ui-style(
+                        border: border,
+                        color: color,
+                        bg: bg
+                    )
+                }
+            }
+        }
+    )
+
 
 
 
@@ -160,17 +204,14 @@ ui-variant(
         if selector-append
             selector += selector-append;
 
-        {selector}
-
-            if selector-child
-                {selector-child}
-                    if selector-grandchild
-                        {selector-grandchild}
-                            each(hash[name])
-                    else
-                        each(hash[name])
-            else
+        ui-apply(
+            selector: selector,
+            selector-child: selector-child,
+            selector-grandchild: selector-grandchild,
+            style: @() {
                 each(hash[name])
+            }
+        )
 
 
 

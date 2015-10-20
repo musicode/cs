@@ -12,24 +12,53 @@
 
         dropdown()
 
+        selector-caret = ' > ' + $selector-dropdown-caret
+
+        > {$selector-text},
+        > {$selector-button}
+
+            ui-fluid()
+
+            {selector-caret}
+                dropdown-caret()
+
+
+        > {$selector-text}
+
+            ui-brand-variant(
+                selector-child: selector-caret,
+                each: @(color) {
+                    ui-set('color', color)
+                }
+            )
+
+
+        > {$selector-button}
+
+            ui-brand-variant(
+                reversed: true,
+                selector-child: selector-caret,
+                each: @(color) {
+                    ui-set('color', color)
+                }
+            )
+
+        {$selector-expanded}
+
+            > {$selector-button}
+                ui-brand-variant(
+                    reversed: true,
+                    each: @(bg, border, color) {
+                        ui-active(bg, border, color, '')
+                    }
+                )
+
+            > {$selector-dropdown-menu}
+
+                display block
+
         > {$selector-dropdown-menu}
             dropdown-menu()
 
-        &.open {
-            .caret {
-               dropdown-caret-top();
-            }
-            .dropdown-menu {
-                display: block;
-            }
-        }
-
-
-    .dropdown-menu {
-
-        dropdown-menu();
-
-        li {
-            dropdown-menu-item();
-        }
-    }
+            > {$selector-dropdown-menu-item}
+                dropdown-menu-item()

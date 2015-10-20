@@ -12,6 +12,14 @@ dropdown()
     ui()
 
 
+dropdown-caret()
+
+    if $support-mouse
+        ui-set('cursor', $cursor-clickable)
+
+    ui-set('margin-left', $dropdown-caret-gap)
+
+
 dropdown-menu()
 
     display none
