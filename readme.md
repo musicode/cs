@@ -43,9 +43,9 @@
    
 4. 固化类名通常会被吐槽不够语义化，**css** 的一大特性就是语义化，因此可以理解为`重新定义了 css`
    
-   比如 <a> 表示链接，**css** 定义的 `.link` 则会带有链接具有的样式，它的风格基于网站的整体设计，类似的还有 `.button` `.label` `.text` `.input` 等
+   比如 `<a>` 表示链接，**css** 定义的 `.link` 则会带有链接具有的样式，它的风格基于网站的整体设计，类似的还有 `.button` `.label` `.text` `.input` 等
    
-5. 使用 **normalize.css** 进行初始化，保证先天的语义不被破坏，比如 <strong> 表示粗体，当我们需要一个粗体的按钮时，可以参考以下写法：
+5. 使用 **normalize.css** 进行初始化，保证先天的语义不被破坏，比如 `<strong>` 表示粗体，当我们需要一个粗体的按钮时，可以参考以下写法：
    
    ``` html
    <strong class="button large primary">click me!</strong>
