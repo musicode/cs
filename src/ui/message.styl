@@ -1,46 +1,44 @@
 /**
- * @file 消息
+ * @file Message
  * @author musicode
  */
 
-@import "../variable/message.styl"
-@import "../mixin/message.styl"
+@import '../variable/message.styl'
+@import '../mixin/message.styl'
 
 +prefix-classes($ui-prefix)
 
-    .message
+    {$selector-message}
 
         message()
 
         ui-brand-variant(
             reversed: true,
             level: 'lighter',
-            each: @(bg = null, border = null, color = null) {
-                background-color bg
-                border 1px solid border
-                color color
+            each: @(bg, border, color) {
+                ui-style(bg, border, color)
             }
         )
 
         ui-size-variant(
             each: @(size) {
-                // 下面的 : ; 如果不加会报错....
-                font-size size['font'];
-                line-height size['line-height'];
-                padding: size['padding-vertical'] size['padding-horizontal']
+                ui-set('font-size', size['font'])
+                ui-set('line-height', size['line-height'])
+                ui-set('padding', size['padding-vertical'] size['padding-horizontal'])
             }
         )
 
         {$selector-round}
             ui-size-variant(
                 each: @(size) {
-                    border-radius size['round']
+                    ui-set('border-radius', size['round'])
                 }
             )
 
         {$selector-radius}
             ui-size-variant(
                 each: @(size) {
-                    border-radius size['radius']
+                    ui-set('border-radius', size['radius'])
                 }
             )
+

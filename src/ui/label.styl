@@ -1,45 +1,44 @@
 /**
- * @file 标签
+ * @file Label
  * @author musicode
  */
 
-@import "../variable/label.styl"
-@import "../mixin/label.styl"
+@import '../variable/label.styl'
+@import '../mixin/label.styl'
 
 +prefix-classes($ui-prefix)
 
-    .label
+    {$selector-label}
 
         label()
 
         ui-brand-variant(
             reversed: true,
-            each: @(bg = null, border = null, color = null) {
-                background-color bg
-                color color
+            each: @(bg, color) {
+                ui-set('background-color', bg)
+                ui-set('color', color)
             }
         )
 
         ui-size-variant(
             each: @(size) {
-                // 下面的 : ; 如果不加会报错....
-                font-size size['font'];
-                line-height size['line-height'];
-                padding: size['padding-vertical'] size['padding-horizontal']
+                ui-set('font-size', size['font'])
+                ui-set('line-height', size['line-height'])
+                ui-set('padding', size['padding-vertical'] size['padding-horizontal'])
             }
         )
 
         {$selector-round}
             ui-size-variant(
                 each: @(size) {
-                    border-radius size['round']
+                    ui-set('border-radius', size['round'])
                 }
             )
 
         {$selector-radius}
             ui-size-variant(
                 each: @(size) {
-                    border-radius size['radius']
+                    ui-set('border-radius', size['radius'])
                 }
             )
 
