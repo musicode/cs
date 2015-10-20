@@ -1,22 +1,22 @@
 /**
- * @file 图片
+ * @file Image
  * @author musicode
  */
 
-@import "../variable/image.styl";
-@import "../mixin/image.styl";
+@import '../variable/image.styl';
+@import '../mixin/image.styl';
 
 +prefix-classes($ui-prefix)
 
-    .image
+    {$selector-image}
 
         image()
 
         ui-size-variant(
             size-hash: $image-size-hash,
             each: @(size) {
-                width size['width'];
-                height size['height'];
+                ui-set('width', size['width'])
+                ui-set('height', size['height'])
             }
         )
 
@@ -24,7 +24,7 @@
             ui-size-variant(
                 size-hash: $image-size-hash,
                 each: @(size) {
-                    border-radius size['round']
+                    border-radius 50%
                 }
             )
 
@@ -32,7 +32,7 @@
             ui-size-variant(
                 size-hash: $image-size-hash,
                 each: @(size) {
-                    border-radius size['radius']
+                    ui-set('border-radius', size['radius'])
                 }
             )
 

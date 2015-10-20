@@ -1,7 +1,0 @@
-opacity($value) {
-    opacity: $value;
-    if ($support-ie8) {
-        $value = 100 * $value;
-        filter: unquote('alpha(opacity=' + $value + ')');
-    }
-}

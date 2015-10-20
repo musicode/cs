@@ -24,23 +24,23 @@
 
         ui-size-variant(
             each: @(size) {
-                font-size size['font'];
-                line-height size['line-height'];
-                padding: size['padding-vertical'] size['padding-horizontal']
+                ui-set('font-size', size['font'])
+                ui-set('line-height', size['line-height'])
+                ui-set('padding', size['padding-vertical'] size['padding-horizontal'])
             }
         )
 
         {$selector-round}
             ui-size-variant(
                 each: @(size) {
-                    border-radius size['round']
+                    ui-set('border-radius', size['round'])
                 }
             )
 
         {$selector-radius}
             ui-size-variant(
                 each: @(size) {
-                    border-radius size['radius']
+                    ui-set('border-radius', size['radius'])
                 }
             )
 
@@ -57,9 +57,9 @@
         ui-size-variant(
             selector-child: selector-item,
             each: @(size) {
-                font-size size['font'];
-                line-height size['line-height'];
-                padding: size['padding-vertical'] size['padding-horizontal']
+                ui-set('font-size', size['font'])
+                ui-set('line-height', size['line-height'])
+                ui-set('padding', size['padding-vertical'] size['padding-horizontal'])
             }
         )
 
@@ -87,8 +87,8 @@
                 selector-child: selector-item,
                 selector-grandchild: $selector-first-child,
                 each: @(size) {
-                    border-top-left-radius size['round'];
-                    border-bottom-left-radius size['round']
+                    ui-set('border-top-left-radius', size['round'])
+                    ui-set('border-bottom-left-radius', size['round'])
                 }
             )
 
@@ -96,8 +96,8 @@
                 selector-child: selector-item,
                 selector-grandchild: $selector-last-child,
                 each: @(size) {
-                    border-top-right-radius size['round'];
-                    border-bottom-right-radius size['round']
+                    ui-set('border-top-right-radius', size['round'])
+                    ui-set('border-bottom-right-radius', size['round'])
                 }
             )
 
@@ -107,8 +107,8 @@
                 selector-child: selector-item,
                 selector-grandchild: $selector-first-child,
                 each: @(size) {
-                    border-top-left-radius size['radius'];
-                    border-bottom-left-radius size['radius']
+                    ui-set('border-top-left-radius', size['radius'])
+                    ui-set('border-bottom-left-radius', size['radius'])
                 }
             )
 
@@ -116,8 +116,8 @@
                 selector-child: selector-item,
                 selector-grandchild: $selector-last-child,
                 each: @(size) {
-                    border-top-right-radius size['radius'];
-                    border-bottom-right-radius size['radius']
+                    ui-set('border-top-right-radius', size['radius'])
+                    ui-set('border-bottom-right-radius', size['radius'])
                 }
             )
 

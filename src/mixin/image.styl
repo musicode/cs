@@ -1,5 +1,5 @@
 /**
- * @file 图片
+ * @file Image
  * @author musicode
  */
 
@@ -9,16 +9,8 @@ image()
     text-align center
     overflow hidden
 
-    a&,
-    b&,
-    i&,
-    em&,
-    span&,
-    label&,
-    strong&
-        display inline-block
-
     ui()
+    ui-inline-to-inline-block()
 
     > img
         display block
@@ -29,6 +21,9 @@ image()
         position relative
 
         &:after
+            background-color #000
+            ui-opacity(0)
+
             content ' '
             position absolute
             top 0
@@ -38,4 +33,4 @@ image()
 
         {$selector-hover}
             &:after
-                background-color $image-link-hover-mask
+                ui-opacity($image-link-hover-mask-opacity)

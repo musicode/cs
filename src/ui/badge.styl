@@ -15,16 +15,16 @@
         ui-brand-variant(
             reversed: true,
             each: @(bg, color) {
-                background-color bg
-                color color
+                ui-set('background-color', bg)
+                ui-set('color', color)
             }
         )
 
         ui-size-variant(
             each: @(size) {
-                border-radius 50%;
-                font-size size['font'];
-                line-height size['line-height'];
-                padding: size['padding-vertical'] size['padding-horizontal'];
+                ui-set('font-size', size['font'])
+                ui-set('line-height', size['line-height'])
+                ui-set('padding', size['padding-vertical'] size['padding-horizontal'])
+                border-radius 50%
             }
         )
