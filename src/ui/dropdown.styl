@@ -1,19 +1,18 @@
 /**
- * @file 下拉菜单
+ * @file Dropdown
  * @author musicode
  */
 
-@import "../variable/dropdown.styl"
-@import "../mixin/dropdown.styl"
-
+@import '../variable/dropdown.styl'
+@import '../mixin/dropdown.styl'
 
 +prefix-classes($ui-prefix)
 
-    .dropdown
+    {$selector-dropdown}
 
         dropdown()
 
-        > .menu
+        > {$selector-dropdown-menu}
             dropdown-menu()
 
         &.open {

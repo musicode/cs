@@ -3,7 +3,7 @@
  * @author musicode
  */
 
-@import "../variable/typography.styl"
+@import '../variable/typography.styl'
 
 +prefix-classes($ui-prefix)
 
@@ -16,11 +16,11 @@
         box-sizing inherit
 
     body
-        background-color $bg-color
-        color $text-color
-        font-family $font-family-title;
-        font-size $size-base['font-size'];
-        line-height $size-base['line-height']
+        ui-set('background-color', $bg-color)
+        ui-set('color', $text-color)
+        ui-set('font-family', $font-family-title)
+        ui-set('font-size', $size-base['font'])
+        ui-set('line-height', $size-base['line-height'])
 
     .link
         ui-link(

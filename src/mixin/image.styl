@@ -22,8 +22,6 @@ image()
 
         &:after
             background-color #000
-            ui-opacity(0)
-
             content ' '
             position absolute
             top 0
@@ -31,6 +29,9 @@ image()
             bottom 0
             left 0
 
+            ui-opacity(0)
+
         {$selector-hover}
             &:after
                 ui-opacity($image-link-hover-mask-opacity)
+
