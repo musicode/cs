@@ -29,12 +29,24 @@ dropdown-menu()
     position absolute
     left 0
     right 0
+    margin-top -1px
 
+    ui-set('background-color', $dropdown-menu-bg)
+
+    if $dropdown-menu-border is a 'rgba'
+        border 1px solid $dropdown-menu-border
 
 dropdown-menu-item()
 
     if $support-mouse
         ui-set('cursor', $cursor-clickable)
 
+    {$selector-hover}
+        ui-set('background-color', $dropdown-menu-item-bg-hover)
 
+    {$selector-active}
+        ui-set('background-color', $dropdown-menu-item-bg-active)
+
+    {$selector-checked}
+        ui-set('background-color', $dropdown-menu-item-bg-checked)
 

@@ -10,12 +10,26 @@
 
     {$selector-dropdown}
 
+        selector-text = ' > ' + $selector-text
+        selector-button = ' > ' + $selector-button
+        selector-menu = ' > ' + $selector-dropdown-menu
+        selector-menu-item = ' > ' + $selector-dropdown-menu + ' > ' + $selector-dropdown-menu-item
+
         dropdown()
+
+        ui-size-variant(
+            selector-child: '&' + selector-button + ',' + '&' + selector-menu-item,
+            each: @(size) {
+                ui-set('font-size', size['font'])
+                ui-set('line-height', size['line-height'])
+                ui-set('padding', size['padding-vertical'] size['padding-horizontal'])
+            }
+        )
 
         selector-caret = ' > ' + $selector-dropdown-caret
 
-        > {$selector-text},
-        > {$selector-button}
+        {selector-text},
+        {selector-button}
 
             ui-fluid()
 
@@ -23,7 +37,7 @@
                 dropdown-caret()
 
 
-        > {$selector-text}
+        {selector-text}
 
             ui-brand-variant(
                 selector-child: selector-caret,
@@ -33,7 +47,7 @@
             )
 
 
-        > {$selector-button}
+        {selector-button}
 
             ui-brand-variant(
                 reversed: true,
@@ -45,7 +59,7 @@
 
         {$selector-expanded}
 
-            > {$selector-button}
+            {selector-button}
                 ui-brand-variant(
                     reversed: true,
                     each: @(bg, border, color) {
@@ -57,8 +71,9 @@
 
                 display block
 
-        > {$selector-dropdown-menu}
+        {selector-menu}
             dropdown-menu()
 
-            > {$selector-dropdown-menu-item}
-                dropdown-menu-item()
+        {selector-menu-item}
+            dropdown-menu-item()
+
