@@ -14,24 +14,33 @@
 
         ui-brand-variant(
             reversed: true,
-            has-bg: true,
-            has-color: true
+            each: @(bg = null, border = null, color = null) {
+                background-color bg
+                color color
+            }
         )
 
         ui-size-variant(
-            has-font: true,
-            has-line-height: true,
-            has-padding: true
+            each: @(size) {
+                // 下面的 : ; 如果不加会报错....
+                font-size size['font'];
+                line-height size['line-height'];
+                padding: size['padding-vertical'] size['padding-horizontal']
+            }
         )
 
         {$selector-round}
             ui-size-variant(
-                has-round: true
+                each: @(size) {
+                    border-radius size['round']
+                }
             )
 
         {$selector-radius}
             ui-size-variant(
-                has-radius: true
+                each: @(size) {
+                    border-radius size['radius']
+                }
             )
 
 

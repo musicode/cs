@@ -3,37 +3,34 @@
  * @author musicode
  */
 
-@import "../variable/dropdown.styl";
-@import "../mixin/dropdown.styl";
+@import "../variable/dropdown.styl"
+@import "../mixin/dropdown.styl"
 
-.dropdown {
-    dropdown();
 
-    .btn-default {
-        ellipsis();
-        dropdown-button();
-    }
++prefix-classes($ui-prefix)
 
-    .caret {
-        dropdown-caret();
-        dropdown-caret-down();
-    }
+    .dropdown
 
-    &.open {
-        .caret {
-           dropdown-caret-top();
+        dropdown()
+
+        > .menu
+            dropdown-menu()
+
+        &.open {
+            .caret {
+               dropdown-caret-top();
+            }
+            .dropdown-menu {
+                display: block;
+            }
         }
-        .dropdown-menu {
-            display: block;
+
+
+    .dropdown-menu {
+
+        dropdown-menu();
+
+        li {
+            dropdown-menu-item();
         }
     }
-}
-
-.dropdown-menu {
-
-    dropdown-menu();
-
-    li {
-        dropdown-menu-item();
-    }
-}

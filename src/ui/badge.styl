@@ -3,8 +3,8 @@
  * @author musicode
  */
 
-@import "../variable/badge.styl";
-@import "../mixin/badge.styl";
+@import "../variable/badge.styl"
+@import "../mixin/badge.styl"
 
 +prefix-classes($ui-prefix)
 
@@ -14,13 +14,17 @@
 
         ui-brand-variant(
             reversed: true,
-            has-bg: true,
-            has-color: true
+            each: @(bg = null, border = null, color = null) {
+                background-color bg
+                color color
+            }
         )
 
         ui-size-variant(
-            has-font: true,
-            has-line-height: true,
-            has-padding: true,
-            has-round: true
+            each: @(size) {
+                border-radius 50%;
+                font-size size['font'];
+                line-height size['line-height'];
+                padding: size['padding-vertical'] size['padding-horizontal'];
+            }
         )

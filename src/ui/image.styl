@@ -14,19 +14,25 @@
 
         ui-size-variant(
             size-hash: $image-size-hash,
-            has-width: true,
-            has-height: true
+            each: @(size) {
+                width size['width'];
+                height size['height'];
+            }
         )
 
         {$selector-round}
             ui-size-variant(
                 size-hash: $image-size-hash,
-                has-round: true
+                each: @(size) {
+                    border-radius size['round']
+                }
             )
 
         {$selector-radius}
             ui-size-variant(
                 size-hash: $image-size-hash,
-                has-radius: true
+                each: @(size) {
+                    border-radius size['radius']
+                }
             )
 

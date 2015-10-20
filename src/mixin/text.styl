@@ -6,12 +6,16 @@
 text()
 
     ui-brand-variant(
-        has-color: true
+        each: @(bg = null, border = null, color = null) {
+            color color
+        }
     )
 
     ui-size-variant(
-        has-font: true,
-        has-line-height: true
+        each: @(size) {
+            font-size size['font']; // 不加分号会报错
+            line-height size['line-height']
+        }
     )
 
     ui()

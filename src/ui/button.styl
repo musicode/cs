@@ -14,29 +14,41 @@
 
         ui-brand-variant(
             reversed: true,
-            has-border: true,
-            has-color: true,
-            has-bg: true,
-            has-hover: true,
-            has-active: true,
-            has-disabled: true
+            each: @(bg = null, border = null, color = null) {
+
+                background-color bg
+                border 1px solid border
+                color color
+
+                ui-hover(bg, border, color)
+                ui-active(bg, border, color)
+                ui-disabled(bg, border, color)
+
+            }
         )
 
+
         ui-size-variant(
-            has-border: true,
-            has-font: true,
-            has-line-height: true,
-            has-padding: true
+            each: @(size) {
+                // 下面的 : ; 如果不加会报错....
+                font-size size['font'];
+                line-height size['line-height'];
+                padding: size['padding-vertical'] size['padding-horizontal']
+            }
         )
 
         {$selector-round}
             ui-size-variant(
-                has-round: true
+                each: @(size) {
+                    border-radius size['round']
+                }
             )
 
         {$selector-radius}
             ui-size-variant(
-                has-radius: true
+                each: @(size) {
+                    border-radius size['radius']
+                }
             )
 
         {$selector-fluid}
@@ -64,27 +76,39 @@
                 border-radius 0
 
             ui-size-variant(
-                has-left-round: true,
                 selector-append: $selector-round,
-                selector-child: $selector-first-child
+                selector-child: $selector-first-child,
+                each: @(size) {
+                    border-top-left-radius size['round'];
+                    border-bottom-left-radius size['round']
+                }
             )
 
             ui-size-variant(
-                has-right-round: true,
                 selector-append: $selector-round,
-                selector-child: $selector-last-child
+                selector-child: $selector-last-child,
+                each: @(size) {
+                    border-top-right-radius size['round'];
+                    border-bottom-right-radius size['round']
+                }
             )
 
             ui-size-variant(
-                has-left-radius: true,
                 selector-append: $selector-radius,
-                selector-child: $selector-first-child
+                selector-child: $selector-first-child,
+                each: @(size) {
+                    border-top-left-radius size['radius'];
+                    border-bottom-left-radius size['radius']
+                }
             )
 
             ui-size-variant(
-                has-right-radius: true,
                 selector-append: $selector-radius,
-                selector-child: $selector-last-child
+                selector-child: $selector-last-child,
+                each: @(size) {
+                    border-top-right-radius size['radius'];
+                    border-bottom-right-radius size['radius']
+                }
             )
 
 

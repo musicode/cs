@@ -1,28 +1,16 @@
 /**
- * @file 工具提示
+ * @file Tooltip
  * @author musicode
  */
-
-tooltip-style(bg = null, border = null, color = null)
-
-    background-color bg
-    border-color border
-    color color
-
-    &:before
-        border-color border
-
-    &:after
-        border-color bg
-
 
 tooltip()
 
     position absolute
-    border 1px solid
+    border 1px solid transparent
     border-radius $tooltip-radius-size
     font-size $tooltip-font-size
     padding $tooltip-padding-vertical $tooltip-padding-horizontal
+    word-wrap break-word
 
     ui()
 
@@ -32,20 +20,25 @@ tooltip()
         content ' '
         border 0 solid transparent
 
-    tooltip-style(
-        bg: $tooltip-bg,
-        color: $tooltip-color,
-        border: ui-darken-border($tooltip-bg)
+    ui-brand-variant(
+        reversed: true,
+        each: @(bg = null, border = null, color = null) {
+
+            ui-style(bg, border, color)
+
+            // 不加 { } 会报错
+            &:before {
+                border-color border
+            }
+
+            &:after {
+                border-color bg
+            }
+
+        }
     )
 
 
-tooltip-reversed()
-
-    tooltip-style(
-        bg: $tooltip-color,
-        color: $tooltip-bg,
-        border: ui-darken-border($tooltip-color)
-    )
 
 
 tooltip-top()

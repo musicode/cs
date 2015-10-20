@@ -3,8 +3,8 @@
  * @author musicode
  */
 
-@import "../variable/message.styl";
-@import "../mixin/message.styl";
+@import "../variable/message.styl"
+@import "../mixin/message.styl"
 
 +prefix-classes($ui-prefix)
 
@@ -14,25 +14,33 @@
 
         ui-brand-variant(
             reversed: true,
-            has-border: true,
-            has-color: true,
-            has-bg: true,
-            level: 'lighter'
+            level: 'lighter',
+            each: @(bg = null, border = null, color = null) {
+                background-color bg
+                border 1px solid border
+                color color
+            }
         )
 
         ui-size-variant(
-            has-border: true,
-            has-font: true,
-            has-line-height: true,
-            has-padding: true
+            each: @(size) {
+                // 下面的 : ; 如果不加会报错....
+                font-size size['font'];
+                line-height size['line-height'];
+                padding: size['padding-vertical'] size['padding-horizontal']
+            }
         )
 
         {$selector-round}
             ui-size-variant(
-                has-round: true
+                each: @(size) {
+                    border-radius size['round']
+                }
             )
 
         {$selector-radius}
             ui-size-variant(
-                has-radius: true
+                each: @(size) {
+                    border-radius size['radius']
+                }
             )

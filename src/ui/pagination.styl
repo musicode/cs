@@ -3,8 +3,8 @@
  * @author musicode
  */
 
-@import "../variable/pagination.styl";
-@import "../mixin/pagination.styl";
+@import "../variable/pagination.styl"
+@import "../mixin/pagination.styl"
 
 +prefix-classes($ui-prefix)
 
@@ -16,32 +16,41 @@
         selector-button = '> .item'
 
         ui-size-variant(
-            has-font: true,
-            has-margin-horizontal: true,
-            selector-append: selector-item
+            selector-append: selector-item,
+            each: @(size) {
+                font-size size['font'];
+                margin-left size['margin-horizontal'];
+                &:first-child {
+                    margin-left 0
+                }
+            }
         )
 
         ui-size-variant(
-            has-line-height: true,
-            has-padding: true,
-            selector-append: selector-button
-        )
-
-        ui-brand-variant(
-            reversed: true,
-            has-hover: true,
-            has-active: true,
-            has-checked: true,
-            selector-append: selector-button
-        )
-
-        ui-brand-variant(
-            reversed: true,
-            has-border: true,
-            has-color: true,
-            has-bg: true,
             selector-append: selector-button,
-            selector-child: $selector-active
+            each: @(size) {
+                line-height size['line-height'];
+                padding: size['padding-vertical'] size['padding-horizontal']
+            }
+        )
+
+        ui-brand-variant(
+            reversed: true,
+            selector-append: selector-button,
+            each: @(bg, border, color) {
+                ui-hover(bg, border, color)
+                ui-active(bg, border, color)
+                ui-checked(bg, border, color)
+            }
+        )
+
+        ui-brand-variant(
+            reversed: true,
+            selector-append: selector-button,
+            selector-child: $selector-active,
+            each: @(bg, border, color) {
+                ui-style(bg, border, color)
+            }
         )
 
         {selector-item}

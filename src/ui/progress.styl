@@ -16,33 +16,45 @@
 
         ui-brand-variant(
             reversed: true,
-            has-bg: true,
-            selector-child: selector-meter
+            selector-child: selector-meter,
+            each: @(bg = null) {
+                background-color bg
+            }
         )
 
         ui-size-variant(
-            has-font: true,
-            has-padding: true,
-            has-line-height: true,
-            selector-child: selector-meter
+            selector-child: selector-meter,
+            each: @(size) {
+                font-size size['font'];
+                line-height size['line-height'];
+                padding: size['padding-vertical'] size['padding-horizontal'];
+            }
         )
 
         {$selector-round}
             ui-size-variant(
-                has-round: true
+                each: @(size) {
+                    border-radius size['round']
+                }
             )
             ui-size-variant(
-                has-round: true,
-                selector-child: selector-meter
+                selector-child: selector-meter,
+                each: @(size) {
+                    border-radius size['round']
+                }
             )
 
         {$selector-radius}
             ui-size-variant(
-                has-radius: true
+                each: @(size) {
+                    border-radius size['radius']
+                }
             )
             ui-size-variant(
-                has-radius: true,
-                selector-child: selector-meter
+                selector-child: selector-meter,
+                each: @(size) {
+                    border-radius size['radius']
+                }
             )
 
         {selector-meter}

@@ -3,13 +3,13 @@
  * @author musicode
  */
 
-@import "../variable/list.styl";
-@import "../mixin/list.styl";
+@import "../variable/list.styl"
+@import "../mixin/list.styl"
 
-.list {
-    list();
-}
++prefix-classes($ui-prefix)
 
-.list-item {
-    list-item();
-}
+    .list
+        list()
+
+        > .item
+            list-item()

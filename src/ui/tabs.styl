@@ -3,8 +3,8 @@
  * @author musicode
  */
 
-@import "../variable/tabs.styl"
-@import "../mixin/tabs.styl"
+@import '../variable/tabs.styl'
+@import '../mixin/tabs.styl'
 
 +prefix-classes($ui-prefix)
 
@@ -12,28 +12,34 @@
 
         tabs()
 
-        selector-item = ' > .item';
+        selector-item = ' > .item'
 
         ui-brand-variant(
             reversed: true,
-            has-hover: true,
-            has-active: true,
-            selector-append: selector-item
+            selector-append: selector-item,
+            each: @(bg, border, color) {
+                ui-hover(bg, border, color)
+                ui-active(bg, border, color)
+            }
         )
 
         ui-brand-variant(
             reversed: true,
-            has-bg: true,
-            has-checked: true,
             selector-append: selector-item,
-            selector-child: $selector-checked
+            selector-child: $selector-checked,
+            each: @(bg, border, color) {
+                background-color bg
+                ui-checked(bg, border, color)
+            }
         )
 
         ui-size-variant(
-            has-font: true,
-            has-line-height: true,
-            has-padding: true,
-            selector-append: selector-item
+            selector-append: selector-item,
+            each: @(size) {
+                font-size size['font'];
+                line-height size['line-height'];
+                padding: size['padding-vertical'] size['padding-horizontal'];
+            }
         )
 
         &.justified
