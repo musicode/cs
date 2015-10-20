@@ -66,7 +66,7 @@
 ``` css
 .btn:active,
 .btn.active {
-    xxx
+    ...
 }
 ```
 
@@ -118,7 +118,16 @@
 
 其中每种颜色又分为 5 种，从浅到深依次为 `xx-lighter` `xx-light` `xx` `xx-dark` `xx-darker`
 
-名称都不用缩写，缩写很难记，比如 small 在 `Bootstrap` 叫做 sm，在 `Foundation` 叫做 sml，这真是蛋疼...
+
+
+结合尺寸来看两个例子：
+
+``` html
+<div class="button small primary">确定（小型）</div>
+<div class="button danger">删除（默认大小）</div>
+```
+
+
 
 对于状态，可以继续扩展类名，比如有以下这些：
 
@@ -128,3 +137,20 @@
 4. disabled 禁用
 5. round 圆形
 6. radius 圆角
+
+
+
+`hover`、`active`、`checked`、`disabled` 看起来似乎是元素伪类，但是 **css** 为了更好的组合性，同时提供了同名类，以 hover 举例，如下：
+
+``` css 
+.button:hover,
+.button.hover {
+    ...
+}
+```
+
+
+
+
+
+名称都不用缩写，缩写很难记，比如 small 在 `Bootstrap` 叫做 sm，在 `Foundation` 叫做 sml，这真是蛋疼...
