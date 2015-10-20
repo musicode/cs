@@ -1,5 +1,5 @@
 /**
- * @file 工具提示
+ * @file Tooltip
  * @author musicode
  */
 
@@ -8,9 +8,29 @@
 
 +prefix-classes($ui-prefix)
 
-    .tooltip
+    {$selector-tooltip}
 
         tooltip()
+
+        ui-brand-variant(
+            reversed: true,
+            each: @(bg, border, color) {
+
+                ui-style(
+                    bg: bg,
+                    color: color,
+                    border: border
+                )
+
+                &:before {
+                    ui-style(border: border)
+                }
+                &:after {
+                    ui-style(border: bg)
+                }
+
+            }
+        )
 
         &.top
             tooltip-top()

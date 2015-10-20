@@ -7,10 +7,11 @@ tooltip()
 
     position absolute
     border 1px solid transparent
-    border-radius $tooltip-radius-size
-    font-size $tooltip-font-size
-    padding $tooltip-padding-vertical $tooltip-padding-horizontal
     word-wrap break-word
+
+    ui-set('border-radius', $tooltip-radius-size)
+    ui-set('font-size', $tooltip-font-size)
+    ui-set('padding', $tooltip-padding-vertical $tooltip-padding-horizontal)
 
     ui()
 
@@ -19,25 +20,6 @@ tooltip()
         position absolute
         content ' '
         border 0 solid transparent
-
-    ui-brand-variant(
-        reversed: true,
-        each: @(bg, border, color) {
-
-            ui-style(bg, border, color)
-
-            &:before {
-                border-color border
-            }
-
-            &:after {
-                border-color bg
-            }
-
-        }
-    )
-
-
 
 
 tooltip-top()

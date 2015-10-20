@@ -1,5 +1,5 @@
 /**
- * @file 标签页
+ * @file Tabs
  * @author musicode
  */
 
@@ -8,15 +8,15 @@
 
 +prefix-classes($ui-prefix)
 
-    .tabs
+    {$selector-tabs}
 
         tabs()
 
-        selector-item = ' > .item'
+        selector-item = ' > ' + $selector-tabs-item
 
         ui-brand-variant(
             reversed: true,
-            selector-append: selector-item,
+            selector-child: selector-item,
             each: @(bg, border, color) {
                 ui-hover(bg, border, color)
                 ui-active(bg, border, color)
@@ -25,24 +25,24 @@
 
         ui-brand-variant(
             reversed: true,
-            selector-append: selector-item,
-            selector-child: $selector-checked,
+            selector-child: selector-item,
+            selector-grandchild: $selector-checked,
             each: @(bg, border, color) {
-                background-color bg
+                ui-style(bg: bg)
                 ui-checked(bg, border, color)
             }
         )
 
         ui-size-variant(
-            selector-append: selector-item,
+            selector-child: selector-item,
             each: @(size) {
-                font-size size['font'];
-                line-height size['line-height'];
-                padding: size['padding-vertical'] size['padding-horizontal'];
+                ui-set('font-size', size['font'])
+                ui-set('line-height', size['line-height'])
+                ui-set('padding', size['padding-vertical'] size['padding-horizontal'])
             }
         )
 
-        &.justified
+        {$selector-justified}
             ui-justified(
                 selector-item: selector-item
             )

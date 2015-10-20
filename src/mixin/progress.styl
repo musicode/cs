@@ -1,5 +1,5 @@
 /**
- * @file 进度条
+ * @file Progress
  * @author musicode
  */
 
@@ -7,8 +7,12 @@ progress()
 
     overflow hidden
 
-    border 1px solid $progress-border
-    background-color $progress-bg
+    border 1px solid transparent
+
+    ui-style(
+        border: $progress-border,
+        bg: $progress-bg
+    )
 
     ui()
 

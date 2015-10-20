@@ -1,20 +1,20 @@
 /**
- * @file 文本
+ * @file Text
  * @author musicode
  */
 
 text()
 
     ui-brand-variant(
-        each: @(bg = null, border = null, color = null) {
-            color color
+        each: @(color) {
+            ui-style(color: color)
         }
     )
 
     ui-size-variant(
         each: @(size) {
-            font-size size['font']; // 不加分号会报错
-            line-height size['line-height']
+            ui-set('font-size', size['font'])
+            ui-set('line-height', size['line-height'])
         }
     )
 

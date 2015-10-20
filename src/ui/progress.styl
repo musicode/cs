@@ -1,59 +1,59 @@
 /**
- * @file 进度条
+ * @file Progress
  * @author musicode
  */
 
-@import "../variable/progress.styl"
-@import "../mixin/progress.styl"
+@import '../variable/progress.styl'
+@import '../mixin/progress.styl'
 
 +prefix-classes($ui-prefix)
 
-    .progress
+    {$selector-progress}
 
         progress()
 
-        selector-meter = ' > .meter';
+        selector-meter = ' > ' + $selector-progress-meter;
 
         ui-brand-variant(
             reversed: true,
             selector-child: selector-meter,
-            each: @(bg = null) {
-                background-color bg
+            each: @(bg) {
+                ui-set('background-color', bg)
             }
         )
 
         ui-size-variant(
             selector-child: selector-meter,
             each: @(size) {
-                font-size size['font'];
-                line-height size['line-height'];
-                padding: size['padding-vertical'] size['padding-horizontal'];
+                ui-set('font-size', size['font'])
+                ui-set('line-height', size['line-height'])
+                ui-set('padding', size['padding-vertical'] size['padding-horizontal'])
             }
         )
 
         {$selector-round}
             ui-size-variant(
                 each: @(size) {
-                    border-radius size['round']
+                    ui-set('border-radius', size['round'])
                 }
             )
             ui-size-variant(
                 selector-child: selector-meter,
                 each: @(size) {
-                    border-radius size['round']
+                    ui-set('border-radius', size['round'])
                 }
             )
 
         {$selector-radius}
             ui-size-variant(
                 each: @(size) {
-                    border-radius size['radius']
+                    ui-set('border-radius', size['radius'])
                 }
             )
             ui-size-variant(
                 selector-child: selector-meter,
                 each: @(size) {
-                    border-radius size['radius']
+                    ui-set('border-radius', size['radius'])
                 }
             )
 
