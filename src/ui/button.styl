@@ -1,36 +1,29 @@
 /**
- * @file button
+ * @file Button
  * @author musicode
  */
 
-@import "../variable/button.styl"
-@import "../mixin/button.styl"
+@import '../variable/button.styl'
+@import '../mixin/button.styl'
 
 +prefix-classes($ui-prefix)
 
-    .button
+    {$selector-button}
 
         button()
 
         ui-brand-variant(
             reversed: true,
-            each: @(bg = null, border = null, color = null) {
-
-                background-color bg
-                border 1px solid border
-                color color
-
+            each: @(bg, border, color) {
+                ui-style(bg, border, color)
                 ui-hover(bg, border, color)
                 ui-active(bg, border, color)
                 ui-disabled(bg, border, color)
-
             }
         )
 
-
         ui-size-variant(
             each: @(size) {
-                // 下面的 : ; 如果不加会报错....
                 font-size size['font'];
                 line-height size['line-height'];
                 padding: size['padding-vertical'] size['padding-horizontal']
@@ -55,29 +48,44 @@
             ui-fluid()
 
 
-    .buttons
+    {$selector-buttons}
 
         buttons()
 
-        > .button
+        selector-item = ' > ' + $selector-buttons-item
 
-            // 避免出现两个边框
-            margin-left -1px
+        ui-size-variant(
+            selector-child: selector-item,
+            each: @(size) {
+                font-size size['font'];
+                line-height size['line-height'];
+                padding: size['padding-vertical'] size['padding-horizontal']
+            }
+        )
 
-            {$selector-first-child}
-                margin-left 0
+        {selector-item}
 
-            {$selector-hover}
-                position relative
-                z-index 1
+            buttons-item()
 
-            {$selector-round},
-            {$selector-radius}
-                border-radius 0
+            if $selector-buttons-item != $selector-button
+
+                button()
+
+                ui-brand-variant(
+                    reversed: true,
+                    each: @(bg, border, color) {
+                        ui-style(bg, border, color)
+                        ui-hover(bg, border, color)
+                        ui-active(bg, border, color)
+                        ui-disabled(bg, border, color)
+                    }
+                )
+
+        {$selector-round}
 
             ui-size-variant(
-                selector-append: $selector-round,
-                selector-child: $selector-first-child,
+                selector-child: selector-item,
+                selector-grandchild: $selector-first-child,
                 each: @(size) {
                     border-top-left-radius size['round'];
                     border-bottom-left-radius size['round']
@@ -85,17 +93,19 @@
             )
 
             ui-size-variant(
-                selector-append: $selector-round,
-                selector-child: $selector-last-child,
+                selector-child: selector-item,
+                selector-grandchild: $selector-last-child,
                 each: @(size) {
                     border-top-right-radius size['round'];
                     border-bottom-right-radius size['round']
                 }
             )
 
+        {$selector-radius}
+
             ui-size-variant(
-                selector-append: $selector-radius,
-                selector-child: $selector-first-child,
+                selector-child: selector-item,
+                selector-grandchild: $selector-first-child,
                 each: @(size) {
                     border-top-left-radius size['radius'];
                     border-bottom-left-radius size['radius']
@@ -103,13 +113,11 @@
             )
 
             ui-size-variant(
-                selector-append: $selector-radius,
-                selector-child: $selector-last-child,
+                selector-child: selector-item,
+                selector-grandchild: $selector-last-child,
                 each: @(size) {
                     border-top-right-radius size['radius'];
                     border-bottom-right-radius size['radius']
                 }
             )
-
-
 

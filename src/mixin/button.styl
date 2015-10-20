@@ -1,10 +1,11 @@
 /**
- * @file 按钮
+ * @file Button
  * @author musicode
  */
 
 button()
 
+    border 1px solid transparent
     display inline-block
     text-align center
     user-select none
@@ -20,4 +21,17 @@ buttons()
     font-size 0
 
     ui()
+
+
+buttons-item()
+
+    // 避免出现两个边框
+    margin-left -1px
+
+    {$selector-first-child}
+        margin-left 0
+
+    {$selector-hover}
+        position relative
+        z-index 1
 

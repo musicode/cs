@@ -22,11 +22,10 @@ tooltip()
 
     ui-brand-variant(
         reversed: true,
-        each: @(bg = null, border = null, color = null) {
+        each: @(bg, border, color) {
 
             ui-style(bg, border, color)
 
-            // 不加 { } 会报错
             &:before {
                 border-color border
             }

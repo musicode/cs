@@ -3,18 +3,18 @@
  * @author musicode
  */
 
-@import "../variable/badge.styl"
-@import "../mixin/badge.styl"
+@import '../variable/badge.styl'
+@import '../mixin/badge.styl'
 
 +prefix-classes($ui-prefix)
 
-    .badge
+    {$selector-badge}
 
         badge()
 
         ui-brand-variant(
             reversed: true,
-            each: @(bg = null, border = null, color = null) {
+            each: @(bg, color) {
                 background-color bg
                 color color
             }

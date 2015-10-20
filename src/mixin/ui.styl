@@ -116,7 +116,8 @@ ui-variant(
             hash,
             each,
             selector-append = '',
-            selector-child = '')
+            selector-child = '',
+            selector-grandchild = '')
 
     for name in hash
 
@@ -132,7 +133,11 @@ ui-variant(
 
             if selector-child
                 {selector-child}
-                    each(hash[name])
+                    if selector-grandchild
+                        {selector-grandchild}
+                            each(hash[name])
+                    else
+                        each(hash[name])
             else
                 each(hash[name])
 
@@ -144,12 +149,14 @@ ui-brand-variant(
                 reversed = false,
                 brand-hash = $brand-hash,
                 selector-append = '',
-                selector-child = '')
+                selector-child = '',
+                selector-grandchild = '')
 
     ui-variant(
         hash: brand-hash,
         selector-append: selector-append,
         selector-child: selector-child,
+        selector-grandchild: selector-grandchild,
         each: @(item) {
 
             color = item[level]
@@ -177,12 +184,14 @@ ui-size-variant(
                 each,
                 size-hash = $size-hash,
                 selector-append = '',
-                selector-child = '')
+                selector-child = '',
+                selector-grandchild = '')
 
     ui-variant(
         hash: size-hash,
         selector-append: selector-append,
         selector-child: selector-child,
+        selector-grandchild: selector-grandchild,
         each: @(item) {
             each(item)
         }
