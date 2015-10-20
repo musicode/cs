@@ -17,8 +17,6 @@ dropdown-caret()
     if $support-mouse
         ui-set('cursor', $cursor-clickable)
 
-    ui-set('margin-left', $dropdown-caret-gap)
-
 
 dropdown-menu()
 
@@ -29,14 +27,16 @@ dropdown-menu()
     position absolute
     left 0
     right 0
-    margin-top -1px
 
+    ui-set('margin-top', $dropdown-menu-gap)
     ui-set('background-color', $dropdown-menu-bg)
 
     if $dropdown-menu-border is a 'rgba'
         border 1px solid $dropdown-menu-border
 
 dropdown-menu-item()
+
+    user-select none
 
     if $support-mouse
         ui-set('cursor', $cursor-clickable)
