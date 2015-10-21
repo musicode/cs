@@ -8,12 +8,23 @@ ui()
     a&
         text-decoration none
 
-    input&,
-    button&
-        outline 0
-        border 0
-        margin 0
-        background-color transparent
+
+ui-reset-form-element()
+
+    outline 0
+    border 0
+    margin 0
+    background-color transparent
+
+
+ui-reset-input()
+
+    &[type="search"]
+        appearance textfield
+
+    // 隐藏 IE 10+ 输入框后面的 x
+    &::-ms-clear
+        display none
 
 
 ui-set(name, value)

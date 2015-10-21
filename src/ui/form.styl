@@ -1,161 +1,16 @@
 /**
- * @file 表单元素
+ * @file Form
  * @author musicode
  */
 
-@import "../variable/form.styl";
-@import "../mixin/form.styl";
+@import '../variable/form.styl'
+@import '../mixin/form.styl'
 
 
++prefix-classes($ui-prefix)
 
-.form-label,
-.form-static,
-.form-radio,
-.form-checkbox {
-    display: inline-block;
-    ui-size('form');
-}
+    {$selector-input}
 
-.form-text,
-.input-group-addon,
-.placeholder {
-    ui-size('form-text');
-}
-
-.form-action {
-    form-action();
-}
+        form-input()
 
 
-.form-group {
-    form-group();
-
-    .success,
-    .error {
-        display: none;
-        font-size: $font-size-tiny;
-    }
-    .success {
-        color: $brand-success;
-    }
-    .error {
-        color: $brand-error;
-    }
-
-    &.has-success {
-        .success {
-            display: inline-block;
-        }
-    }
-    &.has-error {
-        .error {
-            display: inline-block;
-        }
-    }
-}
-
-.form-label {
-    form-label();
-}
-.form-required {
-    form-required();
-}
-
-.form-controls {
-    form-controls();
-}
-
-.form-radio,
-.form-checkbox {
-    form-box();
-}
-
-
-
-.form-text {
-    form-text();
-
-    if ($support-ie) {
-        height: 36px;
-
-        &.tiny {
-            height: 18px;
-        }
-        &.small {
-            height: 26px;
-        }
-        &.large {
-            height: 48px;
-        }
-        &.huge {
-            height: 60px;
-        }
-    }
-}
-
-.placeholder-wrapper {
-    form-placeholder-wrapper();
-}
-.placeholder {
-    form-placeholder();
-}
-
-.form-number {
-    form-number();
-
-    .icon-caret-up,
-    .icon-caret-down {
-        cursor: default;
-        font-size: 20px;
-        position: absolute;
-        right: 3px;
-        user-select: none;
-    }
-
-    .icon-caret-up {
-        top: 2px;
-    }
-    .icon-caret-down {
-        bottom: 2px;
-    }
-}
-
-.form-hint {
-    form-hint();
-}
-
-.form-inline {
-    form-inline();
-}
-.form-block {
-    form-block();
-}
-
-
-.input-group {
-
-    input-group();
-
-    .placeholder-wrapper,
-    .form-text {
-
-        float: left;
-
-        & + .input-group-addon {
-            border-left: none;
-            border-top-left-radius: 0;
-            border-bottom-left-radius: 0;
-        }
-    }
-
-    .form-text {
-        float: left;
-        border-radius: 0;
-        position: relative;
-    }
-
-}
-
-.input-group-addon {
-    input-group-addon();
-}

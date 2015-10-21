@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <title>表单</title>
+    <link rel="stylesheet" href="doc.styl">
+</head>
+
+<body>
+
+    <h2>输入框</h2>
+    <div class="row">
+        <input type="text" class="input" placeholder="裸 input" />
+        <div class="input">
+            <input type="text" />
+            <div class="placeholder">div 包装 input</div>
+        </div>
+        <textarea class="input" placeholder="div 包装 textarea"></textarea>
+        <div class="input">
+            <textarea></textarea>
+            <div class="placeholder">div 包装 input</div>
+        </div>
+    </div>
+    <div class="row">
+        <input type="text" class="input tiny" placeholder="tiny" />
+        <input type="text" class="input small" placeholder="small" />
+        <input type="text" class="input" placeholder="默认" />
+        <input type="text" class="input large" placeholder="large" />
+        <input type="text" class="input huge" placeholder="huge" />
+    </div>
+    <div class="row">
+        <div class="input tiny">
+            <input type="text" />
+            <div class="placeholder">tiny</div>
+        </div>
+        <div class="input small">
+            <input type="text" />
+            <div class="placeholder">small</div>
+        </div>
+        <div class="input">
+            <input type="text" />
+            <div class="placeholder">默认</div>
+        </div>
+        <div class="input large">
+            <input type="text" />
+            <div class="placeholder">large</div>
+        </div>
+        <div class="input huge">
+            <input type="text" />
+            <div class="placeholder">huge</div>
+        </div>
+    </div>
+
+    <h2>带 icon 的输入框</h2>
+    <div class="row">
+        <div class="input">
+            <i class="icon">icon</i>
+            <input type="text" placeholder="placeholder" />
+        </div>
+        <div class="input">
+            <input type="text" placeholder="placeholder" />
+            <i class="icon">icon</i>
+        </div>
+    </div>
+
+    <h2>带 button 的输入框</h2>
+    <div class="row">
+        <div class="input">
+            <div class="button primary">search</div>
+            <input type="text"/>
+        </div>
+        <div class="input">
+            <input type="text"/>
+            <div class="button primary">search</div>
+        </div>
+        <div class="input">
+            <div class="button primary">search</div>
+            <input type="text" />
+            <div class="button primary">search</div>
+        </div>
+    </div>
+
+    <h2>带 label 的输入框</h2>
+    <div class="row">
+        <div class="input">
+            <label class="label">￥</label>
+            <input type="text" />
+        </div>
+        <div class="input">
+            <input type="text" />
+            <label class="label">元</label>
+        </div>
+        <div class="input">
+            <label class="label">￥</label>
+            <input type="text" />
+            <label class="label">元</label>
+        </div>
+    </div>
+
+    <h2>单选框</h2>
+    <div class="row">
+        <label class="radio">
+            <input type="radio" />
+            北京
+        </label>
+        <label class="radio">
+            <input type="radio" />
+            北京
+        </label>
+        <label class="radio">
+            <input type="radio" />
+            北京
+        </label>
+        <label class="radio">
+            <input type="radio" />
+            北京
+        </label>
+    </div>
+    <div class="row">
+        <label class="radio block">
+            <input type="radio" />
+            北京
+        </label>
+        <label class="radio block">
+            <input type="radio" />
+            北京
+        </label>
+        <label class="radio block">
+            <input type="radio" />
+            北京
+        </label>
+        <label class="radio block">
+            <input type="radio" />
+            北京
+        </label>
+    </div>
+
+    <h2>复选框</h2>
+    <div class="row">
+        <label class="checkbox">
+            <input type="checkbox" />
+            北京
+        </label>
+        <label class="checkbox">
+            <input type="checkbox" />
+            北京
+        </label>
+        <label class="checkbox">
+            <input type="checkbox" />
+            北京
+        </label>
+        <label class="checkbox">
+            <input type="checkbox" />
+            北京
+        </label>
+    </div>
+    <div class="row">
+        <label class="checkbox block">
+            <input type="checkbox" />
+            北京
+        </label>
+        <label class="checkbox block">
+            <input type="checkbox" />
+            北京
+        </label>
+        <label class="checkbox block">
+            <input type="checkbox" />
+            北京
+        </label>
+        <label class="checkbox block">
+            <input type="checkbox" />
+            北京
+        </label>
+    </div>
+
+    <h2>日期选择</h2>
+    <div class="row">
+        <div class="date-picker">
+
+        </div>
+    </div>
+
+    <h2>时间选择</h2>
+    <div class="row">
+        <div class="time-picker">
+
+        </div>
+    </div>
+
+</body>
+</html>

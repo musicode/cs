@@ -1,207 +1,127 @@
 /**
- * @file 表单元素
+ * @file Form
  * @author musicode
  */
 
-input-reset
+form-input()
 
-    input[type="search"]
-        appearance textfield
-
-
-    // 隐藏 IE 10+ 输入框后面的 x
-    input::-ms-clear
-        display none
-
-
-    button,
-    select,
-    input,
-    textarea
-        font-family inherit
-        font-size inherit
-        outline 0
-        margin 0
-        padding 0
-
-
-form-group()
-
-    position relative
-    clearfix()
     ui()
 
-    if $form-group-gap > 0
-        padding-top: 0.5 * $form-group-gap;
-        padding-bottom: 0.5 * $form-group-gap;
+    display inline-block
+
+    input&,
+    > input
+        ui-reset-input()
 
 
-form-label()
-    float: left;
-    font-weight: $form-label-font-weight;
-    padding-right: $form-label-gap;
-    text-align: right;
+    textarea&,
+    > textarea
+        resize none
 
+
+    ui-size-variant(
+        selector-child: 'input&,>input,textarea&,>textarea',
+        each: @(size) {
+            ui-set('font-size', size['font'])
+            ui-set('padding', size['padding-vertical'] size['padding-horizontal'])
+        }
+    )
+
+    ui-size-variant(
+        selector-child: 'div&,span&,label&',
+        selector-grandchild: '>input,>textarea',
+        each: @(size) {
+            ui-set('font-size', size['font'])
+            ui-set('padding', size['padding-vertical'] size['padding-horizontal'])
+        }
+    )
+
+
+    input&,
+    > input,
+    textarea&,
+    > textarea
+
+        ui-reset-form-element()
+
+        background-color $form-input-bg
+        border 1px solid $form-input-border
+
+        if $form-placeholder-color is a 'rgba'
+
+            &::-webkit-input-placeholder
+                color $form-placeholder-color
+
+            &:-moz-placeholder
+                color $form-placeholder-color
+
+            &::-moz-placeholder
+                color $form-placeholder-color
+
+            &:-ms-input-placeholder
+                color $form-placeholder-color
+
+    div&,
+    span&,
+    label&
+
+        position relative
+        font-size 0
+
+        ui-size-variant(
+            each: @(size) {
+
+                > {$selector-placeholder} {
+                    ui-set('padding', size['padding-vertical'] size['padding-horizontal'])
+                }
+
+                > {$selector-placeholder},
+                > {$selector-icon} {
+                    ui-set('font-size', size['font'])
+                }
+
+                // icon 在左边
+                > {$selector-icon} {
+                    ui-set('left', size['padding-horizontal'])
+                    ui-set('top', size['padding-vertical'])
+                }
+
+                > input + {$selector-icon} {
+                    left auto
+                    ui-set('right', size['padding-horizontal'])
+                }
+
+            }
+        )
+
+        if $form-placeholder-color is a 'rgba'
+
+            {$selector-placeholder}
+                ui-set('color', $form-placeholder-color)
+                user-select none
+                position absolute
+                left 1px
+                top 1px
+
+
+        // 带 icon
+        > {$selector-icon}
+            position absolute
+
+        // 带 button
+        > {$selector-button}
+            float left
+
+        > {$selector-button} + input
+            border-left 0
+            border-top-left-radius 0
+            border-bottom-left-radius 0
+
+        > input + {$selector-button}
+            float none
 
 form-controls()
 
-    // 避免 inline-block 水平间隙
     font-size 0
 
-
-/**
- * 静态文本
- */
-form-static()
-
-/**
- * 文本输入框，取自 input type
- */
-form-text()
-
-    margin 0
-
-    textarea&
-        resize none
-
-    // 不能合并写
-    &::-webkit-input-placeholder { /* WebKit browsers */
-        color: $form-text-color-placeholder;
-    }
-    &:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-        color: $form-text-color-placeholder;
-    }
-    &::-moz-placeholder { /* Mozilla Firefox 19+ */
-        color: $form-text-color-placeholder;
-    }
-    &:-ms-input-placeholder { /* Internet Explorer 10+ */
-        color: $form-text-color-placeholder;
-    }
-
-
-form-action() {
-    margin-top: $form-action-gap;
-}
-
-
-
-form-required() {
-    margin-right: $form-required-gap;
-    &:after {
-        content: '*';
-        color: $form-required-color;
-        font-size: $form-required-font-size;
-    }
-}
-
-form-hint() {
-
-    ui-size('form-hint');
-    ui-type($type-hash['form-hint']);
-
-}
-
-
-input-group() {
-
-    display: inline-block;
-    clearfix();
-}
-
-input-group-addon() {
-
-    float: left;
-
-    ui-type($type-hash['input-group-addon']);
-
-    &:first-child {
-        border-right: none;
-        border-top-right-radius: 0;
-        border-bottom-right-radius: 0;
-    }
-
-}
-
-// 文本输入框
-form-text() {
-
-
-
-    ui-type($type-hash['form-text']);
-
-
-}
-
-// 模拟 Placeholder
-form-placeholder-wrapper() {
-
-    background-color: #FFF;
-    display: inline-block;
-    position: relative;
-    line-height: 0;
-
-    .form-text {
-        background-color: transparent;
-        position: relative;
-        z-index: $zindex-tiny;
-    }
-}
-
-
-form-placeholder() {
-    border-color: transparent;
-    color: $form-text-color-placeholder;
-    position: absolute;
-    left: 0;
-    top: 0;
-}
-
-form-number() {
-    display: inline-block;
-    position: relative;
-}
-
-// 单选复选框
-form-box() {
-
-    if ($support-mouse) {
-        user-select: none;
-        cursor: pointer;
-    }
-
-    input {
-        if ($support-mouse) {
-            cursor: pointer;
-        }
-        margin-right: $form-box-inner-gap;
-    }
-
-    & + & {
-        margin-left: $form-box-gap;
-    }
-
-}
-
-form-inline() {
-
-    display: inline-block;
-
-    if ($form-inline-gap > 0) {
-        margin-left: $form-inline-gap;
-    }
-
-    &:empty {
-        display: none;
-    }
-}
-
-form-block() {
-
-    display: block;
-
-    if ($form-block-gap > 0) {
-        margin-top: $form-block-gap;
-    }
-
-}
 
