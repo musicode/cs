@@ -59,6 +59,22 @@ form-input()
                 left auto
                 right 0
             }
+
+            > {$selector-icon} {
+                position absolute
+            }
+
+            > {$selector-label} + input,
+            > {$selector-button} + input {
+                border-left 0
+                border-top-left-radius 0
+                border-bottom-left-radius 0
+            }
+            > input + {$selector-label},
+            > input + {$selector-button} {
+                margin-left -1px
+            }
+
         }
     )
 
@@ -89,6 +105,9 @@ form-input()
         position relative
         font-size 0
 
+        > {$selector-icon}
+            position absolute
+
         if $form-placeholder-color is a 'rgba'
 
             > {$selector-form-placeholder}
@@ -99,22 +118,6 @@ form-input()
 
                 user-select none
                 ui-set('color', $form-placeholder-color)
-
-        // 带 icon
-        > {$selector-icon}
-            position absolute
-
-        > {$selector-button} + input
-            border-left 0
-            border-top-left-radius 0
-            border-bottom-left-radius 0
-
-        > input + {$selector-button}
-            float none
-
-    > {$selector-icon}
-        position absolute
-
 
 
     {$selector-hover}
