@@ -64,12 +64,12 @@
 
     <h2>带 icon 的输入框</h2>
     <div class="row">
-        <div class="input">
+        <div class="icon-input">
             <i class="icon">icon</i>
-            <input type="text" placeholder="placeholder" />
+            <input type="text" class="input" placeholder="placeholder" />
         </div>
-        <div class="input">
-            <input type="text" placeholder="placeholder" />
+        <div class="input-icon">
+            <input type="text" class="input" placeholder="placeholder" />
             <i class="icon">icon</i>
         </div>
     </div>
@@ -93,15 +93,19 @@
 
     <h2>带 label 的输入框</h2>
     <div class="row">
-        <div class="input">
+        <div class="input muted">
+            <label class="label muted">￥</label>
+            <input type="text" />
+        </div>
+        <div class="input primary">
             <label class="label primary">￥</label>
             <input type="text" />
         </div>
-        <div class="input">
+        <div class="input success">
             <input type="text" />
             <label class="label success">元</label>
         </div>
-        <div class="input">
+        <div class="input info">
             <label class="label info">￥</label>
             <input type="text" />
             <label class="label muted">元</label>

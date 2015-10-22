@@ -25,14 +25,6 @@ form-input()
     selector-input = 'input&,>input,textarea&,>textarea'
     selector-wrapper = 'div&,span&,label&'
 
-    ui-brand-variant(
-        selector-child: selector-input,
-        each: @(border) {
-            ui-hover(border: border)
-
-        }
-    )
-
     ui-size-variant(
         selector-child: selector-input,
         each: @(size) {
@@ -78,9 +70,6 @@ form-input()
         background-color $form-input-bg
         border 1px solid $form-input-border
 
-        {$selector-focus}
-            ui-set('border-color', $form-input-border-focus, true)
-
         if $form-placeholder-color is a 'rgba'
 
             &::-webkit-input-placeholder
@@ -115,10 +104,6 @@ form-input()
         > {$selector-icon}
             position absolute
 
-        // 带 button
-        > input + {$selector-button}
-            margin-left -1px
-
         > {$selector-button} + input
             border-left 0
             border-top-left-radius 0
@@ -127,9 +112,38 @@ form-input()
         > input + {$selector-button}
             float none
 
+    > {$selector-icon}
+        position absolute
+
+
+
     {$selector-hover}
         {selector-input}
-            ui-set('border-color', $form-input-border-hover)
+            ui-hover(border: $form-input-border, selector: '')
+
+    {selector-input}
+        {$selector-focus}
+            ui-focus(border: $form-input-border, selector: '')
+
+    ui-brand-variant(
+        reversed: true,
+        each: @(bg) {
+
+            {$selector-hover} {
+                {selector-input} {
+                    ui-hover(border: lighten(bg, 50%), selector: '')
+                }
+            }
+
+            {selector-input} {
+                {$selector-focus} {
+                    ui-focus(border: lighten(bg, 40%), selector: '')
+                }
+            }
+
+        }
+    )
+
 
 
 form-group()
