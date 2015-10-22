@@ -3,6 +3,15 @@
  * @author musicode
  */
 
+form()
+
+    &{$selector-inline}
+
+        > {$selector-form-group}
+            display inline-block
+            margin-top 0 !important
+            ui-set('margin-left', $form-group-gap-inline)
+
 form-input()
 
     ui()
@@ -126,11 +135,32 @@ form-group()
 
     font-size 0
 
+    + {$selector-form-group}
+        ui-set('margin-top', $form-group-gap-block)
+
+    > {$selector-label}
+        vertical-align top
+
 
 form-controls()
 
     font-size 0
     display inline-block
+    position relative
+
+    > {$selector-inline}
+        display inline-block
+        ui-set('margin-left', $form-control-gap-inline)
+
+    > {$selector-block}
+        display block
+        ui-set('margin-top', $form-control-gap-block)
+
+    > {$selector-label}
+        border-left 0
+        border-right 0
+        padding-left 0
+        padding-right 0
 
 form-radio()
 

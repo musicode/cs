@@ -7,12 +7,17 @@ dropdown()
 
     display inline-block
     position relative
-    text-align left
 
     ui()
 
+    > {$selector-text},
+    > {$selector-button}
+        text-align left
+
 
 dropdown-caret()
+
+    float right
 
     ui()
 

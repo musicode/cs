@@ -32,6 +32,7 @@
             selector-child: '&' + selector-text + ',&' + selector-button,
             selector-grandchild: selector-caret,
             each: @(size) {
+                ui-set('line-height', size['line-height'])
                 ui-set('margin-left', size['margin-horizontal'])
             }
         )

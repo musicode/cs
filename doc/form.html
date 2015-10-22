@@ -11,6 +11,9 @@
         .input {
 
         }
+        .dropdown {
+            width: 150px;
+        }
     </style>
 </head>
 
@@ -105,75 +108,77 @@
         </div>
     </div>
 
-    <h2>单选框</h2>
+    <h2>水平单选框</h2>
     <div class="row">
         <label class="radio">
-            <input type="radio" />北京
+            <input type="radio" />水平
         </label>
         <label class="radio">
-            <input type="radio" />北京
+            <input type="radio" />水平
         </label>
         <label class="radio">
-            <input type="radio" />北京
+            <input type="radio" />水平
         </label>
         <label class="radio">
-            <input type="radio" />北京
+            <input type="radio" />水平
         </label>
     </div>
+    <h2>垂直单选框</h2>
     <div class="row">
         <label class="radio block">
-            <input type="radio" />北京
+            <input type="radio" />垂直
         </label>
         <label class="radio block">
-            <input type="radio" />北京
+            <input type="radio" />垂直
         </label>
         <label class="radio block">
-            <input type="radio" />北京
+            <input type="radio" />垂直
         </label>
         <label class="radio block">
-            <input type="radio" />北京
+            <input type="radio" />垂直
         </label>
     </div>
 
-    <h2>复选框</h2>
+    <h2>水平复选框</h2>
     <div class="row">
         <label class="checkbox">
-            <input type="checkbox" />北京
+            <input type="checkbox" />水平
         </label>
         <label class="checkbox">
-            <input type="checkbox" />北京
+            <input type="checkbox" />水平
         </label>
         <label class="checkbox">
-            <input type="checkbox" />北京
+            <input type="checkbox" />水平
         </label>
         <label class="checkbox">
-            <input type="checkbox" />北京
+            <input type="checkbox" />水平
         </label>
     </div>
+    <h2>垂直复选框</h2>
     <div class="row">
         <label class="checkbox block">
-            <input type="checkbox" />北京
+            <input type="checkbox" />垂直
         </label>
         <label class="checkbox block">
-            <input type="checkbox" />北京
+            <input type="checkbox" />垂直
         </label>
         <label class="checkbox block">
-            <input type="checkbox" />北京
+            <input type="checkbox" />垂直
         </label>
         <label class="checkbox block">
-            <input type="checkbox" />北京
+            <input type="checkbox" />垂直
         </label>
     </div>
 
     <h2>水平排列</h2>
     <div class="row">
-        <div class="form">
+        <div class="form inline">
             <div class="group">
                 <label class="label" for="">
                     姓名：
                 </label>
                 <div class="controls">
-                    <div class="text">musicode</div>
+                    <div class="label">musicode</div>
                 </div>
             </div>
             <div class="group">
@@ -182,6 +187,73 @@
                 </label>
                 <div class="controls">
                     <input type="text" class="input" />
+                    <div class="inline">
+                        <span class="text primary">inline</span>
+                    </div>
+                </div>
+            </div>
+            <div class="group">
+                <label class="label" for="">
+                    年龄：
+                </label>
+                <div class="controls">
+                    <div class="dropdown">
+                        <div class="button primary">
+                            按钮型
+                            <i class="caret fa fa-caret-down"></i>
+                        </div>
+                        <div class="menu">
+                            <div class="item">111</div>
+                            <div class="item">222</div>
+                            <div class="item">333</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h2>垂直排列</h2>
+    <div class="row">
+        <div class="form">
+            <div class="group">
+                <label class="label" for="">
+                    姓名：
+                </label>
+                <div class="controls">
+                    <div class="label">musicode</div>
+                </div>
+            </div>
+            <div class="group">
+                <label class="label" for="">
+                    姓名：
+                </label>
+                <div class="controls">
+                    <input type="text" class="input" />
+                    <div class="inline">
+                        <span class="text primary">inline</span>
+                    </div>
+                    <div class="block">
+                        <span class="text info">block</span>
+                    </div>
+                </div>
+            </div>
+            <div class="group">
+                <label class="label" for="">
+                    姓名：
+                </label>
+                <div class="controls">
+                    <input type="text" class="input" />
+                    <div class="tooltip error right" style="top:5px;right:-85px">请输入姓名</div>
+                </div>
+            </div>
+            <div class="group">
+                <label class="label" for="">
+                    姓名：
+                </label>
+                <div class="controls">
+                    <input type="text" class="input" />
+                    <div class="tooltip success right" style="top:5px;right:-85px">请输入姓名</div>
                 </div>
             </div>
         </div>
