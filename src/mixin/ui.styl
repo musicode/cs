@@ -17,14 +17,23 @@ ui-reset-form-element()
     background-color transparent
 
 
-ui-set(name, value)
+ui-set(name, value, important = false)
+
+    apply = @() {
+        if (important) {
+            {name} value !important
+        }
+        else {
+            {name} value
+        }
+    }
 
     if value is a 'unit'
         if name == 'opacity' || value > 0
-            {name} value
+            apply()
 
     else if value
-        {name} value
+        apply()
 
 
 ui-opacity(value)
@@ -106,84 +115,83 @@ ui-style(bg = null, border = null, color = null)
         color color
 
 
+ui-status(
+        bg = null, bg-offset = null,
+        border = null, border-offset = null,
+        color = null, color-offset = null,
+        selector = '',
+        extra = null)
 
-ui-hover(bg = null, border = null, color = null, selector = $selector-hover)
+    offset = @(color, offset) {
+
+        if (color is a 'rgba' and offset is a 'unit') {
+            if (offset > 0) {
+                color = darken(color, offset)
+            }
+            else if (offset < 0) {
+                color = lighten(color, -1 * offset)
+            }
+        }
+
+        return color
+    }
 
     ui-apply(
         selector: selector,
         style: @() {
+
             ui-style(
-                border: darken(border, 6%),
-                color: darken(color, 2%),
-                bg: darken(bg, 5%)
+                border: offset(border, border-offset),
+                color: offset(color, color-offset),
+                bg: offset(bg, bg-offset)
             )
+
+            if (extra is a 'function') {
+                extra()
+            }
         }
     )
 
+
+ui-hover(bg = null, border = null, color = null, selector = $selector-hover)
+
+    ui-status(bg, 5%, border, 6%, color, 2%, selector)
 
 
 ui-active(bg = null, border = null, color = null, selector = $selector-active)
 
-    ui-apply(
-        selector: selector,
-        style: @() {
-            ui-style(
-                border: darken(border, 14%),
-                color: darken(color, 3%),
-                bg: darken(bg, 15%)
-            )
-        }
-    )
+    ui-status(bg, 15%, border, 14%, color, 3%, selector)
 
+
+ui-focus(bg = null, border = null, color = null, selector = $selector-focus)
+
+    ui-active(bg, border, color, selector)
 
 
 ui-checked(bg = null, border = null, color = null, selector = $selector-checked)
 
-    ui-apply(
-        selector: selector,
-        style: @() {
-            cursor $cursor-checked
-            ui-style(
-                border: darken(border, 14%),
-                color: darken(color, 5%),
-                bg: darken(bg, 14%)
-            )
-        }
-    )
-
-
+    ui-active(bg, border, color, selector)
 
 
 ui-disabled(bg = null, border = null, color = null, selector = $selector-disabled)
 
-    ui-apply(
-        selector: selector,
-        style: @() {
-            cursor $cursor-disabled
+    ui-status(bg, -35%, border, -30%, color, -60%, selector, @() {
 
-            border = lighten(border, 30%)
-            color = lighten(color, 60%)
-            bg = lighten(bg, 35%)
+        cursor $cursor-disabled
 
-            ui-style(
-                border: border,
-                color: color,
-                bg: bg
-            )
-
-            if ($support-mouse) {
-
-                {$selector-hover},
-                {$selector-active} {
-                    ui-style(
-                        border: border,
-                        color: color,
-                        bg: bg
-                    )
-                }
+        if ($support-mouse) {
+            {$selector-hover},
+            {$selector-active} {
+                ui-style(
+                    border: border,
+                    color: color,
+                    bg: bg
+                )
             }
         }
-    )
+
+    })
+
 
 
 

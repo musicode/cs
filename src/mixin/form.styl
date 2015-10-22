@@ -22,9 +22,19 @@ form-input()
     > textarea
         resize none
 
+    selector-input = 'input&,>input,textarea&,>textarea'
+    selector-wrapper = 'div&,span&,label&'
+
+    ui-brand-variant(
+        selector-child: selector-input,
+        each: @(border) {
+            ui-hover(border: border)
+
+        }
+    )
 
     ui-size-variant(
-        selector-child: 'input&,>input,textarea&,>textarea',
+        selector-child: selector-input,
         each: @(size) {
             ui-set('font-size', size['font'])
             ui-set('line-height', size['line-height'])
@@ -33,11 +43,9 @@ form-input()
     )
 
     ui-size-variant(
-        selector-child: 'div&,span&,label&',
+        selector-child: selector-wrapper,
         each: @(size) {
 
-            > input,
-            > textarea,
             > {$selector-form-placeholder} {
                 ui-set('font-size', size['font'])
                 ui-set('line-height', size['line-height'])
@@ -46,6 +54,7 @@ form-input()
 
             > {$selector-icon} {
                 ui-set('font-size', size['font'])
+                ui-set('line-height', size['line-height'])
             }
 
             // icon 在左边
@@ -62,10 +71,7 @@ form-input()
     )
 
 
-    input&,
-    > input,
-    textarea&,
-    > textarea
+    {selector-input}
 
         ui-reset-form-element()
 
@@ -73,7 +79,7 @@ form-input()
         border 1px solid $form-input-border
 
         {$selector-focus}
-            ui-set('border-color', $form-input-border-focus)
+            ui-set('border-color', $form-input-border-focus, true)
 
         if $form-placeholder-color is a 'rgba'
 
@@ -89,9 +95,7 @@ form-input()
             &:-ms-input-placeholder
                 color $form-placeholder-color
 
-    div&,
-    span&,
-    label&
+    {selector-wrapper}
 
         position relative
         font-size 0
@@ -100,20 +104,20 @@ form-input()
 
             > {$selector-form-placeholder}
 
-                ui-set('color', $form-placeholder-color)
-                user-select none
                 position absolute
                 left 1px
                 top 1px
 
+                user-select none
+                ui-set('color', $form-placeholder-color)
 
         // 带 icon
         > {$selector-icon}
             position absolute
 
         // 带 button
-        > {$selector-button}
-            float left
+        > input + {$selector-button}
+            margin-left -1px
 
         > {$selector-button} + input
             border-left 0
@@ -124,10 +128,7 @@ form-input()
             float none
 
     {$selector-hover}
-        input&,
-        > input,
-        textarea&,
-        > textarea
+        {selector-input}
             ui-set('border-color', $form-input-border-hover)
 
 
