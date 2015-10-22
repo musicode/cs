@@ -17,16 +17,6 @@ ui-reset-form-element()
     background-color transparent
 
 
-ui-reset-input()
-
-    &[type="search"]
-        appearance textfield
-
-    // 隐藏 IE 10+ 输入框后面的 x
-    &::-ms-clear
-        display none
-
-
 ui-set(name, value)
 
     if value is a 'unit'

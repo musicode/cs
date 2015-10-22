@@ -9,11 +9,6 @@ form-input()
 
     display inline-block
 
-    input&,
-    > input
-        ui-reset-input()
-
-
     textarea&,
     > textarea
         resize none
@@ -23,16 +18,37 @@ form-input()
         selector-child: 'input&,>input,textarea&,>textarea',
         each: @(size) {
             ui-set('font-size', size['font'])
+            ui-set('line-height', size['line-height'])
             ui-set('padding', size['padding-vertical'] size['padding-horizontal'])
         }
     )
 
     ui-size-variant(
         selector-child: 'div&,span&,label&',
-        selector-grandchild: '>input,>textarea',
         each: @(size) {
-            ui-set('font-size', size['font'])
-            ui-set('padding', size['padding-vertical'] size['padding-horizontal'])
+
+            > input,
+            > textarea,
+            > {$selector-form-placeholder} {
+                ui-set('font-size', size['font'])
+                ui-set('line-height', size['line-height'])
+                ui-set('padding', size['padding-vertical'] size['padding-horizontal'])
+            }
+
+            > {$selector-icon} {
+                ui-set('font-size', size['font'])
+            }
+
+            // icon 在左边
+            > {$selector-icon} {
+                left 0
+                ui-set('top', size['padding-vertical'])
+            }
+
+            > input + {$selector-icon} {
+                left auto
+                right 0
+            }
         }
     )
 
@@ -46,6 +62,9 @@ form-input()
 
         background-color $form-input-bg
         border 1px solid $form-input-border
+
+        {$selector-focus}
+            ui-set('border-color', $form-input-border-focus)
 
         if $form-placeholder-color is a 'rgba'
 
@@ -68,35 +87,10 @@ form-input()
         position relative
         font-size 0
 
-        ui-size-variant(
-            each: @(size) {
-
-                > {$selector-placeholder} {
-                    ui-set('padding', size['padding-vertical'] size['padding-horizontal'])
-                }
-
-                > {$selector-placeholder},
-                > {$selector-icon} {
-                    ui-set('font-size', size['font'])
-                }
-
-                // icon 在左边
-                > {$selector-icon} {
-                    ui-set('left', size['padding-horizontal'])
-                    ui-set('top', size['padding-vertical'])
-                }
-
-                > input + {$selector-icon} {
-                    left auto
-                    ui-set('right', size['padding-horizontal'])
-                }
-
-            }
-        )
-
         if $form-placeholder-color is a 'rgba'
 
-            {$selector-placeholder}
+            > {$selector-form-placeholder}
+
                 ui-set('color', $form-placeholder-color)
                 user-select none
                 position absolute
@@ -120,8 +114,50 @@ form-input()
         > input + {$selector-button}
             float none
 
-form-controls()
+    {$selector-hover}
+        input&,
+        > input,
+        textarea&,
+        > textarea
+            ui-set('border-color', $form-input-border-hover)
+
+
+form-group()
 
     font-size 0
 
 
+form-controls()
+
+    font-size 0
+    display inline-block
+
+form-radio()
+
+    > input[type="radio"]
+        margin-right $form-box-text-gap
+
+    + {$selector-form-radio}
+        ui-set('margin-left', $form-box-gap-horizontal)
+
+    &{$selector-block}
+        display block
+        margin-left 0
+
+    &{$selector-block} + {$selector-block}
+        ui-set('margin-top', $form-box-gap-vertical)
+
+form-checkbox()
+
+    > input[type="checkbox"]
+        margin-right $form-box-text-gap
+
+    + {$selector-form-checkbox}
+        ui-set('margin-left', $form-box-gap-horizontal)
+
+    &{$selector-block}
+        display block
+        margin-left 0
+
+    &{$selector-block} + {$selector-block}
+        ui-set('margin-top', $form-box-gap-vertical)

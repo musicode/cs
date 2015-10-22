@@ -15,8 +15,7 @@
         ui-brand-variant(
             reversed: true,
             each: @(bg, color) {
-                ui-set('background-color', bg)
-                ui-set('color', color)
+                ui-style(bg, bg, color)
             }
         )
 

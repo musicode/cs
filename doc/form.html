@@ -7,6 +7,11 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <title>表单</title>
     <link rel="stylesheet" href="doc.styl">
+    <style>
+        .input {
+
+        }
+    </style>
 </head>
 
 <body>
@@ -86,94 +91,100 @@
     <h2>带 label 的输入框</h2>
     <div class="row">
         <div class="input">
-            <label class="label">￥</label>
+            <label class="label primary">￥</label>
             <input type="text" />
         </div>
         <div class="input">
             <input type="text" />
-            <label class="label">元</label>
+            <label class="label success">元</label>
         </div>
         <div class="input">
-            <label class="label">￥</label>
+            <label class="label info">￥</label>
             <input type="text" />
-            <label class="label">元</label>
+            <label class="label muted">元</label>
         </div>
     </div>
 
     <h2>单选框</h2>
     <div class="row">
         <label class="radio">
-            <input type="radio" />
-            北京
+            <input type="radio" />北京
         </label>
         <label class="radio">
-            <input type="radio" />
-            北京
+            <input type="radio" />北京
         </label>
         <label class="radio">
-            <input type="radio" />
-            北京
+            <input type="radio" />北京
         </label>
         <label class="radio">
-            <input type="radio" />
-            北京
+            <input type="radio" />北京
         </label>
     </div>
     <div class="row">
         <label class="radio block">
-            <input type="radio" />
-            北京
+            <input type="radio" />北京
         </label>
         <label class="radio block">
-            <input type="radio" />
-            北京
+            <input type="radio" />北京
         </label>
         <label class="radio block">
-            <input type="radio" />
-            北京
+            <input type="radio" />北京
         </label>
         <label class="radio block">
-            <input type="radio" />
-            北京
+            <input type="radio" />北京
         </label>
     </div>
 
     <h2>复选框</h2>
     <div class="row">
         <label class="checkbox">
-            <input type="checkbox" />
-            北京
+            <input type="checkbox" />北京
         </label>
         <label class="checkbox">
-            <input type="checkbox" />
-            北京
+            <input type="checkbox" />北京
         </label>
         <label class="checkbox">
-            <input type="checkbox" />
-            北京
+            <input type="checkbox" />北京
         </label>
         <label class="checkbox">
-            <input type="checkbox" />
-            北京
+            <input type="checkbox" />北京
         </label>
     </div>
     <div class="row">
         <label class="checkbox block">
-            <input type="checkbox" />
-            北京
+            <input type="checkbox" />北京
         </label>
         <label class="checkbox block">
-            <input type="checkbox" />
-            北京
+            <input type="checkbox" />北京
         </label>
         <label class="checkbox block">
-            <input type="checkbox" />
-            北京
+            <input type="checkbox" />北京
         </label>
         <label class="checkbox block">
-            <input type="checkbox" />
-            北京
+            <input type="checkbox" />北京
         </label>
+    </div>
+
+    <h2>水平排列</h2>
+    <div class="row">
+        <div class="form">
+            <div class="group">
+                <label class="label" for="">
+                    姓名：
+                </label>
+                <div class="controls">
+                    <div class="text">musicode</div>
+                </div>
+            </div>
+            <div class="group">
+                <label class="label" for="">
+                    姓名：
+                </label>
+                <div class="controls">
+                    <input type="text" class="input" />
+                </div>
+            </div>
+        </div>
     </div>
 
     <h2>日期选择</h2>
