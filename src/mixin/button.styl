@@ -8,12 +8,23 @@ button()
     border 1px solid transparent
     display inline-block
     text-align center
+    white-space nowrap
     user-select none
+
+    ui()
 
     if $support-mouse
         ui-set('cursor', $cursor-clickable)
 
-    ui()
+    ui-brand-variant(
+        reversed: true,
+        each: @(bg, border, color) {
+            ui-style(bg, border, color)
+            ui-hover(bg, border, color)
+            ui-active(bg, border, color)
+            ui-disabled(bg, border, color)
+        }
+    )
 
 
 buttons()
@@ -25,11 +36,8 @@ buttons()
 
 buttons-item()
 
-    // 避免出现两个边框
-    margin-left -1px
-
-    {$selector-first-child}
-        margin-left 0
+    &:first-child ~ {$selector-buttons-item}
+        margin-left -1px
 
     {$selector-hover}
         position relative

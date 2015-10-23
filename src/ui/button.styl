@@ -12,16 +12,6 @@
 
         button()
 
-        ui-brand-variant(
-            reversed: true,
-            each: @(bg, border, color) {
-                ui-style(bg, border, color)
-                ui-hover(bg, border, color)
-                ui-active(bg, border, color)
-                ui-disabled(bg, border, color)
-            }
-        )
-
         ui-size-variant(
             each: @(size) {
                 ui-set('font-size', size['font'])
@@ -75,16 +65,6 @@
             if $selector-buttons-item != $selector-button
 
                 button()
-
-                ui-brand-variant(
-                    reversed: true,
-                    each: @(bg, border, color) {
-                        ui-style(bg, border, color)
-                        ui-hover(bg, border, color)
-                        ui-active(bg, border, color)
-                        ui-disabled(bg, border, color)
-                    }
-                )
 
         {$selector-round}
 

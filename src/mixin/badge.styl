@@ -1,5 +1,5 @@
 /**
- * @file 徽章
+ * @file Badge
  * @author musicode
  */
 
@@ -8,10 +8,21 @@ badge()
     display inline-block
     text-align center
     white-space nowrap
+    border-radius 50%
 
     if $support-mouse
         ui-set('cursor', $cursor-text)
 
     ui()
+
+    ui-brand-variant(
+        reversed: true,
+        each: @(bg, color) {
+            ui-style(
+                color: color,
+                bg: bg
+            )
+        }
+    )
 
 

@@ -21,10 +21,9 @@ dialog-header()
 
     user-select none
 
-    ui-set('padding', $dialog-header-padding-vertical $dialog-padding-horizontal)
+    ui()
 
-    if $support-mouse
-        ui-set('cursor', $cursor-move)
+    ui-set('padding', $dialog-header-padding-vertical $dialog-padding-horizontal)
 
     if $dialog-header-border is a 'rgba'
         border-bottom 1px solid $dialog-header-border
@@ -34,18 +33,18 @@ dialog-title()
 
     display inline-block
 
+    ui()
     ui-set('font-size', $dialog-title-font-size)
     ui-set('font-weight', $dialog-title-font-weight)
 
 
 dialog-close()
 
-    ui()
-
     position absolute
     top $dialog-close-top
     right $dialog-padding-horizontal
 
+    ui()
     ui-set('font-size', $dialog-close-font-size)
 
     if $support-mouse
@@ -54,6 +53,7 @@ dialog-close()
 
 dialog-body()
 
+    ui()
     ui-set('padding', $dialog-body-padding-vertical $dialog-padding-horizontal)
 
 
@@ -62,6 +62,7 @@ dialog-footer()
     font-size 0
     text-align right
 
+    ui()
     ui-set('padding', $dialog-footer-padding-vertical $dialog-padding-horizontal)
 
     if $dialog-footer-border is a 'rgba'

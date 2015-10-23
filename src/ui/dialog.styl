@@ -11,6 +11,7 @@
     {$selector-dialog}
         dialog()
 
+
         > {$selector-dialog-header}
             dialog-header()
 
@@ -25,3 +26,9 @@
 
         > {$selector-dialog-footer}
             dialog-footer()
+
+
+        &{$selector-dialog-draggable}
+            > {$selector-dialog-header}
+                if $support-mouse
+                    ui-set('cursor', $cursor-move)
