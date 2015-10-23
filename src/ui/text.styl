@@ -12,12 +12,6 @@
 
         text()
 
-        ui-brand-variant(
-            each: @(color) {
-                ui-style(color: color)
-            }
-        )
-
         ui-size-variant(
             each: @(size) {
                 ui-set('font-size', size['font'])

@@ -12,13 +12,6 @@
 
         label()
 
-        ui-brand-variant(
-            reversed: true,
-            each: @(bg, color) {
-                ui-style(bg, bg, color)
-            }
-        )
-
         ui-size-variant(
             each: @(size) {
                 ui-set('font-size', size['font'])

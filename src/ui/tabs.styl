@@ -20,15 +20,6 @@
             each: @(bg, border, color) {
                 ui-hover(bg, border, color)
                 ui-active(bg, border, color)
-            }
-        )
-
-        ui-brand-variant(
-            reversed: true,
-            selector-child: selector-item,
-            selector-grandchild: $selector-checked,
-            each: @(bg, border, color) {
-                ui-style(bg)
                 ui-checked(bg, border, color)
             }
         )

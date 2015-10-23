@@ -15,4 +15,10 @@ label()
 
     ui()
 
+    ui-brand-variant(
+        reversed: true,
+        each: @(bg, color) {
+            ui-style(bg, bg, color)
+        }
+    )
 

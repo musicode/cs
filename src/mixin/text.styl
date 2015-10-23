@@ -7,3 +7,9 @@ text()
 
     ui()
 
+    ui-brand-variant(
+        each: @(color) {
+            ui-set('color', color)
+        }
+    )
+
