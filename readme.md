@@ -11,48 +11,48 @@
 因为样式库在前端开发中占据重要部分，而 `Bootstrap`、`Semantic-ui` 等库总是有那么多不尽然人意的地方，比如：
 
 1. 跟字体库绑定
-   
+
 2. 跟插件库绑定，插件定制性太强，自带的不是很好用
-   
+
 3. 类名太难记，比如 `Semantic-ui` 为了语义化有一堆零碎的 className（没发现规律...），而 `Bootstrap` 则很啰嗦
-   
+
    ​
 
 ## 如何解决问题
 
 1. 不带字体库和插件库，只是纯样式
-   
+
 2. 基于组合和语义化，可延伸出各种使用方式
-   
+
 3. 推荐如下使用方式
-   
+
    ``` html
    <head>
-   	<link rel="stylesheet" href="css.css">
-   	<link rel="stylesheet" href="biz.css">
+        <link rel="stylesheet" href="css.css">
+        <link rel="stylesheet" href="biz.css">
    </head>
    <body>
-     	<div class="button large primary">click me!</div>
+        <div class="button large primary">click me!</div>
    </body>
    ```
-   
+
    * **css** 作为公共库，充分利用缓存
-   
-   
+
+
    * **biz** 基于 **css**，节省大量代码
-   
+
 4. 固化类名通常会被吐槽不够语义化，**css** 的一大特性就是语义化，因此可以理解为`重新定义了 css`
-   
+
    比如 `<a>` 表示链接，**css** 定义的 `.link` 则会带有链接具有的样式，它的风格基于网站的整体设计，类似的还有 `.button` `.label` `.text` `.input` 等
-   
+
 5. 使用 **normalize.css** 进行初始化，保证先天的语义不被破坏，比如 `<strong>` 表示粗体，当我们需要一个粗体的按钮时，可以参考以下写法：
-   
+
    ``` html
    <strong class="button large primary">click me!</strong>
    ```
-   
+
    基于这样的设计思想，业务代码量可大为减少
-   
+
    ​
 
 
@@ -142,7 +142,7 @@
 
 `hover`、`active`、`checked`、`disabled` 看起来似乎是元素伪类，但是 **css** 为了更好的组合性，同时提供了同名类，以 hover 举例，如下：
 
-``` css 
+``` css
 .button:hover,
 .button.hover {
     ...
