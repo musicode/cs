@@ -3,8 +3,8 @@
  * @author musicode
  */
 
-@import '../variable/image.styl';
-@import '../mixin/image.styl';
+@import '../variable/image.styl'
+@import '../mixin/image.styl'
 
 +prefix-classes($ui-prefix)
 
@@ -20,13 +20,11 @@
             }
         )
 
+        {$selector-image-link}&
+            image-link()
+
         {$selector-round}
-            ui-size-variant(
-                size-hash: $image-size-hash,
-                each: @(size) {
-                    border-radius 50%
-                }
-            )
+            border-radius 50%
 
         {$selector-radius}
             ui-size-variant(
