@@ -43,15 +43,5 @@ pagination-button()
         bg: $pagination-button-bg
     )
 
-    ui-brand-variant(
-        reversed: true,
-        selector-child: selector-button,
-        each: @(bg, border, color) {
-            ui-hover(bg, border, color)
-            ui-active(bg, border, color)
-            ui-checked(bg, border, color)
-        }
-    )
-
 
 
