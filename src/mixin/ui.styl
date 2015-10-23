@@ -120,6 +120,7 @@ ui-status(
         border = null, border-offset = null,
         color = null, color-offset = null,
         selector = '',
+        important = false,
         extra = null)
 
     offset = @(color, offset) {
@@ -140,11 +141,9 @@ ui-status(
         selector: selector,
         style: @() {
 
-            ui-style(
-                border: offset(border, border-offset),
-                color: offset(color, color-offset),
-                bg: offset(bg, bg-offset)
-            )
+            ui-set('background-color', offset(bg, bg-offset), important)
+            ui-set('border-color', offset(border, border-offset), important)
+            ui-set('color', offset(color, color-offset), important)
 
             if (extra is a 'function') {
                 extra()
@@ -175,19 +174,11 @@ ui-checked(bg = null, border = null, color = null, selector = $selector-checked)
 
 ui-disabled(bg = null, border = null, color = null, selector = $selector-disabled)
 
-    ui-status(bg, -35%, border, -30%, color, -60%, selector, @() {
+    ui-status(bg, -35%, border, -30%, color, -60%, selector, true, @() {
 
-        cursor $cursor-disabled
-
-        if ($support-mouse) {
-            {$selector-hover},
-            {$selector-active} {
-                ui-style(
-                    border: border,
-                    color: color,
-                    bg: bg
-                )
-            }
+        &,
+        & > i {
+            ui-set('cursor', $cursor-disabled)
         }
 
     })

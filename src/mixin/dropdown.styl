@@ -10,14 +10,39 @@ dropdown()
 
     ui()
 
-    > {$selector-text},
-    > {$selector-button}
-        text-align left
+
+dropdown-trigger()
+
+    text-align left
+
+    ui-fluid()
+
+
+dropdown-text()
+
+    ui-brand-variant(
+        selector-child: selector-icon,
+        each: @(color) {
+            ui-set('color', color)
+        }
+    )
+
+
+dropdown-button()
+
+    ui-brand-variant(
+        reversed: true,
+        selector-child: selector-icon,
+        each: @(color) {
+            ui-set('color', color)
+        }
+    )
 
 
 dropdown-icon()
 
     float right
+    user-select none
 
     ui()
 
@@ -61,4 +86,17 @@ dropdown-menu-item()
 
     {$selector-checked}
         ui-set('background-color', $dropdown-menu-item-bg-checked)
+
+
+dropdown-button-opened()
+    ui-brand-variant(
+        reversed: true,
+        each: @(bg, border, color) {
+            ui-active(bg, border, color, '')
+        }
+    )
+
+
+dropdown-menu-opened()
+    display block
 
