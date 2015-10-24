@@ -3,186 +3,195 @@
  * @author musicode
  */
 
+$color-muted = #666
+$color-primary = #428bca
+$color-secondary = #F4F4F4
+$color-success = #5cb85c
+$color-error = #F95710
+$color-info = #5bc0de
+$color-warning = #f0ad4e
+$color-danger = #d9534f
+
 $brand-muted = {
     '': {
-        fg: #777777,
+        fg: $color-muted,
         bg: #FFF
     },
     light: {
-        fg: #A0A0A0,
+        fg: ui-light($color-muted),
         bg: #FFF
     },
     lighter: {
-        fg: #CCC,
-        bg: #777777
+        fg: ui-lighter($color-muted),
+        bg: $color-muted
     },
     dark: {
-        fg: #555,
+        fg: ui-dark($color-muted),
         bg: #FFF
     },
     darker: {
-        fg: #333,
+        fg: ui-darker($color-muted),
         bg: #FFF
     }
 }
 
 $brand-primary = {
     '': {
-        fg: #428bca,
+        fg: $color-primary,
         bg: #FFF
     },
     light: {
-        fg: #64A9E4,
+        fg: ui-light($color-primary),
         bg: #FFF
     },
     lighter: {
-        fg: #DFF1FF,
-        bg: #428bca
+        fg: ui-lighter($color-primary),
+        bg: $color-primary
     },
     dark: {
-        fg: #3F75A3,
+        fg: ui-dark($color-primary),
         bg: #FFF
     },
     darker: {
-        fg: #295B85,
+        fg: ui-darker($color-primary),
         bg: #FFF
     }
 }
 
 $brand-secondary = {
     '': {
-        fg: #F4F4F4,
-        bg: #333
+        fg: $color-secondary,
+        bg: #FFF
     },
     light: {
-        fg: #F8F8F8,
-        bg: #333
+        fg: ui-light($color-secondary),
+        bg: #FFF
     },
     lighter: {
-        fg: #FDFDFD,
-        bg: #333
+        fg: ui-lighter($color-secondary),
+        bg: $color-secondary
     },
     dark: {
-        fg: #EDEDED,
-        bg: #333
+        fg: ui-dark($color-secondary),
+        bg: #FFF
     },
     darker: {
-        fg: #E6E6E6,
-        bg: #333
+        fg: ui-darker($color-secondary),
+        bg: #FFF
     }
 }
 
 $brand-success = {
     '': {
-        fg: #5cb85c,
-        bg: #fff
+        fg: $color-success,
+        bg: #FFF
     },
     light: {
-        fg: #9CDB7F,
+        fg: ui-light($color-success),
         bg: #FFF
     },
     lighter: {
-        fg: #E6F8DE,
-        bg: #5cb85c
+        fg: ui-lighter($color-success),
+        bg: $color-success
     },
     dark: {
-        fg: #4F9D28,
+        fg: ui-dark($color-success),
         bg: #FFF
     },
     darker: {
-        fg: #408020,
+        fg: ui-darker($color-success),
         bg: #FFF
     }
 }
 
 $brand-error = {
     '': {
-        fg: #F95710,
-        bg: #fff
+        fg: $color-error,
+        bg: #FFF
     },
     light: {
-        fg: #F8AC8A,
+        fg: ui-light($color-error),
         bg: #FFF
     },
     lighter: {
-        fg: #FADBCD,
-        bg: #F95710
+        fg: ui-lighter($color-error),
+        bg: $color-error
     },
     dark: {
-        fg: #D95116,
+        fg: ui-dark($color-error),
         bg: #FFF
     },
     darker: {
-        fg: #BC4816,
+        fg: ui-darker($color-error),
         bg: #FFF
     }
 }
 
 $brand-info = {
     '': {
-        fg: #5bc0de,
-        bg: #fff
+        fg: $color-info,
+        bg: #FFF
     },
     light: {
-        fg: #8AAFFF,
+        fg: ui-light($color-info),
         bg: #FFF
     },
     lighter: {
-        fg: #D5E3FF,
-        bg: #5bc0de
+        fg: ui-lighter($color-info),
+        bg: $color-info
     },
     dark: {
-        fg: #46A4C0,
+        fg: ui-dark($color-info),
         bg: #FFF
     },
     darker: {
-        fg: #3F8EA6,
+        fg: ui-dark($color-info),
         bg: #FFF
     }
 }
 
 $brand-warning = {
     '': {
-        fg: #f0ad4e,
-        bg: #fff
+        fg: $color-warning,
+        bg: #FFF
     },
     light: {
-        fg: #EABA76,
+        fg: ui-light($color-warning),
         bg: #FFF
     },
     lighter: {
-        fg: #FCEACF,
-        bg: #f0ad4e
+        fg: ui-lighter($color-warning),
+        bg: $color-warning
     },
     dark: {
-        fg: #CE9543,
+        fg: ui-dark($color-warning),
         bg: #FFF
     },
     darker: {
-        fg: #B07E37,
+        fg: ui-darker($color-warning),
         bg: #FFF
     }
 }
 
 $brand-danger = {
     '': {
-        fg: #d9534f,
-        bg: #fff
+        fg: $color-danger,
+        bg: #FFF
     },
     light: {
-        fg: #F48986,
+        fg: ui-light($color-danger),
         bg: #FFF
     },
     lighter: {
-        fg: #FFDDDC,
-        bg: #d9534f
+        fg: ui-lighter($color-danger),
+        bg: $color-danger
     },
     dark: {
-        fg: #BE433F,
+        fg: ui-dark($color-danger),
         bg: #FFF
     },
     darker: {
-        fg: #9F3633,
+        fg: ui-darker($color-danger),
         bg: #FFF
     }
 }

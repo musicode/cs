@@ -13,6 +13,22 @@ ui-reset-form-element()
     background-color transparent
 
 
+ui-light(color)
+    return lighten(color, 30%)
+
+
+ui-lighter(color)
+    return lighten(color, 70%)
+
+
+ui-dark(color)
+    return darken(color, 20%)
+
+
+ui-darker(color)
+    return darken(color, 40%)
+
+
 ui-set(name, value, important = false)
 
     apply = @() {
