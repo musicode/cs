@@ -205,7 +205,7 @@ ui-variant(
             selector-child: selector-child,
             selector-grandchild: selector-grandchild,
             style: @() {
-                each(hash[name])
+                each(hash[name], name)
             }
         )
 
@@ -213,7 +213,6 @@ ui-variant(
 
 ui-brand-variant(
                 each,
-                level = 'base',
                 reversed = false,
                 brand-hash = $brand-hash,
                 selector-append = '',
@@ -222,25 +221,32 @@ ui-brand-variant(
 
     ui-variant(
         hash: brand-hash,
-        selector-append: selector-append,
-        selector-child: selector-child,
-        selector-grandchild: selector-grandchild,
-        each: @(item) {
+        each: @(brand) {
 
-            color = item[level]
-            bg = item[level + '-reversed']
+            ui-variant(
+                hash: brand,
+                selector-append: selector-append,
+                selector-child: selector-child,
+                selector-grandchild: selector-grandchild,
+                each: @(item) {
 
-            if reversed {
-                color = item[level + '-reversed']
-                bg = item[level]
-            }
+                    bg = item['bg']
+                    color = item['fg']
 
-            border = darken(bg, 20%)
+                    if (reversed) {
+                        bg = item['fg']
+                        color = item['bg']
+                    }
 
-            each(
-                bg: bg,
-                color: color,
-                border: border
+                    border = darken(bg, 20%)
+
+                    each(
+                        bg: bg,
+                        color: color,
+                        border: border
+                    )
+
+                }
             )
 
         }
