@@ -78,6 +78,14 @@ form-input()
         }
     )
 
+    if $support-ie
+        ui-size-variant(
+            size-hash: $form-input-size-hash,
+            selector-child: selector-input,
+            each: @(size) {
+                //ui-set('height', size['height'])
+            }
+        )
 
     {selector-input}
 
@@ -209,3 +217,12 @@ form-checkbox()
 
     &{$selector-block} + {$selector-block}
         ui-set('margin-top', $form-box-gap-vertical)
+
+
+form-action()
+
+    font-size 0
+    ui-set('margin-top', $form-action-gap-vertical)
+
+    > {$selector-button} + {$selector-button}
+        ui-set('margin-left', $form-action-button-gap-horizontal)

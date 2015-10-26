@@ -13,22 +13,6 @@ ui-reset-form-element()
     background-color transparent
 
 
-ui-light(color)
-    return lighten(color, 30%)
-
-
-ui-lighter(color)
-    return lighten(color, 70%)
-
-
-ui-dark(color)
-    return darken(color, 20%)
-
-
-ui-darker(color)
-    return darken(color, 40%)
-
-
 ui-set(name, value, important = false)
 
     apply = @() {
@@ -229,6 +213,7 @@ ui-variant(
 
 ui-brand-variant(
                 each,
+                level = '',
                 reversed = false,
                 brand-hash = $brand-hash,
                 selector-append = '',
@@ -237,36 +222,34 @@ ui-brand-variant(
 
     ui-variant(
         hash: brand-hash,
-        each: @(brand) {
+        selector-append: selector-append,
+        selector-child: selector-child,
+        selector-grandchild: selector-grandchild,
+        each: @(hash) {
 
-            ui-variant(
-                hash: brand,
-                selector-append: selector-append,
-                selector-child: selector-child,
-                selector-grandchild: selector-grandchild,
-                each: @(item) {
+            item = hash[level]
 
-                    bg = item['bg']
-                    color = item['fg']
+            bg = item['bg']
+            color = item['fg']
 
-                    if (reversed) {
-                        bg = item['fg']
-                        color = item['bg']
-                    }
+            if (reversed) {
+                bg = item['fg']
+                color = item['bg']
+            }
 
-                    border = darken(bg, 20%)
+            border = darken(bg, 20%)
 
-                    each(
-                        bg: bg,
-                        color: color,
-                        border: border
-                    )
-
-                }
+            each(
+                bg: bg,
+                color: color,
+                border: border
             )
 
         }
     )
+
+
+
 
 
 

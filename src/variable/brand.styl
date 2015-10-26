@@ -12,25 +12,40 @@ $color-info = #5bc0de
 $color-warning = #f0ad4e
 $color-danger = #d9534f
 
+ui-light(color)
+    return lighten(color, 30%)
+
+
+ui-lighter(color)
+    return lighten(color, 60%)
+
+
+ui-dark(color)
+    return darken(color, 15%)
+
+
+ui-darker(color)
+    return darken(color, 30%)
+
 $brand-muted = {
     '': {
-        fg: $color-muted,
+        fg: #666,
         bg: #FFF
     },
     light: {
-        fg: ui-light($color-muted),
+        fg: #999,
         bg: #FFF
     },
     lighter: {
-        fg: ui-lighter($color-muted),
-        bg: $color-muted
+        fg: #CCC,
+        bg: #666
     },
     dark: {
-        fg: ui-dark($color-muted),
+        fg: #444,
         bg: #FFF
     },
     darker: {
-        fg: ui-darker($color-muted),
+        fg: #222,
         bg: #FFF
     }
 }
@@ -61,11 +76,11 @@ $brand-primary = {
 $brand-secondary = {
     '': {
         fg: $color-secondary,
-        bg: #FFF
+        bg: #333
     },
     light: {
         fg: ui-light($color-secondary),
-        bg: #FFF
+        bg: #333
     },
     lighter: {
         fg: ui-lighter($color-secondary),
@@ -73,11 +88,11 @@ $brand-secondary = {
     },
     dark: {
         fg: ui-dark($color-secondary),
-        bg: #FFF
+        bg: #333
     },
     darker: {
         fg: ui-darker($color-secondary),
-        bg: #FFF
+        bg: #333
     }
 }
 
