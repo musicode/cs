@@ -5,15 +5,12 @@
 
 progress()
 
+    if $progress-border is a 'rgba'
+        border 1px solid transparent
+
     overflow hidden
 
-    border 1px solid transparent
-
-    ui-style(
-        border: $progress-border,
-        bg: $progress-bg
-    )
-
+    ui-set('background-color', $progress-bg)
     ui()
 
 
