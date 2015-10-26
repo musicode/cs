@@ -10,33 +10,53 @@
 
     {$selector-tabs}
 
-        tabs()
+        display block
+        user-select none
 
-        selector-item = ' > ' + $selector-tabs-item
+        ui()
+
+        ui-collection(
+            each: @(size) {
+
+                > {$selector-tab} {
+
+                    tab-size(size)
+
+                    + {$selector-tab} {
+                        ui-set('margin-left', size['margin-horizontal'])
+                    }
+
+                }
+
+            }
+        )
 
         ui-brand-variant(
             reversed: true,
-            selector-child: selector-item,
-            each: @(bg, border, color) {
-                ui-hover(bg, border, color)
-                ui-active(bg, border, color)
-                ui-checked(bg, border, color)
-            }
+            selector-child: ' > ' + $selector-tab,
+            each: tab-brand
         )
 
-        ui-size-variant(
-            selector-child: selector-item,
-            each: @(size) {
-                ui-set('font-size', size['font'])
-                ui-set('line-height', size['line-height'])
-                ui-set('padding', size['padding-vertical'] size['padding-horizontal'])
-            }
-        )
+        {$selector-tight}
+            > {$selector-tab} + {$selector-tab}
+                margin-left 0
 
         {$selector-justified}
             ui-justified(
-                selector-item: selector-item
+                selector-item: ' > ' + $selector-tab
             )
 
-        {selector-item}
-            tabs-item()
+
+
+        > {$selector-tab}
+
+            display inline-block
+            position relative
+            text-align center
+            white-space nowrap
+
+            ui()
+
+            if $support-mouse
+                ui-set('cursor', $cursor-clickable)
+

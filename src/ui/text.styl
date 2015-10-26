@@ -10,6 +10,19 @@
 
     {$selector-text}
 
-        text()
+        ui()
+
+        ui-brand-variant(
+            each: @(color) {
+                ui-set('color', color)
+            }
+        )
+
+        ui-size-variant(
+            each: @(size) {
+                ui-set('font-size', size['font'])
+                ui-set('line-height', size['line-height'])
+            }
+        )
 
 

@@ -2,38 +2,3 @@
  * @file Image
  * @author musicode
  */
-
-image()
-
-    line-height 0
-    text-align center
-    overflow hidden
-
-    ui()
-    ui-inline-to-inline-block()
-
-    > img
-        display block
-        width 100%
-        height 100%
-
-
-image-link()
-
-    position relative
-
-    &:after
-        background-color #000
-        content ' '
-        position absolute
-        top 0
-        right 0
-        bottom 0
-        left 0
-
-        ui-opacity(0)
-
-    {$selector-hover}
-        &:after
-            ui-opacity($image-link-hover-mask-opacity)
-

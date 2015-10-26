@@ -3,24 +3,17 @@
  * @author musicode
  */
 
-tabs()
 
-    display block
-    font-size 0
-    user-select none
-    ui()
+tab-size(size)
 
-
-tabs-item()
-
-    display inline-block
-    position relative
-    text-align center
-    white-space nowrap
-    ui()
-
-    if $support-mouse
-        ui-set('cursor', $cursor-clickable)
+    ui-set('font-size', size['font'])
+    ui-set('line-height', size['line-height'])
+    ui-set('padding', size['padding-vertical'] size['padding-horizontal'])
 
 
+tab-brand(bg, border, color)
+
+    ui-hover(bg, border, color)
+    ui-active(bg, border, color)
+    ui-checked(bg, border, color)
 
