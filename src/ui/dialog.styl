@@ -9,26 +9,92 @@
 +prefix-classes($ui-prefix)
 
     {$selector-dialog}
-        dialog()
+
+        position fixed
+        text-align left
+
+        ui-set('background-color', $dialog-bg)
+        ui-set('border-radius', $dialog-radius)
+
+        if $dialog-border is a 'rgba'
+            border 1px solid $dialog-border
+
+        ui()
+
+
+
 
 
         > {$selector-dialog-header}
-            dialog-header()
+
+            user-select none
+
+            ui()
+
+            ui-set('padding', $dialog-header-padding-vertical $dialog-padding-horizontal)
+
+            if $dialog-header-border is a 'rgba'
+                border-bottom 1px solid $dialog-header-border
+
+
+
+
+
 
             > {$selector-dialog-title}
-                dialog-title()
+
+                display inline-block
+
+                if $support-mouse
+                    ui-set('cursor', $cursor-text)
+
+                ui()
+                ui-set('font-size', $dialog-title-font-size)
+
+
+
 
             > {$selector-dialog-close}
-                dialog-close()
+                position absolute
+                top $dialog-close-top
+                right $dialog-padding-horizontal
+
+                ui()
+                ui-set('font-size', $dialog-close-font-size)
+
+                if $support-mouse
+                    ui-set('cursor', $cursor-clickable)
+
+
+
 
         > {$selector-dialog-body}
-            dialog-body()
+
+            ui()
+            ui-set('padding', $dialog-body-padding-vertical $dialog-padding-horizontal)
+
+
+
+
+
 
         > {$selector-dialog-footer}
-            dialog-footer()
+
+            text-align right
+
+            ui()
+            ui-set('padding', $dialog-footer-padding-vertical $dialog-padding-horizontal)
+
+            if $dialog-footer-border is a 'rgba'
+                border-top 1px solid $dialog-footer-border
 
 
-        &{$selector-dialog-draggable}
-            > {$selector-dialog-header}
-                if $support-mouse
+
+
+        if $support-mouse
+
+            &{$selector-dialog-draggable}
+                > {$selector-dialog-header}
                     ui-set('cursor', $cursor-move)
+
+

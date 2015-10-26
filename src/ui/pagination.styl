@@ -10,33 +10,24 @@
 
     {$selector-pagination}
 
-        pagination()
+        ul&
+            list-unstyled()
 
-        selector-item = '> ' + $selector-pagination-item
-        selector-button = '> ' + $selector-pagination-button
+        ui()
 
-        ui-brand-variant(
-            reversed: true,
-            selector-child: selector-button,
-            each: @(bg, border, color) {
-                ui-hover(bg, border, color)
-                ui-active(bg, border, color)
-                ui-checked(bg, border, color)
-            }
-        )
-
-        ui-size-variant(
+        ui-collection(
             each: @(size) {
 
-                {selector-item} {
+                > {$selector-pagination-item} {
                     ui-set('font-size', size['font'])
 
                     + {$selector-pagination-item} {
                         ui-set('margin-left', size['margin-horizontal'])
                     }
+
                 }
 
-                {selector-button} {
+                > {$selector-pagination-button} {
                     ui-set('line-height', size['line-height'])
                     ui-set('padding', size['padding-vertical'] size['padding-horizontal'])
                 }
@@ -44,9 +35,42 @@
             }
         )
 
-        {selector-item}
-            pagination-item()
+        ui-brand-variant(
+            reversed: true,
+            selector-child: '> ' + $selector-pagination-button,
+            each: @(bg, border, color) {
+                ui-hover(bg, border, color)
+                ui-active(bg, border, color)
+                ui-checked(bg, border, color)
+            }
+        )
 
-        {selector-button}
-            pagination-button()
+
+        > {$selector-pagination-item}
+
+            display inline-block
+
+            ui()
+
+
+        > {$selector-pagination-button}
+
+            border 1px solid $pagination-button-border
+            user-select none
+
+            if $support-mouse
+                ui-set('cursor', $cursor-clickable)
+
+            ui()
+
+            ui-style(
+                color: $pagination-button-color,
+                bg: $pagination-button-bg
+            )
+
+            ui-disabled(
+                border: $pagination-button-border,
+                color: $pagination-button-color,
+                bg: $pagination-button-bg
+            )
 

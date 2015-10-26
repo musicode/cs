@@ -10,12 +10,46 @@
 
     {$selector-badge}
 
-        badge()
+        display inline-block
+        text-align center
+        white-space nowrap
+
+        a&
+            text-decoration none
+
+        button&
+            border 0
+            outline 0
+
+        ui()
+
+        ui-brand-variant(
+            reversed: true,
+            each: @(bg, color) {
+                ui-style(
+                    color: color,
+                    bg: bg
+                )
+            }
+        )
 
         ui-size-variant(
+            each: badge-size
+        )
+
+    {$selector-badges}
+
+        ui-collection(
             each: @(size) {
-                ui-set('font-size', size['font'])
-                ui-set('line-height', size['line-height'])
-                ui-set('padding', size['padding-vertical'] size['padding-horizontal'])
+
+                > {$selector-badge} {
+                    badge-size(size)
+
+                    + {$selector-badge} {
+                        ui-set('margin-left', size['margin-horizontal'])
+                    }
+
+                }
+
             }
         )

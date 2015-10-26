@@ -3,18 +3,13 @@
  * @author musicode
  */
 
-message()
+message-size(size)
 
-    border 1px solid transparent
-    text-align left
+    ui-set('font-size', size['font'])
+    ui-set('line-height', size['line-height'])
+    ui-set('padding', size['padding-vertical'] size['padding-horizontal'])
 
-    ui()
-    ui-inline-to-inline-block()
 
-    ui-brand-variant(
-        level: 'lighter',
-        reversed: true,
-        each: @(bg, border, color) {
-            ui-style(bg, border, color)
-        }
-    )
+message-brand(bg, border, color)
+
+    ui-style(bg, border, color)
