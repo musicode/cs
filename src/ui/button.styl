@@ -12,97 +12,9 @@
 
         button()
 
-        ui-size-variant(
-            each: @(size) {
-                ui-set('font-size', size['font'])
-                ui-set('line-height', size['line-height'])
-                ui-set('padding', size['padding-vertical'] size['padding-horizontal'])
-            }
-        )
-
-        {$selector-round}
-            ui-size-variant(
-                each: @(size) {
-                    ui-set('border-radius', size['round'])
-                }
-            )
-
-        {$selector-radius}
-            ui-size-variant(
-                each: @(size) {
-                    ui-set('border-radius', size['radius'])
-                }
-            )
-
-        {$selector-fluid}
-            ui-fluid()
-
 
     {$selector-buttons}
 
         buttons()
 
-        selector-item = ' > ' + $selector-buttons-item
-
-        ui-size-variant(
-            selector-child: selector-item,
-            each: @(size) {
-                ui-set('font-size', size['font'])
-                ui-set('line-height', size['line-height'])
-                ui-set('padding', size['padding-vertical'] size['padding-horizontal'])
-            }
-        )
-
-        {$selector-justified}
-            ui-justified(
-                selector-item: selector-item
-            )
-
-        {selector-item}
-
-            buttons-item()
-
-            if $selector-buttons-item != $selector-button
-
-                button()
-
-        {$selector-round}
-
-            ui-size-variant(
-                selector-child: selector-item,
-                selector-grandchild: $selector-first-child,
-                each: @(size) {
-                    ui-set('border-top-left-radius', size['round'])
-                    ui-set('border-bottom-left-radius', size['round'])
-                }
-            )
-
-            ui-size-variant(
-                selector-child: selector-item,
-                selector-grandchild: $selector-last-child,
-                each: @(size) {
-                    ui-set('border-top-right-radius', size['round'])
-                    ui-set('border-bottom-right-radius', size['round'])
-                }
-            )
-
-        {$selector-radius}
-
-            ui-size-variant(
-                selector-child: selector-item,
-                selector-grandchild: $selector-first-child,
-                each: @(size) {
-                    ui-set('border-top-left-radius', size['radius'])
-                    ui-set('border-bottom-left-radius', size['radius'])
-                }
-            )
-
-            ui-size-variant(
-                selector-child: selector-item,
-                selector-grandchild: $selector-last-child,
-                each: @(size) {
-                    ui-set('border-top-right-radius', size['radius'])
-                    ui-set('border-bottom-right-radius', size['radius'])
-                }
-            )
 

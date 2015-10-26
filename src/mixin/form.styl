@@ -14,85 +14,92 @@ form()
 
 form-input()
 
+    selector-input = 'input&,>input'
+    selector-textarea = 'textarea&,>textarea'
+
+    selector-control = selector-input + ',' + selector-textarea
+    selector-wrapper = 'div&,span&,label&'
+
     ui()
 
     display inline-block
 
-    textarea&,
-    > textarea
+    {selector-textarea}
         resize none
 
-    selector-input = 'input&,>input,textarea&,>textarea'
-    selector-wrapper = 'div&,span&,label&'
-
     ui-size-variant(
-        selector-child: selector-input,
         each: @(size) {
-            ui-set('font-size', size['font'])
-            ui-set('line-height', size['line-height'])
-            ui-set('padding', size['padding-vertical'] size['padding-horizontal'])
-        }
-    )
-
-    ui-size-variant(
-        selector-child: selector-wrapper,
-        each: @(size) {
-
-            > {$selector-form-placeholder} {
+            {selector-control} {
                 ui-set('font-size', size['font'])
-                ui-set('line-height', size['line-height'])
                 ui-set('padding', size['padding-vertical'] size['padding-horizontal'])
             }
-
-            > {$selector-icon} {
-                ui-set('font-size', size['font'])
+            {selector-textarea} {
                 ui-set('line-height', size['line-height'])
             }
+            {selector-wrapper} {
+                > {$selector-label},
+                > {$selector-button} {
+                    ui-set('font-size', size['font'])
+                    ui-set('line-height', size['line-height'])
+                    ui-set('padding', size['padding-vertical'] size['padding-horizontal'])
+                }
 
-            // icon 在左边
-            > {$selector-icon} {
-                left 0
-                ui-set('top', size['padding-vertical'])
-            }
+                > {$selector-form-placeholder} {
+                    ui-set('font-size', size['font'])
+                    ui-set('line-height', size['line-height'])
+                    ui-set('padding', size['padding-vertical'] size['padding-horizontal'])
+                }
 
-            > input + {$selector-icon} {
-                left auto
-                right 0
-            }
+                > {$selector-icon} {
+                    ui-set('font-size', size['font'])
+                    ui-set('line-height', size['line-height'])
+                }
 
-            > {$selector-icon} {
-                position absolute
-            }
+                // icon 在左边
+                > {$selector-icon} {
+                    left 0
+                    ui-set('top', size['padding-vertical'])
+                }
 
-            > {$selector-label} + input,
-            > {$selector-button} + input {
-                border-left 0
-                border-top-left-radius 0
-                border-bottom-left-radius 0
-            }
-            > input + {$selector-label},
-            > input + {$selector-button} {
-                margin-left -1px
-            }
+                > input + {$selector-icon} {
+                    left auto
+                    right 0
+                }
 
+                > {$selector-icon} {
+                    position absolute
+                }
+
+                > {$selector-label} + input,
+                > {$selector-button} + input {
+                    border-left 0
+                    border-top-left-radius 0
+                    border-bottom-left-radius 0
+                }
+                > input + {$selector-label},
+                > input + {$selector-button} {
+                    margin-left -1px
+                }
+            }
         }
     )
 
-    if $support-ie
-        ui-size-variant(
-            size-hash: $form-input-size-hash,
-            selector-child: selector-input,
-            each: @(size) {
-                //ui-set('height', size['height'])
-            }
-        )
+    // input 对 line-height 支持有兼容问题，因此用 height 解决
+    ui-size-variant(
+        size-hash: $form-input-size-hash,
+        selector-child: selector-input,
+        each: @(size) {
+            ui-set('height', size['height'])
+        }
+    )
 
-    {selector-input}
+    {selector-control}
 
-        ui-reset-form-element()
+        outline 0
+        margin 0
 
         background-color $form-input-bg
-        border 1px solid $form-input-border
+        border-color $form-input-border
 
         if $form-placeholder-color is a 'rgba'
 
@@ -129,24 +136,31 @@ form-input()
 
 
     {$selector-hover}
-        {selector-input}
+        {selector-control}
             ui-hover(border: $form-input-border, selector: '')
 
-    {selector-input}
+    {selector-control}
         {$selector-focus}
             ui-focus(border: $form-input-border, selector: '')
 
     ui-brand-variant(
         reversed: true,
-        each: @(bg) {
+        each: @(bg, border, color) {
+
+            {selector-wrapper} {
+                > {$selector-label},
+                > {$selector-button} {
+                    ui-style(bg, border, color)
+                }
+            }
 
             {$selector-hover} {
-                {selector-input} {
+                {selector-control} {
                     ui-hover(border: lighten(bg, 50%), selector: '')
                 }
             }
 
-            {selector-input} {
+            {selector-control} {
                 {$selector-focus} {
                     ui-focus(border: lighten(bg, 40%), selector: '')
                 }
@@ -178,7 +192,7 @@ form-controls()
         display inline-block
         ui-set('margin-left', $form-control-gap-inline)
 
-    > {$selector-block}
+    > * + {$selector-block}
         display block
         ui-set('margin-top', $form-control-gap-block)
 
@@ -189,6 +203,8 @@ form-controls()
         padding-right 0
 
 form-radio()
+
+    ui()
 
     > input[type="radio"]
         margin-right $form-box-text-gap
@@ -204,6 +220,8 @@ form-radio()
         ui-set('margin-top', $form-box-gap-vertical)
 
 form-checkbox()
+
+    ui()
 
     > input[type="checkbox"]
         margin-right $form-box-text-gap

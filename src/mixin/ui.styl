@@ -1,16 +1,10 @@
 
 ui()
 
-    if @display == 'inline-block' or @display == 'inline'
-        if !@vertical-align
+    if (@display == 'inline-block' or @display == 'inline') && !@vertical-align
+        &
             vertical-align baseline
 
-ui-reset-form-element()
-
-    outline 0
-    border 0
-    margin 0
-    background-color transparent
 
 
 ui-set(name, value, important = false)
@@ -76,6 +70,16 @@ ui-link(color, has-hover)
         {$selector-hover}
             color darken(color, 10%)
             text-decoration underline
+
+ui-collection(selector-item = '', each)
+
+    font-size 0
+
+    ui-size-variant(
+        selector-child: selector-item,
+        each: each
+    )
+
 
 ui-apply(
         style,

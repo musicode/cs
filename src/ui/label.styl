@@ -9,29 +9,8 @@
 +prefix-classes($ui-prefix)
 
     {$selector-label}
-
         label()
 
-        ui-size-variant(
-            each: @(size) {
-                ui-set('font-size', size['font'])
-                ui-set('line-height', size['line-height'])
-                ui-set('padding', size['padding-vertical'] size['padding-horizontal'])
-            }
-        )
-
-        {$selector-round}
-            ui-size-variant(
-                each: @(size) {
-                    ui-set('border-radius', size['round'])
-                }
-            )
-
-        {$selector-radius}
-            ui-size-variant(
-                each: @(size) {
-                    ui-set('border-radius', size['radius'])
-                }
-            )
-
+    {$selector-labels}
+        labels()
 

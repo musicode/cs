@@ -3,22 +3,73 @@
  * @author musicode
  */
 
+label-size(size)
+
+    ui-set('font-size', size['font'])
+    ui-set('line-height', size['line-height'])
+    ui-set('padding', size['padding-vertical'] size['padding-horizontal'])
+
+
+label-brand(bg, border, color)
+
+    ui-style(bg, bg, color)
+
+
 label()
 
     border 1px solid transparent
     display inline-block
-    text-align center
     white-space nowrap
-
-    if $support-mouse
-        ui-set('cursor', $cursor-text)
-
-    ui()
 
     ui-brand-variant(
         reversed: true,
-        each: @(bg, color) {
-            ui-style(bg, bg, color)
+        each: label-brand
+    )
+
+    ui-size-variant(
+        each: @(size) {
+
+            label-size(size)
+
+            {$selector-round} {
+                ui-set('border-radius', size['round'])
+            }
+
+            {$selector-radius} {
+                ui-set('border-radius', size['radius'])
+            }
+
+        }
+
+    )
+
+
+labels()
+
+    ui-collection(
+        each: @(size) {
+
+            > {$selector-label} {
+                label-size(size)
+
+                + {$selector-label} {
+                    ui-set('margin-left', size['margin-horizontal'])
+                }
+            }
+
+            {$selector-round} {
+                > {$selector-label} {
+                    ui-set('border-radius', size['round'])
+                }
+            }
+
+            {$selector-radius} {
+                > {$selector-label} {
+                    ui-set('border-radius', size['radius'])
+                }
+            }
+
         }
     )
+
 
