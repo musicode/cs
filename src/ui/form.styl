@@ -13,21 +13,88 @@
         form-input()
 
     {$selector-form-radio}
-        form-radio()
+
+        ui()
+
+        > input[type="radio"]
+            margin-right $form-box-text-gap
+
+        + {$selector-form-radio}
+            ui-set('margin-left', $form-box-gap-horizontal)
+
+        &{$selector-block}
+            display block
+            margin-left 0
+
+            + {$selector-block}
+                ui-set('margin-top', $form-box-gap-vertical)
+
 
     {$selector-form-checkbox}
-        form-checkbox()
+
+        ui()
+
+        > input[type="checkbox"]
+            margin-right $form-box-text-gap
+
+        + {$selector-form-checkbox}
+            ui-set('margin-left', $form-box-gap-horizontal)
+
+        &{$selector-block}
+            display block
+            margin-left 0
+
+            + {$selector-block}
+                ui-set('margin-top', $form-box-gap-vertical)
+
+
 
     {$selector-form}
-        form()
+
+        font-size 0
+
+        &{$selector-inline}
+
+            > {$selector-form-group}
+
+                display inline-block
+
+                + {$selector-form-group}
+                    margin-top 0
+                    ui-set('margin-left', $form-group-gap-inline)
+
 
         > {$selector-form-group}
-            form-group()
+
+            + {$selector-form-group}
+                ui-set('margin-top', $form-group-gap-block)
+
+            > {$selector-label}
+
+                vertical-align top
+                text-align right
 
             > {$selector-form-controls}
-                form-controls()
+
+                display inline-block
+                position relative
+
+                > {$selector-inline}
+                    display inline-block
+                    ui-set('margin-left', $form-control-gap-inline)
+
+                > * + {$selector-block}
+                    display block
+                    ui-set('margin-top', $form-control-gap-block)
+
+                > {$selector-label}
+                    border-left 0
+                    border-right 0
+                    padding-left 0
+                    padding-right 0
 
         > {$selector-form-action}
-            form-action()
+
+            ui-set('margin-top', $form-action-gap-vertical)
 
 

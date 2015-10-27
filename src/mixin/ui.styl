@@ -257,8 +257,8 @@ ui-size-variant(
         selector-append: selector-append,
         selector-child: selector-child,
         selector-grandchild: selector-grandchild,
-        each: @(item) {
-            each(item)
+        each: @(item, name) {
+            each(item, name)
         }
     )
 

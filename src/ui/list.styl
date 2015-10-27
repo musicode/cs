@@ -9,8 +9,49 @@
 +prefix-classes($ui-prefix)
 
     {$selector-list}
-        list()
+
+        ul&
+            list-unstyled()
+
+        ui()
+        ui-set('background-color', $list-bg)
+
+        if $list-border is a 'rgba'
+            border 1px solid $list-border
+
+
+        ui-size-variant(
+            each: @(size) {
+
+                > {$selector-list-item} {
+                    ui-set('font-size', size['font'])
+                    ui-set('line-height', size['line-height'])
+                    ui-set('padding', size['padding-vertical'] size['padding-horizontal'])
+
+                    > {$selector-icon} {
+                        ui-set('margin-right', size['margin-horizontal'])
+                    }
+                }
+
+                {$selector-round} {
+                    ui-set('border-radius', size['round'])
+                }
+
+                {$selector-radius} {
+                    ui-set('border-radius', size['radius'])
+                }
+
+            }
+        )
 
         > {$selector-list-item}
-            list-item()
+            display block
+
+            if $list-item-border is a 'rgba'
+                + {$selector-list-item}
+                    border-top 1px solid $list-item-border
+
+
+            > {$selector-list-item-extra}
+                float right
 

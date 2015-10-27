@@ -13,16 +13,11 @@
         ui()
 
         ui-brand-variant(
-            each: @(color) {
-                ui-set('color', color)
-            }
+            each: text-brand
         )
 
         ui-size-variant(
-            each: @(size) {
-                ui-set('font-size', size['font'])
-                ui-set('line-height', size['line-height'])
-            }
+            each: text-size
         )
 
 

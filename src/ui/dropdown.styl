@@ -10,60 +10,133 @@
 
     {$selector-dropdown}
 
-        selector-text = ' > ' + $selector-text
-        selector-button = ' > ' + $selector-button
-        selector-menu = ' > ' + $selector-dropdown-menu
-        selector-menu-item = ' > ' + $selector-dropdown-menu + ' > ' + $selector-dropdown-menu-item
+        display inline-block
+        position relative
 
-        selector-icon = ' > ' + $selector-dropdown-icon
-
-        dropdown()
+        ui()
 
         ui-size-variant(
+            each: dropdown-size
+        )
+
+
+        > {$selector-text},
+        > {$selector-button}
+
+            text-align left
+
+            ui-fluid()
+
+            > {$selector-dropdown-icon}
+
+                float right
+                user-select none
+
+                ui()
+
+                if $support-mouse
+                    ui-set('cursor', $cursor-clickable)
+
+
+
+
+        > {$selector-text}
+
+            ui-brand-variant(
+                each: @(color) {
+                    > {$selector-dropdown-icon} {
+                        ui-set('color', color)
+                    }
+                }
+            )
+
+
+
+
+        > {$selector-button}
+
+            ui-brand-variant(
+                reversed: true,
+                each: @(color) {
+                    > {$selector-dropdown-icon} {
+                        ui-set('color', color)
+                    }
+                }
+            )
+
+
+
+
+        > {$selector-dropdown-menu}
+
+            display none
+            text-align left
+            overflow-x hidden
+            overflow-y auto
+
+            position absolute
+            left 0
+            right 0
+
+            ui()
+            ui-set('margin-top', $dropdown-menu-gap)
+            ui-set('background-color', $dropdown-menu-bg)
+
+            if $dropdown-menu-border is a 'rgba'
+                border 1px solid $dropdown-menu-border
+
+
+
+
+            > {$selector-dropdown-menu-item}
+
+                user-select none
+
+                ui()
+
+                if $support-mouse
+                    ui-set('cursor', $cursor-clickable)
+
+                {$selector-hover}
+                    ui-set('background-color', $dropdown-menu-item-bg-hover)
+
+                {$selector-active}
+                    ui-set('background-color', $dropdown-menu-item-bg-active)
+
+                {$selector-checked}
+                    ui-set('background-color', $dropdown-menu-item-bg-checked)
+
+
+
+
+        {$selector-opened}
+
+            > {$selector-button}
+                ui-brand-variant(
+                    reversed: true,
+                    each: @(bg, border, color) {
+                        ui-active(bg, border, color, '')
+                    }
+                )
+
+            > {$selector-dropdown-menu}
+                display block
+
+
+    {$selector-dropdowns}
+
+        ui-collection(
             each: @(size) {
 
-                &{selector-button},
-                &{selector-menu-item} {
-                    ui-set('font-size', size['font'])
-                    ui-set('line-height', size['line-height'])
-                    ui-set('padding', size['padding-vertical'] size['padding-horizontal'])
-                }
 
-                &{selector-text},
-                &{selector-button} {
-                    {selector-icon} {
-                        ui-set('line-height', size['line-height'])
+                > {$selector-dropdown} {
+                    dropdown-size(size)
+
+                    + {$selector-dropdown} {
                         ui-set('margin-left', size['margin-horizontal'])
                     }
+
                 }
 
             }
         )
-
-        {selector-text},
-        {selector-button}
-            dropdown-trigger()
-
-            {selector-icon}
-                dropdown-icon()
-
-        {selector-text}
-            dropdown-text()
-
-        {selector-button}
-            dropdown-button()
-
-        {selector-menu}
-            dropdown-menu()
-
-        {selector-menu-item}
-            dropdown-menu-item()
-
-        {$selector-opened}
-
-            {selector-button}
-                dropdown-button-opened()
-
-            {selector-menu}
-                dropdown-menu-opened()
-

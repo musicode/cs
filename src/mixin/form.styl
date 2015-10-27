@@ -5,45 +5,37 @@
 
 form()
 
-    &{$selector-inline}
 
-        > {$selector-form-group}
-            display inline-block
-            margin-top 0 !important
-            ui-set('margin-left', $form-group-gap-inline)
 
 form-input()
 
-    selector-input = 'input&,>input'
-    selector-textarea = 'textarea&,>textarea'
+    selector-input = 'input&,> input'
+    selector-textarea = 'textarea&,> textarea'
 
     selector-control = selector-input + ',' + selector-textarea
     selector-wrapper = 'div&,span&,label&'
 
-    ui()
-
-    display inline-block
-
     {selector-textarea}
         resize none
 
+    {selector-wrapper}
+        display inline-block
+
+    ui()
+
     ui-size-variant(
-        each: @(size) {
+        each: @(size, name) {
             {selector-control} {
                 ui-set('font-size', size['font'])
+                ui-set('line-height', size['line-height'])
                 ui-set('padding', size['padding-vertical'] size['padding-horizontal'])
             }
-            {selector-textarea} {
-                ui-set('line-height', size['line-height'])
+            {selector-input} {
+                ui-set('height', $form-input-size-hash[name]['height'])
             }
             {selector-wrapper} {
                 > {$selector-label},
-                > {$selector-button} {
-                    ui-set('font-size', size['font'])
-                    ui-set('line-height', size['line-height'])
-                    ui-set('padding', size['padding-vertical'] size['padding-horizontal'])
-                }
-
+                > {$selector-button},
                 > {$selector-form-placeholder} {
                     ui-set('font-size', size['font'])
                     ui-set('line-height', size['line-height'])
@@ -84,22 +76,13 @@ form-input()
         }
     )
 
-    // input 对 line-height 支持有兼容问题，因此用 height 解决
-    ui-size-variant(
-        size-hash: $form-input-size-hash,
-        selector-child: selector-input,
-        each: @(size) {
-            ui-set('height', size['height'])
-        }
-    )
-
     {selector-control}
 
         outline 0
         margin 0
 
         background-color $form-input-bg
-        border-color $form-input-border
+        border 1px solid $form-input-border
 
         if $form-placeholder-color is a 'rgba'
 
@@ -122,6 +105,9 @@ form-input()
 
         > {$selector-icon}
             position absolute
+
+        {selector-control}
+            vertical-align top
 
         if $form-placeholder-color is a 'rgba'
 
@@ -169,78 +155,3 @@ form-input()
         }
     )
 
-
-
-form-group()
-
-    font-size 0
-
-    + {$selector-form-group}
-        ui-set('margin-top', $form-group-gap-block)
-
-    > {$selector-label}
-        vertical-align top
-
-
-form-controls()
-
-    font-size 0
-    display inline-block
-    position relative
-
-    > {$selector-inline}
-        display inline-block
-        ui-set('margin-left', $form-control-gap-inline)
-
-    > * + {$selector-block}
-        display block
-        ui-set('margin-top', $form-control-gap-block)
-
-    > {$selector-label}
-        border-left 0
-        border-right 0
-        padding-left 0
-        padding-right 0
-
-form-radio()
-
-    ui()
-
-    > input[type="radio"]
-        margin-right $form-box-text-gap
-
-    + {$selector-form-radio}
-        ui-set('margin-left', $form-box-gap-horizontal)
-
-    &{$selector-block}
-        display block
-        margin-left 0
-
-    &{$selector-block} + {$selector-block}
-        ui-set('margin-top', $form-box-gap-vertical)
-
-form-checkbox()
-
-    ui()
-
-    > input[type="checkbox"]
-        margin-right $form-box-text-gap
-
-    + {$selector-form-checkbox}
-        ui-set('margin-left', $form-box-gap-horizontal)
-
-    &{$selector-block}
-        display block
-        margin-left 0
-
-    &{$selector-block} + {$selector-block}
-        ui-set('margin-top', $form-box-gap-vertical)
-
-
-form-action()
-
-    font-size 0
-    ui-set('margin-top', $form-action-gap-vertical)
-
-    > {$selector-button} + {$selector-button}
-        ui-set('margin-left', $form-action-button-gap-horizontal)

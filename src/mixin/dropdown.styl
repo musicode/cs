@@ -3,100 +3,36 @@
  * @author musicode
  */
 
-dropdown()
+dropdown-size(size)
 
-    display inline-block
-    position relative
-
-    ui()
-
-
-dropdown-trigger()
-
-    text-align left
-
-    ui-fluid()
+    > {$selector-text},
+    > {$selector-button},
+    > {$selector-dropdown-menu} > {$selector-dropdown-menu-item}
+        ui-set('font-size', size['font'])
+        ui-set('line-height', size['line-height'])
 
 
-dropdown-text()
-
-    ui-brand-variant(
-        selector-child: '> ' + $selector-dropdown-icon,
-        each: @(color) {
-            ui-set('color', color)
-        }
-    )
+    > {$selector-text}
+        ui-set('padding-left', size['padding-horizontal'])
+        ui-set('padding-right', size['padding-horizontal'])
 
 
-dropdown-button()
-
-    ui-brand-variant(
-        reversed: true,
-        selector-child: '> ' + $selector-dropdown-icon,
-        each: @(color) {
-            ui-set('color', color)
-        }
-    )
+    > {$selector-button},
+    > {$selector-dropdown-menu} > {$selector-dropdown-menu-item}
+        ui-set('padding', size['padding-vertical'] size['padding-horizontal'])
 
 
-dropdown-icon()
-
-    float right
-    user-select none
-
-    ui()
-
-    if $support-mouse
-        ui-set('cursor', $cursor-clickable)
+    > {$selector-text},
+    > {$selector-button}
+        > {$selector-dropdown-icon}
+            ui-set('line-height', size['line-height'])
+            ui-set('margin-left', size['margin-horizontal'])
 
 
-dropdown-menu()
-
-    display none
-    text-align left
-    overflow-x hidden
-    overflow-y auto
-
-    position absolute
-    left 0
-    right 0
-
-    ui()
-    ui-set('margin-top', $dropdown-menu-gap)
-    ui-set('background-color', $dropdown-menu-bg)
-
-    if $dropdown-menu-border is a 'rgba'
-        border 1px solid $dropdown-menu-border
+    {$selector-radius}
+        > {$selector-button},
+        > {$selector-dropdown-menu}
+            ui-set('border-radius', size['radius'])
 
 
-dropdown-menu-item()
-
-    user-select none
-
-    ui()
-
-    if $support-mouse
-        ui-set('cursor', $cursor-clickable)
-
-    {$selector-hover}
-        ui-set('background-color', $dropdown-menu-item-bg-hover)
-
-    {$selector-active}
-        ui-set('background-color', $dropdown-menu-item-bg-active)
-
-    {$selector-checked}
-        ui-set('background-color', $dropdown-menu-item-bg-checked)
-
-
-dropdown-button-opened()
-    ui-brand-variant(
-        reversed: true,
-        each: @(bg, border, color) {
-            ui-active(bg, border, color, '')
-        }
-    )
-
-
-dropdown-menu-opened()
-    display block
 
