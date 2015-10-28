@@ -25,12 +25,17 @@
     input::-ms-clear
         display none
 
-
-
     body
         ui-set('background-color', $bg-color)
-        ui-set('color', $text-color)
+        ui-set('color', $text-color-hash[''])
         ui-set('font', $size-base['font'] unquote('/') $size-base['line-height'] $font-family-title)
+
+    ui-variant(
+        hash: $text-color-hash,
+        each: @(color, name) {
+            ui-set('color', color)
+        }
+    )
 
     .link
         ui-link(

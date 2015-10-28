@@ -31,12 +31,11 @@
 
             ui()
 
+            ui-set('background-color', $dialog-header-bg)
             ui-set('padding', $dialog-header-padding-vertical $dialog-padding-horizontal)
 
             if $dialog-header-border is a 'rgba'
                 border-bottom 1px solid $dialog-header-border
-
-
 
 
 
@@ -54,16 +53,17 @@
 
 
 
-            > {$selector-dialog-close}
-                position absolute
-                top $dialog-close-top
-                right $dialog-padding-horizontal
+        > {$selector-dialog-close},
+        > {$selector-dialog-header} > {$selector-dialog-close}
+            position absolute
+            top $dialog-close-top
+            right $dialog-padding-horizontal
 
-                ui()
-                ui-set('font-size', $dialog-close-font-size)
+            ui()
+            ui-set('font-size', $dialog-close-font-size)
 
-                if $support-mouse
-                    ui-set('cursor', $cursor-clickable)
+            if $support-mouse
+                ui-set('cursor', $cursor-clickable)
 
 
 
@@ -98,3 +98,5 @@
                     ui-set('cursor', $cursor-move)
 
 
+    {$selector-mask} + {$selector-dialog}
+        border 0

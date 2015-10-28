@@ -4,23 +4,29 @@
  */
 
 // 背景色
-$bg-color = #fff;
+$bg-color = #fff
 
 // 文本色
-$text-color = $brand-muted['dark']['fg'];
+$text-color-hash = {
+    '': #666,
+    light: #999,
+    lighter: #CCC,
+    dark: #444,
+    darker: #222
+}
 
 // 链接色
-$link-color = $text-color;
+$link-color = #666
 
 // 链接悬浮色
-$link-color-hover = darken($link-color, 5%);
+$link-color-hover = darken($link-color, 5%)
 
 
 // 标题字体
-$font-family-title = PingHei, "Hiragino Sans GB", "Microsoft YaHei";
+$font-family-title = PingHei, "Hiragino Sans GB", "Microsoft YaHei"
 
 // 正文字体
-$font-family-text = $font-family-title; //arial;
+$font-family-text = $font-family-title
 
 // 代码字体
-$font-family-code = Menlo, Monaco, Consolas, "Courier New", monospace;
+$font-family-code = Menlo, Monaco, Consolas, "Courier New", monospace

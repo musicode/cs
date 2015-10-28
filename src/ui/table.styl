@@ -34,7 +34,7 @@
 
 
 
-        &.striped
+        &{$selector-table-striped}
 
             tbody tr:nth-child(even)
                 background-color $table-body-even-row-bg
@@ -42,7 +42,7 @@
 
 
 
-        &.row-bordered
+        &{$selector-table-row-bordered}
 
             thead tr
                 border-bottom: 1px solid $table-head-border;
@@ -53,7 +53,7 @@
 
 
 
-        &.col-bordered
+        &{$selector-table-col-bordered}
 
             thead th + th
                 border-left 1px solid $table-head-border
@@ -64,10 +64,12 @@
 
 
 
-        &.bordered
+        &{$selector-table-bordered}
 
             thead th
                 border 1px solid $table-head-border
 
             tbody td
                 border 1px solid $table-body-border
+
+

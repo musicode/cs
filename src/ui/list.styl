@@ -13,12 +13,10 @@
         ul&
             list-unstyled()
 
+        text-align left
+
         ui()
         ui-set('background-color', $list-bg)
-
-        if $list-border is a 'rgba'
-            border 1px solid $list-border
-
 
         ui-size-variant(
             each: @(size) {
@@ -27,10 +25,6 @@
                     ui-set('font-size', size['font'])
                     ui-set('line-height', size['line-height'])
                     ui-set('padding', size['padding-vertical'] size['padding-horizontal'])
-
-                    > {$selector-icon} {
-                        ui-set('margin-right', size['margin-horizontal'])
-                    }
                 }
 
                 {$selector-round} {
@@ -44,13 +38,26 @@
             }
         )
 
+        ui-brand-variant(
+            reversed: true,
+            selector-child: '> ' + $selector-list-item,
+            each: @(bg, border, color) {
+                ui-checked(bg, border, color)
+            }
+        )
+
+        if $list-border is a 'rgba'
+
+            &{$selector-list-bordered}
+                border 1px solid $list-border
+
+
         > {$selector-list-item}
             display block
 
             if $list-item-border is a 'rgba'
                 + {$selector-list-item}
                     border-top 1px solid $list-item-border
-
 
             > {$selector-floated}
                 float right
