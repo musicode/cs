@@ -47,6 +47,14 @@
             }
         )
 
+        > {$selector-text}
+            font inherit
+
+        > {$selector-icon} + {$selector-text},
+        > {$selector-text} + {$selector-icon} {
+            ui-set('margin-left', $button-icon-gap)
+        }
+
         {$selector-fluid}
             ui-fluid()
 

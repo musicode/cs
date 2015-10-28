@@ -8,6 +8,13 @@
 
 +prefix-classes($ui-prefix)
 
+    ul.unstyled
+        list-unstyled()
+
+    ul{$selector-inline}
+        > li
+            display inline-block
+
     {$selector-list}
 
         ul&

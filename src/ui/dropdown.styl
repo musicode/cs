@@ -27,7 +27,7 @@
 
             ui-fluid()
 
-            > {$selector-dropdown-icon}
+            > {$selector-icon}
 
                 float right
                 user-select none
@@ -44,7 +44,7 @@
 
             ui-brand-variant(
                 each: @(color) {
-                    > {$selector-dropdown-icon} {
+                    > {$selector-icon} {
                         ui-set('color', color)
                     }
                 }
@@ -58,7 +58,7 @@
             ui-brand-variant(
                 reversed: true,
                 each: @(color) {
-                    > {$selector-dropdown-icon} {
+                    > {$selector-icon} {
                         ui-set('color', color)
                     }
                 }
@@ -81,7 +81,9 @@
             ui()
             ui-set('margin-top', $dropdown-menu-gap)
             ui-set('background-color', $dropdown-menu-bg)
+            ui-set('max-height', $dropdown-menu-max-height)
             ui-set('z-index', $zindex-tiny)
+
 
             if $dropdown-menu-border is a 'rgba'
                 border 1px solid $dropdown-menu-border
@@ -91,6 +93,7 @@
 
             > {$selector-dropdown-menu-item}
 
+                display block
                 user-select none
 
                 ui()
@@ -108,6 +111,8 @@
                     ui-set('background-color', $dropdown-menu-item-bg-checked)
 
 
+        > ul{$selector-dropdown-menu}
+            list-unstyled()
 
 
         {$selector-opened}

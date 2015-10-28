@@ -44,6 +44,14 @@
 
         )
 
+        > {$selector-text}
+            font inherit
+
+        > {$selector-icon} + {$selector-text},
+        > {$selector-text} + {$selector-icon} {
+            ui-set('margin-left', $label-icon-gap)
+        }
+
     {$selector-labels}
 
         ui-collection(
