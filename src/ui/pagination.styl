@@ -13,6 +13,8 @@
         ul&
             list-unstyled()
 
+        color inherit
+
         ui()
 
         ui-collection(
@@ -37,11 +39,12 @@
 
         ui-brand-variant(
             reversed: true,
-            selector-child: '> ' + $selector-pagination-button,
             each: @(bg, border, color) {
-                ui-hover(bg, border, color)
-                ui-active(bg, border, color)
-                ui-checked(bg, border, color)
+                > {$selector-pagination-button} {
+                    ui-hover(bg, border, color)
+                    ui-active(bg, border, color)
+                    ui-checked(bg, border, color)
+                }
             }
         )
 

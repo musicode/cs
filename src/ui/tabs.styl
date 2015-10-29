@@ -33,8 +33,11 @@
 
         ui-brand-variant(
             reversed: true,
-            selector-child: ' > ' + $selector-tab,
-            each: tab-brand
+            each: @(bg, border, color) {
+                > {$selector-tab} {
+                    tab-brand(bg, border, color)
+                }
+            }
         )
 
         &{$selector-tight}

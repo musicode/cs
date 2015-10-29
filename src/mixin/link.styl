@@ -1,0 +1,62 @@
+/**
+ * @file Link
+ * @author musicode
+ */
+
+link-size(size)
+
+    ui-set('font-size', size['font'])
+
+
+
+ui-link()
+
+    display inline
+    text-decoration none
+
+    ui()
+
+    ui-set('color', $brand-link)
+
+    ui-size-variant(
+        each: link-size
+    )
+
+    if $support-mouse
+
+        ui-set('cursor', $cursor-clickable)
+
+        {$selector-hover}
+            ui-hover(
+                color: $brand-link,
+                selector: ''
+            )
+            text-decoration underline
+
+
+
+ui-links()
+
+    ui()
+
+    ui-collection(
+        each: @(size) {
+
+            > {$selector-link} {
+                link-size(size)
+
+                + {$selector-link} {
+                    ui-set('margin-left', size['margin-horizontal'])
+                }
+            }
+
+        }
+    )
+
+
+
+ui-links-tight()
+
+    > {$selector-link} + {$selector-link}
+        margin-left 0
+

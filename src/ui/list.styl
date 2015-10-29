@@ -20,6 +20,7 @@
         ul&
             list-unstyled()
 
+        color inherit
         text-align left
 
         ui()
@@ -47,9 +48,10 @@
 
         ui-brand-variant(
             reversed: true,
-            selector-child: '> ' + $selector-list-item,
             each: @(bg, border, color) {
-                ui-checked(bg, border, color)
+                > {$selector-list-item} {
+                    ui-checked(bg, border, color)
+                }
             }
         )
 

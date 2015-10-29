@@ -24,15 +24,18 @@
         ui-set('color', $text-color)
         ui-set('font', $size-base['font'] unquote('/') $size-base['line-height'] $font-family-title)
 
-    ui-variant(
-        hash: $text-color-hash,
-        each: @(color, name) {
+    ui-brand-variant(
+        each: @(color) {
             ui-set('color', color)
         }
     )
+    ui-size-variant(
+        each: @(size) {
+            ui-set('font-size', size['font'])
+        }
+    )
 
-    {$selector-link}
-        ui-link(
-            color: $link-color,
-            has-hover: true
-        )
+    {$selector-fluid}
+
+        ui-fluid()
+
