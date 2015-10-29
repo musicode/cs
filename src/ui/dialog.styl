@@ -15,6 +15,7 @@
 
         ui-set('background-color', $dialog-bg)
         ui-set('border-radius', $dialog-radius)
+        ui-set('box-shadow', $dialog-shadow)
 
         if $dialog-border is a 'rgba'
             border 1px solid $dialog-border
@@ -33,6 +34,8 @@
 
             ui-set('background-color', $dialog-header-bg)
             ui-set('padding', $dialog-header-padding-vertical $dialog-padding-horizontal)
+            ui-set('border-top-left-radius', $dialog-radius)
+            ui-set('border-top-right-radius', $dialog-radius)
 
             if $dialog-header-border is a 'rgba'
                 border-bottom 1px solid $dialog-header-border
