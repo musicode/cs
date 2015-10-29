@@ -76,6 +76,12 @@ ui-collection-tight(selector-item)
         margin-left 0
 
 
+ui-transition(property)
+
+    if $transition-duration is a 'unit'
+        transition property $transition-duration
+
+
 ui-apply(style, selector = '')
 
     if selector
