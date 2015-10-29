@@ -6,10 +6,47 @@
 text-size(size)
 
     ui-set('font-size', size['font'])
-    ui-set('line-height', size['line-height'])
 
 
 text-brand(color)
 
     ui-set('color', color)
+
+
+ui-text()
+
+    ui()
+
+    ui-brand-variant(
+        each: text-brand
+    )
+
+    ui-size-variant(
+        each: text-size
+    )
+
+
+ui-texts()
+
+    ui()
+
+    ui-collection(
+        each: @(size) {
+
+            > {$selector-text} {
+                text-size(size)
+
+                + {$selector-text} {
+                    ui-set('margin-left', size['margin-horizontal'])
+                }
+            }
+
+        }
+    )
+
+
+ui-texts-tight()
+
+    > {$selector-text} + {$selector-text}
+        margin-left 0
 

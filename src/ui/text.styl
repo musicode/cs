@@ -9,15 +9,11 @@
 +prefix-classes($ui-prefix)
 
     {$selector-text}
-
-        ui()
-
-        ui-brand-variant(
-            each: text-brand
-        )
-
-        ui-size-variant(
-            each: text-size
-        )
+        ui-text()
 
 
+    {$selector-texts}
+        ui-texts()
+
+        {$selector-tight}
+            ui-texts-tight()
