@@ -9,146 +9,17 @@
 +prefix-classes($ui-prefix)
 
     {$selector-button}
-
-        border 1px solid transparent
-        display inline-block
-        text-align center
-        white-space nowrap
-        user-select none
-
-        button-reset()
-
-        if $support-mouse
-            ui-set('cursor', $cursor-clickable)
-
-        ui()
-
-        ui-brand-variant(
-            reversed: true,
-            each: button-brand
-        )
-
-        ui-size-variant(
-            each: @(size) {
-
-                button-size(size)
-
-                &{$selector-round} {
-                    ui-set('border-radius', size['round'])
-                }
-                &{$selector-radius} {
-                    ui-set('border-radius', size['radius'])
-                }
-
-            }
-        )
-
-        > {$selector-text}
-            font inherit
-
-        > {$selector-icon} + {$selector-text},
-        > {$selector-text} + {$selector-icon} {
-            ui-set('margin-left', $button-icon-gap)
-        }
-
+        ui-button()
 
     {$selector-buttons}
+        ui-buttons()
 
-        ui-collection(
-            each: @(size) {
-
-                > {$selector-button} {
-                    button-size(size)
-
-                    + {$selector-button} {
-                        ui-set('margin-left', size['margin-horizontal'])
-
-                        &{$selector-fluid} {
-                            margin-left 0
-                            ui-set('margin-top', size['margin-vertical'])
-                        }
-                    }
-
-                }
-
-                {$selector-round} {
-                    > {$selector-button} {
-                        ui-set('border-radius', size['round'])
-                    }
-                }
-
-                {$selector-radius} {
-                    > {$selector-button} {
-                        ui-set('border-radius', size['radius'])
-                    }
-                }
-
-            }
-        )
+        &{$selector-tight}
+            ui-buttons-tight()
 
         &{$selector-justified}
             ui-justified(
-                selector-item: '>' + $selector-button
+                selector-item: $selector-button
             )
-
-        &{$selector-tight}
-            > {$selector-button}
-
-                + {$selector-button}
-                    margin-left -1px
-
-                {$selector-hover}
-                    position relative
-                    z-index 1
-
-
-            if !$support-ie or !$support-ie8
-
-                &{$selector-round},
-                &{$selector-radius}
-                    > {$selector-button}
-
-                        &:not(:first-child):not(:last-child)
-                            border-radius 0
-
-                        &:first-child
-                            border-top-right-radius 0
-                            border-bottom-right-radius 0
-
-                        &:last-child
-                            border-top-left-radius 0
-                            border-bottom-left-radius 0
-
-            else
-
-                > {$selector-button}
-                    border-radius 0
-
-                side-radius = @(radius) {
-                    {$selector-first-child} {
-                        ui-set('border-top-left-radius', radius)
-                        ui-set('border-bottom-left-radius', radius)
-                    }
-                    {$selector-last-child} {
-                        ui-set('border-top-right-radius', radius)
-                        ui-set('border-bottom-right-radius', radius)
-                    }
-                }
-
-                ui-size-variant(
-                    each: @(size) {
-                        &{$selector-round} {
-                            > {$selector-button} {
-                                side-radius(size['round'])
-                            }
-                        }
-
-                        &{$selector-radius} {
-                            > {$selector-button} {
-                                side-radius(size['radius'])
-                            }
-                        }
-                    }
-                )
 
 

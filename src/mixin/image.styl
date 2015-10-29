@@ -9,6 +9,12 @@ image-reset()
         text-decoraton none
 
 
+image-size(size)
+
+    ui-set('width', size['width'])
+    ui-set('height', size['height'])
+
+
 ui-image()
 
     display inline-block
@@ -27,11 +33,23 @@ ui-image()
 
     ui-size-variant(
         size-hash: $image-size-hash,
-        each: @(size) {
-            ui-set('width', size['width'])
-            ui-set('height', size['height'])
+        each: image-size
+    )
+
+
+ui-images()
+
+    ui()
+
+    ui-collection(
+        selector-item: $selector-image,
+        each: @(size, name) {
+            > {$selector-image} {
+                image-size($image-size-hash[name])
+            }
         }
     )
+
 
 
 ui-image-link()
@@ -49,7 +67,6 @@ ui-image-link()
         if !$support-ie or !$support-ie8
             background-color rgba(0,0,0,0)
             ui-transition(background-color)
-
         else
             background-color #000
             ui-opacity(0)
@@ -57,7 +74,6 @@ ui-image-link()
 
     {$selector-hover}
         &:after
-
             if !$support-ie or !$support-ie8
                 background-color rgba(0,0,0,$image-link-hover-mask-opacity)
             else

@@ -43,7 +43,7 @@ ui-justified(selector-item)
 
     display table
 
-    {selector-item}
+    > {selector-item}
         display table-cell
         width 1%
 
@@ -51,19 +51,25 @@ ui-justified(selector-item)
 
 ui-collection(selector-item = '', each = null)
 
+    display block
     font-size 0
 
     ui-size-variant(
-        each: @(size) {
+        each: @(size, name) {
 
-            > {selector-item} + {selector-item} {
-                ui-set('margin-left', size['margin-horizontal'])
+            > {selector-item} {
+                + {selector-item} {
+                    ui-set('margin-left', size['margin-horizontal'])
+                    &{$selector-fluid} {
+                        margin-left 0
+                        ui-set('margin-top', size['margin-vertical'])
+                    }
+                }
             }
 
             ui-apply(
-                selector-child: selector-item,
                 style: @() {
-                    each(size)
+                    each(size, name)
                 }
             )
 
@@ -72,9 +78,12 @@ ui-collection(selector-item = '', each = null)
 
 ui-collection-tight(selector-item)
 
-    > {selector-item} + {selector-item}
-        margin-left 0
-
+    > {selector-item}
+        + {selector-item}
+            margin-left 0
+            &{$selector-fluid} {
+                margin-top 0
+            }
 
 ui-transition(property)
 
@@ -204,16 +213,18 @@ ui-brand-variant(
         each: @(color) {
 
             bg = null
+            border = color
 
             if (reversed) {
                 bg = color
                 color = #FFF
+                border = darken(bg, 20%)
             }
 
             each(
                 bg: bg,
                 color: color,
-                border: null
+                border: border
             )
 
         }
