@@ -3,6 +3,22 @@
  * @author musicode
  */
 
+link-reset()
+
+    a&
+        text-decoration none
+
+    div&,
+    button&
+        display inline
+
+    button&
+        background-color transparent
+        outline 0
+        border 0
+        padding 0
+
+
 link-size(size)
 
     ui-set('font-size', size['font'])
@@ -11,8 +27,7 @@ link-size(size)
 
 ui-link()
 
-    display inline
-    text-decoration none
+    link-reset()
 
     ui()
 
@@ -40,23 +55,13 @@ ui-links()
     ui()
 
     ui-collection(
+        selector-item: $selector-link,
         each: @(size) {
-
             > {$selector-link} {
                 link-size(size)
-
-                + {$selector-link} {
-                    ui-set('margin-left', size['margin-horizontal'])
-                }
             }
-
         }
     )
 
 
-
-ui-links-tight()
-
-    > {$selector-link} + {$selector-link}
-        margin-left 0
 

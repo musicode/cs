@@ -55,14 +55,26 @@ ui-collection(selector-item = '', each = null)
 
     ui-size-variant(
         each: @(size) {
+
+            > {selector-item} + {selector-item} {
+                ui-set('margin-left', size['margin-horizontal'])
+            }
+
             ui-apply(
                 selector-child: selector-item,
                 style: @() {
                     each(size)
                 }
             )
+
         }
     )
+
+ui-collection-tight(selector-item)
+
+    > {selector-item} + {selector-item}
+        margin-left 0
+
 
 ui-apply(style, selector = '')
 

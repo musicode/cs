@@ -6,7 +6,7 @@
 badge-reset()
 
     a&
-        ui-set('color', $text-color)
+        ui-set('color', $brand-text)
         text-decoration none
 
     button&
@@ -20,3 +20,43 @@ badge-size(size)
     ui-set('line-height', size['line-height'])
     ui-set('padding', size['padding-vertical'] size['padding-horizontal'])
     ui-set('border-radius', size['round'])
+
+
+
+ui-badge()
+
+    display inline-block
+    text-align center
+    white-space nowrap
+
+    badge-reset()
+
+    ui()
+
+    ui-brand-variant(
+        reversed: true,
+        each: @(bg, color) {
+            ui-style(
+                color: color,
+                bg: bg
+            )
+        }
+    )
+
+    ui-size-variant(
+        each: badge-size
+    )
+
+
+
+ui-badges()
+
+    ui-collection(
+        selector-item: $selector-badge,
+        each: @(size) {
+            > {$selector-badge} {
+                badge-size(size)
+            }
+        }
+    )
+

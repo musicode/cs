@@ -20,22 +20,38 @@
         display none
 
     body
-        ui-set('background-color', $bg-color)
-        ui-set('color', $text-color)
-        ui-set('font', $size-base['font'] unquote('/') $size-base['line-height'] $font-family-title)
+        ui-set('background-color', $brand-bg)
+        ui-set('color', $brand-text)
+        ui-set('font', $size-base['font'] unquote('/') $size-base['line-height'] $font-family-text)
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6
+        ui-set('font-family', $font-family-title)
+
+    code
+        ui-set('font-family', $font-family-code)
 
     ui-brand-variant(
         each: @(color) {
             ui-set('color', color)
         }
     )
+
     ui-size-variant(
         each: @(size) {
             ui-set('font-size', size['font'])
         }
     )
 
-    {$selector-fluid}
+    if $brand-border is a 'rgba'
+        {$selector-bordered}
+            border 1px solid $brand-border
 
+    {$selector-fluid}
         ui-fluid()
+
 

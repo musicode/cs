@@ -9,42 +9,12 @@
 +prefix-classes($ui-prefix)
 
     {$selector-badge}
-
-        display inline-block
-        text-align center
-        white-space nowrap
-
-        badge-reset()
-
-        ui()
-
-        ui-brand-variant(
-            reversed: true,
-            each: @(bg, color) {
-                ui-style(
-                    color: color,
-                    bg: bg
-                )
-            }
-        )
-
-        ui-size-variant(
-            each: badge-size
-        )
+        ui-badge()
 
     {$selector-badges}
+        ui-badges()
 
-        ui-collection(
-            each: @(size) {
-
-                > {$selector-badge} {
-                    badge-size(size)
-
-                    + {$selector-badge} {
-                        ui-set('margin-left', size['margin-horizontal'])
-                    }
-
-                }
-
-            }
-        )
+        &{$selector-tight}
+            ui-collection-tight(
+                $selector-badge
+            )

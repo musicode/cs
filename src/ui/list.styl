@@ -55,18 +55,12 @@
             }
         )
 
-        if $list-border is a 'rgba'
-
-            &{$selector-list-bordered}
-                border 1px solid $list-border
-
-
         > {$selector-list-item}
             display block
 
-            if $list-item-border is a 'rgba'
+            if $brand-divider is a 'rgba'
                 + {$selector-list-item}
-                    border-top 1px solid $list-item-border
+                    border-top 1px solid $brand-divider
 
             > {$selector-floated}
                 float right

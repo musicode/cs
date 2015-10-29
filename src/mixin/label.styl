@@ -6,11 +6,12 @@
 label-reset()
 
     a&
-        ui-set('color', $text-color)
+        ui-set('color', $brand-text)
         text-decoration none
 
     button&
         outline 0
+
 
 
 label-size(size)
@@ -24,6 +25,7 @@ label-size(size)
 label-brand(bg, border, color)
 
     ui-style(bg, bg, color)
+
 
 
 ui-label()
@@ -68,14 +70,11 @@ ui-label()
 ui-labels()
 
     ui-collection(
+        selector-item: $selector-label,
         each: @(size) {
 
             > {$selector-label} {
                 label-size(size)
-
-                + {$selector-label} {
-                    ui-set('margin-left', size['margin-horizontal'])
-                }
             }
 
             &{$selector-round} {
@@ -92,11 +91,4 @@ ui-labels()
 
         }
     )
-
-
-ui-labels-tight()
-
-    > {$selector-label} + {$selector-label}
-        margin-left 0
-
 

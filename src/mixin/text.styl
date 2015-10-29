@@ -42,22 +42,10 @@ ui-texts()
     ui()
 
     ui-collection(
+        selector-item: $selector-text,
         each: @(size) {
-
             > {$selector-text} {
                 text-size(size)
-
-                + {$selector-text} {
-                    ui-set('margin-left', size['margin-horizontal'])
-                }
             }
-
         }
     )
-
-
-ui-texts-tight()
-
-    > {$selector-text} + {$selector-text}
-        margin-left 0
-
