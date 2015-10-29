@@ -100,15 +100,12 @@ ui-buttons()
 
 ui-buttons-tight()
 
+    ui-collection-tight(
+        selector-item: $selector-button,
+        gap-item: -1px
+    )
+
     > {$selector-button}
-
-        + {$selector-button}
-            margin-left -1px
-            &{$selector-fluid} {
-                margin-left 0
-                margin-top -1px
-            }
-
         {$selector-hover}
             position relative
             z-index 1
@@ -154,7 +151,6 @@ ui-buttons-tight()
                         side-radius(size['round'])
                     }
                 }
-
                 &{$selector-radius} {
                     > {$selector-button} {
                         side-radius(size['radius'])

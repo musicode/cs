@@ -76,14 +76,16 @@ ui-collection(selector-item = '', each = null)
         }
     )
 
-ui-collection-tight(selector-item)
+ui-collection-tight(selector-item, gap-item = 0)
 
     > {selector-item}
         + {selector-item}
-            margin-left 0
-            &{$selector-fluid} {
-                margin-top 0
-            }
+            margin-left gap-item
+            &{$selector-fluid}
+                if gap-item > 0
+                    margin-top 0
+                margin-top gap-item
+
 
 ui-transition(property)
 
