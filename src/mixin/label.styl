@@ -25,4 +25,78 @@ label-brand(bg, border, color)
     ui-style(bg, bg, color)
 
 
+ui-label()
+
+    border 1px solid transparent
+    display inline-block
+    white-space nowrap
+
+    label-reset()
+
+    ui()
+
+    ui-brand-variant(
+        reversed: true,
+        each: label-brand
+    )
+
+    ui-size-variant(
+        each: @(size) {
+
+            label-size(size)
+
+            &{$selector-round} {
+                ui-set('border-radius', size['round'])
+            }
+
+            &{$selector-radius} {
+                ui-set('border-radius', size['radius'])
+            }
+
+        }
+    )
+
+    > {$selector-text}
+        font inherit
+
+    > {$selector-icon} + {$selector-text},
+    > {$selector-text} + {$selector-icon} {
+        ui-set('margin-left', $label-icon-gap)
+    }
+
+
+ui-labels()
+
+    ui-collection(
+        each: @(size) {
+
+            > {$selector-label} {
+                label-size(size)
+
+                + {$selector-label} {
+                    ui-set('margin-left', size['margin-horizontal'])
+                }
+            }
+
+            &{$selector-round} {
+                > {$selector-label} {
+                    ui-set('border-radius', size['round'])
+                }
+            }
+
+            &{$selector-radius} {
+                > {$selector-label} {
+                    ui-set('border-radius', size['radius'])
+                }
+            }
+
+        }
+    )
+
+
+ui-labels-tight()
+
+    > {$selector-label} + {$selector-label}
+        margin-left 0
+
 

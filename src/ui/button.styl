@@ -33,10 +33,10 @@
 
                 button-size(size)
 
-                {$selector-round} {
+                &{$selector-round} {
                     ui-set('border-radius', size['round'])
                 }
-                {$selector-radius} {
+                &{$selector-radius} {
                     ui-set('border-radius', size['radius'])
                 }
 
@@ -51,7 +51,7 @@
             ui-set('margin-left', $button-icon-gap)
         }
 
-        {$selector-fluid}
+        &{$selector-fluid}
             ui-fluid()
 
 
@@ -66,7 +66,7 @@
                     + {$selector-button} {
                         ui-set('margin-left', size['margin-horizontal'])
 
-                        {$selector-fluid} {
+                        &{$selector-fluid} {
                             margin-left 0
                             ui-set('margin-top', size['margin-vertical'])
                         }
@@ -89,12 +89,12 @@
             }
         )
 
-        {$selector-justified}
+        &{$selector-justified}
             ui-justified(
                 selector-item: '>' + $selector-button
             )
 
-        {$selector-tight}
+        &{$selector-tight}
             > {$selector-button}
 
                 + {$selector-button}
@@ -107,8 +107,8 @@
 
             if !$support-ie or !$support-ie8
 
-                {$selector-round},
-                {$selector-radius}
+                &{$selector-round},
+                &{$selector-radius}
                     > {$selector-button}
 
                         &:not(:first-child):not(:last-child)
@@ -140,13 +140,13 @@
 
                 ui-size-variant(
                     each: @(size) {
-                        {$selector-round} {
+                        &{$selector-round} {
                             > {$selector-button} {
                                 side-radius(size['round'])
                             }
                         }
 
-                        {$selector-radius} {
+                        &{$selector-radius} {
                             > {$selector-button} {
                                 side-radius(size['radius'])
                             }

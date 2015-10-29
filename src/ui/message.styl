@@ -26,17 +26,17 @@
             each: @(size) {
                 message-size(size)
 
-                {$selector-round} {
+                &{$selector-round} {
                     ui-set('border-radius', size['round'])
                 }
 
-                {$selector-radius} {
+                &{$selector-radius} {
                     ui-set('border-radius', size['radius'])
                 }
             }
         )
 
-        {$selector-fluid}
+        &{$selector-fluid}
             ui-fluid()
 
 
@@ -51,7 +51,7 @@
                     + {$selector-message} {
                         ui-set('margin-left', size['margin-horizontal'])
 
-                        {$selector-fluid} {
+                        &{$selector-fluid} {
                             margin-left 0
                             ui-set('margin-top', size['margin-vertical'])
                         }
@@ -59,13 +59,13 @@
 
                 }
 
-                {$selector-round} {
+                &{$selector-round} {
                     > {$selector-message} {
                         ui-set('border-radius', size['round'])
                     }
                 }
 
-                {$selector-radius} {
+                &{$selector-radius} {
                     > {$selector-message} {
                         ui-set('border-radius', size['radius'])
                     }

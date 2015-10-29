@@ -37,11 +37,11 @@
             each: tab-brand
         )
 
-        {$selector-tight}
+        &{$selector-tight}
             > {$selector-tab} + {$selector-tab}
                 margin-left 0
 
-        {$selector-justified}
+        &{$selector-justified}
             ui-justified(
                 selector-item: ' > ' + $selector-tab
             )
