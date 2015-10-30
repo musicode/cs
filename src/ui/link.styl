@@ -3,9 +3,6 @@
  * @author musicode
  */
 
-@import '../variable/link.styl'
-@import '../mixin/link.styl'
-
 +prefix-classes($ui-prefix)
 
     {$selector-link}
@@ -16,6 +13,6 @@
 
         &{$selector-tight}
             ui-collection-tight(
-                $selector-link
+                selector-item: $selector-link
             )
 

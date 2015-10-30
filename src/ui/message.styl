@@ -3,20 +3,14 @@
  * @author musicode
  */
 
-@import '../variable/message.styl'
-@import '../mixin/message.styl'
-
 +prefix-classes($ui-prefix)
 
     {$selector-message}
         ui-message()
 
-
     {$selector-messages}
         ui-messages()
 
         &{$selector-tight}
-            ui-collection-tight(
-                $selector-message
-            )
+            ui-messages-tight()
 

@@ -41,6 +41,11 @@ ui-button()
     if $support-mouse
         ui-set('cursor', $cursor-clickable)
 
+    ui-transition(color)
+
+    {$selector-hover}
+        ui-set('color', $brand-text-hover)
+
     ui()
 
     ui-brand-variant(
@@ -104,12 +109,6 @@ ui-buttons-tight()
         selector-item: $selector-button,
         gap-item: -1px
     )
-
-    > {$selector-button}
-        {$selector-hover}
-            position relative
-            z-index 1
-
 
     if !$support-ie or !$support-ie8
 

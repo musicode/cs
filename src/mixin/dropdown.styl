@@ -35,4 +35,128 @@ dropdown-size(size)
             ui-set('border-radius', size['radius'])
 
 
+ui-dropdown()
+
+    display inline-block
+    position relative
+
+    ui()
+
+    ui-size-variant(
+        each: dropdown-size
+    )
+
+    > {$selector-text},
+    > {$selector-button}
+        text-align left
+        ui-fluid()
+
+        > {$selector-icon}
+            float right
+
+
+    > {$selector-text}
+        > {$selector-icon}
+            user-select none
+            if $support-mouse
+                ui-set('cursor', $cursor-clickable)
+
+
+ui-dropdowns()
+
+    ui-collection(
+        selector-item: $selector-dropdown,
+        each: @(size) {
+            > {$selector-dropdown} {
+                dropdown-size(size)
+            }
+        }
+    )
+
+
+ui-dropdown-text()
+
+    ui-brand-variant(
+        each: @(color) {
+            > {$selector-icon} {
+                ui-set('color', color)
+            }
+        }
+    )
+
+
+ui-dropdown-button()
+
+    ui-brand-variant(
+        reversed: true,
+        each: @(color) {
+            > {$selector-icon} {
+                ui-set('color', color)
+            }
+        }
+    )
+
+
+ui-dropdown-menu()
+
+    display none
+    text-align left
+    overflow-x hidden
+    overflow-y auto
+
+    position absolute
+    left 0
+    right 0
+
+    ui()
+    ui-set('margin-top', $dropdown-menu-gap)
+    ui-set('background-color', $brand-bg)
+    ui-set('max-height', $dropdown-menu-max-height)
+    ui-set('z-index', $zindex-tiny)
+
+
+    if $brand-border is a 'rgba'
+        border 1px solid $brand-border
+
+
+ui-dropdown-menu-item()
+
+    if $support-mouse
+        ui-set('cursor', $cursor-clickable)
+
+    display block
+    user-select none
+
+    ui()
+
+    if $brand-divider is a 'rgba'
+        + {$selector-dropdown-menu-item}
+            border-top 1px solid $brand-divider
+
+    ui-transition(background-color)
+
+    {$selector-hover}
+        ui-set('background-color', $brand-bg-hover)
+
+    {$selector-active}
+        ui-set('background-color', $brand-bg-active)
+
+    {$selector-checked}
+        ui-set('background-color', $brand-bg-checked)
+
+
+
+ui-dropdown-opened-button()
+
+    ui-brand-variant(
+        reversed: true,
+        each: @(bg, border, color) {
+            ui-active(bg, border, color, '')
+        }
+    )
+
+
+ui-dropdown-opened-menu()
+
+    display block
 

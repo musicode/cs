@@ -3,81 +3,18 @@
  * @author musicode
  */
 
-@import '../variable/pagination.styl'
-@import '../mixin/pagination.styl'
-
 +prefix-classes($ui-prefix)
 
     {$selector-pagination}
+        ui-pagination()
 
-        ul&
-            list-unstyled()
-
-        color inherit
-
-        ui()
-
-        ui-collection(
-            each: @(size) {
-
-                > {$selector-pagination-item} {
-                    ui-set('font-size', size['font'])
-
-                    + {$selector-pagination-item} {
-                        ui-set('margin-left', size['margin-horizontal'])
-                    }
-
-                }
-
-                > {$selector-pagination-button} {
-                    ui-set('line-height', size['line-height'])
-                    ui-set('padding', size['padding-vertical'] size['padding-horizontal'])
-                }
-
-            }
-        )
-
-        ui-brand-variant(
-            reversed: true,
-            each: @(bg, border, color) {
-                > {$selector-pagination-button} {
-                    ui-hover(bg, border, color)
-                    ui-active(bg, border, color)
-                    ui-checked(bg, border, color)
-                }
-            }
-        )
-
-
-
+        &{$selector-tight}
+            ui-pagination-tight()
 
         > {$selector-pagination-item}
+            ui-pagination-item()
 
-            display inline-block
+        > {$selector-button}
+            ui-pagination-button()
 
-            ui()
-
-
-
-
-        > {$selector-pagination-button}
-
-            border 1px solid $pagination-button-border
-            user-select none
-
-            if $support-mouse
-                ui-set('cursor', $cursor-clickable)
-
-            ui()
-
-            ui-style(
-                color: $pagination-button-color,
-                bg: $pagination-button-bg
-            )
-
-            ui-disabled(
-                border: $pagination-button-border,
-                color: $pagination-button-color,
-                bg: $pagination-button-bg
-            )
 

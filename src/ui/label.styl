@@ -3,9 +3,6 @@
  * @author musicode
  */
 
-@import '../variable/label.styl'
-@import '../mixin/label.styl'
-
 +prefix-classes($ui-prefix)
 
     {$selector-label}
@@ -15,7 +12,5 @@
         ui-labels()
 
         &{$selector-tight}
-            ui-collection-tight(
-                $selector-label
-            )
+            ui-labels-tight()
 

@@ -3,147 +3,41 @@
  * @author musicode
  */
 
-@import '../variable/dropdown.styl'
-@import '../mixin/dropdown.styl'
-
 +prefix-classes($ui-prefix)
 
     {$selector-dropdown}
-
-        display inline-block
-        position relative
-
-        ui()
-
-        ui-size-variant(
-            each: dropdown-size
-        )
-
-
-        > {$selector-text},
-        > {$selector-button}
-
-            text-align left
-
-            ui-fluid()
-
-            > {$selector-icon}
-
-                float right
-                user-select none
-
-                ui()
-
-                if $support-mouse
-                    ui-set('cursor', $cursor-clickable)
-
-
-
+        ui-dropdown()
 
         > {$selector-text}
-
-            ui-brand-variant(
-                each: @(color) {
-                    > {$selector-icon} {
-                        ui-set('color', color)
-                    }
-                }
-            )
-
-
-
+            ui-dropdown-text()
 
         > {$selector-button}
-
-            ui-brand-variant(
-                reversed: true,
-                each: @(color) {
-                    > {$selector-icon} {
-                        ui-set('color', color)
-                    }
-                }
-            )
-
-
-
+            ui-dropdown-button()
 
         > {$selector-dropdown-menu}
-
-            display none
-            text-align left
-            overflow-x hidden
-            overflow-y auto
-
-            position absolute
-            left 0
-            right 0
-
-            ui()
-            ui-set('margin-top', $dropdown-menu-gap)
-            ui-set('background-color', $dropdown-menu-bg)
-            ui-set('max-height', $dropdown-menu-max-height)
-            ui-set('z-index', $zindex-tiny)
-
-
-            if $dropdown-menu-border is a 'rgba'
-                border 1px solid $dropdown-menu-border
-
-
-
+            ui-dropdown-menu()
 
             > {$selector-dropdown-menu-item}
-
-                display block
-                user-select none
-
-                ui()
-
-                if $support-mouse
-                    ui-set('cursor', $cursor-clickable)
-
-                {$selector-hover}
-                    ui-set('background-color', $dropdown-menu-item-bg-hover)
-
-                {$selector-active}
-                    ui-set('background-color', $dropdown-menu-item-bg-active)
-
-                {$selector-checked}
-                    ui-set('background-color', $dropdown-menu-item-bg-checked)
-
+                ui-dropdown-menu-item()
 
         > ul{$selector-dropdown-menu}
-            list-unstyled()
-
+            list-reset()
 
         &{$selector-opened}
 
             > {$selector-button}
-                ui-brand-variant(
-                    reversed: true,
-                    each: @(bg, border, color) {
-                        ui-active(bg, border, color, '')
-                    }
-                )
+                ui-dropdown-opened-button()
 
             > {$selector-dropdown-menu}
-                display block
+                ui-dropdown-opened-menu()
 
 
     {$selector-dropdowns}
+        ui-dropdowns()
 
-        ui-collection(
-            each: @(size) {
-
-
-                > {$selector-dropdown} {
-                    dropdown-size(size)
-
-                    + {$selector-dropdown} {
-                        ui-set('margin-left', size['margin-horizontal'])
-                    }
-
-                }
-
-            }
-        )
+        &{$selector-tight}
+            ui-collection-tight(
+                selector-item: $selector-dropdown,
+                gap-item: -1px
+            )
 

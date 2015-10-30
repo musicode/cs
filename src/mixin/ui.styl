@@ -86,6 +86,12 @@ ui-collection-tight(selector-item, gap-item = 0)
                     margin-top 0
                 margin-top gap-item
 
+    if $support-mouse and gap-item < 0
+        > {selector-item}
+            {$selector-hover}
+                position relative
+                z-index 1
+
 
 ui-transition(property)
 

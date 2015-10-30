@@ -3,9 +3,6 @@
  * @author musicode
  */
 
-@import '../variable/image.styl'
-@import '../mixin/image.styl'
-
 +prefix-classes($ui-prefix)
 
     {$selector-image}
@@ -26,5 +23,6 @@
 
         &{$selector-tight}
             ui-collection-tight(
-                $selector-image
+                selector-item: $selector-image
             )
+

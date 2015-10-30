@@ -3,9 +3,61 @@
  * @author musicode
  */
 
-
-list-unstyled()
+list-reset()
 
     list-style none
     padding 0
     margin 0
+
+
+ui-list()
+
+    ul&
+        list-reset()
+
+    color inherit
+    text-align left
+
+    ui()
+    ui-set('background-color', $brand-bg)
+
+    ui-size-variant(
+        each: @(size) {
+
+            > {$selector-list-item} {
+                ui-set('line-height', size['line-height'])
+                ui-set('padding', size['padding-vertical'] size['padding-horizontal'])
+            }
+
+            &{$selector-round} {
+                ui-set('border-radius', size['round'])
+            }
+
+            &{$selector-radius} {
+                ui-set('border-radius', size['radius'])
+            }
+
+        }
+    )
+
+    ui-brand-variant(
+        reversed: true,
+        each: @(bg, border, color) {
+            > {$selector-list-item} {
+                ui-checked(bg, border, color)
+            }
+        }
+    )
+
+
+ui-list-item()
+
+    display block
+
+    if $brand-divider is a 'rgba'
+        + {$selector-list-item}
+            border-top 1px solid $brand-divider
+
+    > {$selector-floated}
+        float right
+

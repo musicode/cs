@@ -3,8 +3,6 @@
  * @author musicode
  */
 
-@import '../variable/typography.styl'
-
 +prefix-classes($ui-prefix)
 
     html
@@ -34,6 +32,13 @@
 
     code
         ui-set('font-family', $font-family-code)
+
+    ul&{$selector-unstyled},
+    ul&{$selector-inline}
+        list-reset()
+
+    ul&{$selector-inline} > li
+        display inline-block
 
     ui-brand-variant(
         each: @(color) {

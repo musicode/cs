@@ -3,65 +3,11 @@
  * @author musicode
  */
 
-@import '../variable/list.styl'
-@import '../mixin/list.styl'
-
 +prefix-classes($ui-prefix)
 
-    ul.unstyled
-        list-unstyled()
-
-    ul{$selector-inline}
-        > li
-            display inline-block
-
     {$selector-list}
-
-        ul&
-            list-unstyled()
-
-        color inherit
-        text-align left
-
-        ui()
-        ui-set('background-color', $list-bg)
-
-        ui-size-variant(
-            each: @(size) {
-
-                > {$selector-list-item} {
-                    ui-set('font-size', size['font'])
-                    ui-set('line-height', size['line-height'])
-                    ui-set('padding', size['padding-vertical'] size['padding-horizontal'])
-                }
-
-                &{$selector-round} {
-                    ui-set('border-radius', size['round'])
-                }
-
-                &{$selector-radius} {
-                    ui-set('border-radius', size['radius'])
-                }
-
-            }
-        )
-
-        ui-brand-variant(
-            reversed: true,
-            each: @(bg, border, color) {
-                > {$selector-list-item} {
-                    ui-checked(bg, border, color)
-                }
-            }
-        )
+        ui-list()
 
         > {$selector-list-item}
-            display block
-
-            if $brand-divider is a 'rgba'
-                + {$selector-list-item}
-                    border-top 1px solid $brand-divider
-
-            > {$selector-floated}
-                float right
+            ui-list-item()
 
