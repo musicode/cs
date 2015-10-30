@@ -17,20 +17,11 @@ text-size(size)
     ui-set('font-size', size['font'])
 
 
-text-brand(color)
-
-    ui-set('color', color)
-
-
 ui-text()
 
     text-reset()
 
     ui()
-
-    ui-brand-variant(
-        each: text-brand
-    )
 
     ui-size-variant(
         each: text-size

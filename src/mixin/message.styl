@@ -10,6 +10,59 @@ message-size(size)
     ui-set('padding', size['padding-vertical'] size['padding-horizontal'])
 
 
-message-brand(bg, border, color)
+message-brand(color)
 
-    ui-style(bg, border, color)
+    ui-style(lighten(color, 80%), color, color)
+
+
+ui-message()
+
+    border 1px solid transparent
+    display inline-block
+    text-align left
+
+    ui()
+
+    ui-brand-variant(
+        each: message-brand
+    )
+
+    ui-size-variant(
+        each: @(size) {
+            message-size(size)
+
+            &{$selector-round} {
+                ui-set('border-radius', size['round'])
+            }
+
+            &{$selector-radius} {
+                ui-set('border-radius', size['radius'])
+            }
+        }
+    )
+
+
+ui-messages()
+
+    ui-collection(
+        selector-item: $selector-message,
+        each: @(size) {
+
+            > {$selector-message} {
+                message-size(size)
+            }
+
+            &{$selector-round} {
+                > {$selector-message} {
+                    ui-set('border-radius', size['round'])
+                }
+            }
+
+            &{$selector-radius} {
+                > {$selector-message} {
+                    ui-set('border-radius', size['radius'])
+                }
+            }
+
+        }
+    )

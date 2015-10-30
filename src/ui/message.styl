@@ -9,65 +9,14 @@
 +prefix-classes($ui-prefix)
 
     {$selector-message}
-
-        border 1px solid transparent
-        display inline-block
-        text-align left
-
-        ui()
-
-        ui-brand-variant(
-            level: 'lighter',
-            reversed: true,
-            each: message-brand
-        )
-
-        ui-size-variant(
-            each: @(size) {
-                message-size(size)
-
-                &{$selector-round} {
-                    ui-set('border-radius', size['round'])
-                }
-
-                &{$selector-radius} {
-                    ui-set('border-radius', size['radius'])
-                }
-            }
-        )
+        ui-message()
 
 
     {$selector-messages}
+        ui-messages()
 
-        ui-collection(
-            each: @(size) {
-
-                > {$selector-message} {
-                    message-size(size)
-
-                    + {$selector-message} {
-                        ui-set('margin-left', size['margin-horizontal'])
-
-                        &{$selector-fluid} {
-                            margin-left 0
-                            ui-set('margin-top', size['margin-vertical'])
-                        }
-                    }
-
-                }
-
-                &{$selector-round} {
-                    > {$selector-message} {
-                        ui-set('border-radius', size['round'])
-                    }
-                }
-
-                &{$selector-radius} {
-                    > {$selector-message} {
-                        ui-set('border-radius', size['radius'])
-                    }
-                }
-
-            }
-        )
+        &{$selector-tight}
+            ui-collection-tight(
+                $selector-message
+            )
 
