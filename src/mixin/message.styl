@@ -12,7 +12,9 @@ message-size(size)
 
 message-brand(color)
 
-    ui-style(lighten(color, 80%), color, color)
+    ui-set('background-color', lighten(color, 80%))
+    ui-set('border-color', color)
+    ui-set('color', color)
 
 
 ui-message()

@@ -28,17 +28,15 @@
             reversed: true,
             each: @(bg, border, color) {
 
-                ui-style(
-                    bg: bg,
-                    color: color,
-                    border: border
-                )
+                ui-set('background-color', bg)
+                ui-set('border-color', border)
+                ui-set('color', color)
 
                 &:before {
-                    ui-style(border: border)
+                    ui-set('border-color', border)
                 }
                 &:after {
-                    ui-style(border: bg)
+                    ui-set('border-color', bg)
                 }
 
             }

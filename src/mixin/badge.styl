@@ -22,6 +22,11 @@ badge-size(size)
     ui-set('border-radius', size['round'])
 
 
+badge-brand(bg, border, color)
+
+    ui-set('background-color', bg)
+    ui-set('color', color)
+
 
 ui-badge()
 
@@ -35,12 +40,7 @@ ui-badge()
 
     ui-brand-variant(
         reversed: true,
-        each: @(bg, color) {
-            ui-style(
-                color: color,
-                bg: bg
-            )
-        }
+        each: badge-brand
     )
 
     ui-size-variant(

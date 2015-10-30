@@ -229,7 +229,9 @@ form-input()
             {selector-wrapper} {
                 > {$selector-label},
                 > {$selector-button} {
-                    ui-style(bg, border, color)
+                    ui-set('background-color', bg)
+                    ui-set('border-color', bg)
+                    ui-set('color', color)
                 }
             }
 

@@ -22,7 +22,10 @@ button-size(size)
 
 button-brand(bg, border, color)
 
-    ui-style(bg, border, color)
+    ui-set('background-color', bg)
+    ui-set('border-color', border)
+    ui-set('color', color)
+
     ui-hover(bg, border, color)
     ui-active(bg, border, color)
     ui-disabled(bg, border, color)

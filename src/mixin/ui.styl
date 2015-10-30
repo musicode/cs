@@ -76,6 +76,7 @@ ui-collection(selector-item = '', each = null)
         }
     )
 
+
 ui-collection-tight(selector-item, gap-item = 0)
 
     > {selector-item}
@@ -106,19 +107,6 @@ ui-apply(style, selector = '')
             style()
     else
         style()
-
-
-
-ui-style(bg = null, border = null, color = null)
-
-    if bg is a 'rgba'
-        background-color bg
-
-    if border is a 'rgba'
-        border-color border
-
-    if color is a 'rgba'
-        color color
 
 
 ui-status(
