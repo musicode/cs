@@ -9,57 +9,18 @@
 +prefix-classes($ui-prefix)
 
     {$selector-tabs}
-
-        display block
-        user-select none
-
-        ui()
-
-        ui-collection(
-            each: @(size) {
-
-                > {$selector-tab} {
-
-                    tab-size(size)
-
-                    + {$selector-tab} {
-                        ui-set('margin-left', size['margin-horizontal'])
-                    }
-
-                }
-
-            }
-        )
-
-        ui-brand-variant(
-            reversed: true,
-            each: @(bg, border, color) {
-                > {$selector-tab} {
-                    tab-brand(bg, border, color)
-                }
-            }
-        )
+        ui-tabs()
 
         &{$selector-tight}
-            > {$selector-tab} + {$selector-tab}
-                margin-left 0
+            ui-collection-tight(
+                selector-item: $selector-tab
+            )
 
         &{$selector-justified}
             ui-justified(
                 selector-item: $selector-tab
             )
 
-
-
         > {$selector-tab}
-
-            display inline-block
-            position relative
-            text-align center
-            white-space nowrap
-
-            ui()
-
-            if $support-mouse
-                ui-set('cursor', $cursor-clickable)
+            ui-tab()
 

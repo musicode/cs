@@ -17,10 +17,10 @@ ui-set(name, value, important = false)
     }
 
     if value is a 'unit'
-        if name == 'opacity' || value > 0
+        if name == 'opacity' or value > 0
             apply()
 
-    else if value != 'ident' && value != 'null'
+    else if value is not a 'null'
         apply()
 
 

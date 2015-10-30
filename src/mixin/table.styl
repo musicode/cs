@@ -2,3 +2,61 @@
  * @file Table
  * @author musicode
  */
+
+ui-table()
+
+    color inherit
+    width 100%
+
+    ui()
+
+    > thead
+        background-color $table-head-bg
+
+        > tr > th
+            font-weight normal
+            text-align $table-head-align
+            padding $table-head-cell-padding-vertical $table-head-cell-padding-horizontal
+
+    > tbody
+        background-color $brand-bg
+
+        > tr > td
+            text-align $table-body-align
+            padding $table-body-cell-padding-vertical $table-body-cell-padding-horizontal
+
+
+ui-table-striped()
+
+    > tbody > tr:nth-child(even)
+        background-color $table-body-even-row-bg
+
+
+ui-table-row-bordered()
+
+    > thead > tr
+        border-bottom: 1px solid $brand-border;
+
+    > tbody > tr + tr
+        border-top: 1px solid $brand-divider
+
+
+ui-table-col-bordered()
+
+    > thead > th + th
+        border-left 1px solid $brand-border
+
+    > tbody > td + td
+        border-left 1px solid $brand-divider
+
+
+ui-table-cell-bordered()
+
+    > thead > th
+        border 1px solid $brand-border
+
+    > tbody > td
+        border 1px solid $brand-divider
+
+
+

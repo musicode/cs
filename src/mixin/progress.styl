@@ -2,3 +2,60 @@
  * @file Progress
  * @author musicode
  */
+
+ui-progress()
+
+    overflow hidden
+
+    if $progress-border is a 'rgba'
+        border 1px solid $progress-border
+
+    ui-set('background-color', $progress-bg)
+    ui()
+
+    ui-brand-variant(
+        reversed: true,
+        each: @(bg) {
+            > {$selector-progress-meter} {
+                ui-set('background-color', bg)
+            }
+        }
+    )
+
+    progress-radius = @(radius) {
+        ui-set('border-radius', radius)
+
+        > {$selector-progress-meter} {
+            ui-set('border-radius', radius - 1)
+        }
+    }
+
+    ui-size-variant(
+        each: @(size) {
+
+            > {$selector-progress-meter} {
+                ui-set('font-size', size['font'])
+                ui-set('line-height', size['line-height'])
+                ui-set('padding', size['padding-vertical'] size['padding-horizontal'])
+            }
+
+            &{$selector-round} {
+                progress-radius(size['round'])
+            }
+
+            &{$selector-radius} {
+                progress-radius(size['radius'])
+            }
+
+        }
+    )
+
+
+
+ui-progress-meter()
+
+    display block
+    text-align right
+
+    ui()
+
