@@ -168,16 +168,7 @@ ui-checked(bg = null, border = null, color = null, selector = $selector-checked)
 
 ui-disabled(bg = null, border = null, color = null, selector = $selector-disabled)
 
-    ui-status(bg, -35%, border, -30%, color, -60%, selector, true, @() {
-
-        &,
-        & > i {
-            ui-set('cursor', $cursor-disabled)
-        }
-
-    })
-
-
+    ui-status(bg, -35%, border, -30%, color, -60%, selector, true)
 
 
 
@@ -225,7 +216,6 @@ ui-brand-variant(
 
         }
     )
-
 
 
 

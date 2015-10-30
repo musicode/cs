@@ -40,6 +40,13 @@
     ul&{$selector-inline} > li
         display inline-block
 
+    if $support-mouse
+        {$selector-disabled}
+            &,
+            & > {$selector-icon} {
+                ui-set('cursor', $cursor-disabled, true)
+            }
+
     ui-brand-variant(
         each: @(color) {
             ui-set('color', color)
