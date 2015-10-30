@@ -20,8 +20,13 @@
             > {$selector-dropdown-menu-item}
                 ui-dropdown-menu-item()
 
+            > a{$selector-dropdown-menu-item}
+                text-decoration none
+                ui-set('color', $brand-text)
+
         > ul{$selector-dropdown-menu}
             list-reset()
+            ui-set('margin-top', $dropdown-menu-gap)
 
         &{$selector-opened}
 

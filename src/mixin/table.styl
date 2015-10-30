@@ -18,7 +18,8 @@ ui-table()
             text-align $table-head-align
             padding $table-head-cell-padding-vertical $table-head-cell-padding-horizontal
 
-    > tbody
+    > tbody,
+    > tfoot
         background-color $brand-bg
 
         > tr > td
@@ -37,8 +38,10 @@ ui-table-row-bordered()
     > thead > tr
         border-bottom: 1px solid $brand-border;
 
-    > tbody > tr + tr
-        border-top: 1px solid $brand-divider
+    > tbody,
+    > tfoot
+        > tr + tr
+            border-top: 1px solid $brand-divider
 
 
 ui-table-col-bordered()
@@ -46,8 +49,10 @@ ui-table-col-bordered()
     > thead > tr > th + th
         border-left 1px solid $brand-border
 
-    > tbody > tr > td + td
-        border-left 1px solid $brand-divider
+    > tbody,
+    > tfoot
+        > tr > td + td
+            border-left 1px solid $brand-divider
 
 
 ui-table-cell-bordered()
@@ -55,8 +60,10 @@ ui-table-cell-bordered()
     > thead > tr > th
         border 1px solid $brand-border
 
-    > tbody > tr > td
-        border 1px solid $brand-divider
+    > tbody,
+    > tfoot
+        > tr > td
+            border 1px solid $brand-divider
 
 
 
