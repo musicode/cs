@@ -44,9 +44,9 @@ ui-button()
     if $support-mouse
         ui-set('cursor', $cursor-clickable)
 
-    ui-transition(color)
 
     {$selector-hover}
+        ui-transition(color)
         ui-set('color', $brand-text-hover)
 
     ui()

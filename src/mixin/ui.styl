@@ -197,14 +197,14 @@ ui-brand-variant(
 
     ui-variant(
         hash: brand-hash,
-        each: @(color) {
+        each: @(color, name) {
 
             bg = null
             border = color
 
             if (reversed) {
                 bg = color
-                color = #FFF
+                color = $brand-reversed-hash[name]
                 border = darken(bg, 20%)
             }
 

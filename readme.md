@@ -117,9 +117,6 @@
 7. danger 危险色
 8. muted 灰色
 
-其中每种颜色又分为 5 种，从浅到深依次为 `xx-lighter` `xx-light` `xx` `xx-dark` `xx-darker`
-
-
 
 结合尺寸来看两个例子：
 

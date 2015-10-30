@@ -38,12 +38,13 @@ ui-link()
         ui-set('cursor', $cursor-clickable)
 
         {$selector-hover}
-            ui-hover(
-                color: $brand-link,
-                selector: ''
-            )
+            ui-transition(color)
+            ui-set('color', $brand-link-hover)
             text-decoration underline
 
+        {$selector-disabled}
+            ui-set('color', $brand-link-disabled, true)
+            text-decoration none
 
 
 ui-links()
