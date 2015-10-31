@@ -43,7 +43,7 @@ ui-button()
 
     if $support-mouse
         ui-set('cursor', $cursor-clickable)
-
+        ui-disabled-cursor()
 
     {$selector-hover}
         ui-transition(color)
@@ -90,13 +90,13 @@ ui-buttons()
                 button-size(size)
             }
 
-            {$selector-round} {
+            &{$selector-round} {
                 > {$selector-button} {
                     ui-set('border-radius', size['round'])
                 }
             }
 
-            {$selector-radius} {
+            &{$selector-radius} {
                 > {$selector-button} {
                     ui-set('border-radius', size['radius'])
                 }

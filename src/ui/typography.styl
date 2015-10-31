@@ -37,15 +37,24 @@
     ul&{$selector-inline}
         list-reset()
 
-    ul&{$selector-inline} > li
-        display inline-block
-
-    if $support-mouse
-        {$selector-disabled}
-            &,
-            & > {$selector-icon} {
-                ui-set('cursor', $cursor-disabled, true)
+    ul&{$selector-inline}
+        ui-collection(
+            selector-item: 'li'
+        )
+        &{$selector-tight}
+            ui-collection-tight(
+                selector-item: 'li'
+            )
+        ui-size-variant(
+            each: @(size) {
+                > li {
+                    ui-set('font-size', size['font'])
+                }
             }
+        )
+        > li
+            ui-set('font-size', $size-base['font'])
+            display inline-block
 
     ui-brand-variant(
         each: @(color) {

@@ -1,11 +1,17 @@
 @import '../src/css.styl'
 
 body
-    background-color #fff
-    padding 20px
+    background-color #F2F0EA
+    padding 20px 40px
+
+.row
+
+    background-color #FFF
+    padding 10px
+    box-shadow 1px 1px 3px rgba(0,0,0,0.2)
 
 .row + .row
-    margin-top 10px
+    margin-top 20px
 
 code
     border 1px solid #e0e0e0
@@ -14,3 +20,40 @@ code
     display inline-block
     line-height 1
     padding 2px 6px
+
+blockquote
+    border-left 4px solid $brand-primary
+    background-color #FFF
+    padding 5px 20px
+    box-shadow 1px 1px 3px rgba(0,0,0,0.2)
+
+
+#sidebar,
+#main
+    position fixed
+    top 0
+    bottom 0
+
+#sidebar
+    background-color #F7F8F2
+    left 0
+    width 130px
+
+    h1
+        text-align center
+
+#main
+
+    left 130px
+    right 0
+
+    > iframe
+        width 100%
+        height 100%
+
+h2,
+h3,
+h4,
+h5
+    border-left 4px solid $brand-primary
+    padding 0 10px

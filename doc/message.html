@@ -2,9 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
-    <meta name="format-detection" content="telephone=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>消息</title>
     <link rel="stylesheet" href="doc.styl">
 </head>
@@ -13,7 +11,7 @@
 
     <h1>消息</h1>
 
-    <h2>保持标签原有的字体样式，增强组合性</h2>
+    <h2>保持标签原有的样式</h2>
     <div class="row">
         <a href="#" class="message primary">&lt;a&gt;</a>
         <b class="message primary">&lt;b&gt;</b>
@@ -42,7 +40,7 @@
     <div class="row">
         <div class="message primary tiny">tiny</div>
         <div class="message primary small">small</div>
-        <div class="message primary">base</div>
+        <div class="message primary">default</div>
         <div class="message primary large">large</div>
         <div class="message primary huge">huge</div>
     </div>
@@ -51,7 +49,7 @@
     <div class="row">
         <div class="message primary round tiny">tiny</div>
         <div class="message primary round small">small</div>
-        <div class="message primary round">base</div>
+        <div class="message primary round">default</div>
         <div class="message primary round large">large</div>
         <div class="message primary round huge">huge</div>
     </div>
@@ -60,112 +58,196 @@
     <div class="row">
         <div class="message primary radius tiny">tiny</div>
         <div class="message primary radius small">small</div>
-        <div class="message primary radius">base</div>
+        <div class="message primary radius">default</div>
         <div class="message primary radius large">large</div>
         <div class="message primary radius huge">huge</div>
     </div>
 
-    <h2>水平消息组</h2>
+    <h2>消息分组</h2>
+    <h3>水平</h3>
+    <h4>有间距</h4>
     <div class="row">
         <div class="messages tiny">
-            <div class="message primary radius">message1</div>
-            <div class="message success radius">message2</div>
-            <div class="message info radius">message3</div>
+            <div class="message primary">message1</div>
+            <div class="message success">message2</div>
+            <div class="message danger">message3</div>
         </div>
     </div>
     <div class="row">
-        <div class="messages small">
-            <div class="message primary round">message1</div>
-            <div class="message success round">message2</div>
-            <div class="message info round">message3</div>
+        <div class="messages small radius">
+            <div class="message primary">message1</div>
+            <div class="message success">message2</div>
+            <div class="message danger">message3</div>
         </div>
     </div>
     <div class="row">
         <div class="messages">
             <div class="message primary">message1</div>
             <div class="message success">message2</div>
-            <div class="message info">message3</div>
+            <div class="message danger">message3</div>
         </div>
     </div>
     <div class="row">
-        <div class="messages large">
-            <div class="message primary round">message1</div>
-            <div class="message success round">message2</div>
-            <div class="message info round">message3</div>
+        <div class="messages large round">
+            <div class="message primary">message1</div>
+            <div class="message success">message2</div>
+            <div class="message danger">message3</div>
         </div>
     </div>
     <div class="row">
         <div class="messages huge">
-            <div class="message primary radius">message1</div>
-            <div class="message success radius">message2</div>
-            <div class="message info radius">message3</div>
+            <div class="message primary">message1</div>
+            <div class="message success">message2</div>
+            <div class="message danger">message3</div>
+        </div>
+    </div>
+    <h4>无间距</h4>
+    <div class="row">
+        <div class="messages tight tiny">
+            <div class="message primary">message1</div>
+            <div class="message success">message2</div>
+            <div class="message danger">message3</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="messages tight small radius">
+            <div class="message primary">message1</div>
+            <div class="message success">message2</div>
+            <div class="message danger">message3</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="messages tight">
+            <div class="message primary">message1</div>
+            <div class="message success">message2</div>
+            <div class="message danger">message3</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="messages tight large round">
+            <div class="message primary">message1</div>
+            <div class="message success">message2</div>
+            <div class="message danger">message3</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="messages tight huge">
+            <div class="message primary">message1</div>
+            <div class="message success">message2</div>
+            <div class="message danger">message3</div>
         </div>
     </div>
 
-    <h2>垂直消息组</h2>
+
+    <h3>垂直</h3>
+    <h4>有间距</h4>
     <div class="row">
         <div class="messages tiny">
-            <div class="message fluid primary radius">message1</div>
-            <div class="message fluid success radius">message2</div>
-            <div class="message fluid info radius">message3</div>
+            <div class="message fluid primary">message1</div>
+            <div class="message fluid success">message2</div>
+            <div class="message fluid danger">message3</div>
         </div>
     </div>
     <div class="row">
         <div class="messages small">
-            <div class="message fluid primary round">message1</div>
-            <div class="message fluid success round">message2</div>
-            <div class="message fluid info round">message3</div>
+            <div class="message fluid radius primary">message1</div>
+            <div class="message fluid radius success">message2</div>
+            <div class="message fluid radius danger">message3</div>
         </div>
     </div>
     <div class="row">
         <div class="messages">
             <div class="message fluid primary">message1</div>
             <div class="message fluid success">message2</div>
-            <div class="message fluid info">message3</div>
+            <div class="message fluid danger">message3</div>
         </div>
     </div>
     <div class="row">
         <div class="messages large">
-            <div class="message fluid primary round">message1</div>
-            <div class="message fluid success round">message2</div>
-            <div class="message fluid info round">message3</div>
+            <div class="message fluid round primary">message1</div>
+            <div class="message fluid round success">message2</div>
+            <div class="message fluid round danger">message3</div>
         </div>
     </div>
     <div class="row">
         <div class="messages huge">
-            <div class="message fluid primary radius">message1</div>
-            <div class="message fluid success radius">message2</div>
-            <div class="message fluid info radius">message3</div>
+            <div class="message fluid primary">message1</div>
+            <div class="message fluid success">message2</div>
+            <div class="message fluid danger">message3</div>
+        </div>
+    </div>
+    <h4>无间距</h4>
+    <div class="row">
+        <div class="messages tight tiny">
+            <div class="message fluid primary">message1</div>
+            <div class="message fluid success">message2</div>
+            <div class="message fluid danger">message3</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="messages tight small">
+            <div class="message fluid radius primary">message1</div>
+            <div class="message fluid radius success">message2</div>
+            <div class="message fluid radius danger">message3</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="messages tight">
+            <div class="message fluid primary">message1</div>
+            <div class="message fluid success">message2</div>
+            <div class="message fluid danger">message3</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="messages tight large">
+            <div class="message fluid round primary">message1</div>
+            <div class="message fluid round success">message2</div>
+            <div class="message fluid round danger">message3</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="messages tight huge">
+            <div class="message fluid primary">message1</div>
+            <div class="message fluid success">message2</div>
+            <div class="message fluid danger">message3</div>
         </div>
     </div>
 
-    <h2>紧致消息组</h2>
+
+    <h2>水平均分</h2>
     <div class="row">
-        <div class="messages tight">
+        <div class="messages justified tiny">
             <div class="message primary">message1</div>
             <div class="message success">message2</div>
-            <div class="message info">message3</div>
+            <div class="message danger">message3</div>
         </div>
     </div>
     <div class="row">
-        <div class="messages tight radius">
+        <div class="messages justified small">
             <div class="message primary">message1</div>
             <div class="message success">message2</div>
-            <div class="message info">message3</div>
+            <div class="message danger">message3</div>
         </div>
     </div>
     <div class="row">
-        <div class="messages tight round">
+        <div class="messages justified">
             <div class="message primary">message1</div>
             <div class="message success">message2</div>
-            <div class="message info">message3</div>
+            <div class="message danger">message3</div>
         </div>
     </div>
     <div class="row">
-        <div class="messages tight">
-            <div class="message fluid round primary">message1</div>
-            <div class="message fluid round success">message2</div>
-            <div class="message fluid round info">message3</div>
+        <div class="messages justified large">
+            <div class="message primary">message1</div>
+            <div class="message success">message2</div>
+            <div class="message danger">message3</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="messages justified huge">
+            <div class="message primary">message1</div>
+            <div class="message success">message2</div>
+            <div class="message danger">message3</div>
         </div>
     </div>
 </body>

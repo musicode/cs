@@ -2,9 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
-    <meta name="format-detection" content="telephone=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>按钮</title>
     <link rel="stylesheet" href="doc.styl">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
@@ -14,7 +12,7 @@
 
     <h1>按钮</h1>
 
-    <h2>保持标签原有的字体样式，增强组合性</h2>
+    <h2>保持标签原有的样式</h2>
     <div class="row">
         <a href="#" class="button primary">&lt;a&gt;</a>
         <b class="button primary">&lt;b&gt;</b>
@@ -44,7 +42,7 @@
     <div class="row">
         <div class="button primary tiny">tiny</div>
         <div class="button primary small">small</div>
-        <div class="button primary">base</div>
+        <div class="button primary">default</div>
         <div class="button primary large">large</div>
         <div class="button primary huge">huge</div>
     </div>
@@ -53,7 +51,7 @@
     <div class="row">
         <div class="button primary round tiny">tiny</div>
         <div class="button primary round small">small</div>
-        <div class="button primary round">base</div>
+        <div class="button primary round">default</div>
         <div class="button primary round large">large</div>
         <div class="button primary round huge">huge</div>
     </div>
@@ -62,7 +60,7 @@
     <div class="row">
         <div class="button primary radius tiny">tiny</div>
         <div class="button primary radius small">small</div>
-        <div class="button primary radius">base</div>
+        <div class="button primary radius">default</div>
         <div class="button primary radius large">large</div>
         <div class="button primary radius huge">huge</div>
     </div>
@@ -126,67 +124,42 @@
     <h2>图标按钮</h2>
     <div class="row">
         <div class="button primary tiny">
-            <i class="fa fa-info"></i>
-            <span class="text">text</span>
+            <i class="fa fa-info"></i><span class="text">text</span>
         </div>
         <div class="button primary small">
-            <i class="fa fa-info"></i>
-            <span class="text">text</span>
+            <i class="fa fa-info"></i><span class="text">text</span>
         </div>
         <div class="button primary">
-            <i class="fa fa-info"></i>
-            <span class="text">text</span>
+            <i class="fa fa-info"></i><span class="text">text</span>
         </div>
         <div class="button primary large">
-            <i class="fa fa-info"></i>
-            <span class="text">text</span>
+            <i class="fa fa-info"></i><span class="text">text</span>
         </div>
         <div class="button primary huge">
-            <i class="fa fa-info"></i>
-            <span class="text">text</span>
+            <i class="fa fa-info"></i><span class="text">text</span>
         </div>
     </div>
     <div class="row">
         <div class="button primary tiny">
-            <span class="text">text</span>
-            <i class="fa fa-info"></i>
+            <span class="text">text</span><i class="fa fa-info"></i>
         </div>
         <div class="button primary small">
-            <span class="text">text</span>
-            <i class="fa fa-info"></i>
+            <span class="text">text</span><i class="fa fa-info"></i>
         </div>
         <div class="button primary">
-            <span class="text">text</span>
-            <i class="fa fa-info"></i>
+            <span class="text">text</span><i class="fa fa-info"></i>
         </div>
         <div class="button primary large">
-            <span class="text">text</span>
-            <i class="fa fa-info"></i>
+            <span class="text">text</span><i class="fa fa-info"></i>
         </div>
         <div class="button primary huge">
-            <span class="text">text</span>
-            <i class="fa fa-info"></i>
+            <span class="text">text</span><i class="fa fa-info"></i>
         </div>
     </div>
 
-    <h2>流式</h2>
-    <div class="row">
-        <div class="button primary fluid tiny">fluid</div>
-    </div>
-    <div class="row">
-        <div class="button primary fluid small">fluid</div>
-    </div>
-    <div class="row">
-        <div class="button primary fluid">fluid</div>
-    </div>
-    <div class="row">
-        <div class="button primary fluid large">fluid</div>
-    </div>
-    <div class="row">
-        <div class="button primary fluid huge">fluid</div>
-    </div>
-
-    <h2>水平按钮组</h2>
+    <h2>按钮分组</h2>
+    <h3>水平</h3>
+    <h4>有间距</h4>
     <div class="row">
         <div class="buttons tiny">
             <div class="button primary">button1</div>
@@ -195,7 +168,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="buttons small">
+        <div class="buttons small radius">
             <div class="button primary">button1</div>
             <div class="button success">button2</div>
             <div class="button danger">button3</div>
@@ -209,7 +182,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="buttons large">
+        <div class="buttons large round">
             <div class="button primary">button1</div>
             <div class="button success">button2</div>
             <div class="button danger">button3</div>
@@ -222,8 +195,46 @@
             <div class="button danger">button3</div>
         </div>
     </div>
+    <h4>无间距</h4>
+    <div class="row">
+        <div class="buttons tight tiny">
+            <div class="button primary">button1</div>
+            <div class="button success">button2</div>
+            <div class="button danger">button3</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="buttons tight small radius">
+            <div class="button primary">button1</div>
+            <div class="button success">button2</div>
+            <div class="button danger">button3</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="buttons tight">
+            <div class="button primary">button1</div>
+            <div class="button success">button2</div>
+            <div class="button danger">button3</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="buttons tight large round">
+            <div class="button primary">button1</div>
+            <div class="button success">button2</div>
+            <div class="button danger">button3</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="buttons tight huge">
+            <div class="button primary">button1</div>
+            <div class="button success">button2</div>
+            <div class="button danger">button3</div>
+        </div>
+    </div>
 
-    <h2>垂直按钮组</h2>
+
+    <h3>垂直</h3>
+    <h4>有间距</h4>
     <div class="row">
         <div class="buttons tiny">
             <div class="button fluid primary">button1</div>
@@ -231,31 +242,49 @@
             <div class="button fluid danger">button3</div>
         </div>
     </div>
-
-    <h2>紧致按钮</h2>
     <div class="row">
-        <div class="buttons tight">
-            <div class="button primary">button1</div>
-            <div class="button success">button2</div>
-            <div class="button danger">button3</div>
+        <div class="buttons small">
+            <div class="button fluid radius primary">button1</div>
+            <div class="button fluid radius success">button2</div>
+            <div class="button fluid radius danger">button3</div>
         </div>
     </div>
     <div class="row">
-        <div class="buttons tight radius">
-            <div class="button primary">button1</div>
-            <div class="button success">button2</div>
-            <div class="button danger">button3</div>
+        <div class="buttons">
+            <div class="button fluid primary">button1</div>
+            <div class="button fluid success">button2</div>
+            <div class="button fluid danger">button3</div>
         </div>
     </div>
     <div class="row">
-        <div class="buttons tight round">
-            <div class="button primary">button1</div>
-            <div class="button success">button2</div>
-            <div class="button danger">button3</div>
+        <div class="buttons large">
+            <div class="button fluid round primary">button1</div>
+            <div class="button fluid round success">button2</div>
+            <div class="button fluid round danger">button3</div>
         </div>
     </div>
-
-    <h2>紧致按钮</h2>
+    <div class="row">
+        <div class="buttons huge">
+            <div class="button fluid primary">button1</div>
+            <div class="button fluid success">button2</div>
+            <div class="button fluid danger">button3</div>
+        </div>
+    </div>
+    <h4>无间距</h4>
+    <div class="row">
+        <div class="buttons tight tiny">
+            <div class="button fluid primary">button1</div>
+            <div class="button fluid success">button2</div>
+            <div class="button fluid danger">button3</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="buttons tight small">
+            <div class="button fluid radius primary">button1</div>
+            <div class="button fluid radius success">button2</div>
+            <div class="button fluid radius danger">button3</div>
+        </div>
+    </div>
     <div class="row">
         <div class="buttons tight">
             <div class="button fluid primary">button1</div>
@@ -264,14 +293,14 @@
         </div>
     </div>
     <div class="row">
-        <div class="buttons tight radius">
-            <div class="button fluid primary">button1</div>
-            <div class="button fluid success">button2</div>
-            <div class="button fluid danger">button3</div>
+        <div class="buttons tight large">
+            <div class="button fluid round primary">button1</div>
+            <div class="button fluid round success">button2</div>
+            <div class="button fluid round danger">button3</div>
         </div>
     </div>
     <div class="row">
-        <div class="buttons tight round">
+        <div class="buttons tight huge">
             <div class="button fluid primary">button1</div>
             <div class="button fluid success">button2</div>
             <div class="button fluid danger">button3</div>
@@ -281,7 +310,35 @@
 
     <h2>水平均分</h2>
     <div class="row">
+        <div class="buttons justified tiny">
+            <div class="button primary">button1</div>
+            <div class="button success">button2</div>
+            <div class="button danger">button3</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="buttons justified small">
+            <div class="button primary">button1</div>
+            <div class="button success">button2</div>
+            <div class="button danger">button3</div>
+        </div>
+    </div>
+    <div class="row">
         <div class="buttons justified">
+            <div class="button primary">button1</div>
+            <div class="button success">button2</div>
+            <div class="button danger">button3</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="buttons justified large">
+            <div class="button primary">button1</div>
+            <div class="button success">button2</div>
+            <div class="button danger">button3</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="buttons justified huge">
             <div class="button primary">button1</div>
             <div class="button success">button2</div>
             <div class="button danger">button3</div>

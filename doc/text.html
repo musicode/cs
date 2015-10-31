@@ -2,9 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
-    <meta name="format-detection" content="telephone=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>文本</title>
     <link rel="stylesheet" href="doc.styl">
 </head>
@@ -13,7 +11,16 @@
 
     <h1>文本</h1>
 
-    <h2>保持标签原有的字体样式，增强组合性</h2>
+    <blockquote>
+        <p>
+            为了实现分组，需要把容器元素的 <code>font-size</code> 设置为 0，但这样会因为继承使得子元素的 <code>font-size</code> 也为 0，我们可通过<strong>文本</strong>来恢复 <code>font-size</code>
+        </p>
+        <p>
+            除此之外，在 button 和 label 中，当出现文本和图标混排的情况，也需要一个 class 来标识<strong>文本</strong>，便于统一设置样式，比如 icon-text 的间距
+        </p>
+    </blockquote>
+
+    <h2>保持标签原有的样式</h2>
     <div class="row">
         <a href="#" class="text">&lt;a&gt;</a>
         <b class="text">&lt;b&gt;</b>
@@ -28,50 +35,131 @@
 
     <h2>8 种类型</h2>
     <div class="row">
-        <a href="#" class="text primary">primary</a>
-        <a href="#" class="text secondary">secondary</a>
-        <a href="#" class="text success">success</a>
-        <a href="#" class="text error">error</a>
-        <a href="#" class="text info">info</a>
-        <a href="#" class="text warning">warning</a>
-        <a href="#" class="text danger">danger</a>
-        <a href="#" class="text muted">muted</a>
+        <span class="text primary">primary</span>
+        <span class="text secondary">secondary</span>
+        <span class="text success">success</span>
+        <span class="text error">error</span>
+        <span class="text info">info</span>
+        <span class="text warning">warning</span>
+        <span class="text danger">danger</span>
+        <span class="text muted">muted</span>
     </div>
 
     <h2>5 种尺寸</h2>
     <div class="row">
         <span class="text tiny">tiny</span>
         <span class="text small">small</span>
-        <span class="text">base</span>
+        <span class="text">default</span>
         <span class="text large">large</span>
         <span class="text huge">huge</span>
     </div>
 
-    <h2>分组</h2>
+    <h2>文本分组</h2>
+    <h3>有间距</h3>
     <div class="row">
+        <div class="texts tiny">
+            <span class="text">text</span>
+            <span class="text">text</span>
+            <span class="text">text</span>
+            <span class="text">text</span>
+            <span class="text">text</span>
+            <span class="text">text</span>
+            <span class="text">text</span>
+            <span class="text">text</span>
+        </div>
+        <div class="texts small">
+            <span class="text">text</span>
+            <span class="text">text</span>
+            <span class="text">text</span>
+            <span class="text">text</span>
+            <span class="text">text</span>
+            <span class="text">text</span>
+            <span class="text">text</span>
+            <span class="text">text</span>
+        </div>
         <div class="texts">
-            <a href="#" class="text">text</a>
-            <a href="#" class="text">text</a>
-            <a href="#" class="text">text</a>
-            <a href="#" class="text">text</a>
-            <a href="#" class="text">text</a>
-            <a href="#" class="text">text</a>
-            <a href="#" class="text">text</a>
-            <a href="#" class="text">text</a>
+            <span class="text">text</span>
+            <span class="text">text</span>
+            <span class="text">text</span>
+            <span class="text">text</span>
+            <span class="text">text</span>
+            <span class="text">text</span>
+            <span class="text">text</span>
+            <span class="text">text</span>
+        </div>
+        <div class="texts large">
+            <span class="text">text</span>
+            <span class="text">text</span>
+            <span class="text">text</span>
+            <span class="text">text</span>
+            <span class="text">text</span>
+            <span class="text">text</span>
+            <span class="text">text</span>
+            <span class="text">text</span>
+        </div>
+        <div class="texts huge">
+            <span class="text">text</span>
+            <span class="text">text</span>
+            <span class="text">text</span>
+            <span class="text">text</span>
+            <span class="text">text</span>
+            <span class="text">text</span>
+            <span class="text">text</span>
+            <span class="text">text</span>
         </div>
     </div>
 
-    <h2>紧致分组</h2>
+    <h3>无间距</h3>
     <div class="row">
+        <div class="texts tight tiny">
+            <span class="text">text</span>
+            <span class="text">text</span>
+            <span class="text">text</span>
+            <span class="text">text</span>
+            <span class="text">text</span>
+            <span class="text">text</span>
+            <span class="text">text</span>
+            <span class="text">text</span>
+        </div>
+        <div class="texts tight small">
+            <span class="text">text</span>
+            <span class="text">text</span>
+            <span class="text">text</span>
+            <span class="text">text</span>
+            <span class="text">text</span>
+            <span class="text">text</span>
+            <span class="text">text</span>
+            <span class="text">text</span>
+        </div>
         <div class="texts tight">
-            <a href="#" class="text">text</a>
-            <a href="#" class="text">text</a>
-            <a href="#" class="text">text</a>
-            <a href="#" class="text">text</a>
-            <a href="#" class="text">text</a>
-            <a href="#" class="text">text</a>
-            <a href="#" class="text">text</a>
-            <a href="#" class="text">text</a>
+            <span class="text">text</span>
+            <span class="text">text</span>
+            <span class="text">text</span>
+            <span class="text">text</span>
+            <span class="text">text</span>
+            <span class="text">text</span>
+            <span class="text">text</span>
+            <span class="text">text</span>
+        </div>
+        <div class="texts tight large">
+            <span class="text">text</span>
+            <span class="text">text</span>
+            <span class="text">text</span>
+            <span class="text">text</span>
+            <span class="text">text</span>
+            <span class="text">text</span>
+            <span class="text">text</span>
+            <span class="text">text</span>
+        </div>
+        <div class="texts tight huge">
+            <span class="text">text</span>
+            <span class="text">text</span>
+            <span class="text">text</span>
+            <span class="text">text</span>
+            <span class="text">text</span>
+            <span class="text">text</span>
+            <span class="text">text</span>
+            <span class="text">text</span>
         </div>
     </div>
 
