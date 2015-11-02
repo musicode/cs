@@ -166,64 +166,72 @@
 
     <h2>水平单选框</h2>
     <div class="row">
-        <label class="radio">
-            <input type="radio" />水平
-        </label>
-        <label class="radio">
-            <input type="radio" />水平
-        </label>
-        <label class="radio">
-            <input type="radio" />水平
-        </label>
-        <label class="radio">
-            <input type="radio" />水平
-        </label>
+        <div class="radios">
+            <label class="radio">
+                <input type="radio" />水平
+            </label>
+            <label class="radio">
+                <input type="radio" />水平
+            </label>
+            <label class="radio">
+                <input type="radio" />水平
+            </label>
+            <label class="radio">
+                <input type="radio" />水平
+            </label>
+        </div>
     </div>
     <h2>垂直单选框</h2>
     <div class="row">
-        <label class="radio block">
-            <input type="radio" />垂直
-        </label>
-        <label class="radio block">
-            <input type="radio" />垂直
-        </label>
-        <label class="radio block">
-            <input type="radio" />垂直
-        </label>
-        <label class="radio block">
-            <input type="radio" />垂直
-        </label>
+        <div class="radios">
+            <label class="radio fluid">
+                <input type="radio" />垂直
+            </label>
+            <label class="radio fluid">
+                <input type="radio" />垂直
+            </label>
+            <label class="radio fluid">
+                <input type="radio" />垂直
+            </label>
+            <label class="radio fluid">
+                <input type="radio" />垂直
+            </label>
+        </div>
     </div>
 
     <h2>水平复选框</h2>
     <div class="row">
-        <label class="checkbox">
-            <input type="checkbox" />水平
-        </label>
-        <label class="checkbox">
-            <input type="checkbox" />水平
-        </label>
-        <label class="checkbox">
-            <input type="checkbox" />水平
-        </label>
-        <label class="checkbox">
-            <input type="checkbox" />水平
-        </label>
+        <div class="checkboxes">
+            <label class="checkbox">
+                <input type="checkbox" />水平
+            </label>
+            <label class="checkbox">
+                <input type="checkbox" />水平
+            </label>
+            <label class="checkbox">
+                <input type="checkbox" />水平
+            </label>
+            <label class="checkbox">
+                <input type="checkbox" />水平
+            </label>
+        </div>
     </div>
     <h2>垂直复选框</h2>
     <div class="row">
-        <label class="checkbox block">
-            <input type="checkbox" />垂直
-        </label>
-        <label class="checkbox block">
-            <input type="checkbox" />垂直
-        </label>
-        <label class="checkbox block">
-            <input type="checkbox" />垂直
-        </label>
-        <label class="checkbox block">
-            <input type="checkbox" />垂直
-        </label>
+        <div class="checkboxes">
+            <label class="checkbox fluid">
+                <input type="checkbox" />垂直
+            </label>
+            <label class="checkbox fluid">
+                <input type="checkbox" />垂直
+            </label>
+            <label class="checkbox fluid">
+                <input type="checkbox" />垂直
+            </label>
+            <label class="checkbox fluid">
+                <input type="checkbox" />垂直
+            </label>
+        </div>
     </div>
 
     <h2>水平排列</h2>
@@ -288,8 +296,10 @@
                     <input type="text" class="input" />
                     <div class="inline">
                         <span class="text primary">inline</span>
+                        <span class="label primary tiny">label</span>
                     </div>
                     <div class="block">
+                        <span class="label primary tiny">label</span>
                         <span class="text info">block</span>
                     </div>
                 </div>
@@ -317,18 +327,20 @@
                     城市：
                 </label>
                 <div class="controls">
-                    <label class="label radio">
-                        <input type="radio" />北京
-                    </label>
-                    <label class="label radio">
-                        <input type="radio" />上海
-                    </label>
-                    <label class="label radio">
-                        <input type="radio" />广州
-                    </label>
-                    <label class="label radio">
-                        <input type="radio" />深圳
-                    </label>
+                    <div class="radios">
+                        <label class="label radio">
+                            <input type="radio" />北京
+                        </label>
+                        <label class="label radio">
+                            <input type="radio" />上海
+                        </label>
+                        <label class="label radio">
+                            <input type="radio" />广州
+                        </label>
+                        <label class="label radio">
+                            <input type="radio" />深圳
+                        </label>
+                    </div>
                 </div>
             </div>
             <div class="group">
@@ -336,18 +348,20 @@
                     城市：
                 </label>
                 <div class="controls">
-                    <label class="label radio block">
-                        <input type="radio" />北京
-                    </label>
-                    <label class="label radio block">
-                        <input type="radio" />上海
-                    </label>
-                    <label class="label radio block">
-                        <input type="radio" />广州
-                    </label>
-                    <label class="label radio block">
-                        <input type="radio" />深圳
-                    </label>
+                    <div class="radios tight">
+                        <label class="label radio fluid">
+                            <input type="radio" />北京
+                        </label>
+                        <label class="label radio fluid">
+                            <input type="radio" />上海
+                        </label>
+                        <label class="label radio fluid">
+                            <input type="radio" />广州
+                        </label>
+                        <label class="label radio fluid">
+                            <input type="radio" />深圳
+                        </label>
+                    </div>
                 </div>
             </div>
             <div class="group">
@@ -355,18 +369,20 @@
                     城市：
                 </label>
                 <div class="controls">
-                    <label class="label checkbox">
-                        <input type="checkbox" />北京
-                    </label>
-                    <label class="label checkbox">
-                        <input type="checkbox" />上海
-                    </label>
-                    <label class="label checkbox">
-                        <input type="checkbox" />广州
-                    </label>
-                    <label class="label checkbox">
-                        <input type="checkbox" />深圳
-                    </label>
+                    <div class="checkboxes">
+                        <label class="label checkbox">
+                            <input type="checkbox" />北京
+                        </label>
+                        <label class="label checkbox">
+                            <input type="checkbox" />上海
+                        </label>
+                        <label class="label checkbox">
+                            <input type="checkbox" />广州
+                        </label>
+                        <label class="label checkbox">
+                            <input type="checkbox" />深圳
+                        </label>
+                    </div>
                 </div>
             </div>
             <div class="group">
@@ -374,18 +390,20 @@
                     城市：
                 </label>
                 <div class="controls">
-                    <label class="label checkbox block">
-                        <input type="checkbox" />北京
-                    </label>
-                    <label class="label checkbox block">
-                        <input type="checkbox" />上海
-                    </label>
-                    <label class="label checkbox block">
-                        <input type="checkbox" />广州
-                    </label>
-                    <label class="label checkbox block">
-                        <input type="checkbox" />深圳
-                    </label>
+                    <div class="checkboxes tight">
+                        <label class="label checkbox fluid">
+                            <input type="checkbox" />北京
+                        </label>
+                        <label class="label checkbox fluid">
+                            <input type="checkbox" />上海
+                        </label>
+                        <label class="label checkbox fluid">
+                            <input type="checkbox" />广州
+                        </label>
+                        <label class="label checkbox fluid">
+                            <input type="checkbox" />深圳
+                        </label>
+                    </div>
                 </div>
             </div>
             <div class="footer">

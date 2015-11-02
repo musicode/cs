@@ -20,8 +20,22 @@
     {$selector-form-radio}
         form-radio()
 
+    {$selector-form-radios}
+        form-radios()
+        &{$selector-tight}
+            ui-collection-tight(
+                selector-item: $selector-form-radio
+            )
+
     {$selector-form-checkbox}
         form-checkbox()
+
+    {$selector-form-checkboxes}
+        form-checkboxes()
+        &{$selector-tight}
+            ui-collection-tight(
+                selector-item: $selector-form-checkbox
+            )
 
     {$selector-form}
         form()

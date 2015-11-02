@@ -37,10 +37,14 @@ form-controls()
 
     > {$selector-inline}
         display inline-block
-        ui-set('margin-left', $form-control-gap-inline)
 
     > {$selector-block}
         display block
+
+    > * + {$selector-inline},
+    {$selector-text} + {$selector-label},
+    {$selector-label} + {$selector-text}
+        ui-set('margin-left', $form-control-gap-inline)
 
     > * + {$selector-block}
         ui-set('margin-top', $form-control-gap-block)
@@ -80,16 +84,22 @@ form-radio()
     > input[type="radio"]
         ui-set('margin-right', $form-box-text-gap)
 
-    + {$selector-form-radio}
-        ui-set('margin-left', $form-box-gap-horizontal)
+form-radios()
 
-    &{$selector-block}
-        display block
-        margin-left 0
-
-        + {$selector-block}
-            ui-set('margin-top', $form-box-gap-vertical)
-
+    ui-collection(
+        selector-item: $selector-form-radio,
+        each: @(size) {
+            > {$selector-form-radio} {
+                ui-set('font-size', size['font'])
+            }
+            > {$selector-label} {
+                border-left 0
+                border-right 0
+                padding-left 0
+                padding-right 0
+            }
+        }
+    )
 
 form-checkbox()
 
@@ -98,15 +108,23 @@ form-checkbox()
     > input[type="checkbox"]
         ui-set('margin-right', $form-box-text-gap)
 
-    + {$selector-form-checkbox}
-        ui-set('margin-left', $form-box-gap-horizontal)
 
-    &{$selector-block}
-        display block
-        margin-left 0
+form-checkboxes()
 
-        + {$selector-block}
-            ui-set('margin-top', $form-box-gap-vertical)
+    ui-collection(
+        selector-item: $selector-form-checkbox,
+        each: @(size) {
+            > {$selector-form-checkbox} {
+                ui-set('font-size', size['font'])
+            }
+            > {$selector-label} {
+                border-left 0
+                border-right 0
+                padding-left 0
+                padding-right 0
+            }
+        }
+    )
 
 
 form-input()
