@@ -44,8 +44,10 @@ ui-list()
         reversed: true,
         each: @(bg, color) {
             > {$selector-list-item} {
-                ui-set('background-color', bg)
-                ui-set('color', color)
+                &{$selector-checked} {
+                    ui-set('background-color', bg)
+                    ui-set('color', color)
+                }
             }
         }
     )

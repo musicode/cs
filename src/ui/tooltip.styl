@@ -7,121 +7,19 @@
 
     {$selector-tooltip}
 
-        position absolute
-        border 1px solid transparent
-        word-wrap break-word
+        ui-tooltip()
 
-        ui-set('border-radius', $tooltip-radius-size)
-        ui-set('font-size', $tooltip-font-size)
-        ui-set('padding', $tooltip-padding-vertical $tooltip-padding-horizontal)
+        &{$selector-tooltip-top}
+            ui-tooltip-top()
 
-        ui()
+        &{$selector-tooltip-right}
+            ui-tooltip-right()
 
-        &:before,
-        &:after
-            position absolute
-            content ' '
-            border 0 solid transparent
+        &{$selector-tooltip-bottom}
+            ui-tooltip-bottom()
+
+        &{$selector-tooltip-left}
+            ui-tooltip-left()
 
 
-        ui-brand-variant(
-            reversed: true,
-            each: @(bg, color) {
-
-                border = darken(bg, 20%)
-
-                ui-set('background-color', bg)
-                ui-set('border-color', border)
-                ui-set('color', color)
-
-                &:before {
-                    ui-set('border-color', border)
-                }
-                &:after {
-                    ui-set('border-color', bg)
-                }
-
-            }
-        )
-
-
-
-
-
-        &.top
-
-            &:before,
-            &:after
-                left 50%
-                margin-left -1 * $tooltip-arrow-size
-
-                border-width $tooltip-arrow-size $tooltip-arrow-size 0 $tooltip-arrow-size
-                border-left-color transparent
-                border-right-color transparent
-
-            &:before
-                bottom -1 * $tooltip-arrow-size
-
-            &:after
-                bottom -1 * $tooltip-arrow-size + 1
-
-
-
-
-        &.right
-
-            &:before,
-            &:after
-                top 50%
-                margin-top -1 * $tooltip-arrow-size
-
-                border-width $tooltip-arrow-size $tooltip-arrow-size $tooltip-arrow-size 0
-                border-top-color transparent
-                border-bottom-color transparent
-
-            &:before
-                left -1 * $tooltip-arrow-size
-
-            &:after
-                left -1 * $tooltip-arrow-size + 1
-
-
-
-
-        &.bottom
-
-            &:before,
-            &:after
-                left 50%
-                margin-left -1 * $tooltip-arrow-size
-
-                border-width 0 $tooltip-arrow-size $tooltip-arrow-size $tooltip-arrow-size
-                border-left-color transparent
-                border-right-color transparent
-
-            &:before
-                top -1 * $tooltip-arrow-size
-
-            &:after
-                top -1 * $tooltip-arrow-size + 1
-
-
-
-
-        &.left
-
-            &:before,
-            &:after
-                top 50%
-                margin-top -1 * $tooltip-arrow-size
-
-                border-width $tooltip-arrow-size 0 $tooltip-arrow-size $tooltip-arrow-size
-                border-top-color transparent
-                border-bottom-color transparent
-
-            &:before
-                right -1 * $tooltip-arrow-size
-
-            &:after
-                right -1 * $tooltip-arrow-size + 1
 
