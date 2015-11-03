@@ -11,11 +11,25 @@ tab-size(size)
     ui-set('padding', size['padding-vertical'] size['padding-horizontal'])
 
 
-tab-brand(bg, border, color)
+tab-brand(bg, color)
 
-    ui-hover(bg, border, color)
-    ui-active(bg, border, color)
-    ui-checked(bg, border, color)
+    {$selector-hover}
+        ui-transition('background-color, border-color, color')
+        ui-set('background-color', lighten(bg, 5%))
+        ui-set('border-color', lighten(bg, 5%))
+        ui-set('color', color)
+
+    {$selector-active}
+        ui-set('background-color', bg)
+        ui-set('border-color', bg)
+        ui-set('color', color)
+        ui-set('box-shadow', $button-box-shadow-active)
+
+    {$selector-checked}
+        ui-set('background-color', darken(bg, 10%))
+        ui-set('border-color', darken(bg, 10%))
+        ui-set('color', color)
+        ui-set('box-shadow', none)
 
 
 ui-tab()
@@ -51,9 +65,9 @@ ui-tabs()
 
     ui-brand-variant(
         reversed: true,
-        each: @(bg, border, color) {
+        each: @(bg, color) {
             > {$selector-tab} {
-                tab-brand(bg, border, color)
+                tab-brand(bg, color)
             }
         }
     )

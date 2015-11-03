@@ -99,7 +99,8 @@ ui-collection-tight(selector-item, gap-item = 0)
 ui-transition(property)
 
     if $transition-duration is a 'unit'
-        transition property $transition-duration
+        transition-duration $transition-duration
+        transition-property unquote(property)
 
 
 ui-apply(style, selector = '')
@@ -109,63 +110,6 @@ ui-apply(style, selector = '')
             style()
     else
         style()
-
-
-ui-status(
-        bg = null, bg-offset = null,
-        border = null, border-offset = null,
-        color = null, color-offset = null,
-        selector = '',
-        important = false,
-        extra = null)
-
-    offset = @(color, offset) {
-
-        if (color is a 'rgba' and offset is a 'unit') {
-            if (offset > 0) {
-                color = darken(color, offset)
-            }
-            else if (offset < 0) {
-                color = lighten(color, -1 * offset)
-            }
-        }
-
-        return color
-    }
-
-    ui-apply(
-        selector: selector,
-        style: @() {
-
-            ui-set('background-color', offset(bg, bg-offset), important)
-            ui-set('border-color', offset(border, border-offset), important)
-            ui-set('color', offset(color, color-offset), important)
-
-            if (extra is a 'function') {
-                extra()
-            }
-        }
-    )
-
-
-ui-hover(bg = null, border = null, color = null, selector = $selector-hover)
-
-    ui-status(bg, 5%, border, 6%, color, 2%, selector)
-
-
-ui-active(bg = null, border = null, color = null, selector = $selector-active)
-
-    ui-status(bg, 15%, border, 14%, color, 3%, selector)
-
-
-ui-focus(bg = null, border = null, color = null, selector = $selector-focus)
-
-    ui-active(bg, border, color, selector)
-
-
-ui-checked(bg = null, border = null, color = null, selector = $selector-checked)
-
-    ui-active(bg, border, color, selector)
 
 
 ui-checked-cursor(selector = $selector-checked)
@@ -179,11 +123,6 @@ ui-checked-cursor(selector = $selector-checked)
             }
         }
     )
-
-
-ui-disabled(bg = null, border = null, color = null, selector = $selector-disabled)
-
-    ui-status(bg, -35%, border, -30%, color, -60%, selector, true)
 
 
 ui-disabled-cursor(selector = $selector-disabled)
@@ -227,18 +166,15 @@ ui-brand-variant(
         each: @(color, name) {
 
             bg = null
-            border = color
 
             if (reversed) {
                 bg = color
                 color = $brand-reversed-hash[name]
-                border = darken(bg, 20%)
             }
 
             each(
                 bg: bg,
-                color: color,
-                border: border
+                color: color
             )
 
         }

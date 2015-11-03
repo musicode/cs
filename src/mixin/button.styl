@@ -20,15 +20,29 @@ button-size(size)
     ui-set('padding', size['padding-vertical'] size['padding-horizontal'])
 
 
-button-brand(bg, border, color)
+button-brand(bg, color)
+
+    border = darken(bg, 10%)
 
     ui-set('background-color', bg)
     ui-set('border-color', border)
     ui-set('color', color)
 
-    ui-hover(bg, border, color)
-    ui-active(bg, border, color)
-    ui-disabled(bg, border, color)
+    {$selector-hover}
+        ui-transition('background-color, border-color')
+        ui-set('background-color', darken(bg, 5%))
+        ui-set('border-color', darken(border, 5%))
+
+    {$selector-active}
+        ui-set('background-color', darken(bg, 10%))
+        ui-set('border-color', darken(border, 10%))
+        ui-set('box-shadow', $button-box-shadow-active)
+
+    {$selector-disabled}
+        ui-set('background-color', lighten(bg, 30%), true)
+        ui-set('border-color', lighten(border, 20%), true)
+        ui-set('color', lighten(color, 30%), true)
+        ui-set('box-shadow', none)
 
 
 ui-button()
@@ -46,8 +60,11 @@ ui-button()
         ui-disabled-cursor()
 
     {$selector-hover}
-        ui-transition(color)
+        ui-transition('color')
         ui-set('color', $brand-text-hover)
+
+    {$selector-disabled}
+        ui-set('color', $brand-text-disabled, true)
 
     ui()
 

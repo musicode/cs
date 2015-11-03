@@ -42,9 +42,10 @@ ui-list()
 
     ui-brand-variant(
         reversed: true,
-        each: @(bg, border, color) {
+        each: @(bg, color) {
             > {$selector-list-item} {
-                ui-checked(bg, border, color)
+                ui-set('background-color', bg)
+                ui-set('color', color)
             }
         }
     )

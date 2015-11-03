@@ -3,6 +3,29 @@
  * @author musicode
  */
 
+ui-pagination-button-brand(bg, color)
+
+    border = darken(bg, 10%)
+
+    {$selector-hover}
+        ui-transition('background-color, border-color, color')
+        ui-set('background-color', lighten(bg, 10%))
+        ui-set('border-color', lighten(border, 5%))
+        ui-set('color', color)
+
+    {$selector-active}
+        ui-set('background-color', darken(bg, 10%))
+        ui-set('border-color', darken(border, 10%))
+        ui-set('color', color)
+        ui-set('box-shadow', $button-box-shadow-active)
+
+    {$selector-checked}
+        ui-set('background-color', darken(bg, 10%))
+        ui-set('border-color', darken(border, 10%))
+        ui-set('color', color)
+        ui-set('box-shadow', none)
+
+
 ui-pagination()
 
     ul&
@@ -30,11 +53,9 @@ ui-pagination()
 
     ui-brand-variant(
         reversed: true,
-        each: @(bg, border, color) {
+        each: @(bg, color) {
             > {$selector-button} {
-                ui-hover(bg, border, color)
-                ui-active(bg, border, color)
-                ui-checked(bg, border, color)
+                ui-pagination-button-brand(bg, color)
             }
         }
     )

@@ -66,11 +66,11 @@ ui-image-link()
 
         if !$support-ie or !$support-ie8
             background-color rgba(0,0,0,0)
-            ui-transition(background-color)
+            ui-transition('background-color')
         else
             background-color #000
             ui-opacity(0)
-            ui-transition(opacity)
+            ui-transition('opacity')
 
     {$selector-hover}
         &:after

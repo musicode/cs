@@ -1,9 +1,6 @@
-# CSS
+# CS
 
-**C**ombo **S**emantic **S**tyle
-
-> 重新定义 CSS
-
+**C**ombo **S**tyle
 
 
 ## 为何重复造轮子
@@ -27,7 +24,7 @@
 
    ``` html
    <head>
-        <link rel="stylesheet" href="css.css">
+        <link rel="stylesheet" href="cs.css">
         <link rel="stylesheet" href="biz.css">
    </head>
    <body>
@@ -35,14 +32,14 @@
    </body>
    ```
 
-   * **css** 作为公共库，充分利用缓存
+   * **cs** 作为公共库，充分利用缓存
 
 
-   * **biz** 基于 **css**，节省大量代码
+   * **biz** 基于 **cs**，节省大量代码
 
-5. 固化类名通常会被吐槽不够语义化，**css** 的一大特性就是语义化，因此可以理解为`重新定义了 css`
+5. 固化类名通常会被吐槽不够语义化，**cs** 的一大特性就是语义化。
 
-   比如 `<a>` 表示链接，**css** 定义的 `.link` 则会带有链接具有的样式，它的风格基于网站的整体设计，类似的还有 `.button` `.label` `.text` `.input` 等
+   比如 `<a>` 表示链接，**cs** 定义的 `.link` 则会带有链接具有的样式，它的风格基于网站的整体设计，类似的还有 `.button` `.label` `.text` `.input` 等
 
 6. 使用 **normalize.css** 进行初始化，保证先天的语义不被破坏，比如 `<strong>` 表示粗体，当我们需要一个粗体的按钮时，可以参考以下写法：
 
@@ -134,7 +131,7 @@
 
 
 
-`hover`、`active`、`checked`、`disabled` 看起来似乎是元素伪类，但是 **css** 为了更好的组合性，同时提供了同名类，以 hover 举例，如下：
+`hover`、`active`、`checked`、`disabled` 看起来似乎是元素伪类，但是 **cs** 为了更好的组合性，同时提供了同名类，以 hover 举例，如下：
 
 ``` css
 .button:hover,
@@ -142,9 +139,6 @@
     ...
 }
 ```
-
-
-
 
 
 名称都不用缩写，缩写很难记，比如 small 在 `Bootstrap` 叫做 sm，在 `Foundation` 叫做 sml，这真是蛋疼...

@@ -26,7 +26,9 @@
 
         ui-brand-variant(
             reversed: true,
-            each: @(bg, border, color) {
+            each: @(bg, color) {
+
+                border = darken(bg, 20%)
 
                 ui-set('background-color', bg)
                 ui-set('border-color', border)

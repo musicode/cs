@@ -131,7 +131,7 @@ ui-dropdown-menu-item()
         + {$selector-dropdown-menu-item}
             border-top 1px solid $brand-divider
 
-    ui-transition(background-color)
+    ui-transition('background-color')
 
     {$selector-hover}
         ui-set('background-color', $brand-bg-hover)
@@ -148,8 +148,9 @@ ui-dropdown-opened-button()
 
     ui-brand-variant(
         reversed: true,
-        each: @(bg, border, color) {
-            ui-active(bg, border, color, '')
+        each: @(bg, color) {
+            ui-set('background-color', darken(bg, 10%))
+            ui-set('border-color', darken(bg, 15%))
         }
     )
 

@@ -251,34 +251,35 @@ form-input()
 
     {$selector-hover}
         {selector-control}
-            ui-hover(border: $form-input-border, selector: '')
+            ui-transition('border-color')
+            ui-set('border-color', darken($form-input-border, 10%))
 
     {selector-control}
         {$selector-focus}
-            ui-focus(border: $form-input-border, selector: '')
+            ui-set('border-color', darken($form-input-border, 20%))
 
     ui-brand-variant(
         reversed: true,
-        each: @(bg, border, color) {
+        each: @(bg, color) {
 
             {selector-wrapper} {
-                > {$selector-label},
+                > {$selector-label} {
+                    label-brand(bg, color)
+                }
                 > {$selector-button} {
-                    ui-set('background-color', bg)
-                    ui-set('border-color', bg)
-                    ui-set('color', color)
+                    button-brand(bg, color)
                 }
             }
 
             {$selector-hover} {
                 {selector-control} {
-                    ui-hover(border: lighten(bg, 50%), selector: '')
+                    ui-set('border-color', lighten(bg, 20%))
                 }
             }
 
             {selector-control} {
                 {$selector-focus} {
-                    ui-focus(border: lighten(bg, 40%), selector: '')
+                    ui-set('border-color', bg)
                 }
             }
 
