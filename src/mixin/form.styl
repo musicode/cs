@@ -7,12 +7,19 @@ form()
 
     font-size 0
 
+    > * + {$selector-block}
+        ui-set('margin-top', $form-group-gap-block)
+
 
 form-group()
 
     + {$selector-form-group}
         ui-set('margin-top', $form-group-gap-block)
 
+    > {$selector-label}
+        border-left 0
+        border-right 0
+        padding-left 0
 
 form-group-inline()
 
