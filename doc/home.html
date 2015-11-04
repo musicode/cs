@@ -11,5 +11,108 @@
 
     <h1>CS</h1>
 
+    <blockquote>
+        关键词：<code>组合</code>、<code>语义</code>
+    </blockquote>
+
+    <h2>引用</h2>
+    <div class="row">
+
+        源码版：<code>https://raw.githubusercontent.com/musicode/cs/master/dist/cs.css</code>
+
+        <div class="block">
+            压缩版：<code>https://raw.githubusercontent.com/musicode/cs/master/dist/cs.min.css</code>
+        </div>
+
+    </div>
+
+    <h2>设计思想</h2>
+    <div class="row">
+        <p>
+            从 <strong>颜色</strong> 和 <strong>尺寸</strong> 两个维度进行设计。
+        </p>
+
+        <p>
+            <strong>颜色</strong>分为以下 8 种：
+
+            <ul>
+                <li class="primary">primary</li>
+                <li class="secondary">secondary</li>
+                <li class="success">success</li>
+                <li class="error">error</li>
+                <li class="info">info</li>
+                <li class="warning">warning</li>
+                <li class="danger">danger</li>
+                <li class="muted">muted</li>
+            </ul>
+        </p>
+
+        <p>
+            <strong>尺寸</strong>分为以下 5 种：
+
+            <ul>
+                <li class="tiny">tiny</li>
+                <li class="small">small</li>
+                <li>default</li>
+                <li class="large">large</li>
+                <li class="huge">huge</li>
+            </ul>
+        </p>
+
+        <p>
+            当组件有<strong>状态</strong>时，又分为以下 5 种：
+
+            <ul>
+                <li>hover</li>
+                <li>active</li>
+                <li>disabled</li>
+                <li>checked</li>
+                <li>focus</li>
+            </ul>
+        </p>
+
+        <p>
+            多个相同组件排在一起时，组件之间的距离也被规范起来，先来看水平方向：
+        </p>
+
+        <div class="block">
+            <span class="buttons">
+                <span class="button primary">btn2</span>
+                <span class="button primary">btn2</span>
+                <span class="button primary">btn3</span>
+            </span>
+        </div>
+
+        <p>垂直方向如下：</p>
+        <div class="block">
+            <span class="buttons">
+                <span class="button primary fluid">btn2</span>
+                <span class="button primary fluid">btn2</span>
+                <span class="button primary fluid">btn3</span>
+            </span>
+        </div>
+
+        <p>
+            如果我们偶尔不需要间距，加上 <code>.tight</code> 即可
+        </p>
+        <p>水平方向</p>
+        <div class="block">
+            <span class="buttons tight">
+                <span class="button primary">btn2</span>
+                <span class="button primary">btn2</span>
+                <span class="button primary">btn3</span>
+            </span>
+        </div>
+
+        <p>垂直方向</p>
+        <div class="block">
+            <span class="buttons tight">
+                <span class="button primary fluid">btn2</span>
+                <span class="button primary fluid">btn2</span>
+                <span class="button primary fluid">btn3</span>
+            </span>
+        </div>
+
+    </div>
 </body>
 </html>

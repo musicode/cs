@@ -66,9 +66,6 @@ form-controls()
         padding-left 0
         padding-right 0
 
-    {$selector-icon}
-        font-size $size-base['font']
-
     {$selector-tooltip}
         display none
 
@@ -216,7 +213,7 @@ form-input()
         margin 0
 
         background-color $form-input-bg
-        border 1px solid $form-input-border
+        border 1px solid $brand-border
 
         if $form-placeholder-color is a 'rgba'
 
@@ -258,11 +255,11 @@ form-input()
     {$selector-hover}
         {selector-control}
             ui-transition('border-color')
-            ui-set('border-color', darken($form-input-border, 10%))
+            ui-set('border-color', darken($brand-border, 5%))
 
     {selector-control}
         {$selector-focus}
-            ui-set('border-color', darken($form-input-border, 20%))
+            ui-set('border-color', darken($brand-border, 10%))
 
     ui-brand-variant(
         reversed: true,
