@@ -1731,6 +1731,8 @@ button.badge {
   border-radius: 2px;
   font-size: 12px;
   padding: 2px 6px;
+  -webkit-box-shadow: 2px 2px 1px rgba(0,0,0,0.05);
+          box-shadow: 2px 2px 1px rgba(0,0,0,0.05);
 }
 .tooltip:before,
 .tooltip:after {
@@ -2474,35 +2476,43 @@ ul.list {
 .list.huge.radius {
   border-radius: 6px;
 }
-.list.primary > .item {
+.list.primary > .item.checked,
+.list.primary > .item[checked] {
   background-color: #6c94b8;
   color: #fff;
 }
-.list.secondary > .item {
+.list.secondary > .item.checked,
+.list.secondary > .item[checked] {
   background-color: #fbfbfb;
   color: #605e58;
 }
-.list.success > .item {
+.list.success > .item.checked,
+.list.success > .item[checked] {
   background-color: #5cb85c;
   color: #fff;
 }
-.list.error > .item {
+.list.error > .item.checked,
+.list.error > .item[checked] {
   background-color: #f95710;
   color: #fff;
 }
-.list.info > .item {
+.list.info > .item.checked,
+.list.info > .item[checked] {
   background-color: #5bc0de;
   color: #fff;
 }
-.list.warning > .item {
+.list.warning > .item.checked,
+.list.warning > .item[checked] {
   background-color: #f0ad4e;
   color: #fff;
 }
-.list.danger > .item {
+.list.danger > .item.checked,
+.list.danger > .item[checked] {
   background-color: #d9534f;
   color: #fff;
 }
-.list.muted > .item {
+.list.muted > .item.checked,
+.list.muted > .item[checked] {
   background-color: #ccc;
   color: #fff;
 }
@@ -3033,6 +3043,8 @@ ul.pagination {
   right: 0;
   background-color: #fffdfa;
   max-height: 176px;
+  -webkit-box-shadow: 2px 2px 1px rgba(0,0,0,0.05);
+          box-shadow: 2px 2px 1px rgba(0,0,0,0.05);
   z-index: 1;
   border: 1px solid #dfdddb;
   margin-top: 2px;
@@ -3294,8 +3306,8 @@ body > .mask {
   background-color: #fffdfa;
   min-width: 360px;
   border-radius: 2px;
-  -webkit-box-shadow: 1px 1px 4px rgba(0,0,0,0.1);
-          box-shadow: 1px 1px 4px rgba(0,0,0,0.1);
+  -webkit-box-shadow: 2px 2px 1px rgba(0,0,0,0.05);
+          box-shadow: 2px 2px 1px rgba(0,0,0,0.05);
 }
 .dialog.primary > .header {
   border-bottom: 0;
@@ -3763,7 +3775,7 @@ textarea.input,
   outline: 0;
   margin: 0;
   background-color: #fff;
-  border: 1px solid #ddd;
+  border: 1px solid #dfdddb;
 }
 input.input::-webkit-input-placeholder,
 .input > input::-webkit-input-placeholder,
@@ -3837,7 +3849,7 @@ textarea.input:hover,
           transition-duration: 0.1s;
   -webkit-transition-property: border-color;
           transition-property: border-color;
-  border-color: #c7c7c7;
+  border-color: #d5d2cf;
 }
 input.input.focus,
 .input > input.focus,
@@ -3847,7 +3859,7 @@ input.input:focus,
 .input > input:focus,
 textarea.input:focus,
 .input > textarea:focus {
-  border-color: #b1b1b1;
+  border-color: #cac7c4;
 }
 div.input.primary > .label,
 span.input.primary > .label,
