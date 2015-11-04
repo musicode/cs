@@ -4,11 +4,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>表单</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="doc.css">
     <style>
-        .input {
-
-        }
         .dropdown {
             width: 150px;
         }
@@ -17,19 +15,39 @@
 
 <body>
 
+    <h1>表单</h1>
+
     <h2>输入框</h2>
     <div class="row">
         <input type="text" class="input" placeholder="裸 input" />
+        <textarea class="input" placeholder="裸 textarea"></textarea>
+    </div>
+    <div class="row">
         <div class="input">
             <input type="text" />
             <div class="placeholder">div 包装 input</div>
         </div>
-        <textarea class="input" placeholder="div 包装 textarea"></textarea>
         <div class="input">
             <textarea></textarea>
-            <div class="placeholder">div 包装 input</div>
+            <div class="placeholder">div 包装 textarea</div>
         </div>
     </div>
+
+    <h3>8 种类型</h3>
+    <div class="row">
+        <input type="text" class="input primary" placeholder="primary" />
+        <input type="text" class="input secondary" placeholder="secondary" />
+        <input type="text" class="input success" placeholder="success" />
+        <input type="text" class="input error" placeholder="error" />
+        <div class="block">
+            <input type="text" class="input info" placeholder="info" />
+            <input type="text" class="input warning" placeholder="warning" />
+            <input type="text" class="input danger" placeholder="danger" />
+            <input type="text" class="input muted" placeholder="muted" />
+        </div>
+    </div>
+
+    <h3>5 种尺寸</h3>
     <div class="row">
         <input type="text" class="input tiny" placeholder="tiny" />
         <input type="text" class="input small" placeholder="small" />
@@ -37,69 +55,115 @@
         <input type="text" class="input large" placeholder="large" />
         <input type="text" class="input huge" placeholder="huge" />
     </div>
+
+    <h3>漂浮物在输入框左侧（支持 5 种尺寸）</h3>
     <div class="row">
-        <div class="input tiny">
-            <input type="text" />
-            <div class="placeholder">tiny</div>
-        </div>
         <div class="input small">
-            <input type="text" />
-            <div class="placeholder">small</div>
+            <i class="floated">floated</i>
+            <input type="text" placeholder="placeholder" style="padding-left: 42px" />
         </div>
         <div class="input">
-            <input type="text" />
-            <div class="placeholder">默认</div>
-        </div>
-        <div class="input large">
-            <input type="text" />
-            <div class="placeholder">large</div>
-        </div>
-        <div class="input huge">
-            <input type="text" />
-            <div class="placeholder">huge</div>
+            <i class="floated">floated</i>
+            <input type="text" placeholder="placeholder" style="padding-left: 50px" />
         </div>
     </div>
 
-    <h2>带 漂浮物 的输入框</h2>
+    <h3>漂浮物在输入框右侧（支持 5 种尺寸）</h3>
     <div class="row">
-        <div class="input">
+        <div class="input small">
+            <input type="text" placeholder="placeholder" style="padding-right: 42px" />
             <i class="floated">floated</i>
-            <input type="text" placeholder="placeholder" />
         </div>
         <div class="input">
-            <input type="text" placeholder="placeholder" />
+            <input type="text" placeholder="placeholder" style="padding-right: 50px" />
             <i class="floated">floated</i>
         </div>
     </div>
 
-    <h2>带 button 的输入框</h2>
+    <h3>按钮在输入框左侧（支持 5 种尺寸）</h3>
     <div class="row">
-        <div class="input primary tiny">
-            <div class="button">search</div>
-            <input type="text"/>
-        </div>
         <div class="input primary small">
             <div class="button">search</div>
             <input type="text"/>
         </div>
         <div class="input primary">
-            <div class="button">search</div>
-            <input type="text"/>
-        </div>
-        <div class="input primary large">
-            <div class="button">search</div>
-            <input type="text"/>
-        </div>
-        <div class="input primary huge">
             <div class="button">search</div>
             <input type="text"/>
         </div>
     </div>
     <div class="row">
-        <div class="input primary tiny">
-            <input type="text"/>
+        <div class="input secondary small">
             <div class="button">search</div>
+            <input type="text"/>
         </div>
+        <div class="input secondary">
+            <div class="button">search</div>
+            <input type="text"/>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input success small">
+            <div class="button">search</div>
+            <input type="text"/>
+        </div>
+        <div class="input success">
+            <div class="button">search</div>
+            <input type="text"/>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input error small">
+            <div class="button">search</div>
+            <input type="text"/>
+        </div>
+        <div class="input error">
+            <div class="button">search</div>
+            <input type="text"/>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input info small">
+            <div class="button">search</div>
+            <input type="text"/>
+        </div>
+        <div class="input info">
+            <div class="button">search</div>
+            <input type="text"/>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input warning small">
+            <div class="button">search</div>
+            <input type="text"/>
+        </div>
+        <div class="input warning">
+            <div class="button">search</div>
+            <input type="text"/>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input danger small">
+            <div class="button">search</div>
+            <input type="text"/>
+        </div>
+        <div class="input danger">
+            <div class="button">search</div>
+            <input type="text"/>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input muted small">
+            <div class="button">search</div>
+            <input type="text"/>
+        </div>
+        <div class="input muted">
+            <div class="button">search</div>
+            <input type="text"/>
+        </div>
+    </div>
+
+    <h3>按钮在输入框右侧（支持 5 种尺寸）</h3>
+    <div class="row">
         <div class="input primary small">
             <input type="text"/>
             <div class="button">search</div>
@@ -108,122 +172,312 @@
             <input type="text"/>
             <div class="button">search</div>
         </div>
-        <div class="input primary large">
+    </div>
+    <div class="row">
+        <div class="input secondary small">
             <input type="text"/>
             <div class="button">search</div>
         </div>
-        <div class="input primary huge">
+        <div class="input secondary">
+            <input type="text"/>
+            <div class="button">search</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input success small">
+            <input type="text"/>
+            <div class="button">search</div>
+        </div>
+        <div class="input success">
+            <input type="text"/>
+            <div class="button">search</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input error small">
+            <input type="text"/>
+            <div class="button">search</div>
+        </div>
+        <div class="input error">
+            <input type="text"/>
+            <div class="button">search</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input info small">
+            <input type="text"/>
+            <div class="button">search</div>
+        </div>
+        <div class="input info">
+            <input type="text"/>
+            <div class="button">search</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input warning small">
+            <input type="text"/>
+            <div class="button">search</div>
+        </div>
+        <div class="input warning">
+            <input type="text"/>
+            <div class="button">search</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input danger small">
+            <input type="text"/>
+            <div class="button">search</div>
+        </div>
+        <div class="input danger">
+            <input type="text"/>
+            <div class="button">search</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input muted small">
+            <input type="text"/>
+            <div class="button">search</div>
+        </div>
+        <div class="input muted">
             <input type="text"/>
             <div class="button">search</div>
         </div>
     </div>
 
-    <h2>带 label 的输入框</h2>
+
+    <h3>label 在输入框左侧（支持 5 种尺寸）</h3>
     <div class="row">
-        <div class="input primary tiny">
-            <label class="label">￥</label>
-            <input type="text" />
-        </div>
         <div class="input primary small">
             <label class="label">￥</label>
             <input type="text" />
         </div>
         <div class="input primary">
-            <label class="label">￥</label>
-            <input type="text" />
-        </div>
-        <div class="input primary large">
-            <label class="label">￥</label>
-            <input type="text" />
-        </div>
-        <div class="input primary huge">
             <label class="label">￥</label>
             <input type="text" />
         </div>
     </div>
     <div class="row">
-        <div class="input primary tiny">
-            <input type="text" />
+        <div class="input secondary small">
             <label class="label">￥</label>
+            <input type="text" />
         </div>
+        <div class="input secondary">
+            <label class="label">￥</label>
+            <input type="text" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="input success small">
+            <label class="label">￥</label>
+            <input type="text" />
+        </div>
+        <div class="input success">
+            <label class="label">￥</label>
+            <input type="text" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="input error small">
+            <label class="label">￥</label>
+            <input type="text" />
+        </div>
+        <div class="input error">
+            <label class="label">￥</label>
+            <input type="text" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="input info small">
+            <label class="label">￥</label>
+            <input type="text" />
+        </div>
+        <div class="input info">
+            <label class="label">￥</label>
+            <input type="text" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="input warning small">
+            <label class="label">￥</label>
+            <input type="text" />
+        </div>
+        <div class="input warning">
+            <label class="label">￥</label>
+            <input type="text" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="input danger small">
+            <label class="label">￥</label>
+            <input type="text" />
+        </div>
+        <div class="input danger">
+            <label class="label">￥</label>
+            <input type="text" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="input muted small">
+            <label class="label">￥</label>
+            <input type="text" />
+        </div>
+        <div class="input muted">
+            <label class="label">￥</label>
+            <input type="text" />
+        </div>
+    </div>
+
+
+    <h3>label 在输入框右侧（支持 5 种尺寸）</h3>
+    <div class="row">
         <div class="input primary small">
             <input type="text" />
-            <label class="label">￥</label>
+            <label class="label">元</label>
         </div>
         <div class="input primary">
             <input type="text" />
-            <label class="label">￥</label>
+            <label class="label">元</label>
         </div>
-        <div class="input primary large">
+    </div>
+    <div class="row">
+        <div class="input secondary small">
             <input type="text" />
-            <label class="label">￥</label>
+            <label class="label">元</label>
         </div>
-        <div class="input primary huge">
+        <div class="input secondary">
             <input type="text" />
-            <label class="label">￥</label>
+            <label class="label">元</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input success small">
+            <input type="text" />
+            <label class="label">元</label>
+        </div>
+        <div class="input success">
+            <input type="text" />
+            <label class="label">元</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input error small">
+            <input type="text" />
+            <label class="label">元</label>
+        </div>
+        <div class="input error">
+            <input type="text" />
+            <label class="label">元</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input info small">
+            <input type="text" />
+            <label class="label">元</label>
+        </div>
+        <div class="input info">
+            <input type="text" />
+            <label class="label">元</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input warning small">
+            <input type="text" />
+            <label class="label">元</label>
+        </div>
+        <div class="input warning">
+            <input type="text" />
+            <label class="label">元</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input danger small">
+            <input type="text" />
+            <label class="label">元</label>
+        </div>
+        <div class="input danger">
+            <input type="text" />
+            <label class="label">元</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input muted small">
+            <input type="text" />
+            <label class="label">元</label>
+        </div>
+        <div class="input muted">
+            <input type="text" />
+            <label class="label">元</label>
         </div>
     </div>
 
     <h2>水平单选框</h2>
     <div class="row">
-        <label class="radio">
-            <input type="radio" />水平
-        </label>
-        <label class="radio">
-            <input type="radio" />水平
-        </label>
-        <label class="radio">
-            <input type="radio" />水平
-        </label>
-        <label class="radio">
-            <input type="radio" />水平
-        </label>
+        <div class="radios">
+            <label class="radio">
+                <input type="radio" />水平
+            </label>
+            <label class="radio">
+                <input type="radio" />水平
+            </label>
+            <label class="radio">
+                <input type="radio" />水平
+            </label>
+            <label class="radio">
+                <input type="radio" />水平
+            </label>
+        </div>
     </div>
     <h2>垂直单选框</h2>
     <div class="row">
-        <label class="radio block">
-            <input type="radio" />垂直
-        </label>
-        <label class="radio block">
-            <input type="radio" />垂直
-        </label>
-        <label class="radio block">
-            <input type="radio" />垂直
-        </label>
-        <label class="radio block">
-            <input type="radio" />垂直
-        </label>
+        <div class="radios">
+            <label class="radio fluid">
+                <input type="radio" />垂直
+            </label>
+            <label class="radio fluid">
+                <input type="radio" />垂直
+            </label>
+            <label class="radio fluid">
+                <input type="radio" />垂直
+            </label>
+            <label class="radio fluid">
+                <input type="radio" />垂直
+            </label>
+        </div>
     </div>
 
     <h2>水平复选框</h2>
     <div class="row">
-        <label class="checkbox">
-            <input type="checkbox" />水平
-        </label>
-        <label class="checkbox">
-            <input type="checkbox" />水平
-        </label>
-        <label class="checkbox">
-            <input type="checkbox" />水平
-        </label>
-        <label class="checkbox">
-            <input type="checkbox" />水平
-        </label>
+        <div class="checkboxes">
+            <label class="checkbox">
+                <input type="checkbox" />水平
+            </label>
+            <label class="checkbox">
+                <input type="checkbox" />水平
+            </label>
+            <label class="checkbox">
+                <input type="checkbox" />水平
+            </label>
+            <label class="checkbox">
+                <input type="checkbox" />水平
+            </label>
+        </div>
     </div>
     <h2>垂直复选框</h2>
     <div class="row">
-        <label class="checkbox block">
-            <input type="checkbox" />垂直
-        </label>
-        <label class="checkbox block">
-            <input type="checkbox" />垂直
-        </label>
-        <label class="checkbox block">
-            <input type="checkbox" />垂直
-        </label>
-        <label class="checkbox block">
-            <input type="checkbox" />垂直
-        </label>
+        <div class="checkboxes">
+            <label class="checkbox fluid">
+                <input type="checkbox" />垂直
+            </label>
+            <label class="checkbox fluid">
+                <input type="checkbox" />垂直
+            </label>
+            <label class="checkbox fluid">
+                <input type="checkbox" />垂直
+            </label>
+            <label class="checkbox fluid">
+                <input type="checkbox" />垂直
+            </label>
+        </div>
     </div>
 
     <h2>水平排列</h2>
@@ -288,8 +542,10 @@
                     <input type="text" class="input" />
                     <div class="inline">
                         <span class="text primary">inline</span>
+                        <span class="label primary tiny">label</span>
                     </div>
                     <div class="block">
+                        <span class="label primary tiny">label</span>
                         <span class="text info">block</span>
                     </div>
                 </div>
@@ -317,18 +573,20 @@
                     城市：
                 </label>
                 <div class="controls">
-                    <label class="label radio">
-                        <input type="radio" />北京
-                    </label>
-                    <label class="label radio">
-                        <input type="radio" />上海
-                    </label>
-                    <label class="label radio">
-                        <input type="radio" />广州
-                    </label>
-                    <label class="label radio">
-                        <input type="radio" />深圳
-                    </label>
+                    <div class="radios">
+                        <label class="label radio">
+                            <input type="radio" />北京
+                        </label>
+                        <label class="label radio">
+                            <input type="radio" />上海
+                        </label>
+                        <label class="label radio">
+                            <input type="radio" />广州
+                        </label>
+                        <label class="label radio">
+                            <input type="radio" />深圳
+                        </label>
+                    </div>
                 </div>
             </div>
             <div class="group">
@@ -336,18 +594,20 @@
                     城市：
                 </label>
                 <div class="controls">
-                    <label class="label radio block">
-                        <input type="radio" />北京
-                    </label>
-                    <label class="label radio block">
-                        <input type="radio" />上海
-                    </label>
-                    <label class="label radio block">
-                        <input type="radio" />广州
-                    </label>
-                    <label class="label radio block">
-                        <input type="radio" />深圳
-                    </label>
+                    <div class="radios tight">
+                        <label class="label radio fluid">
+                            <input type="radio" />北京
+                        </label>
+                        <label class="label radio fluid">
+                            <input type="radio" />上海
+                        </label>
+                        <label class="label radio fluid">
+                            <input type="radio" />广州
+                        </label>
+                        <label class="label radio fluid">
+                            <input type="radio" />深圳
+                        </label>
+                    </div>
                 </div>
             </div>
             <div class="group">
@@ -355,18 +615,20 @@
                     城市：
                 </label>
                 <div class="controls">
-                    <label class="label checkbox">
-                        <input type="checkbox" />北京
-                    </label>
-                    <label class="label checkbox">
-                        <input type="checkbox" />上海
-                    </label>
-                    <label class="label checkbox">
-                        <input type="checkbox" />广州
-                    </label>
-                    <label class="label checkbox">
-                        <input type="checkbox" />深圳
-                    </label>
+                    <div class="checkboxes">
+                        <label class="label checkbox">
+                            <input type="checkbox" />北京
+                        </label>
+                        <label class="label checkbox">
+                            <input type="checkbox" />上海
+                        </label>
+                        <label class="label checkbox">
+                            <input type="checkbox" />广州
+                        </label>
+                        <label class="label checkbox">
+                            <input type="checkbox" />深圳
+                        </label>
+                    </div>
                 </div>
             </div>
             <div class="group">
@@ -374,21 +636,23 @@
                     城市：
                 </label>
                 <div class="controls">
-                    <label class="label checkbox block">
-                        <input type="checkbox" />北京
-                    </label>
-                    <label class="label checkbox block">
-                        <input type="checkbox" />上海
-                    </label>
-                    <label class="label checkbox block">
-                        <input type="checkbox" />广州
-                    </label>
-                    <label class="label checkbox block">
-                        <input type="checkbox" />深圳
-                    </label>
+                    <div class="checkboxes tight">
+                        <label class="label checkbox fluid">
+                            <input type="checkbox" />北京
+                        </label>
+                        <label class="label checkbox fluid">
+                            <input type="checkbox" />上海
+                        </label>
+                        <label class="label checkbox fluid">
+                            <input type="checkbox" />广州
+                        </label>
+                        <label class="label checkbox fluid">
+                            <input type="checkbox" />深圳
+                        </label>
+                    </div>
                 </div>
             </div>
-            <div class="action">
+            <div class="footer">
                 <div class="button primary">确定</div>
                 <div class="button link">取消</div>
             </div>
