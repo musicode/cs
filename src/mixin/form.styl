@@ -3,6 +3,7 @@
  * @author musicode
  */
 
+
 form()
 
     font-size 0
@@ -175,22 +176,16 @@ form-input()
                 }
 
                 > {$selector-floated} {
-                    ui-set('font-size', size['font'])
-                    ui-set('line-height', size['line-height'])
-                }
-
-                > {$selector-floated} {
+                    position absolute
                     left 0
                     ui-set('top', size['padding-vertical'])
+                    ui-set('font-size', size['font'])
+                    ui-set('line-height', size['line-height'])
                 }
 
                 > input + {$selector-floated} {
                     left auto
                     right 0
-                }
-
-                > {$selector-floated} {
-                    position absolute
                 }
 
                 > {$selector-label} + input,
@@ -237,7 +232,8 @@ form-input()
         > {$selector-floated}
             position absolute
 
-        {selector-control}
+        > input,
+        > textarea
             vertical-align top
 
         if $form-placeholder-color is a 'rgba'
