@@ -5,6 +5,13 @@
 
 +prefix-classes($ui-prefix)
 
+    // font-size 需要被 $selector-links 覆盖
+    ui-size-variant(
+        each: @(size) {
+            ui-set('font-size', size['font'])
+        }
+    )
+
     {$selector-link}
         ui-link()
 
@@ -20,4 +27,17 @@
             ui-justified(
                 selector-item: $selector-link
             )
+
+    // color 不需要被 $selector-link 覆盖
+    ui-brand-variant(
+        each: @(color) {
+            ui-set('color', color)
+            &{$selector-link} {
+                {$selector-hover} {
+                    ui-set('color', darken(color, 20%))
+                }
+            }
+        }
+    )
+
 

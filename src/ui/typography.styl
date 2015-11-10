@@ -52,18 +52,6 @@
             ui-set('font-size', $size-base['font'])
             display inline-block
 
-    ui-brand-variant(
-        each: @(color) {
-            ui-set('color', color)
-        }
-    )
-
-    ui-size-variant(
-        each: @(size) {
-            ui-set('font-size', size['font'])
-        }
-    )
-
     if $brand-border is a 'rgba'
         {$selector-bordered}
             border 1px solid $brand-border
