@@ -17,6 +17,11 @@
             list-reset()
             ui-set('margin-top', $form-menu-gap)
 
+    {$selector-form-inputs}
+        form-inputs()
+        &{$selector-tight}
+            form-inputs-tight()
+
     {$selector-form-radio}
         form-radio()
 
@@ -41,7 +46,6 @@
         form()
 
         &{$selector-inline}
-
             > {$selector-form-group}
             > {$selector-block} > {$selector-form-group}
                 form-group-inline()

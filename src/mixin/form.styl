@@ -138,13 +138,25 @@ form-checkboxes()
     )
 
 
+form-input-size(size)
+
+    ui-set('font-size', size['font'])
+    ui-set('line-height', size['line-height'])
+    ui-set('padding', size['padding-vertical'] size['padding-horizontal'])
+
+
+form-input-height(name)
+
+    ui-set('height', $form-input-size-hash[name]['height'])
+
+
 form-input()
 
     selector-input = 'input&,> input'
     selector-textarea = 'textarea&,> textarea'
 
     selector-control = selector-input + ',' + selector-textarea
-    selector-wrapper = 'div&,span&,label&'
+    selector-wrapper = 'div&'
 
     {selector-textarea}
         resize none
@@ -159,12 +171,20 @@ form-input()
     ui-size-variant(
         each: @(size, name) {
             {selector-control} {
-                ui-set('font-size', size['font'])
-                ui-set('line-height', size['line-height'])
-                ui-set('padding', size['padding-vertical'] size['padding-horizontal'])
+                form-input-size(size)
             }
             {selector-input} {
-                ui-set('height', $form-input-size-hash[name]['height'])
+                form-input-height(name)
+            }
+            &{$selector-round} {
+                {selector-control} {
+                    ui-set('border-radius', size['round'])
+                }
+            }
+            &{$selector-radius} {
+                {selector-control} {
+                    ui-set('border-radius', size['radius'])
+                }
             }
             {selector-wrapper} {
                 > {$selector-label},
@@ -197,6 +217,41 @@ form-input()
                 > input + {$selector-label},
                 > input + {$selector-button} {
                     margin-left -1px
+                }
+
+                &{$selector-round} {
+                    > {$selector-button},
+                    > {$selector-label},
+                    > input {
+                        ui-set('border-radius', size['round'])
+                        border-top-right-radius 0
+                        border-bottom-right-radius 0
+                    }
+                    > {$selector-label} + input,
+                    > {$selector-button} + input,
+                    > input + {$selector-label},
+                    > input + {$selector-button} {
+                        ui-set('border-radius', size['round'])
+                        border-top-left-radius 0
+                        border-bottom-left-radius 0
+                    }
+                }
+                &{$selector-radius} {
+                    > {$selector-button},
+                    > {$selector-label},
+                    > input {
+                        ui-set('border-radius', size['radius'])
+                        border-top-right-radius 0
+                        border-bottom-right-radius 0
+                    }
+                    > {$selector-label} + input,
+                    > {$selector-button} + input,
+                    > input + {$selector-label},
+                    > input + {$selector-button} {
+                        ui-set('border-radius', size['radius'])
+                        border-top-left-radius 0
+                        border-bottom-left-radius 0
+                    }
                 }
             }
         }
@@ -285,3 +340,101 @@ form-input()
         }
     )
 
+
+
+form-inputs()
+
+    ui-collection(
+        selector-item: $selector-form-input,
+        each: @(size, name) {
+
+            > input{$selector-form-input},
+            > textarea{$selector-form-input},
+            > {$selector-form-input} > input,
+            > {$selector-form-input} > textarea {
+                form-input-size(size)
+            }
+
+            > input{$selector-form-input},
+            > {$selector-form-input} > input {
+                form-input-height(name)
+            }
+
+            &{$selector-round} {
+                > {$selector-button},
+                > {$selector-label},
+                > input{$selector-form-input},
+                > textarea{$selector-form-input},
+                > {$selector-form-input} > input,
+                > {$selector-form-input} > textarea {
+                    ui-set('border-radius', size['round'])
+                }
+            }
+            &{$selector-radius} {
+                > {$selector-button},
+                > {$selector-label},
+                > input{$selector-form-input},
+                > textarea{$selector-form-input},
+                > {$selector-form-input} > input,
+                > {$selector-form-input} > textarea {
+                    ui-set('border-radius', size['radius'])
+                }
+            }
+
+        }
+    )
+
+form-inputs-tight()
+
+    ui-collection-tight(
+        selector-item: $selector-form-input,
+        gap-item: -1px
+    )
+
+    if !$support-ie or !$support-ie8
+
+        &{$selector-round},
+        &{$selector-radius}
+            > {$selector-form-input}
+
+                &:not(:first-child):not(:last-child)
+                    border-radius 0
+
+                &:first-child
+                    border-top-right-radius 0
+                    border-bottom-right-radius 0
+
+                &:last-child
+                    border-top-left-radius 0
+                    border-bottom-left-radius 0
+
+    else
+
+        > {$selector-form-input}
+            border-radius 0
+
+        side-radius = @(radius) {
+            {$selector-first-child} {
+                ui-set('border-top-left-radius', radius)
+                ui-set('border-bottom-left-radius', radius)
+            }
+            {$selector-last-child} {
+                ui-set('border-top-right-radius', radius)
+                ui-set('border-bottom-right-radius', radius)
+            }
+        }
+
+        ui-size-variant(
+            each: @(size) {
+                &{$selector-round} {
+                    > {$selector-form-input} {
+                        side-radius(size['round'])
+                    }
+                }
+                &{$selector-radius} {
+                    > {$selector-form-input} {
+                        side-radius(size['radius'])
+                    }
+                }
+            }
+        )
