@@ -3464,9 +3464,7 @@ textarea.input,
 .input > textarea {
   resize: none;
 }
-div.input,
-span.input,
-label.input {
+div.input {
   display: inline-block;
 }
 input.input,
@@ -3494,50 +3492,62 @@ textarea.input.radius,
   border-radius: 4px;
 }
 div.input > .label,
-span.input > .label,
-label.input > .label,
 div.input > .button,
-span.input > .button,
-label.input > .button,
-div.input > .placeholder,
-span.input > .placeholder,
-label.input > .placeholder {
+div.input > .placeholder {
   font-size: 14px;
   line-height: 1.571428571428571;
   padding: 6px 12px;
 }
-div.input > .floated,
-span.input > .floated,
-label.input > .floated {
+div.input > .floated {
   position: absolute;
   left: 0;
   top: 6px;
   font-size: 14px;
   line-height: 1.571428571428571;
 }
-div.input > input + .floated,
-span.input > input + .floated,
-label.input > input + .floated {
+div.input > input + .floated {
   left: auto;
   right: 0;
 }
 div.input > .label + input,
-span.input > .label + input,
-label.input > .label + input,
-div.input > .button + input,
-span.input > .button + input,
-label.input > .button + input {
+div.input > .button + input {
   border-left: 0;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
 }
 div.input > input + .label,
-span.input > input + .label,
-label.input > input + .label,
-div.input > input + .button,
-span.input > input + .button,
-label.input > input + .button {
+div.input > input + .button {
   margin-left: -1px;
+}
+div.input.round > .button,
+div.input.round > .label,
+div.input.round > input {
+  border-radius: 23px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+div.input.round > .label + input,
+div.input.round > .button + input,
+div.input.round > input + .label,
+div.input.round > input + .button {
+  border-radius: 23px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+div.input.radius > .button,
+div.input.radius > .label,
+div.input.radius > input {
+  border-radius: 4px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+div.input.radius > .label + input,
+div.input.radius > .button + input,
+div.input.radius > input + .label,
+div.input.radius > input + .button {
+  border-radius: 4px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
 }
 input.input.tiny,
 .input.tiny > input,
@@ -3564,50 +3574,62 @@ textarea.input.tiny.radius,
   border-radius: 2px;
 }
 div.input.tiny > .label,
-span.input.tiny > .label,
-label.input.tiny > .label,
 div.input.tiny > .button,
-span.input.tiny > .button,
-label.input.tiny > .button,
-div.input.tiny > .placeholder,
-span.input.tiny > .placeholder,
-label.input.tiny > .placeholder {
+div.input.tiny > .placeholder {
   font-size: 12px;
   line-height: 1.166666666666667;
   padding: 3px 6px;
 }
-div.input.tiny > .floated,
-span.input.tiny > .floated,
-label.input.tiny > .floated {
+div.input.tiny > .floated {
   position: absolute;
   left: 0;
   top: 3px;
   font-size: 12px;
   line-height: 1.166666666666667;
 }
-div.input.tiny > input + .floated,
-span.input.tiny > input + .floated,
-label.input.tiny > input + .floated {
+div.input.tiny > input + .floated {
   left: auto;
   right: 0;
 }
 div.input.tiny > .label + input,
-span.input.tiny > .label + input,
-label.input.tiny > .label + input,
-div.input.tiny > .button + input,
-span.input.tiny > .button + input,
-label.input.tiny > .button + input {
+div.input.tiny > .button + input {
   border-left: 0;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
 }
 div.input.tiny > input + .label,
-span.input.tiny > input + .label,
-label.input.tiny > input + .label,
-div.input.tiny > input + .button,
-span.input.tiny > input + .button,
-label.input.tiny > input + .button {
+div.input.tiny > input + .button {
   margin-left: -1px;
+}
+div.input.tiny.round > .button,
+div.input.tiny.round > .label,
+div.input.tiny.round > input {
+  border-radius: 13px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+div.input.tiny.round > .label + input,
+div.input.tiny.round > .button + input,
+div.input.tiny.round > input + .label,
+div.input.tiny.round > input + .button {
+  border-radius: 13px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+div.input.tiny.radius > .button,
+div.input.tiny.radius > .label,
+div.input.tiny.radius > input {
+  border-radius: 2px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+div.input.tiny.radius > .label + input,
+div.input.tiny.radius > .button + input,
+div.input.tiny.radius > input + .label,
+div.input.tiny.radius > input + .button {
+  border-radius: 2px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
 }
 input.input.small,
 .input.small > input,
@@ -3634,50 +3656,62 @@ textarea.input.small.radius,
   border-radius: 3px;
 }
 div.input.small > .label,
-span.input.small > .label,
-label.input.small > .label,
 div.input.small > .button,
-span.input.small > .button,
-label.input.small > .button,
-div.input.small > .placeholder,
-span.input.small > .placeholder,
-label.input.small > .placeholder {
+div.input.small > .placeholder {
   font-size: 12px;
   line-height: 1.166666666666667;
   padding: 6px 10px;
 }
-div.input.small > .floated,
-span.input.small > .floated,
-label.input.small > .floated {
+div.input.small > .floated {
   position: absolute;
   left: 0;
   top: 6px;
   font-size: 12px;
   line-height: 1.166666666666667;
 }
-div.input.small > input + .floated,
-span.input.small > input + .floated,
-label.input.small > input + .floated {
+div.input.small > input + .floated {
   left: auto;
   right: 0;
 }
 div.input.small > .label + input,
-span.input.small > .label + input,
-label.input.small > .label + input,
-div.input.small > .button + input,
-span.input.small > .button + input,
-label.input.small > .button + input {
+div.input.small > .button + input {
   border-left: 0;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
 }
 div.input.small > input + .label,
-span.input.small > input + .label,
-label.input.small > input + .label,
-div.input.small > input + .button,
-span.input.small > input + .button,
-label.input.small > input + .button {
+div.input.small > input + .button {
   margin-left: -1px;
+}
+div.input.small.round > .button,
+div.input.small.round > .label,
+div.input.small.round > input {
+  border-radius: 15px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+div.input.small.round > .label + input,
+div.input.small.round > .button + input,
+div.input.small.round > input + .label,
+div.input.small.round > input + .button {
+  border-radius: 15px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+div.input.small.radius > .button,
+div.input.small.radius > .label,
+div.input.small.radius > input {
+  border-radius: 3px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+div.input.small.radius > .label + input,
+div.input.small.radius > .button + input,
+div.input.small.radius > input + .label,
+div.input.small.radius > input + .button {
+  border-radius: 3px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
 }
 input.input.large,
 .input.large > input,
@@ -3704,50 +3738,62 @@ textarea.input.large.radius,
   border-radius: 5px;
 }
 div.input.large > .label,
-span.input.large > .label,
-label.input.large > .label,
 div.input.large > .button,
-span.input.large > .button,
-label.input.large > .button,
-div.input.large > .placeholder,
-span.input.large > .placeholder,
-label.input.large > .placeholder {
+div.input.large > .placeholder {
   font-size: 16px;
   line-height: 1.75;
   padding: 8px 17px;
 }
-div.input.large > .floated,
-span.input.large > .floated,
-label.input.large > .floated {
+div.input.large > .floated {
   position: absolute;
   left: 0;
   top: 8px;
   font-size: 16px;
   line-height: 1.75;
 }
-div.input.large > input + .floated,
-span.input.large > input + .floated,
-label.input.large > input + .floated {
+div.input.large > input + .floated {
   left: auto;
   right: 0;
 }
 div.input.large > .label + input,
-span.input.large > .label + input,
-label.input.large > .label + input,
-div.input.large > .button + input,
-span.input.large > .button + input,
-label.input.large > .button + input {
+div.input.large > .button + input {
   border-left: 0;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
 }
 div.input.large > input + .label,
-span.input.large > input + .label,
-label.input.large > input + .label,
-div.input.large > input + .button,
-span.input.large > input + .button,
-label.input.large > input + .button {
+div.input.large > input + .button {
   margin-left: -1px;
+}
+div.input.large.round > .button,
+div.input.large.round > .label,
+div.input.large.round > input {
+  border-radius: 25px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+div.input.large.round > .label + input,
+div.input.large.round > .button + input,
+div.input.large.round > input + .label,
+div.input.large.round > input + .button {
+  border-radius: 25px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+div.input.large.radius > .button,
+div.input.large.radius > .label,
+div.input.large.radius > input {
+  border-radius: 5px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+div.input.large.radius > .label + input,
+div.input.large.radius > .button + input,
+div.input.large.radius > input + .label,
+div.input.large.radius > input + .button {
+  border-radius: 5px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
 }
 input.input.huge,
 .input.huge > input,
@@ -3774,50 +3820,62 @@ textarea.input.huge.radius,
   border-radius: 6px;
 }
 div.input.huge > .label,
-span.input.huge > .label,
-label.input.huge > .label,
 div.input.huge > .button,
-span.input.huge > .button,
-label.input.huge > .button,
-div.input.huge > .placeholder,
-span.input.huge > .placeholder,
-label.input.huge > .placeholder {
+div.input.huge > .placeholder {
   font-size: 18px;
   line-height: 2;
   padding: 10px 22px;
 }
-div.input.huge > .floated,
-span.input.huge > .floated,
-label.input.huge > .floated {
+div.input.huge > .floated {
   position: absolute;
   left: 0;
   top: 10px;
   font-size: 18px;
   line-height: 2;
 }
-div.input.huge > input + .floated,
-span.input.huge > input + .floated,
-label.input.huge > input + .floated {
+div.input.huge > input + .floated {
   left: auto;
   right: 0;
 }
 div.input.huge > .label + input,
-span.input.huge > .label + input,
-label.input.huge > .label + input,
-div.input.huge > .button + input,
-span.input.huge > .button + input,
-label.input.huge > .button + input {
+div.input.huge > .button + input {
   border-left: 0;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
 }
 div.input.huge > input + .label,
-span.input.huge > input + .label,
-label.input.huge > input + .label,
-div.input.huge > input + .button,
-span.input.huge > input + .button,
-label.input.huge > input + .button {
+div.input.huge > input + .button {
   margin-left: -1px;
+}
+div.input.huge.round > .button,
+div.input.huge.round > .label,
+div.input.huge.round > input {
+  border-radius: 30px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+div.input.huge.round > .label + input,
+div.input.huge.round > .button + input,
+div.input.huge.round > input + .label,
+div.input.huge.round > input + .button {
+  border-radius: 30px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+div.input.huge.radius > .button,
+div.input.huge.radius > .label,
+div.input.huge.radius > input {
+  border-radius: 6px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+div.input.huge.radius > .label + input,
+div.input.huge.radius > .button + input,
+div.input.huge.radius > input + .label,
+div.input.huge.radius > input + .button {
+  border-radius: 6px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
 }
 input.input,
 .input > input,
@@ -3852,28 +3910,18 @@ textarea.input:-ms-input-placeholder,
 .input > textarea:-ms-input-placeholder {
   color: #ddd;
 }
-div.input,
-span.input,
-label.input {
+div.input {
   position: relative;
   font-size: 0;
 }
-div.input > .floated,
-span.input > .floated,
-label.input > .floated {
+div.input > .floated {
   position: absolute;
 }
 div.input > input,
-span.input > input,
-label.input > input,
-div.input > textarea,
-span.input > textarea,
-label.input > textarea {
+div.input > textarea {
   vertical-align: top;
 }
-div.input > .placeholder,
-span.input > .placeholder,
-label.input > .placeholder {
+div.input > .placeholder {
   position: absolute;
   left: 1px;
   top: 1px;
@@ -3906,26 +3954,18 @@ textarea.input:focus,
 .input > textarea:focus {
   border-color: #cac7c4;
 }
-div.input.primary > .label,
-span.input.primary > .label,
-label.input.primary > .label {
+div.input.primary > .label {
   background-color: #f90;
   border-color: #f90;
   color: #fff;
 }
-div.input.primary > .button,
-span.input.primary > .button,
-label.input.primary > .button {
+div.input.primary > .button {
   background-color: #f90;
   border-color: #e68a00;
   color: #fff;
 }
 div.input.primary > .button.hover,
-span.input.primary > .button.hover,
-label.input.primary > .button.hover,
-div.input.primary > .button:hover,
-span.input.primary > .button:hover,
-label.input.primary > .button:hover {
+div.input.primary > .button:hover {
   -webkit-transition-duration: 0.1s;
           transition-duration: 0.1s;
   -webkit-transition-property: background-color, border-color;
@@ -3934,22 +3974,14 @@ label.input.primary > .button:hover {
   border-color: #db8300;
 }
 div.input.primary > .button.active,
-span.input.primary > .button.active,
-label.input.primary > .button.active,
-div.input.primary > .button:active,
-span.input.primary > .button:active,
-label.input.primary > .button:active {
+div.input.primary > .button:active {
   background-color: #e68a00;
   border-color: #cf7c00;
   -webkit-box-shadow: inset 0px 1px 4px rgba(0,0,0,0.15);
           box-shadow: inset 0px 1px 4px rgba(0,0,0,0.15);
 }
 div.input.primary > .button.disabled,
-span.input.primary > .button.disabled,
-label.input.primary > .button.disabled,
-div.input.primary > .button[disabled],
-span.input.primary > .button[disabled],
-label.input.primary > .button[disabled] {
+div.input.primary > .button[disabled] {
   background-color: #ffb84d !important;
   border-color: #ffa51f !important;
   color: #fff !important;
@@ -3976,26 +4008,18 @@ textarea.input.primary:focus,
 .input.primary > textarea:focus {
   border-color: #f90;
 }
-div.input.secondary > .label,
-span.input.secondary > .label,
-label.input.secondary > .label {
+div.input.secondary > .label {
   background-color: #fff;
   border-color: #fff;
   color: #605e58;
 }
-div.input.secondary > .button,
-span.input.secondary > .button,
-label.input.secondary > .button {
+div.input.secondary > .button {
   background-color: #fff;
   border-color: #e6e6e6;
   color: #605e58;
 }
 div.input.secondary > .button.hover,
-span.input.secondary > .button.hover,
-label.input.secondary > .button.hover,
-div.input.secondary > .button:hover,
-span.input.secondary > .button:hover,
-label.input.secondary > .button:hover {
+div.input.secondary > .button:hover {
   -webkit-transition-duration: 0.1s;
           transition-duration: 0.1s;
   -webkit-transition-property: background-color, border-color;
@@ -4004,22 +4028,14 @@ label.input.secondary > .button:hover {
   border-color: #dbdbdb;
 }
 div.input.secondary > .button.active,
-span.input.secondary > .button.active,
-label.input.secondary > .button.active,
-div.input.secondary > .button:active,
-span.input.secondary > .button:active,
-label.input.secondary > .button:active {
+div.input.secondary > .button:active {
   background-color: #e6e6e6;
   border-color: #cfcfcf;
   -webkit-box-shadow: inset 0px 1px 4px rgba(0,0,0,0.15);
           box-shadow: inset 0px 1px 4px rgba(0,0,0,0.15);
 }
 div.input.secondary > .button.disabled,
-span.input.secondary > .button.disabled,
-label.input.secondary > .button.disabled,
-div.input.secondary > .button[disabled],
-span.input.secondary > .button[disabled],
-label.input.secondary > .button[disabled] {
+div.input.secondary > .button[disabled] {
   background-color: #fff !important;
   border-color: #ebebeb !important;
   color: #928f88 !important;
@@ -4046,26 +4062,18 @@ textarea.input.secondary:focus,
 .input.secondary > textarea:focus {
   border-color: #fff;
 }
-div.input.success > .label,
-span.input.success > .label,
-label.input.success > .label {
+div.input.success > .label {
   background-color: #56b02a;
   border-color: #56b02a;
   color: #fff;
 }
-div.input.success > .button,
-span.input.success > .button,
-label.input.success > .button {
+div.input.success > .button {
   background-color: #56b02a;
   border-color: #4d9e26;
   color: #fff;
 }
 div.input.success > .button.hover,
-span.input.success > .button.hover,
-label.input.success > .button.hover,
-div.input.success > .button:hover,
-span.input.success > .button:hover,
-label.input.success > .button:hover {
+div.input.success > .button:hover {
   -webkit-transition-duration: 0.1s;
           transition-duration: 0.1s;
   -webkit-transition-property: background-color, border-color;
@@ -4074,22 +4082,14 @@ label.input.success > .button:hover {
   border-color: #499624;
 }
 div.input.success > .button.active,
-span.input.success > .button.active,
-label.input.success > .button.active,
-div.input.success > .button:active,
-span.input.success > .button:active,
-label.input.success > .button:active {
+div.input.success > .button:active {
   background-color: #4d9e26;
   border-color: #458e22;
   -webkit-box-shadow: inset 0px 1px 4px rgba(0,0,0,0.15);
           box-shadow: inset 0px 1px 4px rgba(0,0,0,0.15);
 }
 div.input.success > .button.disabled,
-span.input.success > .button.disabled,
-label.input.success > .button.disabled,
-div.input.success > .button[disabled],
-span.input.success > .button[disabled],
-label.input.success > .button[disabled] {
+div.input.success > .button[disabled] {
   background-color: #83d85a !important;
   border-color: #66ce35 !important;
   color: #fff !important;
@@ -4116,26 +4116,18 @@ textarea.input.success:focus,
 .input.success > textarea:focus {
   border-color: #56b02a;
 }
-div.input.error > .label,
-span.input.error > .label,
-label.input.error > .label {
+div.input.error > .label {
   background-color: #f95710;
   border-color: #f95710;
   color: #fff;
 }
-div.input.error > .button,
-span.input.error > .button,
-label.input.error > .button {
+div.input.error > .button {
   background-color: #f95710;
   border-color: #e94b06;
   color: #fff;
 }
 div.input.error > .button.hover,
-span.input.error > .button.hover,
-label.input.error > .button.hover,
-div.input.error > .button:hover,
-span.input.error > .button:hover,
-label.input.error > .button:hover {
+div.input.error > .button:hover {
   -webkit-transition-duration: 0.1s;
           transition-duration: 0.1s;
   -webkit-transition-property: background-color, border-color;
@@ -4144,22 +4136,14 @@ label.input.error > .button:hover {
   border-color: #dd4706;
 }
 div.input.error > .button.active,
-span.input.error > .button.active,
-label.input.error > .button.active,
-div.input.error > .button:active,
-span.input.error > .button:active,
-label.input.error > .button:active {
+div.input.error > .button:active {
   background-color: #e94b06;
   border-color: #d24405;
   -webkit-box-shadow: inset 0px 1px 4px rgba(0,0,0,0.15);
           box-shadow: inset 0px 1px 4px rgba(0,0,0,0.15);
 }
 div.input.error > .button.disabled,
-span.input.error > .button.disabled,
-label.input.error > .button.disabled,
-div.input.error > .button[disabled],
-span.input.error > .button[disabled],
-label.input.error > .button[disabled] {
+div.input.error > .button[disabled] {
   background-color: #fb8958 !important;
   border-color: #fa6a2c !important;
   color: #fff !important;
@@ -4186,26 +4170,18 @@ textarea.input.error:focus,
 .input.error > textarea:focus {
   border-color: #f95710;
 }
-div.input.info > .label,
-span.input.info > .label,
-label.input.info > .label {
+div.input.info > .label {
   background-color: #6187dc;
   border-color: #6187dc;
   color: #fff;
 }
-div.input.info > .button,
-span.input.info > .button,
-label.input.info > .button {
+div.input.info > .button {
   background-color: #6187dc;
   border-color: #4773d6;
   color: #fff;
 }
 div.input.info > .button.hover,
-span.input.info > .button.hover,
-label.input.info > .button.hover,
-div.input.info > .button:hover,
-span.input.info > .button:hover,
-label.input.info > .button:hover {
+div.input.info > .button:hover {
   -webkit-transition-duration: 0.1s;
           transition-duration: 0.1s;
   -webkit-transition-property: background-color, border-color;
@@ -4214,22 +4190,14 @@ label.input.info > .button:hover {
   border-color: #3b6ad3;
 }
 div.input.info > .button.active,
-span.input.info > .button.active,
-label.input.info > .button.active,
-div.input.info > .button:active,
-span.input.info > .button:active,
-label.input.info > .button:active {
+div.input.info > .button:active {
   background-color: #4773d6;
   border-color: #3061d1;
   -webkit-box-shadow: inset 0px 1px 4px rgba(0,0,0,0.15);
           box-shadow: inset 0px 1px 4px rgba(0,0,0,0.15);
 }
 div.input.info > .button.disabled,
-span.input.info > .button.disabled,
-label.input.info > .button.disabled,
-div.input.info > .button[disabled],
-span.input.info > .button[disabled],
-label.input.info > .button[disabled] {
+div.input.info > .button[disabled] {
   background-color: #90abe7 !important;
   border-color: #6c8fde !important;
   color: #fff !important;
@@ -4256,26 +4224,18 @@ textarea.input.info:focus,
 .input.info > textarea:focus {
   border-color: #6187dc;
 }
-div.input.warning > .label,
-span.input.warning > .label,
-label.input.warning > .label {
+div.input.warning > .label {
   background-color: #f0ad4e;
   border-color: #f0ad4e;
   color: #fff;
 }
-div.input.warning > .button,
-span.input.warning > .button,
-label.input.warning > .button {
+div.input.warning > .button {
   background-color: #f0ad4e;
   border-color: #ee9f31;
   color: #fff;
 }
 div.input.warning > .button.hover,
-span.input.warning > .button.hover,
-label.input.warning > .button.hover,
-div.input.warning > .button:hover,
-span.input.warning > .button:hover,
-label.input.warning > .button:hover {
+div.input.warning > .button:hover {
   -webkit-transition-duration: 0.1s;
           transition-duration: 0.1s;
   -webkit-transition-property: background-color, border-color;
@@ -4284,22 +4244,14 @@ label.input.warning > .button:hover {
   border-color: #ed9924;
 }
 div.input.warning > .button.active,
-span.input.warning > .button.active,
-label.input.warning > .button.active,
-div.input.warning > .button:active,
-span.input.warning > .button:active,
-label.input.warning > .button:active {
+div.input.warning > .button:active {
   background-color: #ee9f31;
   border-color: #ec9316;
   -webkit-box-shadow: inset 0px 1px 4px rgba(0,0,0,0.15);
           box-shadow: inset 0px 1px 4px rgba(0,0,0,0.15);
 }
 div.input.warning > .button.disabled,
-span.input.warning > .button.disabled,
-label.input.warning > .button.disabled,
-div.input.warning > .button[disabled],
-span.input.warning > .button[disabled],
-label.input.warning > .button[disabled] {
+div.input.warning > .button[disabled] {
   background-color: #f4c683 !important;
   border-color: #f1b25a !important;
   color: #fff !important;
@@ -4326,26 +4278,18 @@ textarea.input.warning:focus,
 .input.warning > textarea:focus {
   border-color: #f0ad4e;
 }
-div.input.danger > .label,
-span.input.danger > .label,
-label.input.danger > .label {
+div.input.danger > .label {
   background-color: #d9534f;
   border-color: #d9534f;
   color: #fff;
 }
-div.input.danger > .button,
-span.input.danger > .button,
-label.input.danger > .button {
+div.input.danger > .button {
   background-color: #d9534f;
   border-color: #d43b37;
   color: #fff;
 }
 div.input.danger > .button.hover,
-span.input.danger > .button.hover,
-label.input.danger > .button.hover,
-div.input.danger > .button:hover,
-span.input.danger > .button:hover,
-label.input.danger > .button:hover {
+div.input.danger > .button:hover {
   -webkit-transition-duration: 0.1s;
           transition-duration: 0.1s;
   -webkit-transition-property: background-color, border-color;
@@ -4354,22 +4298,14 @@ label.input.danger > .button:hover {
   border-color: #d1312d;
 }
 div.input.danger > .button.active,
-span.input.danger > .button.active,
-label.input.danger > .button.active,
-div.input.danger > .button:active,
-span.input.danger > .button:active,
-label.input.danger > .button:active {
+div.input.danger > .button:active {
   background-color: #d43b37;
   border-color: #c62e2b;
   -webkit-box-shadow: inset 0px 1px 4px rgba(0,0,0,0.15);
           box-shadow: inset 0px 1px 4px rgba(0,0,0,0.15);
 }
 div.input.danger > .button.disabled,
-span.input.danger > .button.disabled,
-label.input.danger > .button.disabled,
-div.input.danger > .button[disabled],
-span.input.danger > .button[disabled],
-label.input.danger > .button[disabled] {
+div.input.danger > .button[disabled] {
   background-color: #e48784 !important;
   border-color: #dd625f !important;
   color: #fff !important;
@@ -4396,26 +4332,18 @@ textarea.input.danger:focus,
 .input.danger > textarea:focus {
   border-color: #d9534f;
 }
-div.input.muted > .label,
-span.input.muted > .label,
-label.input.muted > .label {
+div.input.muted > .label {
   background-color: #ccc;
   border-color: #ccc;
   color: #fff;
 }
-div.input.muted > .button,
-span.input.muted > .button,
-label.input.muted > .button {
+div.input.muted > .button {
   background-color: #ccc;
   border-color: #b8b8b8;
   color: #fff;
 }
 div.input.muted > .button.hover,
-span.input.muted > .button.hover,
-label.input.muted > .button.hover,
-div.input.muted > .button:hover,
-span.input.muted > .button:hover,
-label.input.muted > .button:hover {
+div.input.muted > .button:hover {
   -webkit-transition-duration: 0.1s;
           transition-duration: 0.1s;
   -webkit-transition-property: background-color, border-color;
@@ -4424,22 +4352,14 @@ label.input.muted > .button:hover {
   border-color: #afafaf;
 }
 div.input.muted > .button.active,
-span.input.muted > .button.active,
-label.input.muted > .button.active,
-div.input.muted > .button:active,
-span.input.muted > .button:active,
-label.input.muted > .button:active {
+div.input.muted > .button:active {
   background-color: #b8b8b8;
   border-color: #a6a6a6;
   -webkit-box-shadow: inset 0px 1px 4px rgba(0,0,0,0.15);
           box-shadow: inset 0px 1px 4px rgba(0,0,0,0.15);
 }
 div.input.muted > .button.disabled,
-span.input.muted > .button.disabled,
-label.input.muted > .button.disabled,
-div.input.muted > .button[disabled],
-span.input.muted > .button[disabled],
-label.input.muted > .button[disabled] {
+div.input.muted > .button[disabled] {
   background-color: #dbdbdb !important;
   border-color: #c6c6c6 !important;
   color: #fff !important;
@@ -4490,21 +4410,32 @@ textarea.input.muted:focus,
   margin-left: 0;
   margin-top: 8px;
 }
-.inputs > .input,
+.inputs > input.input,
+.inputs > textarea.input,
 .inputs > .input > input,
 .inputs > .input > textarea {
   font-size: 14px;
   line-height: 1.571428571428571;
   padding: 6px 12px;
 }
-.inputs > .input,
+.inputs > input.input,
 .inputs > .input > input {
   height: 36px;
 }
-.inputs.round selector-control {
+.inputs.round > .button,
+.inputs.round > .label,
+.inputs.round > input.input,
+.inputs.round > textarea.input,
+.inputs.round > .input > input,
+.inputs.round > .input > textarea {
   border-radius: 23px;
 }
-.inputs.radius selector-control {
+.inputs.radius > .button,
+.inputs.radius > .label,
+.inputs.radius > input.input,
+.inputs.radius > textarea.input,
+.inputs.radius > .input > input,
+.inputs.radius > .input > textarea {
   border-radius: 4px;
 }
 .inputs.tiny > .input + .input {
@@ -4514,21 +4445,32 @@ textarea.input.muted:focus,
   margin-left: 0;
   margin-top: 4px;
 }
-.inputs.tiny > .input,
+.inputs.tiny > input.input,
+.inputs.tiny > textarea.input,
 .inputs.tiny > .input > input,
 .inputs.tiny > .input > textarea {
   font-size: 12px;
   line-height: 1.166666666666667;
   padding: 3px 6px;
 }
-.inputs.tiny > .input,
+.inputs.tiny > input.input,
 .inputs.tiny > .input > input {
   height: 22px;
 }
-.inputs.tiny.round selector-control {
+.inputs.tiny.round > .button,
+.inputs.tiny.round > .label,
+.inputs.tiny.round > input.input,
+.inputs.tiny.round > textarea.input,
+.inputs.tiny.round > .input > input,
+.inputs.tiny.round > .input > textarea {
   border-radius: 13px;
 }
-.inputs.tiny.radius selector-control {
+.inputs.tiny.radius > .button,
+.inputs.tiny.radius > .label,
+.inputs.tiny.radius > input.input,
+.inputs.tiny.radius > textarea.input,
+.inputs.tiny.radius > .input > input,
+.inputs.tiny.radius > .input > textarea {
   border-radius: 2px;
 }
 .inputs.small > .input + .input {
@@ -4538,21 +4480,32 @@ textarea.input.muted:focus,
   margin-left: 0;
   margin-top: 6px;
 }
-.inputs.small > .input,
+.inputs.small > input.input,
+.inputs.small > textarea.input,
 .inputs.small > .input > input,
 .inputs.small > .input > textarea {
   font-size: 12px;
   line-height: 1.166666666666667;
   padding: 6px 10px;
 }
-.inputs.small > .input,
+.inputs.small > input.input,
 .inputs.small > .input > input {
   height: 28px;
 }
-.inputs.small.round selector-control {
+.inputs.small.round > .button,
+.inputs.small.round > .label,
+.inputs.small.round > input.input,
+.inputs.small.round > textarea.input,
+.inputs.small.round > .input > input,
+.inputs.small.round > .input > textarea {
   border-radius: 15px;
 }
-.inputs.small.radius selector-control {
+.inputs.small.radius > .button,
+.inputs.small.radius > .label,
+.inputs.small.radius > input.input,
+.inputs.small.radius > textarea.input,
+.inputs.small.radius > .input > input,
+.inputs.small.radius > .input > textarea {
   border-radius: 3px;
 }
 .inputs.large > .input + .input {
@@ -4562,21 +4515,32 @@ textarea.input.muted:focus,
   margin-left: 0;
   margin-top: 12px;
 }
-.inputs.large > .input,
+.inputs.large > input.input,
+.inputs.large > textarea.input,
 .inputs.large > .input > input,
 .inputs.large > .input > textarea {
   font-size: 16px;
   line-height: 1.75;
   padding: 8px 17px;
 }
-.inputs.large > .input,
+.inputs.large > input.input,
 .inputs.large > .input > input {
   height: 46px;
 }
-.inputs.large.round selector-control {
+.inputs.large.round > .button,
+.inputs.large.round > .label,
+.inputs.large.round > input.input,
+.inputs.large.round > textarea.input,
+.inputs.large.round > .input > input,
+.inputs.large.round > .input > textarea {
   border-radius: 25px;
 }
-.inputs.large.radius selector-control {
+.inputs.large.radius > .button,
+.inputs.large.radius > .label,
+.inputs.large.radius > input.input,
+.inputs.large.radius > textarea.input,
+.inputs.large.radius > .input > input,
+.inputs.large.radius > .input > textarea {
   border-radius: 5px;
 }
 .inputs.huge > .input + .input {
@@ -4586,21 +4550,32 @@ textarea.input.muted:focus,
   margin-left: 0;
   margin-top: 14px;
 }
-.inputs.huge > .input,
+.inputs.huge > input.input,
+.inputs.huge > textarea.input,
 .inputs.huge > .input > input,
 .inputs.huge > .input > textarea {
   font-size: 18px;
   line-height: 2;
   padding: 10px 22px;
 }
-.inputs.huge > .input,
+.inputs.huge > input.input,
 .inputs.huge > .input > input {
   height: 58px;
 }
-.inputs.huge.round selector-control {
+.inputs.huge.round > .button,
+.inputs.huge.round > .label,
+.inputs.huge.round > input.input,
+.inputs.huge.round > textarea.input,
+.inputs.huge.round > .input > input,
+.inputs.huge.round > .input > textarea {
   border-radius: 30px;
 }
-.inputs.huge.radius selector-control {
+.inputs.huge.radius > .button,
+.inputs.huge.radius > .label,
+.inputs.huge.radius > input.input,
+.inputs.huge.radius > textarea.input,
+.inputs.huge.radius > .input > input,
+.inputs.huge.radius > .input > textarea {
   border-radius: 6px;
 }
 .inputs.tight > .input + .input {
@@ -4614,6 +4589,20 @@ textarea.input.muted:focus,
 .inputs.tight > .input:hover {
   position: relative;
   z-index: 1;
+}
+.inputs.tight.round > .input:not(:first-child):not(:last-child),
+.inputs.tight.radius > .input:not(:first-child):not(:last-child) {
+  border-radius: 0;
+}
+.inputs.tight.round > .input:first-child,
+.inputs.tight.radius > .input:first-child {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.inputs.tight.round > .input:last-child,
+.inputs.tight.radius > .input:last-child {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
 }
 .radio > input[type="radio"] {
   margin-right: 6px;
