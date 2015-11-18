@@ -6,6 +6,29 @@
     <title>列表</title>
     <link rel="stylesheet" href="doc.styl">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <style>
+        .list > .item {
+            padding-left: 30px !important;
+            position: relative;
+        }
+        .list > .item > .fa {
+            position: absolute;
+            left: 10px;
+            top: 11px;
+        }
+        .list.tiny > .item > .fa {
+            top: 5px;
+        }
+        .list.small > .item > .fa {
+            top: 8px;
+        }
+        .list.large > .item > .fa {
+            top: 14px;
+        }
+        .list.huge > .item > .fa {
+            top: 20px;
+        }
+    </style>
 </head>
 
 <body>
@@ -299,10 +322,8 @@
                 <div class="floated">
                     x
                 </div>
-                <div class="text">
-                    <i class="icon fa fa-plus-square"></i>
-                    text
-                </div>
+                <i class="icon fa fa-plus-square"></i>
+                text
             </li>
             <li class="item">
                 text

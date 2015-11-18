@@ -14,31 +14,33 @@ button-reset()
         outline 0
 
 button-size(size)
-
     ui-set('font-size', size['font'])
     ui-set('line-height', size['line-height'])
     ui-set('padding', size['padding-vertical'] size['padding-horizontal'])
 
 button-brand(bg, border, color)
-
     ui-set('background-color', bg)
     ui-set('border-color', border)
     ui-set('color', color)
 
-button-hover(bg, border)
+button-hover(bg, border, color = null)
     ui-set('background-color', bg)
     ui-set('border-color', border)
+    if color is a 'rgba'
+        ui-set('color', color)
 
-button-active(bg, border)
+button-active(bg, border, color = null)
     ui-set('background-color', bg)
     ui-set('border-color', border)
     ui-set('box-shadow', $button-box-shadow-active)
+    if color is a 'rgba'
+        ui-set('color', color)
 
 button-disabled(bg, border, color)
     ui-set('background-color', bg, true)
     ui-set('border-color', border, true)
     ui-set('color', color, true)
-    box-shadow none
+    box-shadow none !important
 
 ui-button()
 

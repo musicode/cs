@@ -314,7 +314,7 @@ form-input()
 
     ui-brand-variant(
         reversed: true,
-        each: @(bg, color) {
+        each: @(bg, color, name) {
 
             {selector-wrapper} {
                 > {$selector-label} {
@@ -329,6 +329,30 @@ form-input()
                         border: darken(bg, $button-border-darken),
                         color: color
                     )
+                    {$selector-hover} {
+                        bg-hover = $brand-hover-hash[name]
+                        button-hover(
+                            bg: bg-hover,
+                            border: darken(bg-hover, $button-border-darken),
+                            color: color
+                        )
+                    }
+                    {$selector-active} {
+                        bg-active = $brand-active-hash[name]
+                        button-active(
+                            bg: bg-active,
+                            border: darken(bg-active, $button-border-darken),
+                            color: color
+                        )
+                    }
+                    {$selector-disabled} {
+                        bg-disabled = $brand-disabled-hash[name]
+                        button-disabled(
+                            bg: bg-disabled,
+                            border: darken(bg-disabled, $button-border-darken),
+                            color: color
+                        )
+                    }
                 }
             }
 

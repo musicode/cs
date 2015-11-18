@@ -5,26 +5,6 @@
 
 ui-pagination-button-brand(bg, color)
 
-    border = darken(bg, 10%)
-
-    {$selector-hover}
-        ui-transition('background-color, border-color, color')
-        ui-set('background-color', lighten(bg, 10%))
-        ui-set('border-color', lighten(border, 5%))
-        ui-set('color', color)
-
-    {$selector-active}
-        ui-set('background-color', darken(bg, 10%))
-        ui-set('border-color', darken(border, 10%))
-        ui-set('color', color)
-        ui-set('box-shadow', $button-box-shadow-active)
-
-    {$selector-checked}
-        ui-set('background-color', darken(bg, 10%))
-        ui-set('border-color', darken(border, 10%))
-        ui-set('color', color)
-        ui-set('box-shadow', none)
-
 
 ui-pagination()
 
@@ -43,19 +23,37 @@ ui-pagination()
                 ui-set('font-size', size['font'])
             }
 
-            > {$selector-button} {
-                ui-set('line-height', size['line-height'])
-                ui-set('padding', size['padding-vertical'] size['padding-horizontal'])
-            }
-
         }
     )
 
     ui-brand-variant(
         reversed: true,
-        each: @(bg, color) {
+        each: @(bg, color, name) {
             > {$selector-button} {
-                ui-pagination-button-brand(bg, color)
+                {$selector-hover} {
+                    bg-hover = $brand-hover-hash[name]
+                    button-hover(
+                        bg: bg-hover,
+                        border: darken(bg-hover, $button-border-darken),
+                        color: color
+                    )
+                }
+                {$selector-active} {
+                    bg-active = $brand-active-hash[name]
+                    button-active(
+                        bg: bg-active,
+                        border: darken(bg-active, $button-border-darken),
+                        color: color
+                    )
+                }
+                {$selector-checked} {
+                    bg-checked = $brand-checked-hash[name]
+                    button-active(
+                        bg: bg-checked,
+                        border: darken(bg-checked, $button-border-darken),
+                        color: color
+                    )
+                }
             }
         }
     )
@@ -79,13 +77,18 @@ ui-pagination-item()
 
 ui-pagination-button()
 
-    ui-set('border-color', $brand-border)
-    ui-set('background-color', $brand-bg)
+    button-brand(
+        bg: $brand-bg,
+        border: $brand-border,
+        color: $brand-text
+    )
 
     {$selector-disabled}
-        ui-set('background-color', $brand-bg-disabled, true)
-        ui-set('border-color', $brand-border-disabled, true)
-        ui-set('color', $brand-text-disabled, true)
+        button-disabled(
+            bg: $brand-bg-disabled,
+            border: $brand-border-disabled,
+            color: $brand-text-disabled
+        )
 
 
 

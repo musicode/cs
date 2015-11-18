@@ -12,7 +12,7 @@ message-size(size)
 
 message-brand(color)
 
-    ui-set('background-color', lighten(color, 80%))
+    ui-set('background-color', lighten(color, 95%))
     ui-set('border-color', color)
     ui-set('color', color)
 
@@ -77,50 +77,6 @@ ui-messages-tight()
         gap-item: -1px
     )
 
-    if !$support-ie or !$support-ie8
-
-        &{$selector-round},
-        &{$selector-radius}
-            > {$selector-message}
-
-                &:not(:first-child):not(:last-child)
-                    border-radius 0
-
-                &:first-child
-                    border-top-right-radius 0
-                    border-bottom-right-radius 0
-
-                &:last-child
-                    border-top-left-radius 0
-                    border-bottom-left-radius 0
-
-    else
-
-        > {$selector-message}
-            border-radius 0
-
-        side-radius = @(radius) {
-            {$selector-first-child} {
-                ui-set('border-top-left-radius', radius)
-                ui-set('border-bottom-left-radius', radius)
-            }
-            {$selector-last-child} {
-                ui-set('border-top-right-radius', radius)
-                ui-set('border-bottom-right-radius', radius)
-            }
-        }
-
-        ui-size-variant(
-            each: @(size) {
-                &{$selector-round} {
-                    > {$selector-message} {
-                        side-radius(size['round'])
-                    }
-                }
-                &{$selector-radius} {
-                    > {$selector-message} {
-                        side-radius(size['radius'])
-                    }
-                }
-            }
-        )
+    ui-collection-tight-side-radius(
+        selector-item: $selector-message
+    )

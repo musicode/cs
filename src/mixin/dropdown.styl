@@ -73,30 +73,6 @@ ui-dropdowns()
         }
     )
 
-
-ui-dropdown-text()
-
-    ui-brand-variant(
-        each: @(color) {
-            > {$selector-icon} {
-                ui-set('color', color)
-            }
-        }
-    )
-
-
-ui-dropdown-button()
-
-    ui-brand-variant(
-        reversed: true,
-        each: @(color) {
-            > {$selector-icon} {
-                ui-set('color', color)
-            }
-        }
-    )
-
-
 ui-dropdown-menu()
 
     display none
@@ -140,10 +116,17 @@ ui-dropdown-menu-item()
 
     {$selector-active}
         ui-set('background-color', $brand-bg-active)
+        ui-set('box-shadow', $dropdown-menu-item-box-shadow-active)
 
     {$selector-checked}
         ui-set('background-color', $brand-bg-checked)
 
+    {$selector-disabled}
+        ui-set('background-color', $brand-bg-disabled)
+        ui-set('color', $brand-text-disabled)
+
+        if $support-mouse
+            ui-set('cursor', $cursor-disabled)
 
 
 ui-dropdown-opened-button()
@@ -151,8 +134,11 @@ ui-dropdown-opened-button()
     ui-brand-variant(
         reversed: true,
         each: @(bg, color) {
-            ui-set('background-color', darken(bg, 10%))
-            ui-set('border-color', darken(bg, 15%))
+            button-active(
+                bg: bg,
+                border: darken(bg, $button-border-darken),
+                color: color
+            )
         }
     )
 

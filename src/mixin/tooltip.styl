@@ -21,12 +21,11 @@ ui-tooltip()
         content ' '
         border 0 solid transparent
 
-
     ui-brand-variant(
         reversed: true,
         each: @(bg, color) {
 
-            border = darken(bg, 20%)
+            border = darken(bg, $tooltip-border-darken)
 
             ui-set('background-color', bg)
             ui-set('border-color', border)
