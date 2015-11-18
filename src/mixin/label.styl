@@ -101,50 +101,6 @@ ui-labels-tight()
         selector-item: $selector-label
     )
 
-    if !$support-ie or !$support-ie8
-
-        &{$selector-round},
-        &{$selector-radius}
-            > {$selector-label}
-
-                &:not(:first-child):not(:last-child)
-                    border-radius 0
-
-                &:first-child
-                    border-top-right-radius 0
-                    border-bottom-right-radius 0
-
-                &:last-child
-                    border-top-left-radius 0
-                    border-bottom-left-radius 0
-
-    else
-
-        > {$selector-label}
-            border-radius 0
-
-        side-radius = @(radius) {
-            {$selector-first-child} {
-                ui-set('border-top-left-radius', radius)
-                ui-set('border-bottom-left-radius', radius)
-            }
-            {$selector-last-child} {
-                ui-set('border-top-right-radius', radius)
-                ui-set('border-bottom-right-radius', radius)
-            }
-        }
-
-        ui-size-variant(
-            each: @(size) {
-                &{$selector-round} {
-                    > {$selector-label} {
-                        side-radius(size['round'])
-                    }
-                }
-                &{$selector-radius} {
-                    > {$selector-label} {
-                        side-radius(size['radius'])
-                    }
-                }
-            }
-        )
+    ui-collection-tight-side-radius(
+        selector-item: $selector-label
+    )

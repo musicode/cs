@@ -6,6 +6,7 @@
 +prefix-classes($ui-prefix)
 
     // font-size 需要被 $selector-links 覆盖
+    // 因此先定义
     ui-size-variant(
         each: @(size) {
             ui-set('font-size', size['font'])
@@ -29,12 +30,13 @@
             )
 
     // color 不需要被 $selector-link 覆盖
+    // 因此后定义
     ui-brand-variant(
-        each: @(color) {
+        each: @(color, name) {
             ui-set('color', color)
             &{$selector-link} {
                 {$selector-hover} {
-                    ui-set('color', darken(color, 20%))
+                    ui-set('color', $brand-hover-hash[name])
                 }
             }
         }

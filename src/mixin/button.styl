@@ -13,38 +13,32 @@ button-reset()
         background-color transparent
         outline 0
 
-
 button-size(size)
 
     ui-set('font-size', size['font'])
     ui-set('line-height', size['line-height'])
     ui-set('padding', size['padding-vertical'] size['padding-horizontal'])
 
-
-button-brand(bg, color)
-
-    border = darken(bg, 10%)
+button-brand(bg, border, color)
 
     ui-set('background-color', bg)
     ui-set('border-color', border)
     ui-set('color', color)
 
-    {$selector-hover}
-        ui-transition('background-color, border-color')
-        ui-set('background-color', darken(bg, 5%))
-        ui-set('border-color', darken(border, 5%))
+button-hover(bg, border)
+    ui-set('background-color', bg)
+    ui-set('border-color', border)
 
-    {$selector-active}
-        ui-set('background-color', darken(bg, 10%))
-        ui-set('border-color', darken(border, 10%))
-        ui-set('box-shadow', $button-box-shadow-active)
+button-active(bg, border)
+    ui-set('background-color', bg)
+    ui-set('border-color', border)
+    ui-set('box-shadow', $button-box-shadow-active)
 
-    {$selector-disabled}
-        ui-set('background-color', lighten(bg, 30%), true)
-        ui-set('border-color', lighten(border, 20%), true)
-        ui-set('color', lighten(color, 30%), true)
-        ui-set('box-shadow', none)
-
+button-disabled(bg, border, color)
+    ui-set('background-color', bg, true)
+    ui-set('border-color', border, true)
+    ui-set('color', color, true)
+    box-shadow none
 
 ui-button()
 
@@ -61,7 +55,7 @@ ui-button()
         ui-disabled-cursor()
 
     {$selector-hover}
-        ui-transition('color')
+        ui-transition('background-color, border-color, color')
         ui-set('color', $brand-text-hover)
 
     {$selector-disabled}
@@ -71,7 +65,37 @@ ui-button()
 
     ui-brand-variant(
         reversed: true,
-        each: button-brand
+        each: @(bg, color, name) {
+            button-brand(
+                bg: bg,
+                border: darken(bg, $button-border-darken),
+                color: color
+            )
+            {$selector-hover} {
+                bg-hover = $brand-hover-hash[name]
+                button-hover(
+                    bg: bg-hover,
+                    border: darken(bg-hover, $button-border-darken),
+                    color: color
+                )
+            }
+            {$selector-active} {
+                bg-active = $brand-active-hash[name]
+                button-active(
+                    bg: bg-active,
+                    border: darken(bg-active, $button-border-darken),
+                    color: color
+                )
+            }
+            {$selector-disabled} {
+                bg-disabled = $brand-disabled-hash[name]
+                button-disabled(
+                    bg: bg-disabled,
+                    border: darken(bg-disabled, $button-border-darken),
+                    color: color
+                )
+            }
+        }
     )
 
     ui-size-variant(
@@ -96,6 +120,40 @@ ui-button()
     > {$selector-text} + {$selector-icon} {
         ui-set('margin-left', $button-icon-gap)
     }
+
+
+ui-button-outline()
+
+    ui-brand-variant(
+        each: @(color, name) {
+            button-brand(transparent, color, color)
+
+            {$selector-hover} {
+                color-hover = $brand-hover-hash[name]
+                button-hover(
+                    bg: transparent,
+                    border: color-hover,
+                    color: color-hover
+                )
+            }
+            {$selector-active} {
+                color-active = $brand-active-hash[name]
+                button-active(
+                    bg: transparent,
+                    border: color-active,
+                    color: color-active
+                )
+            }
+            {$selector-disabled} {
+                color-disabled = $brand-disabled-hash[name]
+                button-disabled(
+                    bg: transparent,
+                    border: color-disabled,
+                    color: color-disabled
+                )
+            }
+        }
+    )
 
 
 ui-buttons()
@@ -131,51 +189,7 @@ ui-buttons-tight()
         gap-item: -1px
     )
 
-    if !$support-ie or !$support-ie8
-
-        &{$selector-round},
-        &{$selector-radius}
-            > {$selector-button}
-
-                &:not(:first-child):not(:last-child)
-                    border-radius 0
-
-                &:first-child
-                    border-top-right-radius 0
-                    border-bottom-right-radius 0
-
-                &:last-child
-                    border-top-left-radius 0
-                    border-bottom-left-radius 0
-
-    else
-
-        > {$selector-button}
-            border-radius 0
-
-        side-radius = @(radius) {
-            {$selector-first-child} {
-                ui-set('border-top-left-radius', radius)
-                ui-set('border-bottom-left-radius', radius)
-            }
-            {$selector-last-child} {
-                ui-set('border-top-right-radius', radius)
-                ui-set('border-bottom-right-radius', radius)
-            }
-        }
-
-        ui-size-variant(
-            each: @(size) {
-                &{$selector-round} {
-                    > {$selector-button} {
-                        side-radius(size['round'])
-                    }
-                }
-                &{$selector-radius} {
-                    > {$selector-button} {
-                        side-radius(size['radius'])
-                    }
-                }
-            }
-        )
+    ui-collection-tight-side-radius(
+        selector-item: $selector-button
+    )
 

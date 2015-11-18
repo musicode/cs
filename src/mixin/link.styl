@@ -8,11 +8,13 @@ link-reset()
     a&
         text-decoration none
 
+    input,
     button&
         background-color transparent
         outline 0
         border 0
         padding 0
+
 
 
 link-size(size)
@@ -34,7 +36,6 @@ ui-link()
     )
 
     if $support-mouse
-
         ui-set('cursor', $cursor-clickable)
         ui-disabled-cursor()
 
@@ -46,6 +47,7 @@ ui-link()
     {$selector-disabled}
         ui-set('color', $brand-link-disabled, true)
         text-decoration none
+
 
 
 ui-links()
