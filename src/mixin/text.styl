@@ -12,11 +12,20 @@ text-reset()
         padding 0
 
 
+text-size(size)
+
+    ui-set('font-size', size['font'])
+
+
 ui-text()
 
     text-reset()
 
     ui()
+
+    ui-size-variant(
+        each: text-size
+    )
 
 
 ui-texts()
@@ -27,7 +36,7 @@ ui-texts()
         selector-item: $selector-text,
         each: @(size) {
             > {$selector-text} {
-                ui-set('font-size', size['font'])
+                text-size(size)
             }
         }
     )
