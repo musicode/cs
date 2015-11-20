@@ -1,0 +1,77 @@
+/**
+ * @file Calendar
+ * @author musicode
+ */
+
+ui-calendar()
+    user-select none
+    ui-set('background-color', $calendar-bg)
+    ui-set('font-size', $calendar-font-size)
+    ui-set('line-height', $calendar-line-height)
+
+ui-calendar-header()
+    text-align center
+    position relative
+    ui-set('color', $calendar-header-color)
+    ui-set('font-size', $calendar-header-font-size)
+    ui-set('padding', $calendar-header-padding-vertical $calendar-header-padding-horizontal)
+
+ui-calendar-prev()
+    position absolute
+    line-height 1
+    left $calendar-header-padding-horizontal
+
+    {$selector-disabled}
+        ui-set('color', $brand-text-disabled)
+
+    if $support-mouse
+        ui-set('cursor', $cursor-clickable)
+        ui-disabled-cursor()
+
+ui-calendar-next()
+    position absolute
+    right $calendar-header-padding-horizontal
+    line-height 1
+
+    {$selector-disabled}
+        ui-set('color', $brand-text-disabled)
+
+    if $support-mouse
+        ui-set('cursor', $cursor-clickable)
+        ui-disabled-cursor()
+
+ui-calendar-date-indicator()
+    ui-set('font-size', $calendar-date-indicator-font-size)
+    ui-set('padding', $calendar-date-indicator-padding-vertical $calendar-date-padding-horizontal)
+
+ui-calendar-date-grid()
+    ui-set('background-color', $calendar-date-grid-bg)
+
+ui-calendar-date-cell()
+    text-align center
+    ui-set('color', $calendar-date-color)
+    ui-set('padding', $calendar-date-padding-vertical $calendar-date-padding-horizontal)
+
+    {$selector-hover}
+        ui-transition('background-color, color')
+        ui-set('background-color', $calendar-date-bg-hover)
+        ui-set('color', $calendar-date-color-hover, true)
+
+    {$selector-active}
+        ui-set('background-color', $calendar-date-bg-active)
+        ui-set('color', $calendar-date-color-active, true)
+
+    {$selector-checked}
+        ui-set('background-color', $calendar-date-bg-checked)
+        ui-set('color', $calendar-date-color-checked, true)
+
+    {$selector-disabled}
+        ui-set('background-color', transparent)
+        ui-set('color', $brand-text-disabled, true)
+
+    if $support-mouse
+        ui-set('cursor', $cursor-default)
+        ui-disabled-cursor()
+
+ui-calendar-date-cell-adjacent()
+    ui-set('color', $calendar-date-adjacent-color)

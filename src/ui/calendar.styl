@@ -1,0 +1,38 @@
+/**
+ * @file Calendar
+ * @author musicode
+ */
+
++prefix-classes($ui-prefix)
+
+    {$selector-calendar}
+        ui-calendar()
+
+        > {$selector-calendar-header}
+            ui-calendar-header()
+
+            > {$selector-calendar-prev}
+                ui-calendar-prev()
+
+            > {$selector-calendar-next}
+                ui-calendar-next()
+
+        > {$selector-calendar-body}
+
+            table
+                width 100%
+
+            thead
+
+                > tr > th
+                    ui-calendar-date-indicator()
+
+            tbody
+                ui-calendar-date-grid()
+
+                > tr > td
+                    ui-calendar-date-cell()
+
+                    &{$selector-calendar-date-adjacent}
+                        ui-calendar-date-cell-adjacent()
+
