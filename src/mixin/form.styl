@@ -72,9 +72,8 @@ form-menu()
 
     display none
     position absolute
-
+    ui-set('z-index', $zindex-tiny)
     ui-set('background-color', $brand-bg)
-    ui-set('font-size', $size-base['font'])
     ui-set('box-shadow', $form-menu-box-shadow)
 
 
@@ -333,6 +332,8 @@ form-input-group()
     })
 
 form-inputs()
+
+    position relative
 
     ui-collection(
         selector-item: $selector-form-input,
