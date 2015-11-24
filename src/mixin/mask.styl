@@ -11,6 +11,8 @@ ui-mask()
     bottom 0
     left 0
 
+    ui-set('z-index', $zindex-large)
+
     if !$support-ie or !$support-ie8
         background-color rgba(0,0,0,$selector-mask-opacity)
     else
