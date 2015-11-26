@@ -208,7 +208,7 @@ html {
 }
 body {
   background-color: #fff;
-  color: #605e58;
+  color: #666;
   font: 14px/1.571428571428571 PingHei, "Hiragino Sans GB", "Microsoft YaHei";
 }
 h1,
@@ -311,54 +311,69 @@ ul.inline > li {
 .huge {
   font-size: 18px;
 }
+a,
 .link {
   color: #666;
   cursor: pointer;
 }
+aa,
 a.link {
   text-decoration: none;
 }
+a input,
 .link input,
+buttona,
 button.link {
   background-color: transparent;
   outline: 0;
   border: 0;
   padding: 0;
 }
+a,
 .link {
   font-size: 14px;
 }
+a.tiny,
 .link.tiny {
   font-size: 12px;
 }
+a.small,
 .link.small {
   font-size: 12px;
 }
+a.large,
 .link.large {
   font-size: 16px;
 }
+a.huge,
 .link.huge {
   font-size: 18px;
 }
+a.disabled,
 .link.disabled,
+a[disabled],
 .link[disabled],
+a.disabled > .fa,
 .link.disabled > .fa,
+a[disabled] > .fa,
 .link[disabled] > .fa {
   cursor: not-allowed !important;
 }
+a.hover,
 .link.hover,
+a:hover,
 .link:hover {
   -webkit-transition-duration: 0.1s;
           transition-duration: 0.1s;
   -webkit-transition-property: color;
           transition-property: color;
-  color: #333;
-  text-decoration: underline;
+  color: #f90;
 }
+a.disabled,
 .link.disabled,
+a[disabled],
 .link[disabled] {
-  color: #aaa !important;
-  text-decoration: none;
+  color: #bbb !important;
 }
 .links {
   display: block;
@@ -575,7 +590,7 @@ button.text {
   cursor: pointer;
 }
 a.button {
-  color: #605e58;
+  color: #666;
   text-decoration: none;
 }
 button.button {
@@ -630,13 +645,13 @@ button.button {
 .button.secondary {
   background-color: #fff;
   border-color: #e6e6e6;
-  color: #605e58;
+  color: #666;
 }
 .button.secondary.hover,
 .button.secondary:hover {
   background-color: #f5f5f5;
   border-color: #ddd;
-  color: #605e58;
+  color: #666;
 }
 .button.secondary.active,
 .button.secondary:active {
@@ -644,13 +659,13 @@ button.button {
   border-color: #d3d3d3;
   -webkit-box-shadow: inset 0px 1px 2px rgba(0,0,0,0.08);
           box-shadow: inset 0px 1px 2px rgba(0,0,0,0.08);
-  color: #605e58;
+  color: #666;
 }
 .button.secondary.disabled,
 .button.secondary[disabled] {
   background-color: #fff !important;
   border-color: #e6e6e6 !important;
-  color: #605e58 !important;
+  color: #666 !important;
   -webkit-box-shadow: none !important;
           box-shadow: none !important;
 }
@@ -1227,7 +1242,7 @@ button.button {
   white-space: nowrap;
 }
 a.label {
-  color: #605e58;
+  color: #666;
   text-decoration: none;
 }
 button.label {
@@ -1241,7 +1256,7 @@ button.label {
 .label.secondary {
   background-color: #fff;
   border-color: #fff;
-  color: #605e58;
+  color: #666;
 }
 .label.success {
   background-color: #56b02a;
@@ -1689,7 +1704,7 @@ button.label {
   white-space: nowrap;
 }
 a.badge {
-  color: #605e58;
+  color: #666;
   text-decoration: none;
 }
 button.badge {
@@ -1702,7 +1717,7 @@ button.badge {
 }
 .badge.secondary {
   background-color: #fff;
-  color: #605e58;
+  color: #666;
 }
 .badge.success {
   background-color: #56b02a;
@@ -1983,7 +1998,7 @@ button.badge {
 .tooltip.secondary {
   background-color: #fff;
   border-color: #d9d9d9;
-  color: #605e58;
+  color: #666;
 }
 .tooltip.secondary:before {
   border-color: #d9d9d9;
@@ -2356,7 +2371,7 @@ a.image:hover:after,
 .tabs.secondary > .tab:hover {
   background-color: #f5f5f5;
   border-color: #ddd;
-  color: #605e58;
+  color: #666;
 }
 .tabs.secondary > .tab.active,
 .tabs.secondary > .tab:active {
@@ -2364,19 +2379,19 @@ a.image:hover:after,
   border-color: #d3d3d3;
   -webkit-box-shadow: inset 0px 1px 2px rgba(0,0,0,0.08);
           box-shadow: inset 0px 1px 2px rgba(0,0,0,0.08);
-  color: #605e58;
+  color: #666;
 }
 .tabs.secondary > .tab.checked,
 .tabs.secondary > .tab[checked] {
   background-color: #e6e6e6;
   border-color: #cfcfcf;
-  color: #605e58;
+  color: #666;
 }
 .tabs.secondary > .tab.disabled,
 .tabs.secondary > .tab[disabled] {
   background-color: #fff !important;
   border-color: #e6e6e6 !important;
-  color: #605e58 !important;
+  color: #666 !important;
   -webkit-box-shadow: none !important;
           box-shadow: none !important;
 }
@@ -2598,7 +2613,7 @@ a.image:hover:after,
 .table > tbody > tr.secondary,
 .table > tfoot > tr.secondary {
   background-color: #fff;
-  color: #605e58;
+  color: #666;
 }
 .table > tbody > tr.success,
 .table > tfoot > tr.success {
@@ -2727,7 +2742,7 @@ ul.list {
 .list.secondary > .item.checked,
 .list.secondary > .item[checked] {
   background-color: #fff;
-  color: #605e58;
+  color: #666;
 }
 .list.success > .item.checked,
 .list.success > .item[checked] {
@@ -2770,7 +2785,7 @@ ul.list {
 }
 .list > a.item {
   text-decoration: none;
-  color: #605e58;
+  color: #666;
 }
 .pagination {
   color: inherit;
@@ -2858,7 +2873,7 @@ ul.pagination {
 .pagination.secondary > .button:hover {
   background-color: #f5f5f5;
   border-color: #ddd;
-  color: #605e58;
+  color: #666;
 }
 .pagination.secondary > .button.active,
 .pagination.secondary > .button:active {
@@ -2866,7 +2881,7 @@ ul.pagination {
   border-color: #d3d3d3;
   -webkit-box-shadow: inset 0px 1px 2px rgba(0,0,0,0.08);
           box-shadow: inset 0px 1px 2px rgba(0,0,0,0.08);
-  color: #605e58;
+  color: #666;
 }
 .pagination.secondary > .button.checked,
 .pagination.secondary > .button[checked] {
@@ -2874,7 +2889,7 @@ ul.pagination {
   border-color: #cfcfcf;
   -webkit-box-shadow: inset 0px 1px 2px rgba(0,0,0,0.08);
           box-shadow: inset 0px 1px 2px rgba(0,0,0,0.08);
-  color: #605e58;
+  color: #666;
 }
 .pagination.success > .button.hover,
 .pagination.success > .button:hover {
@@ -3032,7 +3047,7 @@ ul.pagination {
 .pagination > .button {
   background-color: #fff;
   border-color: #dfdddb;
-  color: #605e58;
+  color: #666;
 }
 .pagination > .button.disabled,
 .pagination > .button[disabled] {
@@ -3228,7 +3243,7 @@ ul.pagination {
 }
 .dropdown > .menu > a.item {
   text-decoration: none;
-  color: #605e58;
+  color: #666;
 }
 .dropdown > ul.menu {
   list-style: none;
@@ -3248,7 +3263,7 @@ ul.pagination {
   border-color: #e6e6e6;
   -webkit-box-shadow: inset 0px 1px 2px rgba(0,0,0,0.08);
           box-shadow: inset 0px 1px 2px rgba(0,0,0,0.08);
-  color: #605e58;
+  color: #666;
 }
 .dropdown.opened > .button.success {
   background-color: #56b02a;
@@ -3503,7 +3518,7 @@ body > .mask {
 }
 .dialog.secondary > .header {
   background-color: #fff;
-  color: #605e58;
+  color: #666;
 }
 .dialog.success > .header {
   border-bottom: 0;
