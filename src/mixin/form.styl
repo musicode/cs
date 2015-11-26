@@ -272,8 +272,10 @@ form-input-group()
             border-bottom-right-radius 0
         }
 
-        > {$selector-label} + {$selector-form-input},
-        > {$selector-button} + {$selector-form-input},
+        > {$selector-label} + input{$selector-form-input},
+        > {$selector-label} + {$selector-form-input} > input,
+        > {$selector-button} + input{$selector-form-input},
+        > {$selector-button} + {$selector-form-input} > input,
         > {$selector-form-input} + {$selector-label},
         > {$selector-form-input} + {$selector-button} {
             ui-set('border-radius', radius)
@@ -291,7 +293,8 @@ form-input-group()
             > {$selector-button} {
                 button-size(size)
             }
-            > {$selector-form-input} {
+            > input{$selector-form-input},
+            > {$selector-form-input} > input {
                 form-input-size(size)
             }
             input {
@@ -309,16 +312,26 @@ form-input-group()
                 ui-set('right', size['padding-horizontal'])
             }
 
-            > {$selector-label} + {$selector-form-input},
-            > {$selector-button} + {$selector-form-input} {
+            > {$selector-label} + input{$selector-form-input},
+            > {$selector-label} + {$selector-form-input} > input,
+            > {$selector-button} + input{$selector-form-input},
+            > {$selector-button} + {$selector-form-input} > input {
                 border-top-left-radius 0
                 border-bottom-left-radius 0
+            }
+
+            > {$selector-label} + {$selector-form-input},
+            > {$selector-button} + {$selector-form-input} {
                 margin-left -1px
             }
 
             > {$selector-form-input} + {$selector-label},
             > {$selector-form-input} + {$selector-button} {
                 margin-left -1px
+            }
+            > div{$selector-form-input} + {$selector-label},
+            > div{$selector-form-input} + {$selector-button} {
+                position relative
             }
 
             &{$selector-round} {
