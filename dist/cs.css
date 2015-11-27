@@ -311,57 +311,51 @@ ul.inline > li {
 .huge {
   font-size: 18px;
 }
-a,
-.link {
+a {
   color: #666;
-  cursor: pointer;
-}
-aa,
-a.link {
   text-decoration: none;
 }
-a input,
+a:hover {
+  -webkit-transition-duration: 0.1s;
+          transition-duration: 0.1s;
+  -webkit-transition-property: color;
+          transition-property: color;
+  color: #f90;
+}
+.link {
+  color: #666;
+  text-decoration: none;
+  cursor: pointer;
+}
 .link input,
-buttona,
 button.link {
   background-color: transparent;
   outline: 0;
   border: 0;
   padding: 0;
 }
-a,
 .link {
   font-size: 14px;
 }
-a.tiny,
 .link.tiny {
   font-size: 12px;
 }
-a.small,
 .link.small {
   font-size: 12px;
 }
-a.large,
 .link.large {
   font-size: 16px;
 }
-a.huge,
 .link.huge {
   font-size: 18px;
 }
-a.disabled,
 .link.disabled,
-a[disabled],
 .link[disabled],
-a.disabled > .fa,
 .link.disabled > .fa,
-a[disabled] > .fa,
 .link[disabled] > .fa {
   cursor: not-allowed !important;
 }
-a.hover,
 .link.hover,
-a:hover,
 .link:hover {
   -webkit-transition-duration: 0.1s;
           transition-duration: 0.1s;
@@ -369,9 +363,7 @@ a:hover,
           transition-property: color;
   color: #f90;
 }
-a.disabled,
 .link.disabled,
-a[disabled],
 .link[disabled] {
   color: #bbb !important;
 }
@@ -2077,8 +2069,8 @@ button.badge {
   left: 50%;
   margin-left: -5px;
   border-width: 5px 5px 0 5px;
-  border-left-color: transparent;
-  border-right-color: transparent;
+  border-left-color: transparent !important;
+  border-right-color: transparent !important;
 }
 .tooltip.top:before {
   bottom: -5px;
@@ -2091,8 +2083,8 @@ button.badge {
   top: 50%;
   margin-top: -5px;
   border-width: 5px 5px 5px 0;
-  border-top-color: transparent;
-  border-bottom-color: transparent;
+  border-top-color: transparent !important;
+  border-bottom-color: transparent !important;
 }
 .tooltip.right:before {
   left: -5px;
@@ -2105,8 +2097,8 @@ button.badge {
   left: 50%;
   margin-left: -5px;
   border-width: 0 5px 5px 5px;
-  border-left-color: transparent;
-  border-right-color: transparent;
+  border-left-color: transparent !important;
+  border-right-color: transparent !important;
 }
 .tooltip.bottom:before {
   top: -5px;
@@ -2119,8 +2111,8 @@ button.badge {
   top: 50%;
   margin-top: -5px;
   border-width: 5px 0 5px 5px;
-  border-top-color: transparent;
-  border-bottom-color: transparent;
+  border-top-color: transparent !important;
+  border-bottom-color: transparent !important;
 }
 .tooltip.left:before {
   right: -5px;

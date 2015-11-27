@@ -5,9 +5,6 @@
 
 link-reset()
 
-    a&
-        text-decoration none
-
     input,
     button&
         background-color transparent
@@ -21,15 +18,23 @@ link-size(size)
 
     ui-set('font-size', size['font'])
 
+link-brand()
+    ui-set('color', $brand-link)
+    text-decoration none
 
+link-hover()
+    ui-transition('color')
+    ui-set('color', $brand-link-hover)
+
+link-disabled()
+    ui-set('color', $brand-link-disabled, true)
 
 ui-link()
 
-    link-reset()
-
     ui()
 
-    ui-set('color', $brand-link)
+    link-reset()
+    link-brand()
 
     ui-size-variant(
         each: link-size
@@ -40,11 +45,10 @@ ui-link()
         ui-disabled-cursor()
 
     {$selector-hover}
-        ui-transition('color')
-        ui-set('color', $brand-link-hover)
+        link-hover()
 
     {$selector-disabled}
-        ui-set('color', $brand-link-disabled, true)
+        link-disabled()
 
 
 

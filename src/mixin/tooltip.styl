@@ -52,8 +52,8 @@ ui-tooltip-top()
         margin-left -1 * $tooltip-arrow-size
 
         border-width $tooltip-arrow-size $tooltip-arrow-size 0 $tooltip-arrow-size
-        border-left-color transparent
-        border-right-color transparent
+        border-left-color transparent !important;
+        border-right-color transparent !important
 
     &:before
         bottom -1 * $tooltip-arrow-size
@@ -70,8 +70,8 @@ ui-tooltip-right()
         margin-top -1 * $tooltip-arrow-size
 
         border-width $tooltip-arrow-size $tooltip-arrow-size $tooltip-arrow-size 0
-        border-top-color transparent
-        border-bottom-color transparent
+        border-top-color transparent !important
+        border-bottom-color transparent !important
 
     &:before
         left -1 * $tooltip-arrow-size
@@ -88,8 +88,8 @@ ui-tooltip-bottom()
         margin-left -1 * $tooltip-arrow-size
 
         border-width 0 $tooltip-arrow-size $tooltip-arrow-size $tooltip-arrow-size
-        border-left-color transparent
-        border-right-color transparent
+        border-left-color transparent !important
+        border-right-color transparent !important
 
     &:before
         top -1 * $tooltip-arrow-size
@@ -106,8 +106,8 @@ ui-tooltip-left()
         margin-top -1 * $tooltip-arrow-size
 
         border-width $tooltip-arrow-size 0 $tooltip-arrow-size $tooltip-arrow-size
-        border-top-color transparent
-        border-bottom-color transparent
+        border-top-color transparent !important
+        border-bottom-color transparent !important
 
     &:before
         right -1 * $tooltip-arrow-size
