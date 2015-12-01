@@ -3027,6 +3027,11 @@ ul.pagination {
   position: relative;
   z-index: 1;
 }
+.pagination.tight > .button.checked,
+.pagination.tight > .button[checked] {
+  position: relative;
+  z-index: 1;
+}
 .pagination > .item {
   display: inline-block;
 }
