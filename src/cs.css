@@ -351,8 +351,8 @@ button.link {
 }
 .link.disabled,
 .link[disabled],
-.link.disabled > .fa,
-.link[disabled] > .fa {
+.link.disabled > .icon,
+.link[disabled] > .icon {
   cursor: not-allowed !important;
 }
 .link.hover,
@@ -591,8 +591,8 @@ button.button {
 }
 .button.disabled,
 .button[disabled],
-.button.disabled > .fa,
-.button[disabled] > .fa {
+.button.disabled > .icon,
+.button[disabled] > .icon {
   cursor: not-allowed !important;
 }
 .button.hover,
@@ -881,8 +881,8 @@ button.button {
 .button > .text {
   font: inherit;
 }
-.button > .fa + .text,
-.button > .text + .fa {
+.button > .icon + .text,
+.button > .text + .icon {
   margin-left: 6px;
 }
 .button.outline.primary {
@@ -1207,19 +1207,108 @@ button.button {
   position: relative;
   z-index: 1;
 }
-.buttons.tight.round > .button:not(:first-child):not(:last-child),
-.buttons.tight.radius > .button:not(:first-child):not(:last-child) {
+.buttons.tight > .button {
   border-radius: 0;
 }
-.buttons.tight.round > .button:first-child,
-.buttons.tight.radius > .button:first-child {
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
+.buttons.tight.round > .button.first-child,
+.buttons.tight.round > .button:first-child {
+  border-top-left-radius: 23px;
+  border-bottom-left-radius: 23px;
 }
-.buttons.tight.round > .button:last-child,
+.buttons.tight.round > .button.last-child,
+.buttons.tight.round > .button:last-child {
+  border-top-right-radius: 23px;
+  border-bottom-right-radius: 23px;
+}
+.buttons.tight.radius > .button.first-child,
+.buttons.tight.radius > .button:first-child {
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+.buttons.tight.radius > .button.last-child,
 .buttons.tight.radius > .button:last-child {
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+.buttons.tight.tiny.round > .button.first-child,
+.buttons.tight.tiny.round > .button:first-child {
+  border-top-left-radius: 13px;
+  border-bottom-left-radius: 13px;
+}
+.buttons.tight.tiny.round > .button.last-child,
+.buttons.tight.tiny.round > .button:last-child {
+  border-top-right-radius: 13px;
+  border-bottom-right-radius: 13px;
+}
+.buttons.tight.tiny.radius > .button.first-child,
+.buttons.tight.tiny.radius > .button:first-child {
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 2px;
+}
+.buttons.tight.tiny.radius > .button.last-child,
+.buttons.tight.tiny.radius > .button:last-child {
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+}
+.buttons.tight.small.round > .button.first-child,
+.buttons.tight.small.round > .button:first-child {
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+.buttons.tight.small.round > .button.last-child,
+.buttons.tight.small.round > .button:last-child {
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+.buttons.tight.small.radius > .button.first-child,
+.buttons.tight.small.radius > .button:first-child {
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+.buttons.tight.small.radius > .button.last-child,
+.buttons.tight.small.radius > .button:last-child {
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+.buttons.tight.large.round > .button.first-child,
+.buttons.tight.large.round > .button:first-child {
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+}
+.buttons.tight.large.round > .button.last-child,
+.buttons.tight.large.round > .button:last-child {
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+}
+.buttons.tight.large.radius > .button.first-child,
+.buttons.tight.large.radius > .button:first-child {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+.buttons.tight.large.radius > .button.last-child,
+.buttons.tight.large.radius > .button:last-child {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.buttons.tight.huge.round > .button.first-child,
+.buttons.tight.huge.round > .button:first-child {
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+}
+.buttons.tight.huge.round > .button.last-child,
+.buttons.tight.huge.round > .button:last-child {
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
+.buttons.tight.huge.radius > .button.first-child,
+.buttons.tight.huge.radius > .button:first-child {
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+.buttons.tight.huge.radius > .button.last-child,
+.buttons.tight.huge.radius > .button:last-child {
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
 }
 .buttons.justified {
   display: table;
@@ -1338,8 +1427,8 @@ button.label {
 .label > .text {
   font: inherit;
 }
-.label > .fa + .text,
-.label > .text + .fa {
+.label > .icon + .text,
+.label > .text + .icon {
   margin-left: 6px;
 }
 .labels {
@@ -1442,19 +1531,108 @@ button.label {
 .labels.tight > .label + .label.fluid {
   margin-top: 0;
 }
-.labels.tight.round > .label:not(:first-child):not(:last-child),
-.labels.tight.radius > .label:not(:first-child):not(:last-child) {
+.labels.tight > .label {
   border-radius: 0;
 }
-.labels.tight.round > .label:first-child,
-.labels.tight.radius > .label:first-child {
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
+.labels.tight.round > .label.first-child,
+.labels.tight.round > .label:first-child {
+  border-top-left-radius: 23px;
+  border-bottom-left-radius: 23px;
 }
-.labels.tight.round > .label:last-child,
+.labels.tight.round > .label.last-child,
+.labels.tight.round > .label:last-child {
+  border-top-right-radius: 23px;
+  border-bottom-right-radius: 23px;
+}
+.labels.tight.radius > .label.first-child,
+.labels.tight.radius > .label:first-child {
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+.labels.tight.radius > .label.last-child,
 .labels.tight.radius > .label:last-child {
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+.labels.tight.tiny.round > .label.first-child,
+.labels.tight.tiny.round > .label:first-child {
+  border-top-left-radius: 13px;
+  border-bottom-left-radius: 13px;
+}
+.labels.tight.tiny.round > .label.last-child,
+.labels.tight.tiny.round > .label:last-child {
+  border-top-right-radius: 13px;
+  border-bottom-right-radius: 13px;
+}
+.labels.tight.tiny.radius > .label.first-child,
+.labels.tight.tiny.radius > .label:first-child {
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 2px;
+}
+.labels.tight.tiny.radius > .label.last-child,
+.labels.tight.tiny.radius > .label:last-child {
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+}
+.labels.tight.small.round > .label.first-child,
+.labels.tight.small.round > .label:first-child {
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+.labels.tight.small.round > .label.last-child,
+.labels.tight.small.round > .label:last-child {
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+.labels.tight.small.radius > .label.first-child,
+.labels.tight.small.radius > .label:first-child {
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+.labels.tight.small.radius > .label.last-child,
+.labels.tight.small.radius > .label:last-child {
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+.labels.tight.large.round > .label.first-child,
+.labels.tight.large.round > .label:first-child {
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+}
+.labels.tight.large.round > .label.last-child,
+.labels.tight.large.round > .label:last-child {
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+}
+.labels.tight.large.radius > .label.first-child,
+.labels.tight.large.radius > .label:first-child {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+.labels.tight.large.radius > .label.last-child,
+.labels.tight.large.radius > .label:last-child {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.labels.tight.huge.round > .label.first-child,
+.labels.tight.huge.round > .label:first-child {
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+}
+.labels.tight.huge.round > .label.last-child,
+.labels.tight.huge.round > .label:last-child {
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
+.labels.tight.huge.radius > .label.first-child,
+.labels.tight.huge.radius > .label:first-child {
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+.labels.tight.huge.radius > .label.last-child,
+.labels.tight.huge.radius > .label:last-child {
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
 }
 .labels.justified {
   display: table;
@@ -1669,19 +1847,108 @@ button.label {
   position: relative;
   z-index: 1;
 }
-.messages.tight.round > .message:not(:first-child):not(:last-child),
-.messages.tight.radius > .message:not(:first-child):not(:last-child) {
+.messages.tight > .message {
   border-radius: 0;
 }
-.messages.tight.round > .message:first-child,
-.messages.tight.radius > .message:first-child {
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
+.messages.tight.round > .message.first-child,
+.messages.tight.round > .message:first-child {
+  border-top-left-radius: 23px;
+  border-bottom-left-radius: 23px;
 }
-.messages.tight.round > .message:last-child,
+.messages.tight.round > .message.last-child,
+.messages.tight.round > .message:last-child {
+  border-top-right-radius: 23px;
+  border-bottom-right-radius: 23px;
+}
+.messages.tight.radius > .message.first-child,
+.messages.tight.radius > .message:first-child {
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+.messages.tight.radius > .message.last-child,
 .messages.tight.radius > .message:last-child {
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+.messages.tight.tiny.round > .message.first-child,
+.messages.tight.tiny.round > .message:first-child {
+  border-top-left-radius: 13px;
+  border-bottom-left-radius: 13px;
+}
+.messages.tight.tiny.round > .message.last-child,
+.messages.tight.tiny.round > .message:last-child {
+  border-top-right-radius: 13px;
+  border-bottom-right-radius: 13px;
+}
+.messages.tight.tiny.radius > .message.first-child,
+.messages.tight.tiny.radius > .message:first-child {
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 2px;
+}
+.messages.tight.tiny.radius > .message.last-child,
+.messages.tight.tiny.radius > .message:last-child {
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+}
+.messages.tight.small.round > .message.first-child,
+.messages.tight.small.round > .message:first-child {
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+.messages.tight.small.round > .message.last-child,
+.messages.tight.small.round > .message:last-child {
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+.messages.tight.small.radius > .message.first-child,
+.messages.tight.small.radius > .message:first-child {
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+.messages.tight.small.radius > .message.last-child,
+.messages.tight.small.radius > .message:last-child {
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+.messages.tight.large.round > .message.first-child,
+.messages.tight.large.round > .message:first-child {
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+}
+.messages.tight.large.round > .message.last-child,
+.messages.tight.large.round > .message:last-child {
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+}
+.messages.tight.large.radius > .message.first-child,
+.messages.tight.large.radius > .message:first-child {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+.messages.tight.large.radius > .message.last-child,
+.messages.tight.large.radius > .message:last-child {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.messages.tight.huge.round > .message.first-child,
+.messages.tight.huge.round > .message:first-child {
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+}
+.messages.tight.huge.round > .message.last-child,
+.messages.tight.huge.round > .message:last-child {
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
+.messages.tight.huge.radius > .message.first-child,
+.messages.tight.huge.radius > .message:first-child {
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+.messages.tight.huge.radius > .message.last-child,
+.messages.tight.huge.radius > .message:last-child {
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
 }
 .messages.justified {
   display: table;
@@ -2166,17 +2433,20 @@ a.image:after,
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: rgba(0,0,0,0);
+  background-color: #000;
+  opacity: 0;
+  filter: alpha(opacity=0);
   -webkit-transition-duration: 0.1s;
           transition-duration: 0.1s;
-  -webkit-transition-property: background-color;
-          transition-property: background-color;
+  -webkit-transition-property: opacity;
+          transition-property: opacity;
 }
 a.image.hover:after,
 .image.link.hover:after,
 a.image:hover:after,
 .image.link:hover:after {
-  background-color: rgba(0,0,0,0.2);
+  opacity: 0.2;
+  filter: alpha(opacity=20);
 }
 .image.round {
   border-radius: 50%;
@@ -2577,8 +2847,8 @@ a.image:hover:after,
 }
 .tabs > .tab.disabled,
 .tabs > .tab[disabled],
-.tabs > .tab.disabled > .fa,
-.tabs > .tab[disabled] > .fa {
+.tabs > .tab.disabled > .icon,
+.tabs > .tab[disabled] > .icon {
   cursor: not-allowed !important;
 }
 .table {
@@ -3037,8 +3307,8 @@ ul.pagination {
 }
 .pagination > .item.checked,
 .pagination > .item[checked],
-.pagination > .item.checked > .fa,
-.pagination > .item[checked] > .fa {
+.pagination > .item.checked > .icon,
+.pagination > .item[checked] > .icon {
   cursor: default;
 }
 .pagination > .button {
@@ -3072,8 +3342,8 @@ ul.pagination {
 .dropdown > .menu > .item {
   padding: 6px 12px;
 }
-.dropdown > .text > .fa,
-.dropdown > .button > .fa {
+.dropdown > .text > .icon,
+.dropdown > .button > .icon {
   line-height: 1.571428571428571;
   margin-left: 8px;
 }
@@ -3095,8 +3365,8 @@ ul.pagination {
 .dropdown.tiny > .menu > .item {
   padding: 3px 6px;
 }
-.dropdown.tiny > .text > .fa,
-.dropdown.tiny > .button > .fa {
+.dropdown.tiny > .text > .icon,
+.dropdown.tiny > .button > .icon {
   line-height: 1.166666666666667;
   margin-left: 4px;
 }
@@ -3118,8 +3388,8 @@ ul.pagination {
 .dropdown.small > .menu > .item {
   padding: 6px 10px;
 }
-.dropdown.small > .text > .fa,
-.dropdown.small > .button > .fa {
+.dropdown.small > .text > .icon,
+.dropdown.small > .button > .icon {
   line-height: 1.166666666666667;
   margin-left: 6px;
 }
@@ -3141,8 +3411,8 @@ ul.pagination {
 .dropdown.large > .menu > .item {
   padding: 8px 17px;
 }
-.dropdown.large > .text > .fa,
-.dropdown.large > .button > .fa {
+.dropdown.large > .text > .icon,
+.dropdown.large > .button > .icon {
   line-height: 1.75;
   margin-left: 12px;
 }
@@ -3164,8 +3434,8 @@ ul.pagination {
 .dropdown.huge > .menu > .item {
   padding: 10px 22px;
 }
-.dropdown.huge > .text > .fa,
-.dropdown.huge > .button > .fa {
+.dropdown.huge > .text > .icon,
+.dropdown.huge > .button > .icon {
   line-height: 2;
   margin-left: 14px;
 }
@@ -3179,11 +3449,11 @@ ul.pagination {
   display: block;
   width: 100%;
 }
-.dropdown > .text > .fa,
-.dropdown > .button > .fa {
+.dropdown > .text > .icon,
+.dropdown > .button > .icon {
   float: right;
 }
-.dropdown > .text > .fa {
+.dropdown > .text > .icon {
   -webkit-user-select: none;
       -ms-user-select: none;
           user-select: none;
@@ -3332,8 +3602,8 @@ ul.pagination {
 .dropdowns > .dropdown > .menu > .item {
   padding: 6px 12px;
 }
-.dropdowns > .dropdown > .text > .fa,
-.dropdowns > .dropdown > .button > .fa {
+.dropdowns > .dropdown > .text > .icon,
+.dropdowns > .dropdown > .button > .icon {
   line-height: 1.571428571428571;
   margin-left: 8px;
 }
@@ -3362,8 +3632,8 @@ ul.pagination {
 .dropdowns.tiny > .dropdown > .menu > .item {
   padding: 3px 6px;
 }
-.dropdowns.tiny > .dropdown > .text > .fa,
-.dropdowns.tiny > .dropdown > .button > .fa {
+.dropdowns.tiny > .dropdown > .text > .icon,
+.dropdowns.tiny > .dropdown > .button > .icon {
   line-height: 1.166666666666667;
   margin-left: 4px;
 }
@@ -3392,8 +3662,8 @@ ul.pagination {
 .dropdowns.small > .dropdown > .menu > .item {
   padding: 6px 10px;
 }
-.dropdowns.small > .dropdown > .text > .fa,
-.dropdowns.small > .dropdown > .button > .fa {
+.dropdowns.small > .dropdown > .text > .icon,
+.dropdowns.small > .dropdown > .button > .icon {
   line-height: 1.166666666666667;
   margin-left: 6px;
 }
@@ -3422,8 +3692,8 @@ ul.pagination {
 .dropdowns.large > .dropdown > .menu > .item {
   padding: 8px 17px;
 }
-.dropdowns.large > .dropdown > .text > .fa,
-.dropdowns.large > .dropdown > .button > .fa {
+.dropdowns.large > .dropdown > .text > .icon,
+.dropdowns.large > .dropdown > .button > .icon {
   line-height: 1.75;
   margin-left: 12px;
 }
@@ -3452,8 +3722,8 @@ ul.pagination {
 .dropdowns.huge > .dropdown > .menu > .item {
   padding: 10px 22px;
 }
-.dropdowns.huge > .dropdown > .text > .fa,
-.dropdowns.huge > .dropdown > .button > .fa {
+.dropdowns.huge > .dropdown > .text > .icon,
+.dropdowns.huge > .dropdown > .button > .icon {
   line-height: 2;
   margin-left: 14px;
 }
@@ -3480,7 +3750,9 @@ ul.pagination {
   bottom: 0;
   left: 0;
   z-index: 4;
-  background-color: rgba(0,0,0,0.2);
+  background-color: #000;
+  opacity: 0.2;
+  filter: alpha(opacity=20);
 }
 body > .mask {
   position: fixed;
@@ -4529,19 +4801,108 @@ textarea.input.muted,
   position: relative;
   z-index: 1;
 }
-.inputs.tight.round > .input:not(:first-child):not(:last-child),
-.inputs.tight.radius > .input:not(:first-child):not(:last-child) {
+.inputs.tight > .input {
   border-radius: 0;
 }
-.inputs.tight.round > .input:first-child,
-.inputs.tight.radius > .input:first-child {
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
+.inputs.tight.round > .input.first-child,
+.inputs.tight.round > .input:first-child {
+  border-top-left-radius: 23px;
+  border-bottom-left-radius: 23px;
 }
-.inputs.tight.round > .input:last-child,
+.inputs.tight.round > .input.last-child,
+.inputs.tight.round > .input:last-child {
+  border-top-right-radius: 23px;
+  border-bottom-right-radius: 23px;
+}
+.inputs.tight.radius > .input.first-child,
+.inputs.tight.radius > .input:first-child {
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+.inputs.tight.radius > .input.last-child,
 .inputs.tight.radius > .input:last-child {
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+.inputs.tight.tiny.round > .input.first-child,
+.inputs.tight.tiny.round > .input:first-child {
+  border-top-left-radius: 13px;
+  border-bottom-left-radius: 13px;
+}
+.inputs.tight.tiny.round > .input.last-child,
+.inputs.tight.tiny.round > .input:last-child {
+  border-top-right-radius: 13px;
+  border-bottom-right-radius: 13px;
+}
+.inputs.tight.tiny.radius > .input.first-child,
+.inputs.tight.tiny.radius > .input:first-child {
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 2px;
+}
+.inputs.tight.tiny.radius > .input.last-child,
+.inputs.tight.tiny.radius > .input:last-child {
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+}
+.inputs.tight.small.round > .input.first-child,
+.inputs.tight.small.round > .input:first-child {
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+.inputs.tight.small.round > .input.last-child,
+.inputs.tight.small.round > .input:last-child {
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+.inputs.tight.small.radius > .input.first-child,
+.inputs.tight.small.radius > .input:first-child {
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+.inputs.tight.small.radius > .input.last-child,
+.inputs.tight.small.radius > .input:last-child {
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+.inputs.tight.large.round > .input.first-child,
+.inputs.tight.large.round > .input:first-child {
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+}
+.inputs.tight.large.round > .input.last-child,
+.inputs.tight.large.round > .input:last-child {
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+}
+.inputs.tight.large.radius > .input.first-child,
+.inputs.tight.large.radius > .input:first-child {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+.inputs.tight.large.radius > .input.last-child,
+.inputs.tight.large.radius > .input:last-child {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.inputs.tight.huge.round > .input.first-child,
+.inputs.tight.huge.round > .input:first-child {
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+}
+.inputs.tight.huge.round > .input.last-child,
+.inputs.tight.huge.round > .input:last-child {
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
+.inputs.tight.huge.radius > .input.first-child,
+.inputs.tight.huge.radius > .input:first-child {
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+.inputs.tight.huge.radius > .input.last-child,
+.inputs.tight.huge.radius > .input:last-child {
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
 }
 .radio > input[type="radio"] {
   margin-right: 6px;
@@ -4814,36 +5175,36 @@ textarea.input.muted,
   font-size: 14px;
   padding: 8px 8px;
 }
-.calendar > .header > .fa-chevron-left {
+.calendar > .header > .icon-chevron-left {
   position: absolute;
   line-height: 1;
   left: 8px;
   cursor: pointer;
 }
-.calendar > .header > .fa-chevron-left.disabled,
-.calendar > .header > .fa-chevron-left[disabled] {
+.calendar > .header > .icon-chevron-left.disabled,
+.calendar > .header > .icon-chevron-left[disabled] {
   color: #c7c7c7;
 }
-.calendar > .header > .fa-chevron-left.disabled,
-.calendar > .header > .fa-chevron-left[disabled],
-.calendar > .header > .fa-chevron-left.disabled > .fa,
-.calendar > .header > .fa-chevron-left[disabled] > .fa {
+.calendar > .header > .icon-chevron-left.disabled,
+.calendar > .header > .icon-chevron-left[disabled],
+.calendar > .header > .icon-chevron-left.disabled > .icon,
+.calendar > .header > .icon-chevron-left[disabled] > .icon {
   cursor: not-allowed !important;
 }
-.calendar > .header > .fa-chevron-right {
+.calendar > .header > .icon-chevron-right {
   position: absolute;
   right: 8px;
   line-height: 1;
   cursor: pointer;
 }
-.calendar > .header > .fa-chevron-right.disabled,
-.calendar > .header > .fa-chevron-right[disabled] {
+.calendar > .header > .icon-chevron-right.disabled,
+.calendar > .header > .icon-chevron-right[disabled] {
   color: #c7c7c7;
 }
-.calendar > .header > .fa-chevron-right.disabled,
-.calendar > .header > .fa-chevron-right[disabled],
-.calendar > .header > .fa-chevron-right.disabled > .fa,
-.calendar > .header > .fa-chevron-right[disabled] > .fa {
+.calendar > .header > .icon-chevron-right.disabled,
+.calendar > .header > .icon-chevron-right[disabled],
+.calendar > .header > .icon-chevron-right.disabled > .icon,
+.calendar > .header > .icon-chevron-right[disabled] > .icon {
   cursor: not-allowed !important;
 }
 .calendar > .body table {
@@ -4885,8 +5246,8 @@ textarea.input.muted,
 }
 .calendar > .body tbody > tr > td.disabled,
 .calendar > .body tbody > tr > td[disabled],
-.calendar > .body tbody > tr > td.disabled > .fa,
-.calendar > .body tbody > tr > td[disabled] > .fa {
+.calendar > .body tbody > tr > td.disabled > .icon,
+.calendar > .body tbody > tr > td[disabled] > .icon {
   cursor: not-allowed !important;
 }
 .calendar > .body tbody > tr > td.adjacent {
