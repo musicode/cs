@@ -351,8 +351,8 @@ button.link {
 }
 .link.disabled,
 .link[disabled],
-.link.disabled > .icon,
-.link[disabled] > .icon {
+.link.disabled > .fa,
+.link[disabled] > .fa {
   cursor: not-allowed !important;
 }
 .link.hover,
@@ -591,8 +591,8 @@ button.button {
 }
 .button.disabled,
 .button[disabled],
-.button.disabled > .icon,
-.button[disabled] > .icon {
+.button.disabled > .fa,
+.button[disabled] > .fa {
   cursor: not-allowed !important;
 }
 .button.hover,
@@ -881,8 +881,8 @@ button.button {
 .button > .text {
   font: inherit;
 }
-.button > .icon + .text,
-.button > .text + .icon {
+.button > .fa + .text,
+.button > .text + .fa {
   margin-left: 6px;
 }
 .button.outline.primary {
@@ -1427,8 +1427,8 @@ button.label {
 .label > .text {
   font: inherit;
 }
-.label > .icon + .text,
-.label > .text + .icon {
+.label > .fa + .text,
+.label > .text + .fa {
   margin-left: 6px;
 }
 .labels {
@@ -2847,9 +2847,16 @@ a.image:hover:after,
 }
 .tabs > .tab.disabled,
 .tabs > .tab[disabled],
-.tabs > .tab.disabled > .icon,
-.tabs > .tab[disabled] > .icon {
+.tabs > .tab.disabled > .fa,
+.tabs > .tab[disabled] > .fa {
   cursor: not-allowed !important;
+}
+.tabs > .tab.hover,
+.tabs > .tab:hover {
+  -webkit-transition-duration: 0.1s;
+          transition-duration: 0.1s;
+  -webkit-transition-property: background-color, border-color, color;
+          transition-property: background-color, border-color, color;
 }
 .table {
   color: inherit;
@@ -3307,8 +3314,8 @@ ul.pagination {
 }
 .pagination > .item.checked,
 .pagination > .item[checked],
-.pagination > .item.checked > .icon,
-.pagination > .item[checked] > .icon {
+.pagination > .item.checked > .fa,
+.pagination > .item[checked] > .fa {
   cursor: default;
 }
 .pagination > .button {
@@ -3342,8 +3349,8 @@ ul.pagination {
 .dropdown > .menu > .item {
   padding: 6px 12px;
 }
-.dropdown > .text > .icon,
-.dropdown > .button > .icon {
+.dropdown > .text > .fa,
+.dropdown > .button > .fa {
   line-height: 1.571428571428571;
   margin-left: 8px;
 }
@@ -3365,8 +3372,8 @@ ul.pagination {
 .dropdown.tiny > .menu > .item {
   padding: 3px 6px;
 }
-.dropdown.tiny > .text > .icon,
-.dropdown.tiny > .button > .icon {
+.dropdown.tiny > .text > .fa,
+.dropdown.tiny > .button > .fa {
   line-height: 1.166666666666667;
   margin-left: 4px;
 }
@@ -3388,8 +3395,8 @@ ul.pagination {
 .dropdown.small > .menu > .item {
   padding: 6px 10px;
 }
-.dropdown.small > .text > .icon,
-.dropdown.small > .button > .icon {
+.dropdown.small > .text > .fa,
+.dropdown.small > .button > .fa {
   line-height: 1.166666666666667;
   margin-left: 6px;
 }
@@ -3411,8 +3418,8 @@ ul.pagination {
 .dropdown.large > .menu > .item {
   padding: 8px 17px;
 }
-.dropdown.large > .text > .icon,
-.dropdown.large > .button > .icon {
+.dropdown.large > .text > .fa,
+.dropdown.large > .button > .fa {
   line-height: 1.75;
   margin-left: 12px;
 }
@@ -3434,8 +3441,8 @@ ul.pagination {
 .dropdown.huge > .menu > .item {
   padding: 10px 22px;
 }
-.dropdown.huge > .text > .icon,
-.dropdown.huge > .button > .icon {
+.dropdown.huge > .text > .fa,
+.dropdown.huge > .button > .fa {
   line-height: 2;
   margin-left: 14px;
 }
@@ -3449,11 +3456,11 @@ ul.pagination {
   display: block;
   width: 100%;
 }
-.dropdown > .text > .icon,
-.dropdown > .button > .icon {
+.dropdown > .text > .fa,
+.dropdown > .button > .fa {
   float: right;
 }
-.dropdown > .text > .icon {
+.dropdown > .text > .fa {
   -webkit-user-select: none;
       -ms-user-select: none;
           user-select: none;
@@ -3602,8 +3609,8 @@ ul.pagination {
 .dropdowns > .dropdown > .menu > .item {
   padding: 6px 12px;
 }
-.dropdowns > .dropdown > .text > .icon,
-.dropdowns > .dropdown > .button > .icon {
+.dropdowns > .dropdown > .text > .fa,
+.dropdowns > .dropdown > .button > .fa {
   line-height: 1.571428571428571;
   margin-left: 8px;
 }
@@ -3632,8 +3639,8 @@ ul.pagination {
 .dropdowns.tiny > .dropdown > .menu > .item {
   padding: 3px 6px;
 }
-.dropdowns.tiny > .dropdown > .text > .icon,
-.dropdowns.tiny > .dropdown > .button > .icon {
+.dropdowns.tiny > .dropdown > .text > .fa,
+.dropdowns.tiny > .dropdown > .button > .fa {
   line-height: 1.166666666666667;
   margin-left: 4px;
 }
@@ -3662,8 +3669,8 @@ ul.pagination {
 .dropdowns.small > .dropdown > .menu > .item {
   padding: 6px 10px;
 }
-.dropdowns.small > .dropdown > .text > .icon,
-.dropdowns.small > .dropdown > .button > .icon {
+.dropdowns.small > .dropdown > .text > .fa,
+.dropdowns.small > .dropdown > .button > .fa {
   line-height: 1.166666666666667;
   margin-left: 6px;
 }
@@ -3692,8 +3699,8 @@ ul.pagination {
 .dropdowns.large > .dropdown > .menu > .item {
   padding: 8px 17px;
 }
-.dropdowns.large > .dropdown > .text > .icon,
-.dropdowns.large > .dropdown > .button > .icon {
+.dropdowns.large > .dropdown > .text > .fa,
+.dropdowns.large > .dropdown > .button > .fa {
   line-height: 1.75;
   margin-left: 12px;
 }
@@ -3722,8 +3729,8 @@ ul.pagination {
 .dropdowns.huge > .dropdown > .menu > .item {
   padding: 10px 22px;
 }
-.dropdowns.huge > .dropdown > .text > .icon,
-.dropdowns.huge > .dropdown > .button > .icon {
+.dropdowns.huge > .dropdown > .text > .fa,
+.dropdowns.huge > .dropdown > .button > .fa {
   line-height: 2;
   margin-left: 14px;
 }
@@ -3853,6 +3860,7 @@ body > .mask {
   -webkit-user-select: none;
       -ms-user-select: none;
           user-select: none;
+  background-color: #f8f8f8;
   padding: 15px 15px;
   border-top-left-radius: 2px;
   border-top-right-radius: 2px;
@@ -3934,6 +3942,7 @@ div.input {
 }
 div.input > input,
 div.input > textarea {
+  width: 100%;
   vertical-align: top;
 }
 div.input > .placeholder {
@@ -5175,36 +5184,36 @@ textarea.input.muted,
   font-size: 14px;
   padding: 8px 8px;
 }
-.calendar > .header > .icon-chevron-left {
+.calendar > .header > .fa-chevron-left {
   position: absolute;
   line-height: 1;
   left: 8px;
   cursor: pointer;
 }
-.calendar > .header > .icon-chevron-left.disabled,
-.calendar > .header > .icon-chevron-left[disabled] {
+.calendar > .header > .fa-chevron-left.disabled,
+.calendar > .header > .fa-chevron-left[disabled] {
   color: #c7c7c7;
 }
-.calendar > .header > .icon-chevron-left.disabled,
-.calendar > .header > .icon-chevron-left[disabled],
-.calendar > .header > .icon-chevron-left.disabled > .icon,
-.calendar > .header > .icon-chevron-left[disabled] > .icon {
+.calendar > .header > .fa-chevron-left.disabled,
+.calendar > .header > .fa-chevron-left[disabled],
+.calendar > .header > .fa-chevron-left.disabled > .fa,
+.calendar > .header > .fa-chevron-left[disabled] > .fa {
   cursor: not-allowed !important;
 }
-.calendar > .header > .icon-chevron-right {
+.calendar > .header > .fa-chevron-right {
   position: absolute;
   right: 8px;
   line-height: 1;
   cursor: pointer;
 }
-.calendar > .header > .icon-chevron-right.disabled,
-.calendar > .header > .icon-chevron-right[disabled] {
+.calendar > .header > .fa-chevron-right.disabled,
+.calendar > .header > .fa-chevron-right[disabled] {
   color: #c7c7c7;
 }
-.calendar > .header > .icon-chevron-right.disabled,
-.calendar > .header > .icon-chevron-right[disabled],
-.calendar > .header > .icon-chevron-right.disabled > .icon,
-.calendar > .header > .icon-chevron-right[disabled] > .icon {
+.calendar > .header > .fa-chevron-right.disabled,
+.calendar > .header > .fa-chevron-right[disabled],
+.calendar > .header > .fa-chevron-right.disabled > .fa,
+.calendar > .header > .fa-chevron-right[disabled] > .fa {
   cursor: not-allowed !important;
 }
 .calendar > .body table {
@@ -5246,8 +5255,8 @@ textarea.input.muted,
 }
 .calendar > .body tbody > tr > td.disabled,
 .calendar > .body tbody > tr > td[disabled],
-.calendar > .body tbody > tr > td.disabled > .icon,
-.calendar > .body tbody > tr > td[disabled] > .icon {
+.calendar > .body tbody > tr > td.disabled > .fa,
+.calendar > .body tbody > tr > td[disabled] > .fa {
   cursor: not-allowed !important;
 }
 .calendar > .body tbody > tr > td.adjacent {
