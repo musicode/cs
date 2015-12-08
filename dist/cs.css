@@ -2399,7 +2399,7 @@ button.badge {
   height: 100%;
 }
 a.image {
-  text-decoraton: none;
+  text-decoration: none;
 }
 .image {
   width: 70px;
@@ -2448,22 +2448,28 @@ a.image:hover:after,
   opacity: 0.2;
   filter: alpha(opacity=20);
 }
-.image.round {
+.image.round,
+.image.round:after {
   border-radius: 50%;
 }
-.image.radius {
+.image.radius,
+.image.radius:after {
   border-radius: 4px;
 }
-.image.radius.tiny {
+.image.radius.tiny,
+.image.radius.tiny:after {
   border-radius: 2px;
 }
-.image.radius.small {
+.image.radius.small,
+.image.radius.small:after {
   border-radius: 2px;
 }
-.image.radius.large {
+.image.radius.large,
+.image.radius.large:after {
   border-radius: 6px;
 }
-.image.radius.huge {
+.image.radius.huge,
+.image.radius.huge:after {
   border-radius: 8px;
 }
 .images {
@@ -5101,6 +5107,7 @@ textarea.input.muted,
 }
 .form {
   font-size: 0;
+  text-align: left;
 }
 .form > * + .block {
   margin-top: 10px;
