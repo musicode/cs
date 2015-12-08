@@ -6,7 +6,7 @@
 image-reset()
 
     a&
-        text-decoraton none
+        text-decoration none
 
 
 image-size(size)
@@ -51,7 +51,6 @@ ui-images()
     )
 
 
-
 ui-image-link()
 
     position relative
@@ -82,16 +81,19 @@ ui-image-link()
 
 ui-image-round()
 
-    border-radius 50%
-
-
+    &,
+    &:after
+        border-radius 50%
 
 ui-image-radius()
 
     ui-size-variant(
         size-hash: $image-size-hash,
         each: @(size) {
-            ui-set('border-radius', size['radius'])
+            &,
+            &:after {
+                ui-set('border-radius', size['radius'])
+            }
         }
     )
 
