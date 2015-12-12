@@ -114,10 +114,8 @@ ui-collection-tight-side-radius(selector-item)
 
     else
 
-        > {selector-item}
-            border-radius 0
-
         side-radius = @(radius) {
+            border-radius 0
             {$selector-first-child} {
                 ui-set('border-top-left-radius', radius)
                 ui-set('border-bottom-left-radius', radius)
