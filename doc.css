@@ -3792,6 +3792,9 @@ body > .mask {
   background-color: #f90;
   color: #fff;
 }
+.dialog.primary > .header + .close {
+  color: #fff;
+}
 .dialog.secondary > .header {
   border-bottom: 0;
   margin-left: -1px;
@@ -3800,6 +3803,9 @@ body > .mask {
 }
 .dialog.secondary > .header {
   background-color: #fff;
+  color: #666;
+}
+.dialog.secondary > .header + .close {
   color: #666;
 }
 .dialog.success > .header {
@@ -3812,6 +3818,9 @@ body > .mask {
   background-color: #56b02a;
   color: #fff;
 }
+.dialog.success > .header + .close {
+  color: #fff;
+}
 .dialog.error > .header {
   border-bottom: 0;
   margin-left: -1px;
@@ -3820,6 +3829,9 @@ body > .mask {
 }
 .dialog.error > .header {
   background-color: #f95710;
+  color: #fff;
+}
+.dialog.error > .header + .close {
   color: #fff;
 }
 .dialog.info > .header {
@@ -3832,6 +3844,9 @@ body > .mask {
   background-color: #6187dc;
   color: #fff;
 }
+.dialog.info > .header + .close {
+  color: #fff;
+}
 .dialog.warning > .header {
   border-bottom: 0;
   margin-left: -1px;
@@ -3840,6 +3855,9 @@ body > .mask {
 }
 .dialog.warning > .header {
   background-color: #f0ad4e;
+  color: #fff;
+}
+.dialog.warning > .header + .close {
   color: #fff;
 }
 .dialog.danger > .header {
@@ -3852,6 +3870,9 @@ body > .mask {
   background-color: #d9534f;
   color: #fff;
 }
+.dialog.danger > .header + .close {
+  color: #fff;
+}
 .dialog.muted > .header {
   border-bottom: 0;
   margin-left: -1px;
@@ -3860,6 +3881,9 @@ body > .mask {
 }
 .dialog.muted > .header {
   background-color: #ccc;
+  color: #fff;
+}
+.dialog.muted > .header + .close {
   color: #fff;
 }
 .dialog > .header {
@@ -3898,6 +3922,9 @@ body > .mask {
 }
 .mask + .dialog {
   border: 0;
+}
+.mask + .dialog > .header {
+  margin: 0 !important;
 }
 .input {
   color: inherit;
