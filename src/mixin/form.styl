@@ -173,6 +173,16 @@ form-input()
         background-color $form-input-bg
         border 1px solid $brand-border
 
+        if $support-mouse
+            ui-disabled-cursor()
+
+        &[disabled]
+            ui-set('background-color', $brand-bg-disabled)
+            ui-set('border-color', $brand-border-disabled)
+            &:hover
+                ui-set('border-color', $brand-border-disabled)
+
+
         if $form-placeholder-color is a 'rgba'
 
             &::-webkit-input-placeholder
@@ -248,8 +258,16 @@ form-input()
         each: @(bg, color, name) {
 
             {selector-control} {
-                ui-set('border-color', bg)
                 ui-set('background-color', lighten(bg, 97%))
+                ui-set('border-color', bg)
+
+                &[disabled] {
+                    ui-set('background-color', $brand-bg-disabled)
+                    ui-set('border-color', lighten(bg, 60%))
+                    &:hover {
+                        ui-set('border-color', lighten(bg, 60%))
+                    }
+                }
             }
 
         }

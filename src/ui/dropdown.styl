@@ -5,7 +5,8 @@
 
 +prefix-classes($ui-prefix)
 
-    {$selector-dropdown}
+    {$selector-dropdown},
+    {$selector-dropup}
         ui-dropdown()
 
         > {$selector-dropdown-menu}
@@ -31,6 +32,11 @@
             > {$selector-dropdown-menu}
                 ui-dropdown-opened-menu()
 
+    {$selector-dropup}
+        > {$selector-dropdown-menu}
+            top auto
+            bottom 100%
+            ui-set('margin-bottom', $dropdown-menu-gap)
 
     {$selector-dropdowns}
         ui-dropdowns()

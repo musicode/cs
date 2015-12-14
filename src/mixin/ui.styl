@@ -116,6 +116,9 @@ ui-collection-tight-side-radius(selector-item)
 
         side-radius = @(radius) {
             border-radius 0
+            &{$selector-fluid} {
+                ui-set('border-radius', radius)
+            }
             {$selector-first-child} {
                 ui-set('border-top-left-radius', radius)
                 ui-set('border-bottom-left-radius', radius)
@@ -178,7 +181,7 @@ ui-disabled-cursor(selector = $selector-disabled)
         style: @() {
             &,
             & > {$selector-icon} {
-                ui-set('cursor', $cursor-disabled, true)
+                ui-set('cursor', $cursor-disabled)
             }
         }
     )
