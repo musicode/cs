@@ -3,7 +3,7 @@
  * @author musicode
  */
 
-dialog-brand(bg, color)
+dialog-brand(brand)
 
     > {$selector-dialog-header}
         border-bottom 0
@@ -12,11 +12,12 @@ dialog-brand(bg, color)
         margin-top -1px
 
         &
-            ui-set('background-color', bg)
-            ui-set('color', color)
+            ui-set('background-color', brand['bg'])
+            ui-set('color', brand['color'])
 
         + {$selector-dialog-close}
-            ui-set('color', color)
+            ui-set('color', brand['color'])
+
 
 ui-dialog()
 
@@ -25,18 +26,16 @@ ui-dialog()
     position fixed
     text-align left
 
-    if $brand-border is a 'rgba'
-        border 1px solid $brand-border
-
-    ui()
-
-    ui-set('background-color', $brand-bg)
+    ui-set('background-color', $dialog-bg)
     ui-set('min-width', $dialog-min-width)
-    ui-set('border-radius', $dialog-radius)
     ui-set('box-shadow', $dialog-box-shadow)
+    ui-set('border-radius', $dialog-radius)
 
-    ui-brand-variant(
-        reversed: true,
+    if $dialog-border is a 'rgba'
+        border 1px solid $dialog-border
+
+    ui-variant(
+        hash: $dialog-brand-hash,
         each: dialog-brand
     )
 
@@ -51,27 +50,25 @@ ui-dialog-header()
 
     user-select none
 
-    ui()
-
     ui-set('background-color', $dialog-header-bg)
+    ui-set('color', $dialog-header-color)
     ui-set('padding', $dialog-header-padding-vertical $dialog-padding-horizontal)
-    ui-set('border-top-left-radius', $dialog-radius)
-    ui-set('border-top-right-radius', $dialog-radius)
 
-    if $brand-divider is a 'rgba'
-        border-bottom 1px solid $brand-divider
+    if $dialog-radius > 0
+        ui-set('border-top-left-radius', $dialog-radius)
+        ui-set('border-top-right-radius', $dialog-radius)
+
+    if $dialog-divider is a 'rgba'
+        border-bottom 1px solid $dialog-divider
 
 
 ui-dialog-title()
 
     display inline-block
+    ui-set('font-size', $dialog-title-font-size)
 
     if $support-mouse
         ui-set('cursor', $cursor-text)
-
-    ui()
-    ui-set('font-size', $dialog-title-font-size)
-
 
 
 ui-dialog-close()
@@ -79,8 +76,6 @@ ui-dialog-close()
     position absolute
     ui-set('top', $dialog-close-top)
     ui-set('right', $dialog-padding-horizontal)
-
-    ui()
     ui-set('font-size', $dialog-close-font-size)
 
     if $support-mouse
@@ -90,7 +85,6 @@ ui-dialog-close()
 
 ui-dialog-body()
 
-    ui()
     ui-set('padding', $dialog-body-padding-vertical $dialog-padding-horizontal)
 
 
@@ -99,10 +93,9 @@ ui-dialog-footer()
 
     text-align right
 
-    ui()
     ui-set('padding', $dialog-footer-padding-vertical $dialog-padding-horizontal)
 
-    if $brand-divider is a 'rgba'
-        border-top 1px solid $brand-divider
+    if $dialog-divider is a 'rgba'
+        border-top 1px solid $dialog-divider
 
 

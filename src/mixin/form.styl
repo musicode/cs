@@ -74,7 +74,7 @@ form-menu()
     display none
     position absolute
     ui-set('z-index', $zindex-tiny)
-    ui-set('background-color', $brand-bg)
+    ui-set('background-color', $form-menu-bg)
     ui-set('box-shadow', $form-menu-box-shadow)
 
 
@@ -85,8 +85,6 @@ form-footer()
 
 form-radio()
 
-    ui()
-
     > input[type="radio"]
         ui-set('margin-right', $form-box-text-gap)
 
@@ -95,6 +93,7 @@ form-radios()
 
     ui-collection(
         selector-item: $selector-form-radio,
+        hash: $form-box-size-hash,
         each: @(size) {
             > {$selector-form-radio} {
                 ui-set('font-size', size['font'])
@@ -111,8 +110,6 @@ form-radios()
 
 form-checkbox()
 
-    ui()
-
     > input[type="checkbox"]
         ui-set('margin-right', $form-box-text-gap)
 
@@ -121,6 +118,7 @@ form-checkboxes()
 
     ui-collection(
         selector-item: $selector-form-checkbox,
+        hash: $form-box-size-hash,
         each: @(size) {
             > {$selector-form-checkbox} {
                 ui-set('font-size', size['font'])
@@ -144,7 +142,7 @@ form-input-size(size)
 
 form-input-height(name)
 
-    ui-set('height', $form-input-size-hash[name]['height'])
+    ui-set('height', $form-input-height-hash[name])
 
 
 form-input()
@@ -163,8 +161,6 @@ form-input()
 
     color inherit
 
-    ui()
-
     {selector-control}
 
         outline 0
@@ -177,11 +173,11 @@ form-input()
             ui-disabled-cursor()
 
         &[disabled]
-            ui-set('background-color', $brand-bg-disabled)
-            ui-set('border-color', $brand-border-disabled)
+            ui-set('background-color', $form-input-bg-disabled, true)
+            ui-set('border-color', $form-input-border-disabled, true)
+            ui-set('color', $form-input-color-disabled, true)
             &:hover
-                ui-set('border-color', $brand-border-disabled)
-
+                ui-set('border-color', $form-input-border-disabled, true)
 
         if $form-placeholder-color is a 'rgba'
 
@@ -227,7 +223,8 @@ form-input()
         {$selector-focus}
             ui-set('border-color', $brand-primary)
 
-    ui-size-variant(
+    ui-variant(
+        hash: $form-input-size-hash,
         each: @(size, name) {
             {selector-control} {
                 form-input-size(size)
@@ -240,36 +237,24 @@ form-input()
                     form-input-size(size)
                 }
             }
-            &{$selector-round} {
-                {selector-control} {
-                    ui-set('border-radius', size['round'])
+            ui-variant(
+                hash: $form-input-radius-hash[name],
+                each: @(radius) {
+                    {selector-control} {
+                        ui-set('border-radius', radius)
+                    }
                 }
-            }
-            &{$selector-radius} {
-                {selector-control} {
-                    ui-set('border-radius', size['radius'])
-                }
-            }
+            )
         }
     )
 
-    ui-brand-variant(
-        reversed: true,
-        each: @(bg, color, name) {
-
+    ui-variant(
+        hash: $form-input-brand-hash,
+        each: @(brand, name) {
             {selector-control} {
-                ui-set('background-color', lighten(bg, 97%))
-                ui-set('border-color', bg)
-
-                &[disabled] {
-                    ui-set('background-color', $brand-bg-disabled)
-                    ui-set('border-color', lighten(bg, 60%))
-                    &:hover {
-                        ui-set('border-color', lighten(bg, 60%))
-                    }
-                }
+                ui-set('background-color', brand['bg'])
+                ui-set('border-color', brand['border'])
             }
-
         }
     )
 
@@ -304,7 +289,8 @@ form-input-group()
         }
     }
 
-    ui-size-variant(
+    ui-variant(
+        hash: $form-input-size-hash,
         each: @(size, name) {
 
             > {$selector-label} {
@@ -313,11 +299,8 @@ form-input-group()
             > {$selector-button} {
                 button-size(size)
             }
-            > input{$selector-form-input},
-            > {$selector-form-input} > input {
-                form-input-size(size)
-            }
             input {
+                form-input-size(size)
                 form-input-height(name)
             }
 
@@ -354,13 +337,14 @@ form-input-group()
                 position relative
             }
 
-            &{$selector-round} {
-                control-radius(size['round'])
-            }
-
-            &{$selector-radius} {
-                control-radius(size['radius'])
-            }
+            ui-variant(
+                hash: $form-input-radius-hash[name],
+                each: @(radius) {
+                    input {
+                        ui-set('border-radius', radius)
+                    }
+                }
+            )
 
     })
 
@@ -370,40 +354,29 @@ form-inputs()
 
     ui-collection(
         selector-item: $selector-form-input,
+        hash: $form-input-size-hash,
         each: @(size, name) {
 
-            > input{$selector-form-input},
-            > textarea{$selector-form-input},
-            > {$selector-form-input} > input,
-            > {$selector-form-input} > textarea {
+            input,
+            textarea {
                 form-input-size(size)
             }
 
-            > input{$selector-form-input},
-            > {$selector-form-input} > input {
+            input {
                 form-input-height(name)
             }
 
-            &{$selector-round} {
-                > {$selector-button},
-                > {$selector-label},
-                > input{$selector-form-input},
-                > textarea{$selector-form-input},
-                > {$selector-form-input} > input,
-                > {$selector-form-input} > textarea {
-                    ui-set('border-radius', size['round'])
+            ui-variant(
+                hash: $form-input-radius-hash[name],
+                each: @(radius) {
+                    > {$selector-button},
+                    > {$selector-label},
+                    input,
+                    textarea {
+                        ui-set('border-radius', radius)
+                    }
                 }
-            }
-            &{$selector-radius} {
-                > {$selector-button},
-                > {$selector-label},
-                > input{$selector-form-input},
-                > textarea{$selector-form-input},
-                > {$selector-form-input} > input,
-                > {$selector-form-input} > textarea {
-                    ui-set('border-radius', size['radius'])
-                }
-            }
+            )
 
         }
     )
@@ -416,5 +389,7 @@ form-inputs-tight()
     )
 
     ui-collection-tight-side-radius(
-        selector-item: $selector-form-input
+        selector-item: $selector-form-input,
+        hash: $form-input-size-hash
     )
+

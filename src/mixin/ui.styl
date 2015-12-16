@@ -1,7 +1,4 @@
 
-ui()
-
-
 ui-set(name, value, important = false)
 
     apply = @() {
@@ -46,12 +43,13 @@ ui-justified(selector-item)
 
 
 
-ui-collection(selector-item, each = null)
+ui-collection(selector-item, hash = $size-hash, each = null)
 
     display block
     font-size 0
 
-    ui-size-variant(
+    ui-variant(,
+        hash: hash,
         each: @(size, name) {
 
             > {selector-item} {
@@ -93,7 +91,7 @@ ui-collection-tight(selector-item, gap-item = 0)
                 z-index 1
 
 
-ui-collection-tight-side-radius(selector-item)
+ui-collection-tight-side-radius(selector-item, hash = $size-hash)
 
     if !$support-ie or !$support-ie8
 
@@ -101,14 +99,14 @@ ui-collection-tight-side-radius(selector-item)
         &{$selector-radius}
             > {selector-item}
 
-                &:not(:first-child):not(:last-child)
+                &:not({$selector-fluid}):not(:first-child):not(:last-child)
                     border-radius 0
 
-                &:first-child
+                &:not({$selector-fluid}):first-child
                     border-top-right-radius 0
                     border-bottom-right-radius 0
 
-                &:last-child
+                &:not({$selector-fluid}):last-child
                     border-top-left-radius 0
                     border-bottom-left-radius 0
 
@@ -129,7 +127,8 @@ ui-collection-tight-side-radius(selector-item)
             }
         }
 
-        ui-size-variant(
+        ui-variant(
+            hash: hash,
             each: @(size) {
                 &{$selector-round} {
                     > {selector-item} {
@@ -208,10 +207,10 @@ ui-variant(hash, each)
 ui-brand-variant(
                 each,
                 reversed = false,
-                brand-hash = $brand-hash)
+                hash = $brand-hash)
 
     ui-variant(
-        hash: brand-hash,
+        hash: hash,
         each: @(color, name) {
 
             bg = null
@@ -234,10 +233,21 @@ ui-brand-variant(
 
 ui-size-variant(
                 each,
-                size-hash = $size-hash)
+                hash = $size-hash)
 
     ui-variant(
-        hash: size-hash,
+        hash: hash,
+        each: @(item, name) {
+            each(item, name)
+        }
+    )
+
+ui-radius-variant(
+                each,
+                hash = $radius-hash)
+
+    ui-variant(
+        hash: hash,
         each: @(item, name) {
             each(item, name)
         }

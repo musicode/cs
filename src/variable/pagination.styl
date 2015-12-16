@@ -6,3 +6,192 @@
 $selector-pagination = '.pagination'
 $selector-pagination-item = '.item'
 
+$pagination-hover-lighten = 6%
+$pagination-active-lighten = 3%
+
+$pagination-brand-hash = {
+    primary: {
+        bg: $brand-bg,
+        border: $brand-border,
+        color: $brand-text,
+
+        bg-hover: lighten($brand-primary, $pagination-hover-lighten),
+        border-hover: lighten($brand-primary, $pagination-hover-lighten),
+        color-hover: #FFF,
+
+        bg-active: lighten($brand-primary, $pagination-active-lighten),
+        border-active: lighten($brand-primary, $pagination-active-lighten),
+        color-active: #FFF,
+
+        bg-checked: $brand-primary,
+        border-checked: $brand-primary,
+        color-checked: #FFF,
+
+        bg-disabled: $brand-bg-disabled,
+        border-disabled: $brand-border-disabled,
+        color-disabled: $brand-text-disabled
+    },
+    secondary: {
+        bg: $brand-bg,
+        border: $brand-border,
+        color: $brand-text,
+
+        bg-hover: lighten($brand-text, $pagination-hover-lighten),
+        border-hover: lighten($brand-text, $pagination-hover-lighten),
+        color-hover: #FFF,
+
+        bg-active: lighten($brand-text, $pagination-active-lighten),
+        border-active: lighten($brand-text, $pagination-active-lighten),
+        color-active: #FFF,
+
+        bg-checked: $brand-text,
+        border-checked: $brand-text,
+        color-checked: #FFF,
+
+        bg-disabled: $brand-bg-disabled,
+        border-disabled: $brand-border-disabled,
+        color-disabled: $brand-text-disabled
+    },
+    success: {
+        bg: $brand-bg,
+        border: $brand-border,
+        color: $brand-text,
+
+        bg-hover: lighten($brand-success, $pagination-hover-lighten),
+        border-hover: lighten($brand-success, $pagination-hover-lighten),
+        color-hover: #FFF,
+
+        bg-active: lighten($brand-success, $pagination-active-lighten),
+        border-active: lighten($brand-success, $pagination-active-lighten),
+        color-active: #FFF,
+
+        bg-checked: $brand-success,
+        border-checked: $brand-success,
+        color-checked: #FFF,
+
+        bg-disabled: $brand-bg-disabled,
+        border-disabled: $brand-border-disabled,
+        color-disabled: $brand-text-disabled
+    },
+    error: {
+        bg: $brand-bg,
+        border: $brand-border,
+        color: $brand-text,
+
+        bg-hover: lighten($brand-error, $pagination-hover-lighten),
+        border-hover: lighten($brand-error, $pagination-hover-lighten),
+        color-hover: #FFF,
+
+        bg-active: lighten($brand-error, $pagination-active-lighten),
+        border-active: lighten($brand-error, $pagination-active-lighten),
+        color-active: #FFF,
+
+        bg-checked: $brand-error,
+        border-checked: $brand-error,
+        color-checked: #FFF,
+
+        bg-disabled: $brand-bg-disabled,
+        border-disabled: $brand-border-disabled,
+        color-disabled: $brand-text-disabled
+    },
+    info: {
+        bg: $brand-bg,
+        border: $brand-border,
+        color: $brand-text,
+
+        bg-hover: lighten($brand-info, $pagination-hover-lighten),
+        border-hover: lighten($brand-info, $pagination-hover-lighten),
+        color-hover: #FFF,
+
+        bg-active: lighten($brand-info, $pagination-active-lighten),
+        border-active: lighten($brand-info, $pagination-active-lighten),
+        color-active: #FFF,
+
+        bg-checked: $brand-info,
+        border-checked: $brand-info,
+        color-checked: #FFF,
+
+        bg-disabled: $brand-bg-disabled,
+        border-disabled: $brand-border-disabled,
+        color-disabled: $brand-text-disabled
+    },
+    warning: {
+        bg: $brand-bg,
+        border: $brand-border,
+        color: $brand-text,
+
+        bg-hover: lighten($brand-warning, $pagination-hover-lighten),
+        border-hover: lighten($brand-warning, $pagination-hover-lighten),
+        color-hover: #FFF,
+
+        bg-active: lighten($brand-warning, $pagination-active-lighten),
+        border-active: lighten($brand-warning, $pagination-active-lighten),
+        color-active: #FFF,
+
+        bg-checked: $brand-warning,
+        border-checked: $brand-warning,
+        color-checked: #FFF,
+
+        bg-disabled: $brand-bg-disabled,
+        border-disabled: $brand-border-disabled,
+        color-disabled: $brand-text-disabled
+    },
+    danger: {
+        bg: $brand-bg,
+        border: $brand-border,
+        color: $brand-text,
+
+        bg-hover: lighten($brand-danger, $pagination-hover-lighten),
+        border-hover: lighten($brand-danger, $pagination-hover-lighten),
+        color-hover: #FFF,
+
+        bg-active: lighten($brand-danger, $pagination-active-lighten),
+        border-active: lighten($brand-danger, $pagination-active-lighten),
+        color-active: #FFF,
+
+        bg-checked: $brand-danger,
+        border-checked: $brand-danger,
+        color-checked: #FFF,
+
+        bg-disabled: $brand-bg-disabled,
+        border-disabled: $brand-border-disabled,
+        color-disabled: $brand-text-disabled
+    },
+    muted: {
+        bg: $brand-bg,
+        border: $brand-border,
+        color: $brand-text,
+
+        bg-hover: lighten($brand-muted, $pagination-hover-lighten),
+        border-hover: lighten($brand-muted, $pagination-hover-lighten),
+        color-hover: #FFF,
+
+        bg-active: lighten($brand-muted, $pagination-active-lighten),
+        border-active: lighten($brand-muted, $pagination-active-lighten),
+        color-active: #FFF,
+
+        bg-checked: $brand-muted,
+        border-checked: $brand-muted,
+        color-checked: #FFF,
+
+        bg-disabled: $brand-bg-disabled,
+        border-disabled: $brand-border-disabled,
+        color-disabled: $brand-text-disabled
+    }
+}
+
+$pagination-size-hash = {
+    '': $size-base,
+    tiny: $size-tiny,
+    small: $size-small,
+    large: $size-large,
+    huge: $size-huge
+}
+
+$pagination-radius-hash = {
+    '': $radius-base,
+    tiny: $radius-tiny,
+    small: $radius-small,
+    large: $radius-large,
+    huge: $radius-huge
+}

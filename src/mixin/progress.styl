@@ -11,10 +11,10 @@ ui-progress()
         border 1px solid $progress-border
 
     ui-set('background-color', $progress-bg)
-    ui()
+    ui-set('color', $progress-color)
 
-    ui-brand-variant(
-        reversed: true,
+    ui-variant(
+        hash: $progress-brand-hash,
         each: @(bg) {
             > {$selector-progress-meter} {
                 ui-set('background-color', bg)
@@ -22,16 +22,9 @@ ui-progress()
         }
     )
 
-    progress-radius = @(radius) {
-        ui-set('border-radius', radius)
-
-        > {$selector-progress-meter} {
-            ui-set('border-radius', radius - 1)
-        }
-    }
-
-    ui-size-variant(
-        each: @(size) {
+    ui-variant(
+        hash: $progress-size-hash,
+        each: @(size, name) {
 
             > {$selector-progress-meter} {
                 ui-set('font-size', size['font'])
@@ -39,13 +32,16 @@ ui-progress()
                 ui-set('padding', size['padding-vertical'] size['padding-horizontal'])
             }
 
-            &{$selector-round} {
-                progress-radius(size['round'])
-            }
+            ui-variant(
+                hash: $progress-radius-hash[name],
+                each: @(radius, name) {
+                    ui-set('border-radius', radius)
 
-            &{$selector-radius} {
-                progress-radius(size['radius'])
-            }
+                    > {$selector-progress-meter} {
+                        ui-set('border-radius', radius - 1)
+                    }
+                }
+            )
 
         }
     )
@@ -56,6 +52,4 @@ ui-progress-meter()
 
     display block
     text-align right
-
-    ui()
 

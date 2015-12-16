@@ -10,11 +10,11 @@ message-size(size)
     ui-set('padding', size['padding-vertical'] size['padding-horizontal'])
 
 
-message-brand(color)
+message-brand(brand)
 
-    ui-set('background-color', lighten(color, 95%))
-    ui-set('border-color', color)
-    ui-set('color', color)
+    ui-set('background-color', brand['bg'])
+    ui-set('border-color', brand['border'])
+    ui-set('color', brand['color'])
 
 
 ui-message()
@@ -23,23 +23,22 @@ ui-message()
     display inline-block
     text-align left
 
-    ui()
-
-    ui-brand-variant(
+    ui-variant(
+        hash: $message-brand-hash,
         each: message-brand
     )
 
-    ui-size-variant(
-        each: @(size) {
+    ui-variant(
+        hash: $message-size-hash,
+        each: @(size, name) {
             message-size(size)
 
-            &{$selector-round} {
-                ui-set('border-radius', size['round'])
-            }
-
-            &{$selector-radius} {
-                ui-set('border-radius', size['radius'])
-            }
+            ui-variant(
+                hash: $message-radius-hash[name],
+                each: @(radius) {
+                    ui-set('border-radius', radius)
+                }
+            )
         }
     )
 
@@ -48,23 +47,21 @@ ui-messages()
 
     ui-collection(
         selector-item: $selector-message,
-        each: @(size) {
+        hash: $message-size-hash,
+        each: @(size, name) {
 
             > {$selector-message} {
                 message-size(size)
             }
 
-            &{$selector-round} {
-                > {$selector-message} {
-                    ui-set('border-radius', size['round'])
+            ui-variant(
+                hash: $message-radius-hash[name],
+                each: @(radius) {
+                    > {$selector-message} {
+                        ui-set('border-radius', radius)
+                    }
                 }
-            }
-
-            &{$selector-radius} {
-                > {$selector-message} {
-                    ui-set('border-radius', size['radius'])
-                }
-            }
+            )
 
         }
     )
@@ -78,5 +75,6 @@ ui-messages-tight()
     )
 
     ui-collection-tight-side-radius(
-        selector-item: $selector-message
+        selector-item: $selector-message,
+        hash: $message-size-hash,
     )

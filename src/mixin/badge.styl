@@ -14,18 +14,19 @@ badge-reset()
         outline 0
 
 
-badge-size(size)
+badge-brand(brand)
+
+    ui-set('background-color', brand['bg'])
+    ui-set('color', brand['color'])
+
+
+badge-size(size, name)
 
     ui-set('font-size', size['font'])
     ui-set('line-height', size['line-height'])
     ui-set('padding', size['padding-vertical'] size['padding-horizontal'])
-    ui-set('border-radius', size['round'])
 
-
-badge-brand(bg, color)
-
-    ui-set('background-color', bg)
-    ui-set('color', color)
+    ui-set('border-radius', $badge-radius-hash[name])
 
 
 ui-badge()
@@ -36,14 +37,13 @@ ui-badge()
 
     badge-reset()
 
-    ui()
-
-    ui-brand-variant(
-        reversed: true,
+    ui-variant(
+        hash: $badge-brand-hash,
         each: badge-brand
     )
 
-    ui-size-variant(
+    ui-variant(
+        hash: $badge-size-hash,
         each: badge-size
     )
 
@@ -53,9 +53,10 @@ ui-badges()
 
     ui-collection(
         selector-item: $selector-badge,
-        each: @(size) {
+        hash: $badge-size-hash,
+        each: @(size, name) {
             > {$selector-badge} {
-                badge-size(size)
+                badge-size(size, name)
             }
         }
     )

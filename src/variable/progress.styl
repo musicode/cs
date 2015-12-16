@@ -6,5 +6,54 @@
 $selector-progress = '.progress'
 $selector-progress-meter = '.meter'
 
-$progress-bg = #F6F6F6;
-$progress-border = #F1F1F1;
+$progress-bg = #EEE
+$progress-border = darken($progress-bg, 1%)
+$progress-color = #FFF
+
+// $progress-brand-hash = {
+//     primary: $brand-primary,
+//     secondary: $brand-secondary,
+//     success: $brand-success,
+//     error: $brand-error,
+//     info: $brand-info,
+//     warning: $brand-warning,
+//     danger: $brand-danger,
+//     muted: $brand-muted
+// }
+
+// $progress-size-hash = {
+//     '': $size-base,
+//     tiny: $size-tiny,
+//     small: $size-small,
+//     large: $size-large,
+//     huge: $size-huge
+// }
+
+// $progress-radius-hash = {
+//     '': $radius-base,
+//     tiny: $radius-tiny,
+//     small: $radius-small,
+//     large: $radius-large,
+//     huge: $radius-huge
+// }
+
+$progress-brand-hash = {
+    primary: $brand-primary,
+    error: $brand-error,
+    info: $brand-info
+}
+
+$progress-size-hash = {
+    '': {
+        font: 12px,
+        line-height: 1.1666666666666667,
+        padding-horizontal: 8px,
+        padding-vertical: 4px
+    }
+}
+
+$progress-radius-hash = {
+    '': {
+        '': $radius-small['round']
+    }
+}

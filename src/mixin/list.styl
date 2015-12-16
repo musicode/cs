@@ -18,35 +18,38 @@ ui-list()
     color inherit
     text-align left
 
-    ui()
-    ui-set('background-color', $brand-bg)
+    ui-set('background-color', $list-bg)
 
-    ui-size-variant(
-        each: @(size) {
+    ui-variant(
+        hash: $list-size-hash,
+        each: @(size, name) {
 
             > {$selector-list-item} {
                 ui-set('line-height', size['line-height'])
                 ui-set('padding', size['padding-vertical'] size['padding-horizontal'])
             }
 
-            &{$selector-round} {
-                ui-set('border-radius', size['round'])
-            }
-
-            &{$selector-radius} {
-                ui-set('border-radius', size['radius'])
-            }
-
+            ui-variant(
+                hash: $list-radius-hash[name],
+                each: @(radius) {
+                    ui-set('border-radius', radius)
+                    > {$selector-list-item} {
+                        ui-set('border-radius', radius)
+                    }
+                }
+            )
         }
     )
 
-    ui-brand-variant(
-        reversed: true,
-        each: @(bg, color) {
+    ui-variant(
+        hash: $list-brand-hash,
+        each: @(brand) {
             > {$selector-list-item} {
+                ui-set('color', brand['color'])
+
                 &{$selector-checked} {
-                    ui-set('background-color', bg)
-                    ui-set('color', color)
+                    ui-set('background-color', brand['bg-checked'])
+                    ui-set('color', brand['color-checked'])
                 }
             }
         }
@@ -57,9 +60,9 @@ ui-list-item()
 
     display block
 
-    if $brand-divider is a 'rgba'
+    if $list-item-divider is a 'rgba'
         + {$selector-list-item}
-            border-top 1px solid $brand-divider
+            border-top 1px solid $list-item-divider
 
     > {$selector-floated}
         float right

@@ -15,7 +15,6 @@ ui-tooltip()
     ui-set('font-size', $tooltip-font-size)
     ui-set('padding', $tooltip-padding-vertical $tooltip-padding-horizontal)
     ui-set('box-shadow', $tooltip-box-shadow)
-    ui()
 
     &:before,
     &:after
@@ -23,21 +22,19 @@ ui-tooltip()
         content ' '
         border 0 solid transparent
 
-    ui-brand-variant(
-        reversed: true,
-        each: @(bg, color) {
+    ui-variant(
+        hash: $tooltip-brand-hash,
+        each: @(brand, name) {
 
-            border = darken(bg, $tooltip-border-darken)
-
-            ui-set('background-color', bg)
-            ui-set('border-color', border)
-            ui-set('color', color)
+            ui-set('background-color', brand['bg'])
+            ui-set('border-color', brand['border'])
+            ui-set('color', brand['color'])
 
             &:before {
-                ui-set('border-color', border)
+                ui-set('border-color', brand['border'])
             }
             &:after {
-                ui-set('border-color', bg)
+                ui-set('border-color', brand['bg'])
             }
 
         }

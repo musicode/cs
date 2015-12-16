@@ -21,10 +21,16 @@ $selector-form-checkboxes = '.checkboxes'
 $form-input-bg = #FFF
 $form-input-border-hover-lighten = 30%
 
-$form-placeholder-color = #DDD
+$form-input-bg-disabled = #EEE
+$form-input-border-disabled = #CCC
+$form-input-color-disabled = #999
+
+$form-placeholder-color = #CCC
 
 $form-input-icon-width = 30px
-$form-menu-gap = 2px
+
+$form-menu-bg = $brand-bg
+$form-menu-gap = 0
 $form-menu-box-shadow = $layer-box-shadow
 
 $form-group-gap-inline = 8px
@@ -37,20 +43,72 @@ $form-box-text-gap = 6px
 
 $form-footer-gap-vertical = 30px
 
-$form-input-size-hash = {
-    tiny: {
-        height: 22px
+$form-box-size-hash = {
+    '': $size-base,
+    tiny: $size-tiny,
+    small: $size-small,
+    large: $size-large,
+    huge: $size-huge
+}
+
+$form-input-height-hash = {
+    '': 36px,
+    tiny: 20px,
+    small: 26px,
+    large: 44px,
+    huge: 58px
+}
+
+$form-input-bg-lighten = 97%
+
+$form-input-brand-hash = {
+    primary: {
+        bg: lighten($brand-primary, $form-input-bg-lighten),
+        border: $brand-primary
     },
-    small: {
-        height: 28px
+    secondary: {
+        bg: #FFF,
+        border: $brand-border
     },
-    '': {
-        height: 36px
+    success: {
+        bg: lighten($brand-success, $form-input-bg-lighten),
+        border: $brand-success
     },
-    large: {
-        height: 46px
+    error: {
+        bg: lighten($brand-error, $form-input-bg-lighten),
+        border: $brand-error
     },
-    huge: {
-        height: 58px
+    info: {
+        bg: lighten($brand-info, $form-input-bg-lighten),
+        border: $brand-info
+    },
+    warning: {
+        bg: lighten($brand-warning, $form-input-bg-lighten),
+        border: $brand-warning
+    },
+    danger: {
+        bg: lighten($brand-danger, $form-input-bg-lighten),
+        border: $brand-danger
+    },
+    muted: {
+        bg: lighten($brand-muted, $form-input-bg-lighten),
+        border: $brand-muted
     }
 }
+
+$form-input-size-hash = {
+    '': $size-base,
+    tiny: $size-tiny,
+    small: $size-small,
+    large: $size-large,
+    huge: $size-huge
+}
+
+$form-input-radius-hash = {
+    '': $radius-base,
+    tiny: $radius-tiny,
+    small: $radius-small,
+    large: $radius-large,
+    huge: $radius-huge
+}
+

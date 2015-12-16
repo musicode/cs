@@ -22,7 +22,7 @@ ui-calendar-prev()
     left $calendar-header-padding-horizontal
 
     {$selector-disabled}
-        ui-set('color', $brand-text-disabled)
+        ui-set('color', $calendar-prev-color-disabled)
 
     if $support-mouse
         ui-set('cursor', $cursor-clickable)
@@ -34,7 +34,7 @@ ui-calendar-next()
     line-height 1
 
     {$selector-disabled}
-        ui-set('color', $brand-text-disabled)
+        ui-set('color', $calendar-next-color-disabled)
 
     if $support-mouse
         ui-set('cursor', $cursor-clickable)
@@ -63,8 +63,8 @@ ui-calendar-date-cell()
         ui-set('color', $calendar-date-color-checked, true)
 
     {$selector-disabled}
-        ui-set('background-color', transparent)
-        ui-set('color', $brand-text-disabled, true)
+        ui-set('background-color', $calendar-date-bg-disabled)
+        ui-set('color', $calendar-date-color-disabled, true)
 
     if $support-mouse
         ui-set('cursor', $cursor-default)

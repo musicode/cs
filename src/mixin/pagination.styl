@@ -3,9 +3,6 @@
  * @author musicode
  */
 
-ui-pagination-button-brand(bg, color)
-
-
 ui-pagination()
 
     ul&
@@ -13,45 +10,64 @@ ui-pagination()
 
     color inherit
 
-    ui()
-
     ui-collection(
         selector-item: $selector-pagination-item,
-        each: @(size) {
-
+        hash: $pagination-size-hash,
+        each: @(size, name) {
             > {$selector-pagination-item} {
                 ui-set('font-size', size['font'])
             }
-
+            > {$selector-button} {
+                button-size(size)
+            }
+            ui-variant(
+                hash: $pagination-radius-hash[name],
+                each: @(radius) {
+                    > {$selector-button} {
+                        ui-set('border-radius', radius)
+                    }
+                }
+            )
         }
     )
 
-    ui-brand-variant(
-        reversed: true,
-        each: @(bg, color, name) {
+    ui-variant(
+        hash: $pagination-brand-hash,
+        each: @(brand) {
             > {$selector-button} {
+
+                button-brand(
+                    bg: brand['bg'],
+                    border: brand['border'],
+                    color: brand['color']
+                )
+
                 {$selector-hover} {
-                    bg-hover = $brand-hover-hash[name]
                     button-hover(
-                        bg: bg-hover,
-                        border: darken(bg-hover, $button-border-darken),
-                        color: color
+                        bg: brand['bg-hover'],
+                        border: brand['border-hover'],
+                        color: brand['color-hover']
                     )
                 }
                 {$selector-active} {
-                    bg-active = $brand-active-hash[name]
                     button-active(
-                        bg: bg-active,
-                        border: darken(bg-active, $button-border-darken),
-                        color: color
+                        bg: brand['bg-active'],
+                        border: brand['border-active'],
+                        color: brand['color-active']
                     )
                 }
                 {$selector-checked} {
-                    bg-checked = $brand-checked-hash[name]
                     button-active(
-                        bg: bg-checked,
-                        border: darken(bg-checked, $button-border-darken),
-                        color: color
+                        bg: brand['bg-checked'],
+                        border: brand['border-checked'],
+                        color: brand['color-checked']
+                    )
+                }
+                {$selector-disabled} {
+                    button-disabled(
+                        bg: brand['bg-disabled'],
+                        border: brand['border-disabled'],
+                        color: brand['color-disabled']
                     )
                 }
             }
@@ -76,25 +92,6 @@ ui-pagination-tight()
 ui-pagination-item()
 
     display inline-block
-    ui()
-
     ui-checked-cursor()
-
-
-ui-pagination-button()
-
-    button-brand(
-        bg: $brand-bg,
-        border: $brand-border,
-        color: $brand-text
-    )
-
-    {$selector-disabled}
-        button-disabled(
-            bg: $brand-bg-disabled,
-            border: $brand-border-disabled,
-            color: $brand-text-disabled
-        )
-
 
 

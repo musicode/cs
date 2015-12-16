@@ -29,23 +29,20 @@ ui-image()
 
     image-reset()
 
-    ui()
-
-    ui-size-variant(
-        size-hash: $image-size-hash,
+    ui-variant(
+        hash: $image-size-hash,
         each: image-size
     )
 
 
 ui-images()
 
-    ui()
-
     ui-collection(
         selector-item: $selector-image,
-        each: @(size, name) {
+        hash: $image-size-hash,
+        each: @(size) {
             > {$selector-image} {
-                image-size($image-size-hash[name])
+                image-size(size)
             }
         }
     )
@@ -65,19 +62,18 @@ ui-image-link()
 
         if !$support-ie or !$support-ie8
             background-color rgba(0,0,0,0)
-            ui-transition('background-color')
         else
             background-color #000
             ui-opacity(0)
-            ui-transition('opacity')
 
     {$selector-hover}
         &:after
             if !$support-ie or !$support-ie8
                 background-color rgba(0,0,0,$image-link-hover-mask-opacity)
+                ui-transition('background-color')
             else
                 ui-opacity($image-link-hover-mask-opacity)
-
+                ui-transition('opacity')
 
 ui-image-round()
 
@@ -87,8 +83,8 @@ ui-image-round()
 
 ui-image-radius()
 
-    ui-size-variant(
-        size-hash: $image-size-hash,
+    ui-variant(
+        hash: $image-size-hash,
         each: @(size) {
             &,
             &:after {

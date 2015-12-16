@@ -15,7 +15,6 @@ link-reset()
 
 
 link-size(size)
-
     ui-set('font-size', size['font'])
 
 link-brand()
@@ -30,13 +29,11 @@ link-disabled()
     ui-set('color', $brand-link-disabled, true)
 
 ui-link()
-
-    ui()
-
     link-reset()
     link-brand()
 
-    ui-size-variant(
+    ui-variant(
+        hash: $link-size-hash,
         each: link-size
     )
 
@@ -54,10 +51,9 @@ ui-link()
 
 ui-links()
 
-    ui()
-
     ui-collection(
         selector-item: $selector-link,
+        hash: $link-size-hash,
         each: @(size) {
             > {$selector-link} {
                 link-size(size)

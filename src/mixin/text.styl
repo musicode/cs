@@ -21,19 +21,17 @@ ui-text()
 
     text-reset()
 
-    ui()
-
-    ui-size-variant(
+    ui-variant(
+        hash: $text-size-hash,
         each: text-size
     )
 
 
 ui-texts()
 
-    ui()
-
     ui-collection(
         selector-item: $selector-text,
+        hash: $text-size-hash,
         each: @(size) {
             > {$selector-text} {
                 text-size(size)

@@ -5,3 +5,64 @@
 
 $selector-message = '.message'
 $selector-messages = '.messages'
+
+$message-bg-lighten = 95%
+
+$message-brand-hash = {
+    primary: {
+        bg: lighten($brand-primary, $message-bg-lighten),
+        border: $brand-primary,
+        color: $brand-primary
+    },
+    secondary: {
+        bg: lighten($brand-text, $message-bg-lighten),
+        border: $brand-text,
+        color: $brand-text
+    },
+    success: {
+        bg: lighten($brand-success, $message-bg-lighten),
+        border: $brand-success,
+        color: $brand-success
+    },
+    error: {
+        bg: lighten($brand-error, $message-bg-lighten),
+        border: $brand-error,
+        color: $brand-error
+    },
+    info: {
+        bg: lighten($brand-info, $message-bg-lighten),
+        border: $brand-info,
+        color: $brand-info
+    },
+    warning: {
+        bg: lighten($brand-warning, $message-bg-lighten),
+        border: $brand-warning,
+        color: $brand-warning
+    },
+    danger: {
+        bg: lighten($brand-danger, $message-bg-lighten),
+        border: $brand-danger,
+        color: $brand-danger
+    },
+    muted: {
+        bg: lighten($brand-muted, $message-bg-lighten),
+        border: $brand-muted,
+        color: $brand-muted
+    }
+}
+
+$message-size-hash = {
+    '': $size-base,
+    tiny: $size-tiny,
+    small: $size-small,
+    large: $size-large,
+    huge: $size-huge
+}
+
+$message-radius-hash = {
+    '': $radius-base,
+    tiny: $radius-tiny,
+    small: $radius-small,
+    large: $radius-large,
+    huge: $radius-huge
+}

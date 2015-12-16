@@ -13,21 +13,18 @@ label-reset()
         outline 0
 
 
+label-brand(brand)
+
+    ui-set('background-color', brand['bg'])
+    ui-set('border-color', brand['border'])
+    ui-set('color', brand['color'])
+
 
 label-size(size)
 
     ui-set('font-size', size['font'])
     ui-set('line-height', size['line-height'])
     ui-set('padding', size['padding-vertical'] size['padding-horizontal'])
-
-
-
-label-brand(bg, color)
-
-    ui-set('background-color', bg)
-    ui-set('border-color', bg)
-    ui-set('color', color)
-
 
 
 ui-label()
@@ -38,25 +35,22 @@ ui-label()
 
     label-reset()
 
-    ui()
-
-    ui-brand-variant(
-        reversed: true,
+    ui-variant(
+        hash: $label-brand-hash,
         each: label-brand
     )
 
-    ui-size-variant(
-        each: @(size) {
-
+    ui-variant(
+        hash: $label-size-hash,
+        each: @(size, name) {
             label-size(size)
 
-            &{$selector-round} {
-                ui-set('border-radius', size['round'])
-            }
-
-            &{$selector-radius} {
-                ui-set('border-radius', size['radius'])
-            }
+            ui-variant(
+                hash: $label-radius-hash[name],
+                each: @(radius) {
+                    ui-set('border-radius', radius)
+                }
+            )
         }
     )
 
@@ -68,23 +62,21 @@ ui-labels()
 
     ui-collection(
         selector-item: $selector-label,
-        each: @(size) {
+        hash: $label-size-hash,
+        each: @(size, name) {
 
             > {$selector-label} {
                 label-size(size)
             }
 
-            &{$selector-round} {
-                > {$selector-label} {
-                    ui-set('border-radius', size['round'])
+            ui-variant(
+                hash: $label-radius-hash[name],
+                each: @(radius) {
+                    > {$selector-label} {
+                        ui-set('border-radius', radius)
+                    }
                 }
-            }
-
-            &{$selector-radius} {
-                > {$selector-label} {
-                    ui-set('border-radius', size['radius'])
-                }
-            }
+            )
 
         }
     )
@@ -97,5 +89,6 @@ ui-labels-tight()
     )
 
     ui-collection-tight-side-radius(
-        selector-item: $selector-label
+        selector-item: $selector-label,
+        hash: $label-size-hash
     )
