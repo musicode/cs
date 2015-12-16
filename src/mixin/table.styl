@@ -21,11 +21,11 @@ ui-table()
         background-color $brand-bg
 
         > tr
-            ui-brand-variant(
-                reversed: true,
-                each: @(bg, color) {
-                    ui-set('background-color', bg)
-                    ui-set('color', color)
+            ui-variant(
+                hash: $table-brand-hash,
+                each: @(brand) {
+                    ui-set('background-color', brand['bg'])
+                    ui-set('color', brand['color'])
                 }
             )
 

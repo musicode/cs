@@ -40,7 +40,8 @@
             ui-collection-tight(
                 selector-item: 'li'
             )
-        ui-size-variant(
+        ui-variant(
+            hash: $size-hash,
             each: @(size) {
                 > li {
                     ui-set('font-size', size['font'])

@@ -44,7 +44,7 @@ ui-dropdown()
 
     > {$selector-text},
     > {$selector-button}
-        display block
+        ui-fluid()
         > {$selector-icon}
             float right
 
@@ -90,7 +90,7 @@ ui-dropdown-menu()
     ui-set('padding', $dropdown-menu-padding-vertival $dropdown-menu-padding-horizontal)
     ui-set('max-height', $dropdown-menu-max-height)
     ui-set('box-shadow', $dropdown-menu-box-shadow)
-    ui-set('z-index', $zindex-tiny)
+    ui-set('z-index', $zindex-small)
 
     if $dropdown-menu-border is a 'rgba'
         border 1px solid $dropdown-menu-border

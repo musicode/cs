@@ -201,7 +201,6 @@ form-input()
         > input,
         > textarea
             width 100%
-            vertical-align top
 
         if $form-placeholder-color is a 'rgba'
 
@@ -302,6 +301,11 @@ form-input-group()
             input {
                 form-input-size(size)
                 form-input-height(name)
+                &:hover,
+                &:active {
+                    position relative
+                    ui-set('z-index', zindex-tiny)
+                }
             }
 
             > {$selector-floated} {
@@ -390,6 +394,6 @@ form-inputs-tight()
 
     ui-collection-tight-side-radius(
         selector-item: $selector-form-input,
-        hash: $form-input-size-hash
+        hash: $form-input-radius-hash
     )
 

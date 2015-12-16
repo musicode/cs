@@ -7,10 +7,16 @@
 
     // font-size 需要被 $selector-links 覆盖
     // 因此先定义
-    ui-size-variant(
+    ui-variant(
+        hash: $size-hash,
         each: @(size) {
             ui-set('font-size', size['font'])
             ui-set('line-height', size['line-height'])
+
+            {$select-link},
+            {$select-text} {
+                font inherit
+            }
         }
     )
 
@@ -37,7 +43,8 @@
 
     // color 不需要被 $selector-link 覆盖
     // 因此后定义
-    ui-brand-variant(
+    ui-variant(
+        hash: $brand-hash,
         each: @(color, name) {
             ui-set('color', color)
             &{$selector-link} {
