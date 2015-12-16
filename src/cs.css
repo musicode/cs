@@ -298,8 +298,8 @@ ul.inline > li {
   display: block;
   width: 100%;
 }
-.icon + .text,
-.text + .icon {
+.fa + .text,
+.text + .fa {
   margin-left: 5px;
 }
 .tiny {
@@ -358,8 +358,8 @@ button.link {
 }
 .link.disabled,
 .link[disabled],
-.link.disabled > .icon,
-.link[disabled] > .icon {
+.link.disabled > .fa,
+.link[disabled] > .fa {
   cursor: not-allowed;
 }
 .link.hover,
@@ -598,8 +598,8 @@ button.button {
 }
 .button.disabled,
 .button[disabled],
-.button.disabled > .icon,
-.button[disabled] > .icon {
+.button.disabled > .fa,
+.button[disabled] > .fa {
   cursor: not-allowed;
 }
 .button.hover,
@@ -2831,8 +2831,8 @@ a.image:hover:after,
 }
 .tabs > .tab.disabled,
 .tabs > .tab[disabled],
-.tabs > .tab.disabled > .icon,
-.tabs > .tab[disabled] > .icon {
+.tabs > .tab.disabled > .fa,
+.tabs > .tab[disabled] > .fa {
   cursor: not-allowed;
 }
 .tabs > .tab.hover,
@@ -3511,8 +3511,8 @@ ul.pagination {
 }
 .pagination > .item.checked,
 .pagination > .item[checked],
-.pagination > .item.checked > .icon,
-.pagination > .item[checked] > .icon {
+.pagination > .item.checked > .fa,
+.pagination > .item[checked] > .fa {
   cursor: default;
 }
 .dropdown,
@@ -3527,14 +3527,14 @@ ul.pagination {
 .dropup > .button {
   display: block;
 }
-.dropdown > .text > .icon,
-.dropup > .text > .icon,
-.dropdown > .button > .icon,
-.dropup > .button > .icon {
+.dropdown > .text > .fa,
+.dropup > .text > .fa,
+.dropdown > .button > .fa,
+.dropup > .button > .fa {
   float: right;
 }
-.dropdown > .text > .icon,
-.dropup > .text > .icon {
+.dropdown > .text > .fa,
+.dropup > .text > .fa {
   -webkit-user-select: none;
       -ms-user-select: none;
           user-select: none;
@@ -3564,10 +3564,10 @@ ul.pagination {
 .dropup > .menu > .item {
   padding: 6px 12px;
 }
-.dropdown > .text > .icon,
-.dropup > .text > .icon,
-.dropdown > .button > .icon,
-.dropup > .button > .icon {
+.dropdown > .text > .fa,
+.dropup > .text > .fa,
+.dropdown > .button > .fa,
+.dropup > .button > .fa {
   line-height: 1.571428571428571;
   margin-left: 8px;
 }
@@ -3603,10 +3603,10 @@ ul.pagination {
 .dropup.tiny > .menu > .item {
   padding: 2px 4px;
 }
-.dropdown.tiny > .text > .icon,
-.dropup.tiny > .text > .icon,
-.dropdown.tiny > .button > .icon,
-.dropup.tiny > .button > .icon {
+.dropdown.tiny > .text > .fa,
+.dropup.tiny > .text > .fa,
+.dropdown.tiny > .button > .fa,
+.dropup.tiny > .button > .fa {
   line-height: 1.166666666666667;
   margin-left: 4px;
 }
@@ -3642,10 +3642,10 @@ ul.pagination {
 .dropup.small > .menu > .item {
   padding: 5px 7px;
 }
-.dropdown.small > .text > .icon,
-.dropup.small > .text > .icon,
-.dropdown.small > .button > .icon,
-.dropup.small > .button > .icon {
+.dropdown.small > .text > .fa,
+.dropup.small > .text > .fa,
+.dropdown.small > .button > .fa,
+.dropup.small > .button > .fa {
   line-height: 1.166666666666667;
   margin-left: 6px;
 }
@@ -3681,10 +3681,10 @@ ul.pagination {
 .dropup.large > .menu > .item {
   padding: 8px 16px;
 }
-.dropdown.large > .text > .icon,
-.dropup.large > .text > .icon,
-.dropdown.large > .button > .icon,
-.dropup.large > .button > .icon {
+.dropdown.large > .text > .fa,
+.dropup.large > .text > .fa,
+.dropdown.large > .button > .fa,
+.dropup.large > .button > .fa {
   line-height: 1.625;
   margin-left: 12px;
 }
@@ -3720,10 +3720,10 @@ ul.pagination {
 .dropup.huge > .menu > .item {
   padding: 10px 20px;
 }
-.dropdown.huge > .text > .icon,
-.dropup.huge > .text > .icon,
-.dropdown.huge > .button > .icon,
-.dropup.huge > .button > .icon {
+.dropdown.huge > .text > .fa,
+.dropup.huge > .text > .fa,
+.dropdown.huge > .button > .fa,
+.dropup.huge > .button > .fa {
   line-height: 1.555555555555556;
   margin-left: 14px;
 }
@@ -3835,8 +3835,8 @@ ul.pagination {
 .dropdowns > .dropdown > .menu > .item {
   padding: 6px 12px;
 }
-.dropdowns > .dropdown > .text > .icon,
-.dropdowns > .dropdown > .button > .icon {
+.dropdowns > .dropdown > .text > .fa,
+.dropdowns > .dropdown > .button > .fa {
   line-height: 1.571428571428571;
   margin-left: 8px;
 }
@@ -3869,8 +3869,8 @@ ul.pagination {
 .dropdowns.tiny > .dropdown > .menu > .item {
   padding: 2px 4px;
 }
-.dropdowns.tiny > .dropdown > .text > .icon,
-.dropdowns.tiny > .dropdown > .button > .icon {
+.dropdowns.tiny > .dropdown > .text > .fa,
+.dropdowns.tiny > .dropdown > .button > .fa {
   line-height: 1.166666666666667;
   margin-left: 4px;
 }
@@ -3903,8 +3903,8 @@ ul.pagination {
 .dropdowns.small > .dropdown > .menu > .item {
   padding: 5px 7px;
 }
-.dropdowns.small > .dropdown > .text > .icon,
-.dropdowns.small > .dropdown > .button > .icon {
+.dropdowns.small > .dropdown > .text > .fa,
+.dropdowns.small > .dropdown > .button > .fa {
   line-height: 1.166666666666667;
   margin-left: 6px;
 }
@@ -3937,8 +3937,8 @@ ul.pagination {
 .dropdowns.large > .dropdown > .menu > .item {
   padding: 8px 16px;
 }
-.dropdowns.large > .dropdown > .text > .icon,
-.dropdowns.large > .dropdown > .button > .icon {
+.dropdowns.large > .dropdown > .text > .fa,
+.dropdowns.large > .dropdown > .button > .fa {
   line-height: 1.625;
   margin-left: 12px;
 }
@@ -3971,8 +3971,8 @@ ul.pagination {
 .dropdowns.huge > .dropdown > .menu > .item {
   padding: 10px 20px;
 }
-.dropdowns.huge > .dropdown > .text > .icon,
-.dropdowns.huge > .dropdown > .button > .icon {
+.dropdowns.huge > .dropdown > .text > .fa,
+.dropdowns.huge > .dropdown > .button > .fa {
   line-height: 1.555555555555556;
   margin-left: 14px;
 }
@@ -4194,14 +4194,14 @@ input.input[disabled],
 .input > input[disabled],
 textarea.input[disabled],
 .input > textarea[disabled],
-input.input.disabled > .icon,
-.input > input.disabled > .icon,
-textarea.input.disabled > .icon,
-.input > textarea.disabled > .icon,
-input.input[disabled] > .icon,
-.input > input[disabled] > .icon,
-textarea.input[disabled] > .icon,
-.input > textarea[disabled] > .icon {
+input.input.disabled > .fa,
+.input > input.disabled > .fa,
+textarea.input.disabled > .fa,
+.input > textarea.disabled > .fa,
+input.input[disabled] > .fa,
+.input > input[disabled] > .fa,
+textarea.input[disabled] > .fa,
+.input > textarea[disabled] > .fa {
   cursor: not-allowed;
 }
 input.input[disabled],
@@ -5346,36 +5346,36 @@ textarea.input.muted,
   font-size: 14px;
   padding: 8px 8px;
 }
-.calendar > .header > .icon-chevron-left {
+.calendar > .header > .fa-chevron-left {
   position: absolute;
   line-height: 1;
   left: 8px;
   cursor: pointer;
 }
-.calendar > .header > .icon-chevron-left.disabled,
-.calendar > .header > .icon-chevron-left[disabled] {
+.calendar > .header > .fa-chevron-left.disabled,
+.calendar > .header > .fa-chevron-left[disabled] {
   color: #c7c7c7;
 }
-.calendar > .header > .icon-chevron-left.disabled,
-.calendar > .header > .icon-chevron-left[disabled],
-.calendar > .header > .icon-chevron-left.disabled > .icon,
-.calendar > .header > .icon-chevron-left[disabled] > .icon {
+.calendar > .header > .fa-chevron-left.disabled,
+.calendar > .header > .fa-chevron-left[disabled],
+.calendar > .header > .fa-chevron-left.disabled > .fa,
+.calendar > .header > .fa-chevron-left[disabled] > .fa {
   cursor: not-allowed;
 }
-.calendar > .header > .icon-chevron-right {
+.calendar > .header > .fa-chevron-right {
   position: absolute;
   right: 8px;
   line-height: 1;
   cursor: pointer;
 }
-.calendar > .header > .icon-chevron-right.disabled,
-.calendar > .header > .icon-chevron-right[disabled] {
+.calendar > .header > .fa-chevron-right.disabled,
+.calendar > .header > .fa-chevron-right[disabled] {
   color: #c7c7c7;
 }
-.calendar > .header > .icon-chevron-right.disabled,
-.calendar > .header > .icon-chevron-right[disabled],
-.calendar > .header > .icon-chevron-right.disabled > .icon,
-.calendar > .header > .icon-chevron-right[disabled] > .icon {
+.calendar > .header > .fa-chevron-right.disabled,
+.calendar > .header > .fa-chevron-right[disabled],
+.calendar > .header > .fa-chevron-right.disabled > .fa,
+.calendar > .header > .fa-chevron-right[disabled] > .fa {
   cursor: not-allowed;
 }
 .calendar > .body table {
@@ -5417,8 +5417,8 @@ textarea.input.muted,
 }
 .calendar > .body tbody > tr > td.disabled,
 .calendar > .body tbody > tr > td[disabled],
-.calendar > .body tbody > tr > td.disabled > .icon,
-.calendar > .body tbody > tr > td[disabled] > .icon {
+.calendar > .body tbody > tr > td.disabled > .fa,
+.calendar > .body tbody > tr > td[disabled] > .fa {
   cursor: not-allowed;
 }
 .calendar > .body tbody > tr > td.adjacent {
