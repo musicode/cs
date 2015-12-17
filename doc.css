@@ -2328,7 +2328,7 @@ button.badge {
 .tooltip.primary {
   background-color: #fffaf2;
   border-color: #f90;
-  color: #f90;
+  color: #555;
 }
 .tooltip.primary:before {
   border-color: #f90;
@@ -4436,7 +4436,7 @@ input.input.primary,
 .input.primary > input,
 textarea.input.primary,
 .input.primary > textarea {
-  background-color: #fffcf7;
+  background-color: #fff;
   border-color: #f90;
 }
 input.input.secondary,
@@ -4450,42 +4450,42 @@ input.input.success,
 .input.success > input,
 textarea.input.success,
 .input.success > textarea {
-  background-color: #fafef7;
+  background-color: #fff;
   border-color: #5fb41b;
 }
 input.input.error,
 .input.error > input,
 textarea.input.error,
 .input.error > textarea {
-  background-color: #fffaf8;
+  background-color: #fff;
   border-color: #f95710;
 }
 input.input.info,
 .input.info > input,
 textarea.input.info,
 .input.info > textarea {
-  background-color: #fafbfe;
+  background-color: #fff;
   border-color: #6187dc;
 }
 input.input.warning,
 .input.warning > input,
 textarea.input.warning,
 .input.warning > textarea {
-  background-color: #fffdfa;
+  background-color: #fff;
   border-color: #f0ad4e;
 }
 input.input.danger,
 .input.danger > input,
 textarea.input.danger,
 .input.danger > textarea {
-  background-color: #fefafa;
+  background-color: #fff;
   border-color: #d9534f;
 }
 input.input.muted,
 .input.muted > input,
 textarea.input.muted,
 .input.muted > textarea {
-  background-color: #fcfcfc;
+  background-color: #fff;
   border-color: #a3a3a3;
 }
 .input + .menu,
@@ -4526,11 +4526,6 @@ textarea.input.muted,
   padding: 6px 12px;
   height: 36px;
 }
-.input-group input:hover,
-.input-group input:active {
-  position: relative;
-  z-index: zindex-tiny;
-}
 .input-group > .floated {
   left: 12px;
   font-size: 14px;
@@ -4553,17 +4548,59 @@ textarea.input.muted,
 }
 .input-group > .input + .label,
 .input-group > .input + .button {
-  margin-left: -1px;
+  border-left: 0;
 }
-.input-group > div.input + .label,
-.input-group > div.input + .button {
-  position: relative;
+.input-group > .button,
+.input-group > .label,
+.input-group input,
+.input-group textarea {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
 }
-.input-group.round input {
+.input-group > .label + input.input,
+.input-group > .label + .input > input,
+.input-group > .button + input.input,
+.input-group > .button + .input > input,
+.input-group > .input + .label,
+.input-group > .input + .button {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.input-group.round > .button,
+.input-group.round > .label,
+.input-group.round input,
+.input-group.round textarea {
   border-radius: 50px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
 }
-.input-group.radius input {
+.input-group.round > .label + input.input,
+.input-group.round > .label + .input > input,
+.input-group.round > .button + input.input,
+.input-group.round > .button + .input > input,
+.input-group.round > .input + .label,
+.input-group.round > .input + .button {
+  border-radius: 50px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.input-group.radius > .button,
+.input-group.radius > .label,
+.input-group.radius input,
+.input-group.radius textarea {
   border-radius: 2px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.input-group.radius > .label + input.input,
+.input-group.radius > .label + .input > input,
+.input-group.radius > .button + input.input,
+.input-group.radius > .button + .input > input,
+.input-group.radius > .input + .label,
+.input-group.radius > .input + .button {
+  border-radius: 2px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
 }
 .input-group.tiny > .label {
   font-size: 12px;
@@ -4580,11 +4617,6 @@ textarea.input.muted,
   line-height: 1.166666666666667;
   padding: 2px 4px;
   height: 20px;
-}
-.input-group.tiny input:hover,
-.input-group.tiny input:active {
-  position: relative;
-  z-index: zindex-tiny;
 }
 .input-group.tiny > .floated {
   left: 4px;
@@ -4608,17 +4640,59 @@ textarea.input.muted,
 }
 .input-group.tiny > .input + .label,
 .input-group.tiny > .input + .button {
-  margin-left: -1px;
+  border-left: 0;
 }
-.input-group.tiny > div.input + .label,
-.input-group.tiny > div.input + .button {
-  position: relative;
+.input-group.tiny > .button,
+.input-group.tiny > .label,
+.input-group.tiny input,
+.input-group.tiny textarea {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
 }
-.input-group.tiny.round input {
+.input-group.tiny > .label + input.input,
+.input-group.tiny > .label + .input > input,
+.input-group.tiny > .button + input.input,
+.input-group.tiny > .button + .input > input,
+.input-group.tiny > .input + .label,
+.input-group.tiny > .input + .button {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.input-group.tiny.round > .button,
+.input-group.tiny.round > .label,
+.input-group.tiny.round input,
+.input-group.tiny.round textarea {
   border-radius: 50px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
 }
-.input-group.tiny.radius input {
+.input-group.tiny.round > .label + input.input,
+.input-group.tiny.round > .label + .input > input,
+.input-group.tiny.round > .button + input.input,
+.input-group.tiny.round > .button + .input > input,
+.input-group.tiny.round > .input + .label,
+.input-group.tiny.round > .input + .button {
+  border-radius: 50px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.input-group.tiny.radius > .button,
+.input-group.tiny.radius > .label,
+.input-group.tiny.radius input,
+.input-group.tiny.radius textarea {
   border-radius: 2px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.input-group.tiny.radius > .label + input.input,
+.input-group.tiny.radius > .label + .input > input,
+.input-group.tiny.radius > .button + input.input,
+.input-group.tiny.radius > .button + .input > input,
+.input-group.tiny.radius > .input + .label,
+.input-group.tiny.radius > .input + .button {
+  border-radius: 2px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
 }
 .input-group.small > .label {
   font-size: 12px;
@@ -4635,11 +4709,6 @@ textarea.input.muted,
   line-height: 1.166666666666667;
   padding: 5px 7px;
   height: 26px;
-}
-.input-group.small input:hover,
-.input-group.small input:active {
-  position: relative;
-  z-index: zindex-tiny;
 }
 .input-group.small > .floated {
   left: 7px;
@@ -4663,17 +4732,59 @@ textarea.input.muted,
 }
 .input-group.small > .input + .label,
 .input-group.small > .input + .button {
-  margin-left: -1px;
+  border-left: 0;
 }
-.input-group.small > div.input + .label,
-.input-group.small > div.input + .button {
-  position: relative;
+.input-group.small > .button,
+.input-group.small > .label,
+.input-group.small input,
+.input-group.small textarea {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
 }
-.input-group.small.round input {
+.input-group.small > .label + input.input,
+.input-group.small > .label + .input > input,
+.input-group.small > .button + input.input,
+.input-group.small > .button + .input > input,
+.input-group.small > .input + .label,
+.input-group.small > .input + .button {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.input-group.small.round > .button,
+.input-group.small.round > .label,
+.input-group.small.round input,
+.input-group.small.round textarea {
   border-radius: 50px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
 }
-.input-group.small.radius input {
+.input-group.small.round > .label + input.input,
+.input-group.small.round > .label + .input > input,
+.input-group.small.round > .button + input.input,
+.input-group.small.round > .button + .input > input,
+.input-group.small.round > .input + .label,
+.input-group.small.round > .input + .button {
+  border-radius: 50px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.input-group.small.radius > .button,
+.input-group.small.radius > .label,
+.input-group.small.radius input,
+.input-group.small.radius textarea {
   border-radius: 2px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.input-group.small.radius > .label + input.input,
+.input-group.small.radius > .label + .input > input,
+.input-group.small.radius > .button + input.input,
+.input-group.small.radius > .button + .input > input,
+.input-group.small.radius > .input + .label,
+.input-group.small.radius > .input + .button {
+  border-radius: 2px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
 }
 .input-group.large > .label {
   font-size: 16px;
@@ -4690,11 +4801,6 @@ textarea.input.muted,
   line-height: 1.625;
   padding: 8px 16px;
   height: 44px;
-}
-.input-group.large input:hover,
-.input-group.large input:active {
-  position: relative;
-  z-index: zindex-tiny;
 }
 .input-group.large > .floated {
   left: 16px;
@@ -4718,17 +4824,59 @@ textarea.input.muted,
 }
 .input-group.large > .input + .label,
 .input-group.large > .input + .button {
-  margin-left: -1px;
+  border-left: 0;
 }
-.input-group.large > div.input + .label,
-.input-group.large > div.input + .button {
-  position: relative;
+.input-group.large > .button,
+.input-group.large > .label,
+.input-group.large input,
+.input-group.large textarea {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
 }
-.input-group.large.round input {
+.input-group.large > .label + input.input,
+.input-group.large > .label + .input > input,
+.input-group.large > .button + input.input,
+.input-group.large > .button + .input > input,
+.input-group.large > .input + .label,
+.input-group.large > .input + .button {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.input-group.large.round > .button,
+.input-group.large.round > .label,
+.input-group.large.round input,
+.input-group.large.round textarea {
   border-radius: 50px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
 }
-.input-group.large.radius input {
+.input-group.large.round > .label + input.input,
+.input-group.large.round > .label + .input > input,
+.input-group.large.round > .button + input.input,
+.input-group.large.round > .button + .input > input,
+.input-group.large.round > .input + .label,
+.input-group.large.round > .input + .button {
+  border-radius: 50px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.input-group.large.radius > .button,
+.input-group.large.radius > .label,
+.input-group.large.radius input,
+.input-group.large.radius textarea {
   border-radius: 4px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.input-group.large.radius > .label + input.input,
+.input-group.large.radius > .label + .input > input,
+.input-group.large.radius > .button + input.input,
+.input-group.large.radius > .button + .input > input,
+.input-group.large.radius > .input + .label,
+.input-group.large.radius > .input + .button {
+  border-radius: 4px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
 }
 .input-group.huge > .label {
   font-size: 18px;
@@ -4745,11 +4893,6 @@ textarea.input.muted,
   line-height: 1.555555555555556;
   padding: 10px 20px;
   height: 58px;
-}
-.input-group.huge input:hover,
-.input-group.huge input:active {
-  position: relative;
-  z-index: zindex-tiny;
 }
 .input-group.huge > .floated {
   left: 20px;
@@ -4773,17 +4916,59 @@ textarea.input.muted,
 }
 .input-group.huge > .input + .label,
 .input-group.huge > .input + .button {
-  margin-left: -1px;
+  border-left: 0;
 }
-.input-group.huge > div.input + .label,
-.input-group.huge > div.input + .button {
-  position: relative;
+.input-group.huge > .button,
+.input-group.huge > .label,
+.input-group.huge input,
+.input-group.huge textarea {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
 }
-.input-group.huge.round input {
+.input-group.huge > .label + input.input,
+.input-group.huge > .label + .input > input,
+.input-group.huge > .button + input.input,
+.input-group.huge > .button + .input > input,
+.input-group.huge > .input + .label,
+.input-group.huge > .input + .button {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.input-group.huge.round > .button,
+.input-group.huge.round > .label,
+.input-group.huge.round input,
+.input-group.huge.round textarea {
   border-radius: 50px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
 }
-.input-group.huge.radius input {
+.input-group.huge.round > .label + input.input,
+.input-group.huge.round > .label + .input > input,
+.input-group.huge.round > .button + input.input,
+.input-group.huge.round > .button + .input > input,
+.input-group.huge.round > .input + .label,
+.input-group.huge.round > .input + .button {
+  border-radius: 50px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.input-group.huge.radius > .button,
+.input-group.huge.radius > .label,
+.input-group.huge.radius input,
+.input-group.huge.radius textarea {
   border-radius: 4px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.input-group.huge.radius > .label + input.input,
+.input-group.huge.radius > .label + .input > input,
+.input-group.huge.radius > .button + input.input,
+.input-group.huge.radius > .button + .input > input,
+.input-group.huge.radius > .input + .label,
+.input-group.huge.radius > .input + .button {
+  border-radius: 4px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
 }
 .inputs {
   position: relative;
