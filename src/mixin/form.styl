@@ -301,11 +301,6 @@ form-input-group()
             input {
                 form-input-size(size)
                 form-input-height(name)
-                &:hover,
-                &:active {
-                    position relative
-                    ui-set('z-index', zindex-tiny)
-                }
             }
 
             > {$selector-floated} {
@@ -334,19 +329,13 @@ form-input-group()
 
             > {$selector-form-input} + {$selector-label},
             > {$selector-form-input} + {$selector-button} {
-                margin-left -1px
-            }
-            > div{$selector-form-input} + {$selector-label},
-            > div{$selector-form-input} + {$selector-button} {
-                position relative
+                border-left 0
             }
 
             ui-variant(
                 hash: $form-input-radius-hash[name],
                 each: @(radius) {
-                    input {
-                        ui-set('border-radius', radius)
-                    }
+                    control-radius(radius)
                 }
             )
 
