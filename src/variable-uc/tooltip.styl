@@ -1,0 +1,36 @@
+/**
+ * @file Tooltip
+ * @author musicode
+ */
+
+$selector-tooltip = '.tooltip'
+$selector-tooltip-top = '.top'
+$selector-tooltip-right = '.right'
+$selector-tooltip-bottom = '.bottom'
+$selector-tooltip-left = '.left'
+
+$tooltip-font-size = 12px
+$tooltip-padding-vertical = 12px
+$tooltip-padding-horizontal = 22px
+$tooltip-arrow-size = 6px
+$tooltip-radius-size = 2px
+
+$tooltip-box-shadow = $layer-box-shadow
+
+$tooltip-brand-hash = {
+    primary: {
+        bg: lighten($brand-primary, 95%),
+        border: $brand-primary,
+        color: $brand-text
+    },
+    secondary: {
+        bg: #FFF,
+        border: $brand-border,
+        color: $brand-text
+    },
+    error: {
+        bg: lighten($brand-error, 95%),
+        border: $brand-error,
+        color: $brand-error
+    }
+}

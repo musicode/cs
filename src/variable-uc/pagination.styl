@@ -1,0 +1,44 @@
+/**
+ * @file Pagination
+ * @author musicode
+ */
+
+$selector-pagination = '.pagination'
+$selector-pagination-item = '.item'
+
+$pagination-hover-lighten = 6%
+$pagination-active-lighten = 3%
+
+$pagination-brand-hash = {
+    primary: {
+        bg: $brand-bg,
+        border: $brand-border,
+        color: $brand-text,
+
+        bg-hover: lighten($brand-primary, $pagination-hover-lighten),
+        border-hover: lighten($brand-primary, $pagination-hover-lighten),
+        color-hover: #FFF,
+
+        bg-active: lighten($brand-primary, $pagination-active-lighten),
+        border-active: lighten($brand-primary, $pagination-active-lighten),
+        color-active: #FFF,
+
+        bg-checked: $brand-primary,
+        border-checked: $brand-primary,
+        color-checked: #FFF,
+
+        bg-disabled: $brand-bg-disabled,
+        border-disabled: $brand-border-disabled,
+        color-disabled: $brand-text-disabled
+    }
+}
+
+$pagination-size-hash = {
+    '': $size-base,
+    small: $size-small
+}
+
+$pagination-radius-hash = {
+    '': $radius-base,
+    small: $radius-small
+}

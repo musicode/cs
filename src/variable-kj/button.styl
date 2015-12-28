@@ -1,0 +1,307 @@
+/**
+ * @file Button
+ * @author musicode
+ */
+
+$selector-button = '.button'
+$selector-buttons = '.buttons'
+
+$button-box-shadow-active = inset 0px 1px 2px rgba(0,0,0,0.08)
+
+$button-hover-darken = 6%
+$button-active-darken = 12%
+$button-outline-lighten = 95%
+
+$button-brand-hash = {
+    primary: {
+        bg: $brand-primary,
+        border: $brand-primary,
+        color: #FFF,
+
+        bg-hover: darken($brand-primary, $button-hover-darken),
+        border-hover: darken($brand-primary, $button-hover-darken),
+        color-hover: #FFF,
+
+        bg-active: darken($brand-primary, $button-active-darken),
+        border-active: darken($brand-primary, $button-active-darken),
+        color-active: #FFF,
+
+        bg-disabled: $brand-bg-disabled,
+        border-disabled: $brand-border-disabled,
+        color-disabled: $brand-text-disabled
+    },
+    secondary: {
+        bg: $brand-secondary,
+        border: $brand-border,
+        color: $brand-text,
+
+        bg-hover: darken($brand-secondary, $button-hover-darken),
+        border-hover: darken($brand-border, $button-hover-darken),
+        color-hover: $brand-text,
+
+        bg-active: darken($brand-secondary, $button-active-darken),
+        border-active: darken($brand-border, $button-active-darken),
+        color-active: $brand-text,
+
+        bg-disabled: $brand-bg-disabled,
+        border-disabled: $brand-border-disabled,
+        color-disabled: $brand-text-disabled
+    },
+    success: {
+        bg: $brand-success,
+        border: $brand-success,
+        color: #FFF,
+
+        bg-hover: darken($brand-success, $button-hover-darken),
+        border-hover: darken($brand-success, $button-hover-darken),
+        color-hover: #FFF,
+
+        bg-active: darken($brand-success, $button-active-darken),
+        border-active: darken($brand-success, $button-active-darken),
+        color-active: #FFF,
+
+        bg-disabled: $brand-bg-disabled,
+        border-disabled: $brand-border-disabled,
+        color-disabled: $brand-text-disabled
+    },
+    error: {
+        bg: $brand-error,
+        border: $brand-error,
+        color: #FFF,
+
+        bg-hover: darken($brand-error, $button-hover-darken),
+        border-hover: darken($brand-error, $button-hover-darken),
+        color-hover: #FFF,
+
+        bg-active: darken($brand-error, $button-active-darken),
+        border-active: darken($brand-error, $button-active-darken),
+        color-active: #FFF,
+
+        bg-disabled: $brand-bg-disabled,
+        border-disabled: $brand-border-disabled,
+        color-disabled: $brand-text-disabled
+    },
+    info: {
+        bg: $brand-info,
+        border: $brand-info,
+        color: #FFF,
+
+        bg-hover: darken($brand-info, $button-hover-darken),
+        border-hover: darken($brand-info, $button-hover-darken),
+        color-hover: #FFF,
+
+        bg-active: darken($brand-info, $button-active-darken),
+        border-active: darken($brand-info, $button-active-darken),
+        color-active: #FFF,
+
+        bg-disabled: $brand-bg-disabled,
+        border-disabled: $brand-border-disabled,
+        color-disabled: $brand-text-disabled
+    },
+    warning: {
+        bg: $brand-warning,
+        border: $brand-warning,
+        color: #FFF,
+
+        bg-hover: darken($brand-warning, $button-hover-darken),
+        border-hover: darken($brand-warning, $button-hover-darken),
+        color-hover: #FFF,
+
+        bg-active: darken($brand-warning, $button-active-darken),
+        border-active: darken($brand-warning, $button-active-darken),
+        color-active: #FFF,
+
+        bg-disabled: $brand-bg-disabled,
+        border-disabled: $brand-border-disabled,
+        color-disabled: $brand-text-disabled
+    },
+    danger: {
+        bg: $brand-danger,
+        border: $brand-danger,
+        color: #FFF,
+
+        bg-hover: darken($brand-danger, $button-hover-darken),
+        border-hover: darken($brand-danger, $button-hover-darken),
+        color-hover: #FFF,
+
+        bg-active: darken($brand-danger, $button-active-darken),
+        border-active: darken($brand-danger, $button-active-darken),
+        color-active: #FFF,
+
+        bg-disabled: $brand-bg-disabled,
+        border-disabled: $brand-border-disabled,
+        color-disabled: $brand-text-disabled
+    },
+    muted: {
+        bg: $brand-muted,
+        border: $brand-muted,
+        color: #FFF,
+
+        bg-hover: darken($brand-muted, $button-hover-darken),
+        border-hover: darken($brand-muted, $button-hover-darken),
+        color-hover: #FFF,
+
+        bg-active: darken($brand-muted, $button-active-darken),
+        border-active: darken($brand-muted, $button-active-darken),
+        color-active: #FFF,
+
+        bg-disabled: $brand-bg-disabled,
+        border-disabled: $brand-border-disabled,
+        color-disabled: $brand-text-disabled
+    }
+}
+
+$button-outline-brand-hash = {
+    primary: {
+        bg: lighten($brand-primary, $button-outline-lighten),
+        border: $brand-primary,
+        color: $brand-primary,
+
+        bg-hover: $brand-primary,
+        border-hover: $brand-primary,
+        color-hover: #FFF,
+
+        bg-active: darken($brand-primary, $button-active-darken),
+        border-active: darken($brand-primary, $button-active-darken),
+        color-active: #FFF,
+
+        bg-disabled: $brand-bg-disabled,
+        border-disabled: $brand-border-disabled,
+        color-disabled: $brand-text-disabled
+    },
+    secondary: {
+        bg: lighten($brand-text, $button-outline-lighten),
+        border: $brand-text,
+        color: $brand-text,
+
+        bg-hover: $brand-text,
+        border-hover: $brand-text,
+        color-hover: #FFF,
+
+        bg-active: darken($brand-text, $button-active-darken),
+        border-active: darken($brand-text, $button-active-darken),
+        color-active: #FFF,
+
+        bg-disabled: $brand-bg-disabled,
+        border-disabled: $brand-border-disabled,
+        color-disabled: $brand-text-disabled
+    },
+    success: {
+        bg: lighten($brand-success, $button-outline-lighten),
+        border: $brand-success,
+        color: $brand-success,
+
+        bg-hover: $brand-success,
+        border-hover: $brand-success,
+        color-hover: #FFF,
+
+        bg-active: darken($brand-success, $button-active-darken),
+        border-active: darken($brand-success, $button-active-darken),
+        color-active: #FFF,
+
+        bg-disabled: $brand-bg-disabled,
+        border-disabled: $brand-border-disabled,
+        color-disabled: $brand-text-disabled
+    },
+    error: {
+        bg: lighten($brand-error, $button-outline-lighten),
+        border: $brand-error,
+        color: $brand-error,
+
+        bg-hover: $brand-error,
+        border-hover: $brand-error,
+        color-hover: #FFF,
+
+        bg-active: darken($brand-error, $button-active-darken),
+        border-active: darken($brand-error, $button-active-darken),
+        color-active: #FFF,
+
+        bg-disabled: $brand-bg-disabled,
+        border-disabled: $brand-border-disabled,
+        color-disabled: $brand-text-disabled
+    },
+    info: {
+        bg: lighten($brand-info, $button-outline-lighten),
+        border: $brand-info,
+        color: $brand-info,
+
+        bg-hover: $brand-info,
+        border-hover: $brand-info,
+        color-hover: #FFF,
+
+        bg-active: darken($brand-info, $button-active-darken),
+        border-active: darken($brand-info, $button-active-darken),
+        color-active: #FFF,
+
+        bg-disabled: $brand-bg-disabled,
+        border-disabled: $brand-border-disabled,
+        color-disabled: $brand-text-disabled
+    },
+    warning: {
+        bg: lighten($brand-warning, $button-outline-lighten),
+        border: $brand-warning,
+        color: $brand-warning,
+
+        bg-hover: $brand-warning,
+        border-hover: $brand-warning,
+        color-hover: #FFF,
+
+        bg-active: darken($brand-warning, $button-active-darken),
+        border-active: darken($brand-warning, $button-active-darken),
+        color-active: #FFF,
+
+        bg-disabled: $brand-bg-disabled,
+        border-disabled: $brand-border-disabled,
+        color-disabled: $brand-text-disabled
+    },
+    danger: {
+        bg: lighten($brand-danger, $button-outline-lighten),
+        border: $brand-danger,
+        color: $brand-danger,
+
+        bg-hover: $brand-danger,
+        border-hover: $brand-danger,
+        color-hover: #FFF,
+
+        bg-active: darken($brand-danger, $button-active-darken),
+        border-active: darken($brand-danger, $button-active-darken),
+        color-active: #FFF,
+
+        bg-disabled: $brand-bg-disabled,
+        border-disabled: $brand-border-disabled,
+        color-disabled: $brand-text-disabled
+    },
+    muted: {
+        bg: lighten($brand-muted, $button-outline-lighten),
+        border: $brand-muted,
+        color: $brand-muted,
+
+        bg-hover: $brand-muted,
+        border-hover: $brand-muted,
+        color-hover: #FFF,
+
+        bg-active: darken($brand-muted, $button-active-darken),
+        border-active: darken($brand-muted, $button-active-darken),
+        color-active: #FFF,
+
+        bg-disabled: $brand-bg-disabled,
+        border-disabled: $brand-border-disabled,
+        color-disabled: $brand-text-disabled
+    }
+}
+
+$button-size-hash = {
+    '': $size-base,
+    tiny: $size-tiny,
+    small: $size-small,
+    large: $size-large,
+    huge: $size-huge
+}
+
+$button-radius-hash = {
+    '': $radius-base,
+    tiny: $radius-tiny,
+    small: $radius-small,
+    large: $radius-large,
+    huge: $radius-huge
+}

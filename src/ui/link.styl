@@ -44,12 +44,16 @@
     // color 不需要被 $selector-link 覆盖
     // 因此后定义
     ui-variant(
-        hash: $brand-hash,
-        each: @(color, name) {
-            ui-set('color', color)
-            &{$selector-link} {
+        hash: $link-brand-hash,
+        each: @(brand) {
+            ui-set('color', brand['color'])
+            {$selector-link} {
+                color inherit
+            }
+            &{$selector-link},
+            {$selector-link} {
                 {$selector-hover} {
-                    ui-set('color', $brand-hover-hash[name])
+                    ui-set('color', brand['color-hover'])
                 }
             }
         }
