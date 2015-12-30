@@ -58,8 +58,8 @@ ui-dialog-header()
         ui-set('border-top-left-radius', $dialog-radius)
         ui-set('border-top-right-radius', $dialog-radius)
 
-    if $dialog-divider is a 'rgba'
-        border-bottom 1px solid $dialog-divider
+    if $dialog-header-divider is a 'rgba'
+        border-bottom 1px solid $dialog-header-divider
 
 
 ui-dialog-title()
@@ -91,11 +91,10 @@ ui-dialog-body()
 
 ui-dialog-footer()
 
-    text-align right
-
+    ui-set('text-align', $dialog-footer-text-align);
     ui-set('padding', $dialog-footer-padding-vertical $dialog-padding-horizontal)
 
-    if $dialog-divider is a 'rgba'
-        border-top 1px solid $dialog-divider
+    if $dialog-footer-divider is a 'rgba'
+        border-top 1px solid $dialog-footer-divider
 
 
