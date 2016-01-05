@@ -35,6 +35,10 @@
             ui-collection-tight(
                 selector-item: $selector-form-radio
             )
+        &{$selector-justified}
+            ui-justified(
+                selector-item: $selector-form-radio
+            )
 
     {$selector-form-checkbox}
         form-checkbox()
@@ -43,6 +47,10 @@
         form-checkboxes()
         &{$selector-tight}
             ui-collection-tight(
+                selector-item: $selector-form-checkbox
+            )
+        &{$selector-justified}
+            ui-justified(
                 selector-item: $selector-form-checkbox
             )
 
