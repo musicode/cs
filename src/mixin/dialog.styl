@@ -77,9 +77,13 @@ ui-dialog-close()
     ui-set('top', $dialog-close-top)
     ui-set('right', $dialog-padding-horizontal)
     ui-set('font-size', $dialog-close-font-size)
+    ui-set('color', $dialog-close-color)
 
     if $support-mouse
         ui-set('cursor', $cursor-clickable)
+        &:hover
+            ui-transition('color')
+            ui-set('color', $dialog-close-color-hover)
 
 
 
