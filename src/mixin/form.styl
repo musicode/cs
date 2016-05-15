@@ -197,6 +197,9 @@ form-input()
         position relative
         font-size 0
 
+        if $support-mouse
+            cursor text
+
         > input,
         > textarea
             width 100%
@@ -208,12 +211,14 @@ form-input()
 
             > {$selector-form-placeholder}
 
+                ui-set('color', $form-placeholder-color)
+
                 position absolute
                 left 1px
                 top 1px
 
                 user-select none
-                ui-set('color', $form-placeholder-color)
+
 
     {$selector-hover}
         {selector-control}
