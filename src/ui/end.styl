@@ -1,0 +1,13 @@
+/**
+ * @file 为了获得更高的 css 优先级，因此放在最后定义
+ * @author musicode
+ */
+
++prefix-classes($ui-prefix)
+
+    if $brand-border is a 'rgba'
+        {$selector-bordered}
+            border 1px solid $brand-border
+
+    {$selector-fluid}
+        ui-fluid(true)

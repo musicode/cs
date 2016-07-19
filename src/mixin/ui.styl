@@ -30,11 +30,16 @@ ui-ellipsis()
     text-overflow ellipsis
     white-space nowrap
 
-ui-fluid()
+ui-fluid(isImportant = false)
 
-    display block
-    width 100%
-
+    if (isImportant) {
+        display block !important
+        width 100% !important
+    }
+    else {
+        display block
+        width 100%
+    }
 
 ui-justified(selector-item)
 

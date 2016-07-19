@@ -160,12 +160,12 @@ form-input()
         display inline-block
 
     color inherit
+    background-color $form-input-bg
 
     {selector-control}
 
         outline 0
 
-        background-color $form-input-bg
         border 1px solid $brand-border
 
         if $support-mouse
@@ -218,6 +218,11 @@ form-input()
                 top 1px
 
                 user-select none
+
+                + input,
+                + textarea
+                    position relative
+                    background-color transparent
 
 
     {$selector-hover}
