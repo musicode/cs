@@ -29,7 +29,18 @@ ui-progress()
             > {$selector-progress-meter} {
                 ui-set('font-size', size['font'])
                 ui-set('line-height', size['line-height'])
-                ui-set('padding', size['padding-vertical'] size['padding-horizontal'])
+
+                if $support-ie8 {
+                    ui-set('padding', size['padding-vertical'] size['padding-horizontal'])
+                }
+
+                &:empty {
+                    ui-set('padding', size['padding-vertical'] 0)
+                }
+                &:not(:empty) {
+                    ui-set('padding', size['padding-vertical'] size['padding-horizontal'])
+                }
+
             }
 
             ui-variant(
