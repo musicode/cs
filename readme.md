@@ -1,6 +1,6 @@
 # CS
 
-**C**ombo **S**tyle
+**C**omposite **S**tyle
 
 
 
@@ -15,11 +15,11 @@
 
 ## 如何解决问题
 
-1. 基于 Stylus，功能超级强大，语法似于 js，几乎可以实现任何思路   
+1. 基于 Stylus，功能超级强大，语法似于 js，几乎可以实现任何思路
 2. 不带字体库和插件库，只是纯样式
 3. 基于组合和语义化，可延伸出各种使用方式
 4. 推荐如下使用方式
-   
+
    ```html
    <head>
         <link rel="stylesheet" href="cs.css">
@@ -29,28 +29,28 @@
         <div class="button large primary">click me!</div>
    </body>
    ```
-   
+
    * **cs** 作为公共库，可开启永久缓存
    * **biz** 基于 **cs**，可节省大量重复代码
 
 ## 特点
 
 1. 固化类名通常会被吐槽不够语义化，**cs** 的一大特性就是语义化。
-   
+
    比如 `<a>` 表示链接，**cs** 定义的 `.link` 则会带有链接具有的样式，它的风格基于网站的整体设计，类似的还有 `.button` `.label` `.text` `.input` 等
-   
+
 2. 使用 **normalize.css** 进行初始化，保证先天的语义不被破坏，比如 `<strong>` 表示粗体，当我们需要一个粗体的按钮时，可参考以下写法：
-   
+
    ```html
    <strong class="button large primary">click me!</strong>
    ```
-   
+
    当我们需要一个斜体的按钮时，可参考以下写法：
-   
+
    ```html
    <i class="button large primary">click me!</i>
    ```
-   
+
    只需修改模板，而无需修改样式。基于这样的设计思想，业务代码可大为减少
 
 3. 非常重要的一点是，没有样式库可以解决所有问题，即使 Bootsrap 有那么多组件也做不到（况且很多是用不上的），业务代码是一定会有的，我们的追求是尽可能的减少业务代码。
